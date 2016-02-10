@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>INDEX || layout</title>
+		<link rel="stylesheet" href="css/materialize.css" media="screen,projection"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/custom1.css">
+		<style type="text/css">
+		</style>
+	</head>
+	<body>
+		<header>
+		</header>
+		<div class="side-section">
+			<ul class="side-nav fixed blue lighten-3" style="left:0px">
+				<li class="logo"><img class="responsive-img circle center" src="1.jpg" width="160px" height="160px"></li>
+				<li class="blue lighten-3"><a href="#!" class="waves-effect waves-lighten" style="color:#1976d2;">First Sidebar Link</a></li>
+				<li class="blue lighten-3"><a href="#!" class="waves-effect waves-lighten" style="color:#1976d2;">Second Sidebar Link</a></li>
+				<li class=" blue lighten-3"><a href="#!" class="waves-effect waves-lighten" style="color:#1976d2;">First Sidebar Link</a></li>
+				<li class="blue lighten-3"><a href="#!" class="waves-effect waves-lighten" style="color:#1976d2;">Second Sidebar Link</a></li>
+			</ul>
+		</div>
+		<main>
+		<div class="row">
+		<a class="waves-effect waves-lighten btn-flat large" id="nav-btn"><i class="large material-icons" style="color:#1976d2;font-size: xx-large;">list</i></a>
+			<div class="col s12 no-padding">
+				<div class="card blue darken-1 no-padding">
+		            <div class="card-content white-text">
+		              <span class="card-title">Card Title</span>
+		              <p>I am a very simple card. I am good at containing small bits of information.
+		              I am convenient because I require little markup to use effectively.</p>
+		            </div>
+		            <div class="card-action">
+		              <a href="#">This is a link</a>
+		              <a href="#">This is a link</a>
+		            </div>
+          		</div>
+			</div>
+		</div>
+		</main>
+		<footer>
+		</footer>
+		<!-- scripts -->
+		<script src = "js/jquery.js"></script>
+		<script src = "js/materialize.js"></script>
+		<script>
+			$("#nav-btn").click(function(){
+				$("main").toggleClass("active");
+				$("main").toggleClass("z-depth-3");
+			});
+		</script>
+	</body>
+</html>
