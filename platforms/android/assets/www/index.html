@@ -36,10 +36,25 @@
     </head>
     <body>
     <a href="chart.html">This is Chart.HTML</a>
-    <a href="navbar.html">Navbar ->> click here</a>
+    <a href="navbar.html">Navbar ->> click here</a>\
+    <p class="test"></p>
+    <p class="fail"></p>
     <!--dump js files here-->
         <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript">
+        var success=function(data){
+        	if(data){
+        		$(".test").html(data+"Step counter is working");
+        	}
+            else{
+                $(".test").html(data+"Step counter is not working");
+            }
+        }
+        var failure=function(data){
+            $(".fail").html(data+"feature not supported");
+        }
+        pedometer.isStepCountingAvailable(success, failure);
         </script>
     </body>
 </html>

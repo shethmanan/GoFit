@@ -12,6 +12,9 @@
         },
         "cordova-plugin-crosswalk-webview": {
             "PACKAGE_NAME": "com.rg.hello"
+        },
+        "cordova-plugin-pedometer": {
+            "PACKAGE_NAME": "com.rg.hello"
         }
     },
     "dependent_plugins": {}

@@ -10,6 +10,9 @@
     <preference default="--disable-pull-to-refresh-effect" name="xwalkCommandLine" />
     <preference default="embedded" name="xwalkMode" />
     <preference default="true" name="xwalkMultipleApk" />
+    <feature name="Pedometer">
+        <param name="android-package" value="org.apache.cordova.pedometer.PedoListener" />
+    </feature>
     <allow-intent href="market:*" />
     <name>GoFit</name>
     <description>
