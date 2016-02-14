@@ -89,7 +89,7 @@
 										</div>
 								  </div>
 								</div>
-								<i style="activity_status;left: 167px;top: 50px;" class="material-icons activity_status">directions_walk</i>
+								<i style="activity_status;left: 172px;top: 50px;" class="material-icons activity_status">directions_walk</i>
 							</center>	
 						</div>
 						<!--For the rounded image or animation which will show the steps-->
@@ -106,10 +106,10 @@
 					<div class="blue-text">&nbsp&nbsp<div class="dynamic">350</div>steps</div>
 				</div>
 			</div>
-			<div class="gap"></div>
+			<br>
 			<div class="row">
 				<div class="col s12">
-					<a class="btn waves-effect waves-light blue darken-4 full-width">Start&nbsp&nbspWalking</a>
+					<a class="btn waves-effect waves-light blue darken-4 full-width">Start Walking</a>
 				</div>
 			</div>
 			
@@ -124,6 +124,22 @@
 			$("#nav-btn").click(function(){
 				$("main").toggleClass("active");
 				$("main").toggleClass("z-depth-3");
+				if($("main").hasClass("active")){
+					$("main.active").velocity({
+						translateX: "70vw",
+						translateY: "10vh",
+					});
+				}
+				else
+				{
+					$("main").velocity({
+						translateX: "0px",
+						translateY: "0px",
+						height:"100 vh",
+						width:"100 vw"
+
+					});	
+				}
 			});
 		</script>
 	</body>

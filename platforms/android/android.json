@@ -35,6 +35,10 @@
                         {
                             "xml": "<feature name=\"Pedometer\"><param name=\"android-package\" value=\"org.apache.cordova.pedometer.PedoListener\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"CordovaStepCounter\"><param name=\"android-package\" value=\"net.texh.cordovapluginstepcounter.CordovaStepCounter\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -50,6 +54,30 @@
                             "xml": "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\" />",
                             "count": 1
                         }
+                    ],
+                    "/manifest/application": [
+                        {
+                            "xml": "<service android:enabled=\"true\" android:name=\"net.texh.cordovapluginstepcounter.StepCounterService\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<receiver android:name=\"net.texh.cordovapluginstepcounter.StepCounterBootReceiver\"><intent-filter><action android:name=\"android.intent.action.BOOT_COMPLETED\" /></intent-filter></receiver>",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest": [
+                        {
+                            "xml": "<uses-feature android:name=\"android.hardware.sensor.stepcounter\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-feature android:name=\"android.hardware.sensor.stepdetector\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.RECEIVE_BOOT_COMPLETED\" />",
+                            "count": 1
+                        }
                     ]
                 }
             }
@@ -63,6 +91,9 @@
             "PACKAGE_NAME": "com.rg.hello"
         },
         "cordova-plugin-pedometer": {
+            "PACKAGE_NAME": "com.rg.hello"
+        },
+        "net.texh.cordovapluginstepcounter": {
             "PACKAGE_NAME": "com.rg.hello"
         }
     },
@@ -81,11 +112,20 @@
             "clobbers": [
                 "pedometer"
             ]
+        },
+        {
+            "file": "plugins/net.texh.cordovapluginstepcounter/www/stepcounter.js",
+            "id": "net.texh.cordovapluginstepcounter.stepcounter",
+            "pluginId": "net.texh.cordovapluginstepcounter",
+            "clobbers": [
+                "stepcounter"
+            ]
         }
     ],
     "plugin_metadata": {
         "cordova-plugin-whitelist": "1.2.1",
         "cordova-plugin-crosswalk-webview": "1.5.0",
-        "cordova-plugin-pedometer": "0.4.1"
+        "cordova-plugin-pedometer": "0.4.1",
+        "net.texh.cordovapluginstepcounter": "0.0.4"
     }
 }

@@ -15,6 +15,9 @@
         },
         "cordova-plugin-pedometer": {
             "PACKAGE_NAME": "com.rg.hello"
+        },
+        "net.texh.cordovapluginstepcounter": {
+            "PACKAGE_NAME": "com.rg.hello"
         }
     },
     "dependent_plugins": {}

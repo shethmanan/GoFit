@@ -13,6 +13,9 @@
     <feature name="Pedometer">
         <param name="android-package" value="org.apache.cordova.pedometer.PedoListener" />
     </feature>
+    <feature name="CordovaStepCounter">
+        <param name="android-package" value="net.texh.cordovapluginstepcounter.CordovaStepCounter" />
+    </feature>
     <allow-intent href="market:*" />
     <name>GoFit</name>
     <description>

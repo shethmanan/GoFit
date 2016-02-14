@@ -13,6 +13,14 @@ module.exports = [
         "clobbers": [
             "pedometer"
         ]
+    },
+    {
+        "file": "plugins/net.texh.cordovapluginstepcounter/www/stepcounter.js",
+        "id": "net.texh.cordovapluginstepcounter.stepcounter",
+        "pluginId": "net.texh.cordovapluginstepcounter",
+        "clobbers": [
+            "stepcounter"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -20,7 +28,8 @@ module.exports.metadata =
 {
     "cordova-plugin-whitelist": "1.2.1",
     "cordova-plugin-crosswalk-webview": "1.5.0",
-    "cordova-plugin-pedometer": "0.4.1"
+    "cordova-plugin-pedometer": "0.4.1",
+    "net.texh.cordovapluginstepcounter": "0.0.4"
 }
 // BOTTOM OF METADATA
 });
