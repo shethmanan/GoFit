@@ -5,7 +5,7 @@ $("#nav-btn").click(function(){
 					$("main.active").velocity({
 						translateX: "65vw",
 						translateY: "10vh",
-					},"linear");
+					},{easing:"linear"});
 				}
 				else
 				{
@@ -14,7 +14,6 @@ $("#nav-btn").click(function(){
 						translateY: "0px",
 						height:"100 vh",
 						width:"100 vw"
-
-					},"linear");	
+					},{easing:"linear"});	
 				}
 			});

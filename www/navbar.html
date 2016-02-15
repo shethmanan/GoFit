@@ -7,6 +7,9 @@
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/navbar.css">
 		<style type="text/css">
+		.color{
+			background-color: black;
+		}
 		</style>
 	</head>
 	<body>
@@ -23,14 +26,18 @@
 		</div>
 		<main>
 		<div class="row">
-		<a class="waves-effect waves-lighten btn-flat large" id="nav-btn"><i class="large material-icons" style="color:#1976d2;font-size: xx-large;">list</i></a>
+			<a class="waves-effect waves-lighten btn-flat large" id="nav-btn"><i class="large material-icons" style="color:#1976d2;font-size: xx-large;">list</i></a>
 			<div class="col s12 no-padding">
-				<div class="card blue darken-1 no-padding" hidden>
-		            <img src="1.jpg" width="100%" height="100%">
-		            <div class="caption center-align">
-		            	<h3>This is our big Tagline!</h3>
-		            </div>
-          		</div>
+				<div class="card no-padding" id="first" hidden>
+					<a href="index.html"><img src="1.jpg" width="100%" height="100%"></a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s12 no-padding">
+				<div class="card no-padding" id="second" hidden>
+					<a href="#"><img src="2.jpg" width="100%" height="100%"></a>
+				</div>
 			</div>
 		</div>
 		</main>
@@ -44,8 +51,7 @@
 		<script type="text/javascript" src="js/velocity.ui.min.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
-			$(".card").show().velocity("transition.swoopIn")
-		});
+			 $(".card").velocity("transition.bounceIn",{ stagger: 250}).delay(1000)}, 2000);
 		</script>
 		</script>
 	</body>
