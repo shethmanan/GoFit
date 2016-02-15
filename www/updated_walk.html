@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection"/>
-		<link rel="stylesheet" type="text/css" href="css/custom1.css"/>
+		<link rel="stylesheet" type="text/css" href="css/navbar.css"/>
 		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<style>
@@ -47,6 +47,7 @@
 				top:61px;
 				font-size:27px;
 			}
+			
 		</style>
 	</head>
 	<body>
@@ -54,11 +55,11 @@
 		</header>
 		<div class="side-section">
 			<ul class="side-nav fixed blue lighten-3" style="left:0px">
-				<li class="logo"><img class="responsive-img circle center" src="1.jpg" width="160px" height="160px"></li>
-				<li class="blue lighten-3"><a href="#!" class="waves-effect waves-lighten" style="color:#1976d2;">First Sidebar Link</a></li>
-				<li class="blue lighten-3"><a href="#!" class="waves-effect waves-lighten" style="color:#1976d2;">Second Sidebar Link</a></li>
-				<li class=" blue lighten-3"><a href="#!" class="waves-effect waves-lighten" style="color:#1976d2;">First Sidebar Link</a></li>
-				<li class="blue lighten-3"><a href="#!" class="waves-effect waves-lighten" style="color:#1976d2;">Second Sidebar Link</a></li>
+				<li class="logo" style="background-color:transparent;"><img class="profile-pic circle" src="1.jpg"></li>
+				<li class="blue lighten-3"><a href="#!" class="waves-effect waves-lighten" style="color:#1976d2;">Set Goals</a></li>
+				<li class="blue lighten-3"><a href="#!" class="waves-effect waves-lighten" style="color:#1976d2;">Exercise</a></li>
+				<li class=" blue lighten-3"><a href="#!" class="waves-effect waves-lighten" style="color:#1976d2;">Calorie Calculator</a></li>
+				<li class="blue lighten-3"><a href="#!" class="waves-effect waves-lighten" style="color:#1976d2;">Help</a></li>
 			</ul>
 		</div>
 		<main>
@@ -112,35 +113,9 @@
 					<a class="btn waves-effect waves-light blue darken-4 full-width">Start Walking</a>
 				</div>
 			</div>
-			
-			
-			
-
-
 		</main>
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/materialize.js"></script>
-		<script>
-			$("#nav-btn").click(function(){
-				$("main").toggleClass("active");
-				$("main").toggleClass("z-depth-3");
-				if($("main").hasClass("active")){
-					$("main.active").velocity({
-						translateX: "70vw",
-						translateY: "10vh",
-					});
-				}
-				else
-				{
-					$("main").velocity({
-						translateX: "0px",
-						translateY: "0px",
-						height:"100 vh",
-						width:"100 vw"
-
-					});	
-				}
-			});
-		</script>
+		<script type="text/javascript" src="js/navbar-transition.js"></script>
 	</body>
 <html>
