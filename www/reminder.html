@@ -37,7 +37,7 @@
 		<a class="waves-effect waves-lighten btn-flat large" id="nav-btn"><i class="large material-icons" style="color:#1976d2;font-size: xx-large;">list</i></a>
 
 
-		<a class="btn-floating btn-large waves-effect circle red modal-trigger" href="#reminder"><i class="material-icons">add</i></a>
+		<a class="btn-floating btn-large waves-effect circle BLUE modal-trigger" href="#reminder"><i class="material-icons">add</i></a>
 
 
 
@@ -84,13 +84,14 @@
 		$('select').material_select();
 	});
 	$('#submit_remind').on('click',function(){
-		
+
 		closeModal("#reminder");
 	});
-		function closeModal(data)
-		{
-			$(data).closeModal()
-		};
+	function closeModal(data)
+	{
+		$(data).closeModal();
+
+	};
 	
 	</script>
 
