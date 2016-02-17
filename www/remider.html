@@ -50,8 +50,10 @@
 		</div>
 	<main>
 		<!-- nav bar button-->
-		<a class="waves-effect waves-lighten btn-flat large" id="nav-btn"><i class="large material-icons" style="color:#1976d2;font-size: xx-large;">list</i></a>
-
+		<div class="row blue darken-2 no-marign"><a class="waves-effect waves-lighten btn-flat large" id="nav-btn"><i class="large material-icons" style="color:white;font-size: xx-large;">list</i></a>
+		</div>
+		<div class="d-card">
+		</div>
 		<!--modal trigger and body-->
 		<a class="btn-floating fixed btn-large waves-effect circle red modal-trigger" href="#reminder"><i class="material-icons">add</i></a>
 
@@ -104,12 +106,12 @@
 		
 		closeModal("#reminder");
 	});
-		function closeModal(data)
-		{
-			$(data).closeModal();
-			var title=document.getElementById("title_text").value;
-			var time=document.getElementById("time_text").value;
-			var freq;
+	var title;
+	var time;
+	var freq;
+	function storeData(){
+			title=$("#title_text").val();
+			time=$("#time_text").val();
 			if(time==1){
 				freq="30 mins";
 			}
@@ -125,13 +127,18 @@
 			else{
 				freq="please select a the frequency";
 			}
-			
-			var x="<div id='dynamic-card'><div class='row'><div class='col s12'><div class='card blue' id='eg'> <div id='eg-cancel' class='right-align 1'><i class='material-icons deep-orange-text remind'>cancel</i></div><div class='remind-title-text'>"+title+"!</div><br><span class='remind-text1'><b>Frequency: </b>"+freq+"<br></span></div></div></div></div>";
-			$("main").append(x);
+	}
+		function closeModal(data)
+		{
+			$(data).closeModal();
+			storeData();
+			var x="<div class='row'><div class='col s12'><div class='card blue'> <div class='right-align 1' onclick='removeCard(this);'><i class='material-icons deep-orange-text remind'>cancel</i></div><div class='remind-title-text'>"+title+"!</div><br><span class='remind-text1'><b>Frequency: </b>"+freq+"<br></span></div></div></div>";
+			$(".d-card").append(x);
 		};
-		$("#eg-cancel").click(function(){
-			$(".1").remove();
-		});
+		function removeCard(data)
+		{
+			$(data).closest("div.card").remove();
+		}
 	
 	</script>
 
