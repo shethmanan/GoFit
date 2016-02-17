@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection"/>
+	<link rel="stylesheet" type="text/css" href="css/navbar.css">
+		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<style>
+		.btn-floating {
+		    bottom: 40px;
+		    position: fixed;
+		    right: 25px;
+		}
+		.waves-effect.waves-blue .waves-ripple {
+		 /* The alpha value allows the text and background color
+		 of the button to still show through. */
+		  background-color: rgba(33, 150, 243 , 0.65);
+		}
+		.remind-title-text{
+			color:orange;
+			font-size:50px;
+			text-align:center;
+			font-weight:bold;
+		}
+		.remind-text1{
+			color:white;
+			font-size:25px;
+
+		}
+		b{
+			font-size:32px;
+			padding-left:15px;
+		}
+		i.remind{
+			padding-top: 6px;
+			padding-right: 4px;
+		}
+	</style>
+</head>
+<body>	
+	<div class="side-section">
+			<ul class="side-nav fixed blue lighten-3" style="left:0px">
+				<li class="logo" style="background-color:transparent;"><img class="profile-pic circle" src="1.jpg"></li>
+				<li class="blue lighten-3"><a href="#!" class="waves-effect waves-lighten" style="color:#1976d2;">Set Goals</a></li>
+				<li class="blue lighten-3"><a href="#!" class="waves-effect waves-lighten" style="color:#1976d2;">Exercise</a></li>
+				<li class=" blue lighten-3"><a href="#!" class="waves-effect waves-lighten" style="color:#1976d2;">Calorie Calculator</a></li>
+				<li class="blue lighten-3"><a href="#!" class="waves-effect waves-lighten" style="color:#1976d2;">Help</a></li>
+			</ul>
+		</div>
+	<main>
+		<!-- nav bar button-->
+		<a class="waves-effect waves-lighten btn-flat large" id="nav-btn"><i class="large material-icons" style="color:#1976d2;font-size: xx-large;">list</i></a>
+
+		<!--modal trigger and body-->
+		<a class="btn-floating fixed btn-large waves-effect circle red modal-trigger" href="#reminder"><i class="material-icons">add</i></a>
+
+		<div id="reminder" class="modal bottom-sheet">
+			<div class="modal-header">
+				<h4 class="blue-text center-align no-margin">Add New Reminders</h4>
+			</div>
+			<div class="modal-footer">
+				<div class="row no-margin">
+				<form class="col s12">
+					<div class="row">
+						<div class="input-field col s12">
+							<input placeholder="Title" id="title_text" type="text" required>
+						</div>
+					</div>
+					<div class="row no-margin">
+						<div class="input-field col s12">
+							<select id="time_text">
+								<option value="" selected disabled>Select frequency</option>
+								<option value="1">30 mins</option>
+								<option value="2">1 hour</option>
+								<option value="3">3 hours</option>
+								<option value="4">6 hours</option>
+							</select>
+						</div>
+					</div>
+					<div class="row no-margin">
+						<div class="col s4 offset-s8">
+							<a class="btn-flat  waves-effect waves-blue" id="submit_remind" >Add&nbspReminder</a>
+						</div>
+						
+					</div>
+				</form>
+				</div>
+			</div>
+		</div><!--modal end-->
+		
+	<!--div class="1">ashbkj<div class="2">nlk</div>n;lhiyv;</div-->
+		
+	</main>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/materialize.js"></script>
+	<script type="text/javascript" src="js/navbar-transition.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('.modal-trigger').leanModal();
+		$('select').material_select();
+	});
+	$('#submit_remind').on('click',function(){
+		
+		closeModal("#reminder");
+	});
+		function closeModal(data)
+		{
+			$(data).closeModal();
+			var title=document.getElementById("title_text").value;
+			var time=document.getElementById("time_text").value;
+			var freq;
+			if(time==1){
+				freq="30 mins";
+			}
+			else if(time==2){
+				freq="1 hours";
+			}
+			else if(time==3){
+				freq="3 hours";
+			}
+			else if(time==4){
+				freq="6 hours";
+			}
+			else{
+				freq="please select a the frequency";
+			}
+			
+			var x="<div id='dynamic-card'><div class='row'><div class='col s12'><div class='card blue' id='eg'> <div id='eg-cancel' class='right-align 1'><i class='material-icons deep-orange-text remind'>cancel</i></div><div class='remind-title-text'>"+title+"!</div><br><span class='remind-text1'><b>Frequency: </b>"+freq+"<br></span></div></div></div></div>";
+			$("main").append(x);
+		};
+		$("#eg-cancel").click(function(){
+			$(".1").remove();
+		});
+	
+	</script>
+
+</body>
+</html>
