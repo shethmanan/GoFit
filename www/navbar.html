@@ -5,11 +5,31 @@
 		<link rel="stylesheet" href="css/materialize.css" media="screen,projection"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/icon?family=Roboto" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/navbar.css">
 		<style type="text/css">
 		.color{
 			background-color: black;
 		}
+		.square-card{
+			height: 50vw;
+			width:45vw;
+		}
+		.btn-floating{
+			position: absolute;
+			border-style: solid;
+			border-width: 2px;
+			top: -25px;
+			left: 40%;
+		}
+		.index-footer{
+			position:absolute;
+			top:70vh;
+			width:100%;
+		}
+		.card-footer{
+			width:100%;
+			height:30vh;
 		</style>
 	</head>
 	<body>
@@ -25,18 +45,31 @@
 			</ul>
 		</div>
 		<main>
+		<div class="row blue darken-2">
+			<a class="waves-effect waves-lighten btn-flat large" id="nav-btn"><i class="large material-icons" style="color:white;font-size: xx-large;">list</i></a>
+		</div>
+		<div class="gap"></div>
 		<div class="row">
-			<a class="waves-effect waves-lighten btn-flat large" id="nav-btn"><i class="large material-icons" style="color:#1976d2;font-size: xx-large;">list</i></a>
-			<div class="col s12 no-padding">
-				<div class="card no-padding" id="first" hidden>
-					<a href="index.html"><img src="1.jpg" width="100%" height="100%"></a>
+			<div class="col s6">
+				<div class="square-card blue darken-1"><i class="material-icons white-text left-align" style="font-size: 70px;">album</i>
+					<p class="no-margin"><thin class="white-text left-align" style="font-size: 20px;padding-left:5px;">Best streak</thin></p>
+					<b class="white-text left-align" style="font-size: 60px;padding-left:5px;">7</b>
 				</div>
 			</div>
+			<div class="col s6">
+				<div class="square-card blue darken-2"><i class="material-icons white-text left-align" style="font-size: 70px;">album</i>
+					<p class="no-margin"><thin class="white-text left-align" style="font-size: 20px;padding-left:5px;">Total Goals Hit</thin></p>
+				<b class="white-text left-align" style="font-size: 60px;padding-left:5px;">1203</b></div>
+			</div>
 		</div>
-		<div class="row">
+		<div class="gap"></div>
+		<div class="row index-footer no-margin">
 			<div class="col s12 no-padding">
-				<div class="card no-padding" id="second" hidden>
-					<a href="#"><img src="2.jpg" width="100%" height="100%"></a>
+				<div class="card-footer blue darken-4 no-margin">
+					<div class="btn-floating btn-large blue darken-3 z-depth-0 center-align"><i class="material-icons">directions_run</i></div>
+					<div class="gap"></div>
+					<h5 class="center-align" style="color:white;">Go for your goals</h5>
+					<p class="center-align"style="color:white">Complete your Goals and GoFit with us...</p>
 				</div>
 			</div>
 		</div>
@@ -51,7 +84,7 @@
 		<script type="text/javascript" src="js/velocity.ui.min.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
-			 $(".card").velocity("transition.bounceIn",{ stagger: 250}).delay(1000)}, 2000);
+			//$(".card").velocity("transition.bounceIn",{ stagger: 250}).delay(1000)}, 2000);
 		</script>
 		</script>
 	</body>
