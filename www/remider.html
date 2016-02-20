@@ -132,7 +132,7 @@
 		{
 			$(data).closeModal();
 			storeData();
-			var x="<div class='row'><div class='col s12'><div class='card blue'> <div class='right-align 1' onclick='removeCard(this);'><i class='material-icons deep-orange-text remind'>cancel</i></div><div class='remind-title-text'>"+title+"!</div><br><span class='remind-text1'><b>Frequency: </b>"+freq+"<br></span></div></div></div>";
+			var x="<div class='row'><div class='col s12'><div class='card blue'> <div class='right-align 1' ><i class='material-icons deep-orange-text remind ' onclick='removeCard(this);'>cancel</i></div><div class='remind-title-text'>"+title+"!</div><br><span class='remind-text1'><b>Frequency: </b>"+freq+"<br></span></div></div></div>";
 			$(".d-card").append(x);
 		};
 		function removeCard(data)
