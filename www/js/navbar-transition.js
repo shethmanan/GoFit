@@ -19,6 +19,5 @@ $("#nav-btn").click(function(){
 				var x = document.getElementById(data);
 				if(x.hasAttribute("style")){
 					x.removeAttribute("style");
-
 				}
 			}
