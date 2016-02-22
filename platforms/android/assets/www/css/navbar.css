@@ -7,11 +7,9 @@
 			position:relative;
 			top:0px;
 			left:0px;
-			height: 100vh;
+			height:100vh;
 			width:100vw;
 			transition: all 0.5s;
-		}
-		.side-li{
 		}
 		main.active{
 			position: fixed;
@@ -38,4 +36,14 @@
 		.gap{
 			padding-top: 15px;
 			padding-bottom: 15px;
+		}
+		.profile-pic{
+		    position: relative;
+		    width: 70.5px;
+		    height: 70.5px;
+		    top: 45px;
+		    left: 50px;
+		}
+		.no-margin{
+			margin:0px;
 		}
