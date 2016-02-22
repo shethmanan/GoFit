@@ -4,7 +4,7 @@ $("#nav-btn").click(function(){
 				if($("main").hasClass("active")){
 					$("main.active").velocity({
 						translateX: "65vw",
-						translateY: "10vh",
+						translateY: "0vh",
 					},{easing:"linear"});
 				}
 				else
@@ -12,8 +12,13 @@ $("#nav-btn").click(function(){
 					$("main").velocity({
 						translateX: "0px",
 						translateY: "0px",
-						height:"100 vh",
-						width:"100 vw"
 					},{easing:"linear"});	
 				}
 			});
+		function removeAttr(data){
+				var x = document.getElementById(data);
+				if(x.hasAttribute("style")){
+					x.removeAttribute("style");
+
+				}
+			}

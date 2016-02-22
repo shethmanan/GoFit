@@ -1,6 +1,35 @@
-		body{
-			background-color: #90caf9;
-			background-clip: 
+.btn-floating {
+		    bottom: 40px;
+		    position: fixed;
+		    right: 25px;
+		}
+		.waves-effect.waves-blue .waves-ripple {
+		 /* The alpha value allows the text and background color
+		 of the button to still show through. */
+		  background-color: rgba(33, 150, 243 , 0.65);
+		}
+		.remind-title-text{
+			color:orange;
+			font-size:50px;
+			text-align:center;
+			font-weight:bold;
+		}
+		.remind-text1{
+			color:white;
+			font-size:25px;
+
+		}
+		b{
+			font-size:32px;
+			padding-left:15px;
+		}
+		i.remind{
+			padding-top: 6px;
+			padding-right: 4px;
+		}
+
+				body{
+			background-color: #90caf9; 
 		}
 		main{
 			background-color:#fff;
@@ -10,6 +39,7 @@
 			height:100vh;
 			width:100vw;
 			transition: all 0.5s;
+			overflow: hidden;
 		}
 		main.active{
 			position: fixed;
@@ -46,4 +76,9 @@
 		}
 		.no-margin{
 			margin:0px;
+		}
+		.card-small{
+			box-shadow:none;
+			width:100%;
+			height:100px;
 		}

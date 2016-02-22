@@ -7,35 +7,8 @@
 		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<style>
-		.btn-floating {
-		    bottom: 40px;
-		    position: fixed;
-		    right: 25px;
-		}
-		.waves-effect.waves-blue .waves-ripple {
-		 /* The alpha value allows the text and background color
-		 of the button to still show through. */
-		  background-color: rgba(33, 150, 243 , 0.65);
-		}
-		.remind-title-text{
-			color:orange;
-			font-size:50px;
-			text-align:center;
-			font-weight:bold;
-		}
-		.remind-text1{
-			color:white;
-			font-size:25px;
+		
 
-		}
-		b{
-			font-size:32px;
-			padding-left:15px;
-		}
-		i.remind{
-			padding-top: 6px;
-			padding-right: 4px;
-		}
 	</style>
 </head>
 <body>	
@@ -48,7 +21,7 @@
 				<li class="blue lighten-3"><a href="#!" class="waves-effect waves-lighten" style="color:#1976d2;">Help</a></li>
 			</ul>
 		</div>
-	<main>
+	<main id="main">
 		<!-- nav bar button-->
 		<div class="row blue darken-2 no-marign"><a class="waves-effect waves-lighten btn-flat large" id="nav-btn"><i class="large material-icons" style="color:white;font-size: xx-large;">list</i></a>
 		</div>
@@ -99,11 +72,14 @@
 	<script type="text/javascript" src="js/navbar-transition.js"></script>
 	<script type="text/javascript">
 	$(document).ready(function(){
-		$('.modal-trigger').leanModal();
+		$('.modal-trigger').click(function(){
+			removeAttr('main');
+			 $('#reminder').openModal();	
+		})
 		$('select').material_select();
 	});
 	$('#submit_remind').on('click',function(){
-		
+		// $("main").removeAttr("style");
 		closeModal("#reminder");
 	});
 	var title;
@@ -132,14 +108,15 @@
 		{
 			$(data).closeModal();
 			storeData();
-			var x="<div class='row'><div class='col s12'><div class='card blue'> <div class='right-align 1' ><i class='material-icons deep-orange-text remind ' onclick='removeCard(this);'>cancel</i></div><div class='remind-title-text'>"+title+"!</div><br><span class='remind-text1'><b>Frequency: </b>"+freq+"<br></span></div></div></div>";
+			var x="<div class='row'><div class='col s12'><div class='card-small blue'> <div class='right-align 1' ><i class='material-icons deep-orange-text remind ' onclick='removeCard(this);'>cancel</i></div><div class='remind-title-text'>"+title+"!</div><br><span class='remind-text1'><b>Frequency: </b>"+freq+"<br></span></div></div></div>";
 			$(".d-card").append(x);
 		};
 		function removeCard(data)
 		{
-			$(data).closest("div.card").remove();
+			$(data).closest("div.card-small").remove();
 		}
-	
+
+		
 	</script>
 
 </body>
