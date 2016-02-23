@@ -38,6 +38,7 @@ var app = {
 
     // Update DOM on a Received Event
     receivedEvent: function(id) {
+         
         var success=function(data){
             console.log(data);
             if(data){
@@ -52,7 +53,18 @@ var app = {
             $(".fail").html(data+" feature not supported");
         }
         pedometer.isStepCountingAvailable(success, failure);
+        var parentElement = document.getElementById(id);
+        var listeningElement = parentElement.querySelector('.listening');
+        var receivedElement = parentElement.querySelector('.received');
+
+        listeningElement.setAttribute('style', 'display:none;');
+        receivedElement.setAttribute('style', 'display:block;');
+
+        console.log('Received Event: ' + id);
     }
 };
 
 app.initialize();
+
+
+

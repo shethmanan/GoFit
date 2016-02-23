@@ -18,7 +18,17 @@
         },
         "net.texh.cordovapluginstepcounter": {
             "PACKAGE_NAME": "com.rg.hello"
+        },
+        "de.appplant.cordova.plugin.local-notification": {
+            "PACKAGE_NAME": "com.rg.hello"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.rg.hello"
+        },
+        "cordova-plugin-app-event": {
+            "PACKAGE_NAME": "com.rg.hello"
+        }
+    }
 }
