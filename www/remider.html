@@ -4,10 +4,20 @@
 		
 		<link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection"/>
 		<link rel="stylesheet" type="text/css" href="css/navbar.css">
+		<link rel="stylesheet" type="text/css" href="css/reminder.css">
 		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<style>
-			
+			.dropdown-content span {
+			color: #2196f3 !important;
+			}
+			.input-field{
+				color:#2196f3;
+			}
+			.input-field input[type=text]:focus {
+		    	border-bottom: 1px solid #2196f3;
+		     
+		   	}
 		</style>
 	</head>
 	<body>
@@ -36,12 +46,12 @@
 				<form class="col s12">
 					<div class="row">
 						<div class="input-field col s12">
-							<input placeholder="Title" id="title_text" type="text">
+							<input placeholder="Title" value="" id="title_text" type="text">
 						</div>
 					</div>
 					<div class="row no-margin">
-						<div class="input-field col s12">
-							<select id="time_text">
+						<div class="input-field blue-text col s12">
+							<select class="blue-text" id="time_text">
 								<option value="-1" selected>Select frequency</option>
 								<option value="30">30 mins</option>
 								<option value="60">1 hour</option>
@@ -52,7 +62,7 @@
 					</div>
 					<div class="row no-margin">
 						<div class="col s4 offset-s8">
-							<a class="btn-flat  waves-effect waves-blue" id="submit_remind" >Add&nbspReminder</a>
+							<a class="btn-flat  waves-effect waves-blue blue-text" id="submit_remind">Add&nbspReminder</a>
 						</div>
 						
 					</div>
