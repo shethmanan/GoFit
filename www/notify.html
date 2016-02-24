@@ -4,20 +4,24 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
     </head> 
     <body>
-        
+        d
         <a onClick="notify()">Notify!</a>
         <a onClick="cancel_notify()">CancelNotify!</a>
+        <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script>
-           
-            function notify(){
-                 cordova.plugins.notification.local.schedule({
+             function notify(){
+                cordova.plugins.notification.local.schedule({
                     id: 1,
                     title: "GoFit",
                     text: "Drink Water",
+                    every: 'second',
                 });
-            }
+                // cordova.plugins.notification.local is now available
+            } 
+
+           
              function cancel_notify(){
 
                 cordova.plugins.notification.local.cancel(1, function () {
