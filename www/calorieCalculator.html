@@ -11,7 +11,6 @@
 		::-webkit-input-placeholder {
 			color: #0d47a1;
 		}
-
 		</style>
 	</head>
 	<body>
@@ -71,78 +70,70 @@
 								</div>
 								<div class="row">
 									<div class="input-field col s6">
-											<input class="height" placeholder="Feet" id="feet" type="text">
-	          								<label for="feet">Height</label>
+										<input class="height" placeholder="Height" id="feet" type="text">
+										<label for="feet">Feet</label>
 									</div>
 									<div class="input-field col s6">
-											<input class="height" placeholder="Inches" id="inches" type="text">
-	          								<label for="inches">Height</label>
+										<input class="height" placeholder="Height" id="inches" type="text">
+										<label for="inches">Inches</label>
 									</div>
 								</div>
+								<div class="row">
+									<div class="input-field col s4">
+										<input class="weight" placeholder="Pounds" id="weight" type="text">
+										<label for="weight">Weight</label>
+									</div>
+									<div class="input-field col s8">
+										<select>
+											<option value="1">Basal Metabolic Rate (BMR)</option>
+											<option value="1.2">Sedentary - little or no exercise</option>
+											<option value="1.375" selected="">Lightly Active - exercise/sports 1-3 times/week</option>
+											<option value="1.55">Moderatetely Active - exercise/sports 3-5 times/week</option>
+											<option value="1.725">Very Active - hard exercise/sports 6-7 times/week</option>
+											<option value="1.9">Extra Active - very hard exercise/sports or physical job</option>
+										</select>
+										<label>Materialize Select</label>
+									</div>
+								</div>	
 							</form>
 						</div>
-					</div>
-					<!-- <div class="col s12">
-								<div class="card blue lighten-4">
-											<div class="row">
-													<form class="col s12">
-															<div class="row">
-																	<div class="input-field col s3">
-																			<input  id="age" type="text" class="validate">
-																			<label for="age">Age</label>
-																	</div>
-															</div>
-															<div class="row">
-																		<div class="col s6">
-																					<input name="gender" type="radio" id="male" />
-																						<label for="male">Male</label>
-																						<input name="gender" type="radio" id="female" />
-																							<label for="female">Female</label>
-																			</div>
-																</div>
-																<div class="row">
-																		<div class="input-field col s3">
-																				<input id="height" type="text" class="validate">
-																				<label for="height">Feet</label>
-																		</div>
-																		<div class="input-field col s3">
-																				<input id="feet" type="text" class="validate">
-																				<label for="feet">Inches</label> <br>
-																		</div>
-																</div>
-													</div>
-													<div class="row">
-															<div class="input-field col s3">
-																	<input id="weight" type="text" class="validate">
-																	<label for="weight">Weight</label>
-															</div>
-													</div>
-													<div class="input-field col s12">
-																	<select>
-																			<option value="1">Basal Metabolic Rate (BMR)</option>
-																					<option value="1.2">Sedentary - little or no exercise</option>
-																					<option value="1.375" selected="">Lightly Active - exercise/sports 1-3 times/week
-																					</option>
-																					<option value="1.55">Moderatetely Active - exercise/sports 3-5 times/week</option>
-																					<option value="1.725">Very Active - hard exercise/sports 6-7 times/week</option>
-																					<option value="1.9">Extra Active - very hard exercise/sports or physical job
-																					</option>
-																	</select>
-																	<label>Select Activity</label>
-															</div>
-											</form>
+						<div class="row" id="submit">
+								<div class="col s4 offset-s4 no-padding no-margin">
+									<a href="javascript:void(0)" class="btn blue">Click Me</a>
 								</div>
 						</div>
-				</div>
-			</div> -->
-		</div>
-		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++ Metrics unit ++++++++++++++++++++++++++++++++++++++++++++-->
-		<div class="" id="metric-unit">
-			
+						<ul id="results">
+						<li style="opacity: 0;">THIS IS LI</li>
+						<li style="opacity: 0;">THIS IS LI</li>
+						<li style="opacity: 0;">THIS IS LI</li>
+						</ul>	
+						<center>
+						<!--preloader-->
+							<div class="preloader-wrapper small">
+								<div class="spinner-layer spinner-blue-only">
+									<div class="circle-clipper left">
+										<div class="circle"></div>
+									</div>
+									<div class="gap-patch">
+										<div class="circle"></div>
+									</div>
+									<div class="circle-clipper right">
+										<div class="circle"></div>
+									</div>
+								</div>
+							</div>
+						<!--End preloader-->
+						</center>
+					</div>
+				</div>																				
+			</div>
+			<!-- ++++++++++++++++++++++++++++++++++++++++++++++++ Metrics unit ++++++++++++++++++++++++++++++++++++++++++++-->
+			<div class="" id="metric-unit">
+				
+			</div>
 		</div>
 	</div>
-</div>
-</main>
+	</main>
 <footer></footer>
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src = "js/materialize.js"></script>
@@ -152,6 +143,12 @@
 		$('ul.tabs').tabs();
 		$('.collapsible').collapsible();
 		$('select').material_select();
+		$("#submit").click(function(){
+			$('#results').finish();
+			$('preloader-wrapper').addClass('active');
+			Materialize.showStaggeredList('#results');
+			$('preloader-wrapper').removeClass('active');
+		});
 	});
 </script>
 </body>
