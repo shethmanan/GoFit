@@ -12,11 +12,14 @@
         <script type="text/javascript" src="js/index.js"></script>
         <script>
              function notify(){
+                var now = new Date().getTime(),
+                    _5_sec_from_now = new Date(now + 5 * 1000);
                 cordova.plugins.notification.local.schedule({
                     id: 1,
                     title: "GoFit",
                     text: "Drink Water",
-                    every: 'second',
+                    at: _5_sec_from_now,
+                    every: 2
                 });
                 // cordova.plugins.notification.local is now available
             } 
@@ -28,14 +31,17 @@
                     // Notification was cancelled
                     
                 });
-            }
+            }   
             /*
-                 function notify(id1,title1,text1){
-                 cordova.plugins.notification.local.schedule({
+                 function notify(id1,title1,text1,freq){
+                    var now = new Date().getTime(),
+                    first_time = new Date(now + 5 * 1000 * 60);
+                     cordova.plugins.notification.local.schedule({
                     id: id1,
                     title: title1,
                     text: text1,
-                    data: { secret:"#heyy" }
+                    at: first_time,
+                    every: freq
                 });
             }
             */
