@@ -101,7 +101,7 @@
                       <label for="inches">Inches</label>
                     </div>
                     <div class="input-field col s4">
-                      <input class="height" placeholder="Height" id="cms" type="number" name="cms">
+                      <input class="height" placeholder="Height" id="cms" type="number" name="cms" onkeyup="heightConverter(this.value)">
                       <label for="cms">Cms</label>
                     </div>
                   </div>
@@ -206,12 +206,12 @@
                   <a id="submit-mu" type="submit" href="javascript:void(0)" class="btn blue">Click Me</a>
                 </div>
               </div>
-              <ul id="results">
-                <li id="cneed" style="opacity: 0;"></li>
-                <li id="fneed" style="opacity: 0;"></li>
-								<li id="crneed" style="opacity: 0;"></li>
-								<li id="aneed" style="opacity: 0;"></li>
-								<li id="pneed" style="opacity: 0;"></li>
+              <ul id="results-mu">
+                <li id="cneed-mu" style="opacity: 0;"></li>
+                <li id="fneed-mu" style="opacity: 0;"></li>
+								<li id="crneed-mu" style="opacity: 0;"></li>
+								<li id="aneed-mu" style="opacity: 0;"></li>
+								<li id="pneed-mu" style="opacity: 0;"></li>
               </ul>
               <center>
                 <!--preloader-->
@@ -268,8 +268,7 @@
 			var weight = Math.round(parseInt(data[5].value)/ 2.2046);
 			//done calculating
       var loa = data[6].value;
-      console.log(loa);
-      switch (gen) {
+      switch(gen) {
         case "male":
           fd = (10 * weight) + (6.25 * cm) - (5 * age) + 5;
           break;
@@ -320,9 +319,46 @@
       console.log(hc);
       $("#cms").val(""+hc);
     }
-
+    function heightConverter(cms){
+      var hc = parseInt(cms);
+      var hi = hc / 2.54;
+      var hf = Math.floor(hi / 12);
+      var ri = Math.round(hi % 12);
+      if (hc > 40 && hc <= 210) {
+          $("#feet").val(hf);
+      }
+      $("#inches").val(ri);
+    }
     function calculateCalorieMU(data){
       console.log(data);
+      var age = data[0].value;
+      var gen = data[1].value;
+      var cm = data[2].value;
+			var weight =parseInt(data[3].value);
+      var loa = data[4].value;
+      // check gender
+      switch(gen) {
+        case "male":
+          fd = (10 * weight) + (6.25 * cm) - (5 * age) + 5;
+          break;
+        case "female":
+          fd = (10 * weight) + (6.25 * cm) - (5 * age) - 161;
+          break;
+        default:
+					console.log("something went wrong");
+          break;
+      }
+      cneed = fd * loa;
+      fneed = Math.floor((cneed * 0.25) / 9);
+      pneed = Math.floor((cneed * 0.25) / 4);
+      crneed = Math.floor((cneed * 0.25) / 4);
+      aneed = Math.floor((cneed * 0.25) / 7);
+      $("#cneed-mu").html("Calories needed :"+cneed+" grams");
+      $("#fneed-mu").html("Fats :"+fneed+" grams");
+      $("#crneed-mu").html("Carbohydrates :"+crneed+" grams");
+      $("#aneed-mu").html("Alcohol : "+aneed+" grams");
+      $("#pneed-mu").html("Protien : "+pneed+" grams");
+      Materialize.showStaggeredList('#results-mu');
     }
   </script>
 </body>
