@@ -15,9 +15,9 @@ $("#nav-btn").click(function(){
 					},{easing:"linear"});	
 				}
 			});
-		function removeAttr(data){
-				var x = document.getElementById(data);
-				if(x.hasAttribute("style")){
-					x.removeAttribute("style");
-				}
-			}
+function removeAttr(data){
+		var x = document.getElementById(data);
+		if(x.hasAttribute("style")){
+			x.removeAttribute("style");
+		}
+	}

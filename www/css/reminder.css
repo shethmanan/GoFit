@@ -1,4 +1,4 @@
-.btn-floating {
+		.btn-floating {
 		    bottom: 40px;
 		    position: fixed;
 		    right: 25px;
@@ -27,3 +27,15 @@
 			padding-top: 6px;
 			padding-right: 4px;
 		}
+
+		.dropdown-content span {
+			color: #2196f3 !important;
+			}
+		.input-field{
+				color:#2196f3;
+			}
+		.input-field input[type=text]:focus {
+		    	border-bottom: 1px solid #2196f3;
+		     
+		   	}
+

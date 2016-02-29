@@ -11,11 +11,16 @@
       ::-webkit-input-placeholder {
         color: #0d47a1;
       }
+      .tabs .indicator {
+		   	height: 3px;
+		    background-color: #82b1ff;
+		}
 
     </style>
   </head>
   <body>
     <header></header>
+   	<!-- side nav -->
     <div class="side-section">
       <ul class="side-nav fixed blue lighten-3" style="left:0px">
         <li class="logo" style="background-color:transparent;"><img class="profile-pic circle" src="1.jpg"></li>
@@ -46,11 +51,14 @@
     </ul>
   </div>
   <main>
+  <!-- side nav btn -->
     <div class="row blue darken-2 no-margin">
       <a class="waves-effect waves-lighten btn-flat large" id="nav-btn">
         <i class="large material-icons" style="color:white;font-size: xx-large;">list</i>
       </a>
     </div>
+   <!-- side nav btn ends -->
+    <!-- side nav ends -->
     <div class="row">
       <div class="col s12 no-padding">
         <ul class="tabs blue darken-1 no-margin">
@@ -85,21 +93,21 @@
                   </div>
                   <div class="row no-margin">
                     <div class="input-field col s4">
-                      <input class="height" placeholder="Height" id="feet" type="text" name="feet" value="1" onkeyup="heightConverter()">
+                      <input class="height" placeholder="Height" id="feet" type="number" name="feet" value="1" onkeyup="heightConverter()">
                       <label for="feet">Feet</label>
                     </div>
                     <div class="input-field col s4">
-                      <input class="height" placeholder="Height" id="inches" type="text" name="inches" value="1" onkeyup="heightConverter()">
+                      <input class="height" placeholder="Height" id="inches" type="number" name="inches" value="1" onkeyup="heightConverter()">
                       <label for="inches">Inches</label>
                     </div>
                     <div class="input-field col s4">
-                      <input class="height" placeholder="Height" id="cms" type="text" name="cms">
+                      <input class="height" placeholder="Height" id="cms" type="number" name="cms">
                       <label for="cms">Cms</label>
                     </div>
                   </div>
                   <div class="row no-margin">
                     <div class="input-field col s4">
-                      <input class="weight" placeholder="Pounds" id="weight" type="text" name="weight">
+                      <input class="weight" placeholder="Pounds" id="weight" type="number" name="weight">
                       <label for="weight">Weight</label>
                     </div>
                     <div class="input-field col s8">
