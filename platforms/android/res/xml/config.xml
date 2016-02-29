@@ -30,6 +30,7 @@
     <author email="dev@cordova.apache.org" href="http://cordova.io">
         Apache Cordova Team
     </author>
+    <icon height="96" platform="android" src="www/images.png" width="96" />
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />

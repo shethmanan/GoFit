@@ -1,10 +1,10 @@
 
 		body{
-	background-color: #90caf9; 
+	background-color: #90caf9;
 }
 		main{
 			background-color:#fff;
-			position:relative;
+			position:absolute;
 			top:0px;
 			left:0px;
 			height:100vh;
