@@ -93,11 +93,11 @@
                   </div>
                   <div class="row no-margin">
                     <div class="input-field col s4">
-                      <input class="height" placeholder="Height" id="feet" type="number" name="feet" value="1" onkeyup="heightConverter()">
+                      <input class="height" placeholder="Height" id="feet" type="number" name="feet" value="1" onkeyup="heightConvertercm()">
                       <label for="feet">Feet</label>
                     </div>
                     <div class="input-field col s4">
-                      <input class="height" placeholder="Height" id="inches" type="number" name="inches" value="1" onkeyup="heightConverter()">
+                      <input class="height" placeholder="Height" id="inches" type="number" name="inches" value="1" onkeyup="heightConvertercm()">
                       <label for="inches">Inches</label>
                     </div>
                     <div class="input-field col s4">
@@ -311,7 +311,7 @@
       $("#aneed").html("Alcohol : "+alh1+" lbs");
       Materialize.showStaggeredList('#results');
     }
-    function heightConverter(){
+    function heightConvertercm(){
       var hf = parseInt($("#feet").val());
       var hi = parseInt($("#inches").val());
       var hc;
