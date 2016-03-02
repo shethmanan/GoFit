@@ -57,6 +57,7 @@
 				time+=" mins";
 				var notify={id:i,title:title,time:time};
 				localStorage.setItem("notify_"+i,JSON.stringify(notify));
+				notify("notify_"+i,title,time);
 				return true;
 		}
 				function closeModal(data)
@@ -100,6 +101,7 @@
 			{
 				var card = $(data).closest("div.card-small");
 				var key = "notify_"+card.attr("id");
+				cancel_notify(key);
 				localStorage.removeItem(key);
 				card.closest("div.row").remove();
 			}
