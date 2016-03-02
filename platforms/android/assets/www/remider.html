@@ -98,7 +98,7 @@
 			function notify(id1,title1,freq){
                     var now = new Date().getTime(),
                     first_time = new Date(now + 5 * 1000 * 60);
-                     cordova.plugins.notification.local.schedule({
+                    cordova.plugins.notification.local.schedule({
                     id: id1,
                     title: title1,
                     at: first_time,
@@ -106,12 +106,10 @@
                     });
                 }
 
-             function cancel_notify(id) {
+            function cancel_notify(id) {
 
        			 cordova.plugins.notification.local.cancel(id, function () {
-         
-
-      			  });
+      			});
       		}
 		</script>
 		<script type="text/javascript" src="js/reminder.js"></script>

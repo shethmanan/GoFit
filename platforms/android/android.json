@@ -47,6 +47,10 @@
                         {
                             "xml": "<feature name=\"LocalNotification\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.localnotification.LocalNotification\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -144,6 +148,9 @@
         },
         "de.appplant.cordova.plugin.local-notification": {
             "PACKAGE_NAME": "com.rg.hello"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.rg.hello"
         }
     },
     "dependent_plugins": {},
@@ -204,6 +211,14 @@
                 "cordova.plugins.notification.local.core",
                 "plugin.notification.local.core"
             ]
+        },
+        {
+            "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+            "id": "cordova-plugin-splashscreen.SplashScreen",
+            "pluginId": "cordova-plugin-splashscreen",
+            "clobbers": [
+                "navigator.splashscreen"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -213,6 +228,7 @@
         "net.texh.cordovapluginstepcounter": "0.0.4",
         "cordova-plugin-device": "1.1.1",
         "cordova-plugin-app-event": "1.2.0",
-        "de.appplant.cordova.plugin.local-notification": "0.8.4"
+        "de.appplant.cordova.plugin.local-notification": "0.8.4",
+        "cordova-plugin-splashscreen": "3.2.0"
     }
 }

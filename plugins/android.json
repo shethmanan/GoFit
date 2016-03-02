@@ -21,6 +21,9 @@
         },
         "de.appplant.cordova.plugin.local-notification": {
             "PACKAGE_NAME": "com.rg.hello"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.rg.hello"
         }
     },
     "dependent_plugins": {
