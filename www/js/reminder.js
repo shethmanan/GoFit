@@ -7,7 +7,7 @@
 				for (var i = 0; i < localStorage.length; i++) {
 					key = localStorage.getItem("notify_"+i);
 					value = jQuery.parseJSON(key);
-		/*-------------------card ------------------------------------------------*/ 
+		/*-------------------card ------------------------------------------------*/
 		var x='<div class="row">'
 							x+='<div class="col s12">'
 							x+='<div class="card-small blue darken-2" id="'+value.id+'">'
@@ -30,7 +30,7 @@
 												x+='</div>'
 											x+='</div>'
 										x+='</div>'
-									x+='</div>'	
+									x+='</div>'
 								x+='</div>'
 							x+='</div>'
 						x+='</div>';
@@ -50,6 +50,17 @@
 		var time;
 		var freq;
 		var i=localStorage.length;
+		function setNotification(id1, title1, freq) {
+      var now = new Date().getTime(),
+        first_time = new Date(now + 5 * 1000 * 60);
+      cordova.plugins.notification.local.schedule({
+        id: id1,
+        title: title1,
+        at: first_time,
+        every: freq
+      });
+      return true;
+    }
 		function storeData(){
 				title=$("#title_text").val();
 				time=$("#time_text").val();
@@ -57,7 +68,7 @@
 				time+=" mins";
 				var notify={id:i,title:title,time:time};
 				localStorage.setItem("notify_"+i,JSON.stringify(notify));
-				notify("notify_"+i,title,time);
+				setNotification("notify_"+i,title,time);
 				return true;
 		}
 				function closeModal(data)
@@ -88,10 +99,10 @@
 												x+='</div>'
 											x+='</div>'
 										x+='</div>'
-									x+='</div>'	
+									x+='</div>'
 								x+='</div>'
 							x+='</div>'
-						x+='</div>';	
+						x+='</div>';
 					$(".d-card").append(x);
 					i++;
 				}
@@ -101,7 +112,7 @@
 			{
 				var card = $(data).closest("div.card-small");
 				var key = "notify_"+card.attr("id");
-				cancel_notify(key);
+				removeNotification(key);
 				localStorage.removeItem(key);
 				card.closest("div.row").remove();
 			}
