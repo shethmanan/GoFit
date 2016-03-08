@@ -40,4 +40,7 @@
 			top:61px;
 			font-size:27px;
 		}
-			
+		.card.step{
+			height: 40vh;
+			width : 100vw;
+			}
