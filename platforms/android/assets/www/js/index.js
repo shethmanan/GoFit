@@ -61,22 +61,9 @@ var app = {
 
     console.log('Received Event: ' + id);
 
-    function setNotification(id1, title1, freq) {
-      var now = new Date().getTime(),
-        first_time = new Date(now + 5 * 1000 * 60);
-      cordova.plugins.notification.local.schedule({
-        id: id1,
-        title: title1,
-        at: first_time,
-        every: freq
-      });
-      return true;
-    }
 
-    function removeNotification(id) {
-      cordova.plugins.notification.local.cancel(id, function() {});
-      return true;
-    }
+
+    
   }
 };
 
