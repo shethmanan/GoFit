@@ -1,70 +1,40 @@
-<!DOCTYPE html>
 <html>
-<head>
-	<title>GoFit || Charts</title>
-	<!--dump css files here-->
-	<link rel="stylesheet" type="text/css" href="css/materialize.css">
-	<link rel="stylesheet" type="text/css" href="css/xcharts.min.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-</head>
-<body>
-<div class="row">
-	<div class="col s12">
-		<figure style="width: 300px; height: 300px;" id="myChart"></figure>
-	</div>
-</div>
-<!--dump js files here-->
-<script type="text/javascript" src="cordova.js"></script>
-<script src="js/d3.min.js" charset="utf-8"></script>
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/materialize.js"></script>
-<script type="text/javascript" src="js/xcharts.min.js"></script>
-<script type="text/javascript">
-	var data = {
-  "xScale": "ordinal",
-  "yScale": "linear",
-  "type": "bar",
-  "main": [
-    {
-      "className": ".pizza",
-      "data": [
-        {
-          "x": "Pepperoni",
-          "y": 10
-        },
-        {
-          "x": "Cheese",
-          "y": 4
-        },
-        {
-          "x": "Che",
-          "y": 9
-        }
-      ]
-    }
-  ],
-  "comp": [
-    {
-      "className": ".pizza",
-      "type": "line-dotted",
-      "data": [
-        {
-          "x": "Pepperoni",
-          "y": 10
-        },
-        {
-          "x": "Cheese",
-          "y": 4
-        },
-        {
-          "x": "Che",
-          "y": 9
-        }
-      ]
-    }
+	<head>
+
+		<link rel="stylesheet" href="css\chartist.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	</head>
+	<body>
+		af
+		<div id="chart1">
+
+		</div>
+		<button onClick="f1()">avd</button>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/chartist.min.js"></script>
+		<script>
+			function f1(){
+			var data = {
+  // A labels array that can contain any sort of values
+  labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+  // Our series array that contains series objects or in this case series data arrays
+  series: [
+    [5, 2, 4, 2, 0]
   ]
+};
+ var option = {
+	 width:300,
+	 height:200,
+	 low: 0,
+  	 showArea: true
+ };
+ 
+// Create a new line chart object where as first parameter we pass in a selector
+// that is resolving to our chart container element. The Second parameter
+// is the actual data object.
+new Chartist.Line('#chart1', data,option
+	);
 }
-	var myChart = new xChart('bar', data, '#myChart');
-</script>
-</body>
+		</script>
+	</body>
 </html>
