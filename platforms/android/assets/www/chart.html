@@ -3,17 +3,40 @@
 
 		<link rel="stylesheet" href="css\chartist.min.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<style>
+			.ct-series-a .ct-line {
+			  /* Set the colour of this series line */
+			  stroke: red;
+			  /* Control the thikness of your lines */
+			  stroke-width: 3px;
+			  /* Create a dashed line with a pattern */
+			  /*stroke-dasharray: 10px 20px;*/
+			}
+			.ct-series-a .ct-point {
+			  /* Colour of your points */
+			  stroke: blue;
+			  /* Size of your points */
+			  stroke-width: 10px;
+			  /* Make your points appear as squares */
+			  stroke-linecap: circle;
+			  show-point : false;
+			}
+		</style>
 	</head>
 	<body>
 		af
 		<div id="chart1">
 
 		</div>
-		<button onClick="f1()">avd</button>
+		<button >avd</button>
+		<div id="2" class="ct-chart">
+
+		</div>
+		<button onClick="f1();">avsafd</button>
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/chartist.min.js"></script>
 		<script>
-			function f1(){
+			
 			var data = {
   // A labels array that can contain any sort of values
   labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
@@ -26,15 +49,89 @@
 	 width:300,
 	 height:200,
 	 low: 0,
+	 showPoint : false,
+	 fullWidth: true,
   	 showArea: true
  };
  
 // Create a new line chart object where as first parameter we pass in a selector
 // that is resolving to our chart container element. The Second parameter
 // is the actual data object.
-new Chartist.Line('#chart1', data,option
+var chart = new Chartist.Line('#chart1', data,option
 	);
+chart.on('draw', function(data) {
+  if(data.type === 'line' || data.type === 'area') {
+    data.element.animate({
+      d: {
+        begin: 2000 * data.index,
+        dur: 2000,
+        from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
+        to: data.path.clone().stringify(),
+        easing: Chartist.Svg.Easing.easeOutQuint
+      }
+    });
+  }
+});
+
+function f1(){
+var chart = new Chartist.Pie('.ct-chart', {
+  series: [10, 20, 50, 20, 5, 50, 15],
+  labels: [1, 2, 3, 4, 5, 6, 7]
+}, {
+  donut: true,
+  showLabel: false
+});
+
+chart.on('draw', function(data) {
+  if(data.type === 'slice') {
+    // Get the total path length in order to use for dash array animation
+    var pathLength = data.element._node.getTotalLength();
+
+    // Set a dasharray that matches the path length as prerequisite to animate dashoffset
+    data.element.attr({
+      'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
+    });
+
+    // Create animation definition while also assigning an ID to the animation for later sync usage
+    var animationDefinition = {
+      'stroke-dashoffset': {
+        id: 'anim' + data.index,
+        dur: 1000,
+        from: -pathLength + 'px',
+        to:  '0px',
+        easing: Chartist.Svg.Easing.easeOutQuint,
+        // We need to use `fill: 'freeze'` otherwise our animation will fall back to initial (not visible)
+        fill: 'freeze'
+      }
+    };
+
+    // If this was not the first slice, we need to time the animation so that it uses the end sync event of the previous animation
+    if(data.index !== 0) {
+      animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
+    }
+
+    // We need to set an initial value before the animation starts as we are not in guided mode which would do that for us
+    data.element.attr({
+      'stroke-dashoffset': -pathLength + 'px'
+    });
+
+    // We can't use guided mode as the animations need to rely on setting begin manually
+    // See http://gionkunz.github.io/chartist-js/api-documentation.html#chartistsvg-function-animate
+    data.element.animate(animationDefinition, false);
+  }
+});
+
+// For the sake of the example we update the chart every time it's created with a delay of 8 seconds
+chart.on('created', function() {
+  if(window.__anim21278907124) {
+    clearTimeout(window.__anim21278907124);
+    window.__anim21278907124 = null;
+  }
+  window.__anim21278907124 = setTimeout(chart.update.bind(chart), 10000);
+});
+
 }
+
 		</script>
 	</body>
 </html>

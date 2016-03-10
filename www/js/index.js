@@ -62,6 +62,15 @@ var app = {
     console.log('Received Event: ' + id);
 
 
+    var successHandler = function (data) {
+     pedometerData.startDate; -> ms since 1970
+    // pedometerData.endDate; -> ms since 1970
+     alert(pedometerData.numberOfSteps);
+    // pedometerData.distance;
+    // pedometerData.floorsAscended;
+    // pedometerData.floorsDescended;
+};
+pedometer.startPedometerUpdates(successHandler, failure);
 
     
   }
