@@ -2,7 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="css/materialize.css" media="screen,projection"/>
-    <title>CalorieCalculator</title>
+    <title>BMI Calculator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Roboto" rel="stylesheet">
@@ -74,23 +74,7 @@
           <div class="row">
             <div class="col s12">
               <div class="card blue lighten-5 z-depth-3">
-                <form id="us-unitCC">
-                  <div class="row no-margin">
-                    <div class="input-field col s4">
-                      <input id="age" type="text" name="age">
-                      <label for="age">AGE</label>
-                    </div>
-                    <div class="input-field col s8 no-padding">
-                      <div class="row no-margin">
-                        <div class="col s12">
-                          <input name="gender" type="radio" id="male" value="male" checked>
-                          <label for="male">MALE</label>
-                          <input name="gender" type="radio" id="female" value="female">
-                          <label for="female">FEMALE</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <form id="us-unitBMI">
                   <div class="row no-margin">
                     <div class="input-field col s4">
                       <input class="height" placeholder="Height" id="feet" type="number" name="feet" value="1" onkeyup="heightConvertercm()">
@@ -110,16 +94,6 @@
                       <input class="weight" placeholder="Pounds" id="weight" type="number" name="weight">
                       <label for="weight">Weight</label>
                     </div>
-                    <div class="input-field col s8">
-                      <select name="loa">
-                        <option value="1.2">Sedentary - little or no exercise</option>
-                        <option value="1.375">Lightly Active - exercise/sports 1-3 times/week</option>
-                        <option value="1.55">Moderatetely Active - exercise/sports 3-5 times/week</option>
-                        <option value="1.725">Very Active - hard exercise/sports 6-7 times/week</option>
-                        <option value="1.9">Extra Active - very hard exercise/sports or physical job</option>
-                      </select>
-                      <label>Materialize Select</label>
-                    </div>
                   </div>
                 </form>
               </div>
@@ -129,12 +103,16 @@
                 </div>
               </div>
               <ul id="results">
-                <li id="cneed" style="opacity: 0;"></li>
-                <li id="fneed" style="opacity: 0;"></li>
-								<li id="crneed" style="opacity: 0;"></li>
-								<li id="aneed" style="opacity: 0;"></li>
-								<li id="pneed" style="opacity: 0;"></li>
+                <li id="bmi" style="opacity: 0;"></li>
+                <li id="your-weight"></li>
+                <li id="tip-head"></li>
+                <li id="tip-1"></li>
+       			<li id="tip-2"></li>
+				<li id="tip-3"></li>
+				<li id="tip-4"></li>
+				<li id="tip-5"></li>
               </ul>
+
               <center>
                 <!--preloader-->
                 <div class="preloader-wrapper small">
@@ -155,28 +133,12 @@
             </div>
           </div>
         </div>
-        <!-- ++++++++++++++++++++++++++++++++++++++++++++++++ Metrics unit ++++++++++++++++++++++++++++++++++++++++++++-->
+        <!-- +++++++++++++++++++++++++++++++++++++Metrics unit++++++++++++++++++++++++++++++++++++++++++++-->
         <div class="" id="metric-unit">
           <div class="row">
             <div class="col s12">
               <div class="card blue lighten-5 z-depth-3">
-                <form id="m-unitCC">
-                  <div class="row no-margin">
-                    <div class="input-field col s4">
-                      <input id="age-mu" type="text" name="age">
-                      <label for="age">AGE</label>
-                    </div>
-                    <div class="input-field col s8 no-padding">
-                      <div class="row no-margin">
-                        <div class="col s12">
-                          <input name="gender" type="radio" id="male-mu" value="male" checked>
-                          <label for="male-mu">MALE</label>
-                          <input name="gender" type="radio" id="female-mu" value="female">
-                          <label for="female-mu">FEMALE</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <form id="m-unitBMI">
                   <div class="row no-margin">
                     <div class="input-field col s6">
                       <input class="height" placeholder="Height" id="cms-mu" type="text" name="cms">
@@ -187,18 +149,6 @@
                       <label for="weight">Weight</label>
                     </div>
                   </div>
-                  <div class="row no-margin">
-                    <div class="input-field col s12">
-                      <select name="loa">
-                        <option value="1.2">Sedentary - little or no exercise</option>
-                        <option value="1.375">Lightly Active - exercise/sports 1-3 times/week</option>
-                        <option value="1.55">Moderatetely Active - exercise/sports 3-5 times/week</option>
-                        <option value="1.725">Very Active - hard exercise/sports 6-7 times/week</option>
-                        <option value="1.9">Extra Active - very hard exercise/sports or physical job</option>
-                      </select>
-                      <label>Materialize Select</label>
-                    </div>
-                  </div>
                 </form>
               </div>
               <div class="row">
@@ -207,11 +157,14 @@
                 </div>
               </div>
               <ul id="results-mu">
-                <li id="cneed-mu" style="opacity: 0;"></li>
-                <li id="fneed-mu" style="opacity: 0;"></li>
-								<li id="crneed-mu" style="opacity: 0;"></li>
-								<li id="aneed-mu" style="opacity: 0;"></li>
-								<li id="pneed-mu" style="opacity: 0;"></li>
+                <li id="bmi-mu" style="opacity: 0;"></li>
+                <li id="your-muweight"></li>
+                <li id="tip-muhead"></li>
+                <li id="tip-mu1"></li>
+       			<li id="tip-mu2"></li>
+				<li id="tip-mu3"></li>
+				<li id="tip-mu4"></li>
+				<li id="tip-mu5"></li>
               </ul>
               <center>
                 <!--preloader-->
@@ -241,74 +194,72 @@
   <script type="text/javascript" src="js/materialize.js"></script>
   <script type="text/javascript" src="js/navbar-transition.js"></script>
   <script type="text/javascript">
-	var cneed; //calories needed
-	var fneed; //fat needed
-	var crneed;//carbohydrates needed
-	var pneed;//protien needed
-	var aneed;//alcohol needed
-	var fd;
+	var bmi;
     $(document).ready(function () {
       $('ul.tabs').tabs();
       $('.collapsible').collapsible();
-      $('select').material_select();
+      //US unit function calling
       $("#submit").click(function () {
-        calculateCalorieUS($("form#us-unitCC").serializeArray());
+        calculateBMIUS($("form#us-unitBMI").serializeArray());
       });
+      //Metrics unit function calling
       $("#submit-mu").click(function(){
-        calculateCalorieMU($("form#m-unitCC").serializeArray());
+        calculateBMIMU($("form#m-unitBMI").serializeArray());
       });
     });
-    function calculateCalorieUS(data) {
-      var age = data[0].value;
-      var gen = data[1].value;
-      var feet = data[2].value;
-      var inch = data[3].value;
-      var cm = data[4].value;
+    function calculateBMIUS(data) {
+      var feet = data[0].value;
+      var inch = data[1].value;
+      
+      inch = parseInt(inch) + parseInt((feet * 12));
+      
+      var cm = data[2].value;
 			// calculating weight
-			var weight = Math.round(parseInt(data[5].value)/ 2.2046);
+	  var weight = Math.round(parseInt(data[3].value));
 			//done calculating
-      var loa = data[6].value;
-      switch(gen) {
-        case "male":
-          fd = (10 * weight) + (6.25 * cm) - (5 * age) + 5;
-          break;
-        case "female":
-          fd = (10 * weight) + (6.25 * cm) - (5 * age) - 161;
-          break;
-        default:
-					console.log("something went wrong");
-          break;
-      }
-      // calorie needed
-      cneed = fd*loa;
-      cneed = Math.floor(cneed);
-      // fat needed
-      fneed = Math.floor((cneed * 0.25) / 9);
-      fneed = Math.floor(fneed * 0.0353);
-      // protien needed
-      pneed = Math.floor((cneed * 0.25) / 4);
-      pneed = Math.floor(pneed * 0.0353);
-      // carbohydrates needed
-      crneed = Math.floor((cneed * 0.25) / 4);
-      crneed = Math.floor(crneed * 0.0353);
-      // alcohol needed
-      aneed = Math.floor((cneed * 0.25) / 7);
-      aneed = Math.floor(aneed * 0.0353);
-			console.log(fd);
-      console.log(data);
-      var fat1 = fneed * 0.0022;
-      var pro1 = pneed * 0.0022;
-      var car1 = crneed * 0.0022;
-      var alh1 = aneed * 0.0022;
-      fat1 = fat1.toFixed(3);
-      pro1 = pro1.toFixed(3);
-      car1 = car1.toFixed(3);
-      alh1 = alh1.toFixed(3);
-      $("#cneed").html("Calories Needed : "+cneed);
-      $("#fneed").html("fat : "+fat1+" lbs");
-      $("#pneed").html("protien : "+pro1+" lbs");
-      $("#crneed").html("Carbohydrates : "+car1+" lbs");
-      $("#aneed").html("Alcohol : "+alh1+" lbs");
+            
+      bmi = ( weight / ( inch * inch ) ) * 703;
+      bmi= Math.round(bmi * 10) / 10;
+       
+      $("#bmi").html("Your Body Mass Index Is : "+bmi);
+  		 if(bmi < 18.5){
+  		 	$("#your-weight").html("You are UnderWeight.");
+  		 	$("#tip-head").html("Tips that can be followed:")
+      		$("#tip-1").html("Drink 6-8 glasses of distilled water a day.");
+      		$("#tip-2").html("Eat frequent but small meals.");
+      		$("#tip-3").html("Eat lots of raw fruits and vegetables (green leafy vegetables are great).");
+      		$("#tip-4").html("Do not drink coffee, alcohol, soda pop,...");
+      		$("#tip-5").html("Increase your intake of complex carbohydrates, particularly whole grain ones");
+  	     }
+  	     if(bmi >= 18.5 && bmi <= 24.99){
+  	     	$("#your-weight").html("You have normal weight");
+  	     	$("#tip-head").html("You dont need any tips to be followed.");
+  	     	$("#tip-1").html("You just have to maintain your weight.");
+  	     	$("#tip-2").html(" ");
+  	     	$("#tip-3").html(" ");
+  	     	$("#tip-4").html(" ");
+  	     	$("#tip-5").html(" ");
+
+  	     }
+  	     else if(bmi >=25 && bmi <= 29.99){
+  		 	$("#your-weight").html("You are Over Weight.");
+  		 	$("#tip-head").html("Tips that can be followed:")
+      		$("#tip-1").html("Drink min 8 glasses of water a day.");
+      		$("#tip-2").html("Consume fewer calories than you burn, you will lose weight. ");
+      		$("#tip-3").html("Become more physically active or by eating less.");
+      		$("#tip-4").html("Start your lunch/dinner with a soup or a salad.");
+      		$("#tip-5").html("Stop Cola consumption.");
+  	     }
+  	     else if(bmi>=30){
+  	     	$("#your-weight").html("You are obese.");
+  		 	$("#tip-head").html("Tips that can be followed:");
+      		$("#tip-1").html("Eat a variety of foods, especially pasta, rice and other whole-grain foods..");
+      		$("#tip-2").html("Reduce your fat-intake. ");
+      		$("#tip-3").html("Eat lots of fruits and vegetables.");
+      		$("#tip-4").html("Try to do atleast 30 mins of physical activity a day on most days of the week.");
+      		$("tip-5").html(" ");
+  	     }
+
       Materialize.showStaggeredList('#results');
     }
     function heightConvertercm(){
@@ -329,35 +280,57 @@
       }
       $("#inches").val(ri);
     }
-    function calculateCalorieMU(data){
+
+//+++++++++++++++++++++++++++++++METRICS FUNCTION+++++++++++++++++++++++++++++++++++++++++++
+
+    function calculateBMIMU(data){
       console.log(data);
-      var age = data[0].value;
-      var gen = data[1].value;
-      var cm = data[2].value;
-			var weight =parseInt(data[3].value);
-      var loa = data[4].value;
-      // check gender
-      switch(gen) {
-        case "male":
-          fd = (10 * weight) + (6.25 * cm) - (5 * age) + 5;
-          break;
-        case "female":
-          fd = (10 * weight) + (6.25 * cm) - (5 * age) - 161;
-          break;
-        default:
-					console.log("something went wrong");
-          break;
-      }
-      cneed = fd * loa;
-      fneed = Math.floor((cneed * 0.25) / 9);
-      pneed = Math.floor((cneed * 0.25) / 4);
-      crneed = Math.floor((cneed * 0.25) / 4);
-      aneed = Math.floor((cneed * 0.25) / 7);
-      $("#cneed-mu").html("Calories needed :"+cneed+" grams");
-      $("#fneed-mu").html("Fats :"+fneed+" grams");
-      $("#crneed-mu").html("Carbohydrates :"+crneed+" grams");
-      $("#aneed-mu").html("Alcohol : "+aneed+" grams");
-      $("#pneed-mu").html("Protien : "+pneed+" grams");
+      var cm = data[0].value;
+      cm = cm/100;
+	  var weight =parseInt(data[1].value);
+      //var loa = data[4].value;
+      bmi = ( weight / ( cm * cm) );
+      bmi= Math.round(bmi * 10) / 10;
+       
+      $("#bmi-mu").html("Your Body Mass Index Is : "+bmi);
+  		 if(bmi < 18.5){
+  		 	$("#your-muweight").html("You are UnderWeight.");
+  		 	$("#tip-muhead").html("Tips that can be followed:");
+      		$("#tip-mu1").html("Drink 6-8 glasses of distilled water a day.");
+      		$("#tip-mu2").html("Eat frequent but small meals.");
+      		$("#tip-mu3").html("Eat lots of raw fruits and vegetables (green leafy vegetables are great).");
+      		$("#tip-mu4").html("Do not drink coffee, alcohol, soda pop,...");
+      		$("#tip-mu5").html("Increase your intake of complex carbohydrates, particularly whole grain ones");
+  	     }
+  	     if(bmi >= 18.5 && bmi <= 24.99){
+  	     	$("#your-muweight").html("You have normal weight");
+  	     	$("#tip-muhead").html("You dont need any tips to be followed.");
+  	     	$("#tip-mu1").html("You just have to maintain your weight.");
+  	     	$("#tip-mu2").html(" ");
+  	     	$("#tip-mu3").html(" ");
+  	     	$("#tip-mu4").html(" ");
+  	     	$("#tip-mu5").html(" ");
+
+  	     }
+  	     else if(bmi >=25 && bmi <= 29.99){
+  		 	$("#your-muweight").html("You are Over Weight.");
+  		 	$("#tip-muhead").html("Tips that can be followed:")
+      		$("#tip-mu1").html("Drink min 8 glasses of water a day.");
+      		$("#tip-mu2").html("Consume fewer calories than you burn, you will lose weight. ");
+      		$("#tip-mu3").html("Become more physically active or by eating less.");
+      		$("#tip-mu4").html("Start your lunch/dinner with a soup or a salad.");
+      		$("#tip-mu5").html("Stop Cola consumption.");
+  	     }
+  	     else if(bmi>=30){
+  	     	$("#your-muweight").html("Your are obese.");
+  		 	$("#tip-muhead").html("Tips that can be followed:")
+      		$("#tip-mu1").html("Eat a variety of foods, especially pasta, rice and other whole-grain foods..");
+      		$("#tip-mu2").html("Reduce your fat-intake. ");
+      		$("#tip-mu3").html("Eat lots of fruits and vegetables.");
+      		$("#tip-mu4").html("Try to do atleast 30 mins of physical activity a day on most days of the week.");
+      		$("tip-mu5").html(" ");
+  	     }
+
       Materialize.showStaggeredList('#results-mu');
     }
   </script>

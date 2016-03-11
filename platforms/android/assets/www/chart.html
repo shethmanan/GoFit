@@ -3,17 +3,36 @@
 
 		<link rel="stylesheet" href="css\chartist.min.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<style>
+			.ct-series-a .ct-line {
+			  /* Set the colour of this series line */
+			  stroke: red;
+			  /* Control the thikness of your lines */
+			  stroke-width: 3px;
+			  /* Create a dashed line with a pattern */
+			  /*stroke-dasharray: 10px 20px;*/
+			}
+			.ct-series-a .ct-point {
+			  /* Colour of your points */
+			  stroke: blue;
+			  /* Size of your points */
+			  stroke-width: 10px;
+			  /* Make your points appear as squares */
+			  stroke-linecap: circle;
+			  show-point : false;
+			}
+		</style>
 	</head>
 	<body>
 		af
 		<div id="chart1">
 
 		</div>
-		<button onClick="f1()">avd</button>
+		<button >avd</button>
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/chartist.min.js"></script>
 		<script>
-			function f1(){
+			
 			var data = {
   // A labels array that can contain any sort of values
   labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
@@ -26,15 +45,30 @@
 	 width:300,
 	 height:200,
 	 low: 0,
+	 showPoint : false,
+	 fullWidth: true,
   	 showArea: true
  };
  
 // Create a new line chart object where as first parameter we pass in a selector
 // that is resolving to our chart container element. The Second parameter
 // is the actual data object.
-new Chartist.Line('#chart1', data,option
+var chart = new Chartist.Line('#chart1', data,option
 	);
-}
+chart.on('draw', function(data) {
+  if(data.type === 'line' || data.type === 'area') {
+    data.element.animate({
+      d: {
+        begin: 2000 * data.index,
+        dur: 2000,
+        from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
+        to: data.path.clone().stringify(),
+        easing: Chartist.Svg.Easing.easeOutQuint
+      }
+    });
+  }
+});
+
 		</script>
 	</body>
 </html>
