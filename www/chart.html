@@ -5,132 +5,170 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<style>
 			.ct-series-a .ct-line {
-			  /* Set the colour of this series line */
-			  stroke: red;
-			  /* Control the thikness of your lines */
-			  stroke-width: 3px;
-			  /* Create a dashed line with a pattern */
-			  /*stroke-dasharray: 10px 20px;*/
-			}
-			.ct-series-a .ct-point {
-			  /* Colour of your points */
-			  stroke: blue;
-			  /* Size of your points */
-			  stroke-width: 10px;
-			  /* Make your points appear as squares */
-			  stroke-linecap: circle;
-			  show-point : false;
-			}
+        /* Set the colour of this series line */
+        stroke: red;
+        /* Control the thikness of your lines */
+        stroke-width: 3px;
+        /* Create a dashed line with a pattern */
+        /*stroke-dasharray: 10px 20px;*/
+      }
+      .ct-series-a .ct-point {
+        /* Colour of your points */
+        stroke: blue;
+        /* Size of your points */
+        stroke-width: 10px;
+        /* Make your points appear as squares */
+        stroke-linecap: circle;
+        show-point : false;
+      }
+      .ct-series-a .ct-slice-donut {
+        stroke: blue;   
+        stroke-width: 8px !important;   
+        stroke-linecap: circle;
+      }
+
+      .ct-series-b .ct-slice-donut {
+        stroke: #f0ece9;   
+        stroke-width: 8px !important;   
+      }
+      #status_text{
+        color:#0099ff;
+      }
+      #score_in_percent{
+        font-size: 35px;  
+      }
 		</style>
 	</head>
 	<body>
-		af
-		<div id="chart1">
+		Buttons are of no use rite nw
+    <div id="chart1">
 
-		</div>
-		<button >avd</button>
-		<div id="2" class="ct-chart">
+    </div>
+    <button >avd</button>
+    <div id="2" class="ct-chart">
+        <div id="status_text" style="position:relative;left:9%;top:157px"><span id="score_in_percent">60% </span> Completed</div>
+    </div>
+    <button id="pie_chart_btn" >Pie chart</button>
 
-		</div>
-		<button onClick="f1();">avsafd</button>
+
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/chartist.min.js"></script>
 		<script>
 			
-			var data = {
-  // A labels array that can contain any sort of values
-  labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-  // Our series array that contains series objects or in this case series data arrays
-  series: [
-    [5, 2, 4, 2, 0]
-  ]
-};
- var option = {
-	 width:300,
-	 height:200,
-	 low: 0,
-	 showPoint : false,
-	 fullWidth: true,
-  	 showArea: true
- };
- 
-// Create a new line chart object where as first parameter we pass in a selector
-// that is resolving to our chart container element. The Second parameter
-// is the actual data object.
-var chart = new Chartist.Line('#chart1', data,option
-	);
-chart.on('draw', function(data) {
-  if(data.type === 'line' || data.type === 'area') {
-    data.element.animate({
-      d: {
-        begin: 2000 * data.index,
-        dur: 2000,
-        from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
-        to: data.path.clone().stringify(),
-        easing: Chartist.Svg.Easing.easeOutQuint
+    $(document).ready(function(){
+        // $("#status_text").hide();
+        var mon = 5, tue =4,wed = 2,thu = 6,fri = 4,sat = 1,sun = 4;
+        
+        //Replace the values by the one stored in database
+
+        var data = {
+          // A labels array that can contain any sort of values
+          labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri','Sat','Sun'],
+          // Our series array that contains series objects or in this case series data arrays
+          series: [
+            [mon, tue, wed, thu, fri,sat,sun]
+          ]
+        };
+        var option = {
+           width:310,
+           height:200,
+           low: 0,
+           showPoint : false,
+           fullWidth: false,
+           showArea: true
+        };
+         
+        // Create a new line chart object where as first parameter we pass in a selector
+        // that is resolving to our chart container element. The Second parameter
+        // is the actual data object.
+        var chart = new Chartist.Line('#chart1', data,option);
+        chart.on('draw', function(data) {
+          if(data.type === 'line' || data.type === 'area') {
+            data.element.animate({
+              d: {
+                begin: 2000 * data.index,
+                dur: 2000,
+                from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
+                to: data.path.clone().stringify(),
+                easing: Chartist.Svg.Easing.easeOutQuint
+              }
+            });
+          }
+        });
+
+      });
+
+
+
+$(document).ready(function(){
+
+  var log_data = 20;
+  //replace with the data from database
+
+  var chart = new Chartist.Pie('.ct-chart', {
+    series: [log_data, 10],
+    labels: [1, 2]
+  }, {
+    donut: true,
+    showLabel: false,
+    width: 300,
+    height: 300
+  });
+
+  chart.on('draw', function(data) {
+    if(data.type === 'slice') {
+      // Get the total path length in order to use for dash array animation
+      var pathLength = data.element._node.getTotalLength();
+
+      // Set a dasharray that matches the path length as prerequisite to animate dashoffset
+      data.element.attr({
+        'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
+      });
+
+      // Create animation definition while also assigning an ID to the animation for later sync usage
+      var animationDefinition = {
+        'stroke-dashoffset': {
+          id: 'anim' + data.index,
+          dur: 1000,
+          from: -pathLength + 'px',
+          to:  '0px',
+          easing: Chartist.Svg.Easing.easeOutQuint,
+          // We need to use `fill: 'freeze'` otherwise our animation will fall back to initial (not visible)
+          fill: 'freeze'
+        }
+      };
+
+      // If this was not the first slice, we need to time the animation so that it uses the end sync event of the previous animation
+      if(data.index !== 0) {
+        animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
       }
-    });
-  }
-});
 
-function f1(){
-var chart = new Chartist.Pie('.ct-chart', {
-  series: [10, 20, 50, 20, 5, 50, 15],
-  labels: [1, 2, 3, 4, 5, 6, 7]
-}, {
-  donut: true,
-  showLabel: false
-});
+      // We need to set an initial value before the animation starts as we are not in guided mode which would do that for us
+      data.element.attr({
+        'stroke-dashoffset': -pathLength + 'px'
+      });
 
-chart.on('draw', function(data) {
-  if(data.type === 'slice') {
-    // Get the total path length in order to use for dash array animation
-    var pathLength = data.element._node.getTotalLength();
-
-    // Set a dasharray that matches the path length as prerequisite to animate dashoffset
-    data.element.attr({
-      'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
-    });
-
-    // Create animation definition while also assigning an ID to the animation for later sync usage
-    var animationDefinition = {
-      'stroke-dashoffset': {
-        id: 'anim' + data.index,
-        dur: 1000,
-        from: -pathLength + 'px',
-        to:  '0px',
-        easing: Chartist.Svg.Easing.easeOutQuint,
-        // We need to use `fill: 'freeze'` otherwise our animation will fall back to initial (not visible)
-        fill: 'freeze'
-      }
-    };
-
-    // If this was not the first slice, we need to time the animation so that it uses the end sync event of the previous animation
-    if(data.index !== 0) {
-      animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
+      // We can't use guided mode as the animations need to rely on setting begin manually
+      // See http://gionkunz.github.io/chartist-js/api-documentation.html#chartistsvg-function-animate
+      data.element.animate(animationDefinition, false);
     }
+  });
 
-    // We need to set an initial value before the animation starts as we are not in guided mode which would do that for us
-    data.element.attr({
-      'stroke-dashoffset': -pathLength + 'px'
-    });
+  // For the sake of the example we update the chart every time it's created with a delay of 8 seconds
+  chart.on('created', function() {
+    if(window.__anim21278907124) {
+      clearTimeout(window.__anim21278907124);
+      window.__anim21278907124 = null;
+    }
+    window.__anim21278907124 = setTimeout(chart.update.bind(chart), 1000000);
+  });
 
-    // We can't use guided mode as the animations need to rely on setting begin manually
-    // See http://gionkunz.github.io/chartist-js/api-documentation.html#chartistsvg-function-animate
-    data.element.animate(animationDefinition, false);
-  }
+  // $("#pie_chart_btn").click(function(){
+    $("#status_text").hide();
+    $("#status_text").fadeIn(1500);
+// });
+
 });
-
-// For the sake of the example we update the chart every time it's created with a delay of 8 seconds
-chart.on('created', function() {
-  if(window.__anim21278907124) {
-    clearTimeout(window.__anim21278907124);
-    window.__anim21278907124 = null;
-  }
-  window.__anim21278907124 = setTimeout(chart.update.bind(chart), 10000);
-});
-
-}
 
 		</script>
 	</body>
