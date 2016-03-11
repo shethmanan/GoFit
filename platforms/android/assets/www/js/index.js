@@ -43,6 +43,9 @@ var app = {
       console.log(data);
       if (data) {
         $(".test").html(data + " Step counter feature is supported");
+        pedometerData.startDate;
+        // alert(pedometerData.numberOfSteps);
+         $(".test1").html(pedometerData.numberOfSteps);
       } else {
         $(".test").html(data + " Step counter feature is not supported");
       }
@@ -62,15 +65,15 @@ var app = {
     console.log('Received Event: ' + id);
 
 
-    var successHandler = function (data) {
-     pedometerData.startDate; -> ms since 1970
+    // var successHandler = function (data) {
+     // pedometerData.startDate; -> ms since 1970
     // pedometerData.endDate; -> ms since 1970
-     alert(pedometerData.numberOfSteps);
+     // alert(pedometerData.numberOfSteps);
     // pedometerData.distance;
     // pedometerData.floorsAscended;
     // pedometerData.floorsDescended;
-};
-pedometer.startPedometerUpdates(successHandler, failure);
+// };
+// pedometer.startPedometerUpdates(successHandler, failure);
 
     
   }
