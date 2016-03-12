@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script type="text/javascript">
+    // var db = openDatabase('GoFit', '1.0', 'Test DB', 2 * 1024 * 1024)
+    //   db.transaction(function(tx) {
+    //     tx.executeSql("CREATE TABLE IF NOT EXISTS USER (id unique, name, weight, gender)");
+    //     tx.executeSql("SELECT name FROM sqlite_master WHERE type='table' and name = 'USER'", [], function(tx, results) {
+    //       if (results.rows.length > 0) {
+    //         window.location = "http://www.w3schools.com";
+    //       }
+    //     });
+    //   });
+  </script>
+  <meta charset="utf-8">
+  <title>Login</title>
+  <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+  .input-form{
+    position:relative;
+    top: 10vh;
+  }
+    body {
+      background-image: url("img/body.jpg");
+      background-size: 100vw 100vh;
+    }
+
+    body:before {
+      content: '';
+      z-index: -2;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      -webkit-filter: blur(3px);
+      background: url('img/body.jpg') no-repeat;
+      background-size: 100vw 100vh;
+    }
+
+    .background-edit {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+      background-color: hsla(35, 27%, 23%, 0.36);
+      ;
+    }
+    /* label color */
+
+    .input-field label {
+      color: #fff;
+    }
+    /* label focus color */
+
+    .input-field input[type=text]:focus + label {
+      color: #fff;
+    }
+    /*number colour white*/
+
+    .input-field input[type=number]:focus + label {
+      color: #fff;
+    }
+    /* label underline focus color */
+
+    .input-field input[type=number]:focus {
+      border-bottom: 1px solid #fff;
+      box-shadow: 0 1px 0 0 #fff;
+    }
+    /* label underline focus color */
+
+    .input-field input[type=text]:focus {
+      border-bottom: 1px solid #fff;
+      box-shadow: 0 1px 0 0 #fff;
+    }
+    /* valid color */
+
+    .input-field input[type=text].valid {
+      border-bottom: 1px solid green;
+      box-shadow: 0 1px 0 0 green;
+    }
+    /* invalid color */
+
+    .input-field input[type=text].invalid {
+      border-bottom: 1px solid red;
+      box-shadow: 0 1px 0 0 red;
+    }
+    /* icon prefix focus color */
+
+    .input-field .prefix.active {
+      color: #fff;
+    }
+
+    input {
+      color: #fff;
+    }
+
+    .no-margin {
+      margin: 0;
+    }
+    .logo{
+      margin-top: 35px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="background-edit"></div>
+  <div class="logo">
+      <center>
+        <img src="img/logo.png" alt="" />
+      </center>
+  </div>
+  <div class="input-form">
+    <form>
+      <div class="row no-margin no-padding">
+        <div class="input-field col s12 no-margin">
+          <input id="name" type="text" class="validate">
+          <label for="name">First Name</label>
+        </div>
+      </div>
+      <div class="row no-margin no-padding">
+        <div class="input-field col s4 no-margin">
+          <input type="number" name="age" id="age">
+          <label for="age">Age</label>
+        </div>
+        <div class="input-field col s4 no-margin">
+          <input id="weight" type="number" class="validate">
+          <label for="weight">Weight</label>
+        </div>
+        <div class="input-field col s4 no-margin">
+          <input type="number" name="height" id="height">
+          <label for="height">Height</label>
+        </div>
+      </div>
+      <div class="row no-margin no-padding">
+        <div class="input-field col s12">
+          <select>
+            <option data-icon="img/male.ico" class="left circle" value="Male" selected>Male</option>
+            <option data-icon="img/female.ico" class="left circle" value="Female">Female</option>
+          </select>
+          <label>Gender</label>
+        </div>
+      </div>
+      <div class="row no-margin no-padding">
+        <div class="col 4 offset-s4 no-padding">
+          <a class="waves-effect waves-light blue accent-2 btn white-text" id="submitbtn"><i class="material-icons right white-text">cloud</i>Submit</a>
+        </div>
+      </div>
+    </form>
+  </div>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/materialize.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('select').material_select();
+      $("#submitbtn").click(function() {
+        
+      });
+    });
+  </script>
+</body>
+
+</html>

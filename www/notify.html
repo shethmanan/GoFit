@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+  </head>
+  <body>
+    d
+    <a onClick="notify()">Notify!</a>
+    <a onClick="cancel_notify()">CancelNotify!</a>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script>
+      function notify() {
+        var now = new Date().getTime(),
+          _5_sec_from_now = new Date(now + 5 * 1000);
+        cordova.plugins.notification.local.schedule({id: 1, title: "GoFit", text: "Drink Water", at: _5_sec_from_now, every: 2});
+        // cordova.plugins.notification.local is now available
+      }
+
+      function cancel_notify() {
+
+        cordova.plugins.notification.local.cancel(1, function () {
+          // Notification was cancelled
+
+        });
+      }
+      /*
+                 function notify(id1,title1,text1,freq){
+                    var now = new Date().getTime(),
+                    first_time = new Date(now + 5 * 1000 * 60);
+                     cordova.plugins.notification.local.schedule({
+                    id: id1,
+                    title: title1,
+                    text: text1,
+                    at: first_time,
+                    every: freq
+                    });
+                }
+            */
+    </script>
+  </body>
+</html>

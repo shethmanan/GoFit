@@ -1,0 +1,226 @@
+@font-face {
+	font-family: "Flaticon";
+	src: url("flaticon.eot");
+	src: url("flaticon.eot#iefix") format("embedded-opentype"),
+	url("flaticon.woff") format("woff"),
+	url("flaticon.ttf") format("truetype"),
+	url("flaticon.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+	font-family: Flaticon;
+        font-size: 20px;
+font-style: normal;
+margin-left: -20px;
+}.flaticon-apple63:before {
+	content: "\e000";
+}
+.flaticon-apple64:before {
+	content: "\e001";
+}
+.flaticon-bald37:before {
+	content: "\e002";
+}
+.flaticon-ball23:before {
+	content: "\e003";
+}
+.flaticon-band13:before {
+	content: "\e004";
+}
+.flaticon-bicycle14:before {
+	content: "\e005";
+}
+.flaticon-bike15:before {
+	content: "\e006";
+}
+.flaticon-break1:before {
+	content: "\e007";
+}
+.flaticon-burger10:before {
+	content: "\e008";
+}
+.flaticon-calendar146:before {
+	content: "\e009";
+}
+.flaticon-carrot8:before {
+	content: "\e00a";
+}
+.flaticon-chronometer19:before {
+	content: "\e00b";
+}
+.flaticon-chronometer20:before {
+	content: "\e00c";
+}
+.flaticon-cross85:before {
+	content: "\e00d";
+}
+.flaticon-date6:before {
+	content: "\e00e";
+}
+.flaticon-drugs6:before {
+	content: "\e00f";
+}
+.flaticon-dumbbell24:before {
+	content: "\e010";
+}
+.flaticon-dumbbells2:before {
+	content: "\e011";
+}
+.flaticon-dumbbells3:before {
+	content: "\e012";
+}
+.flaticon-file73:before {
+	content: "\e013";
+}
+.flaticon-first41:before {
+	content: "\e014";
+}
+.flaticon-fitness:before {
+	content: "\e015";
+}
+.flaticon-flexions:before {
+	content: "\e016";
+}
+.flaticon-gloves5:before {
+	content: "\e017";
+}
+.flaticon-hanging14:before {
+	content: "\e018";
+}
+.flaticon-healthy7:before {
+	content: "\e019";
+}
+.flaticon-heart285:before {
+	content: "\e01a";
+}
+.flaticon-heart286:before {
+	content: "\e01b";
+}
+.flaticon-heart287:before {
+	content: "\e01c";
+}
+.flaticon-heart288:before {
+	content: "\e01d";
+}
+.flaticon-kickboxing1:before {
+	content: "\e01e";
+}
+.flaticon-man428:before {
+	content: "\e01f";
+}
+.flaticon-man429:before {
+	content: "\e020";
+}
+.flaticon-medical85:before {
+	content: "\e021";
+}
+.flaticon-medical86:before {
+	content: "\e022";
+}
+.flaticon-medical87:before {
+	content: "\e023";
+}
+.flaticon-meter7:before {
+	content: "\e024";
+}
+.flaticon-musculous:before {
+	content: "\e025";
+}
+.flaticon-music224:before {
+	content: "\e026";
+}
+.flaticon-musical103:before {
+	content: "\e027";
+}
+.flaticon-musical104:before {
+	content: "\e028";
+}
+.flaticon-no67:before {
+	content: "\e029";
+}
+.flaticon-notes24:before {
+	content: "\e02a";
+}
+.flaticon-oxygenation:before {
+	content: "\e02b";
+}
+.flaticon-pencil88:before {
+	content: "\e02c";
+}
+.flaticon-restaurant44:before {
+	content: "\e02d";
+}
+.flaticon-resting5:before {
+	content: "\e02e";
+}
+.flaticon-runer:before {
+	content: "\e02f";
+}
+.flaticon-sauce3:before {
+	content: "\e030";
+}
+.flaticon-scale16:before {
+	content: "\e031";
+}
+.flaticon-scale17:before {
+	content: "\e032";
+}
+.flaticon-skating3:before {
+	content: "\e033";
+}
+.flaticon-sportive57:before {
+	content: "\e034";
+}
+.flaticon-standing92:before {
+	content: "\e035";
+}
+.flaticon-star157:before {
+	content: "\e036";
+}
+.flaticon-steroids1:before {
+	content: "\e037";
+}
+.flaticon-sunrise4:before {
+	content: "\e038";
+}
+.flaticon-swimming22:before {
+	content: "\e039";
+}
+.flaticon-thin37:before {
+	content: "\e03a";
+}
+.flaticon-thumb42:before {
+	content: "\e03b";
+}
+.flaticon-trophy56:before {
+	content: "\e03c";
+}
+.flaticon-truck38:before {
+	content: "\e03d";
+}
+.flaticon-two328:before {
+	content: "\e03e";
+}
+.flaticon-water53:before {
+	content: "\e03f";
+}
+.flaticon-weightlifter1:before {
+	content: "\e040";
+}
+.flaticon-weightlifter2:before {
+	content: "\e041";
+}
+.flaticon-weightlifter3:before {
+	content: "\e042";
+}
+.flaticon-wine57:before {
+	content: "\e043";
+}
+.flaticon-yin6:before {
+	content: "\e044";
+}
+.flaticon-yoga13:before {
+	content: "\e045";
+}
