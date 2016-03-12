@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no"> -->
+    <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection"/>
+    <link rel="stylesheet" type="text/css" href="css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="css/reminder.css">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+    </style>
+  </head>
+  <body>
+    <div class="side-section">
+      <ul class="side-nav fixed blue lighten-3" style="left:0px">
+        <li class="logo" style="background-color:transparent;"><img class="profile-pic circle" src="1.jpg"></li>
+        <li class="blue lighten-3">
+          <a href="remider.html" class="waves-effect waves-lighten" style="color:#1976d2;">Set Goals</a>
+        </li>
+        <li class="blue lighten-3">
+          <a href="updated_walk.html" class="waves-effect waves-lighten" style="color:#1976d2;">Exercise</a>
+        </li>
+        <ul class="collapsible collapsible-accordion">
+          <li class="blue lighten-3">
+            <a class="collapsible-header" class="waves-effect waves-lighten" style="color:#1976d2;">Calculators</a>
+            <div class="collapsible-body">
+              <ul>
+                <li class="blue lighten-3">
+                  <a href="BMICal.html" class="waves-effect waves-lighten" style="color:#1976d2;">BMI Calculator</a>
+                </li>
+                <li class="blue lighten-3">
+                  <a href="calorieCalculator.html" class="waves-effect waves-lighten" style="color:#1976d2;">Calorie Calculator</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      <li class="blue lighten-3">
+        <a href="#!" class="waves-effect waves-lighten" style="color:#1976d2;">Help</a>
+      </li>
+    </ul>
+  </div>
+  <main id="main">
+    <!-- side nav btn -->
+    <div class="row blue darken-2 no-margin">
+      <a class="waves-effect waves-lighten btn-flat large" id="nav-btn">
+        <i class="large material-icons" style="color:white;font-size: xx-large;">list</i>
+      </a>
+    </div>
+    <!-- side nav btn ends -->
+    <!-- side nav ends -->
+    <div class="row"></div>
+    <div class="d-card"></div>
+    <!--modal trigger and body-->
+    <a class="btn-floating fixed btn-large waves-effect circle red modal-trigger" href="#reminder">
+      <i class="material-icons">add</i>
+    </a>
+    <div id="reminder" class="modal bottom-sheet">
+      <div class="modal-header">
+        <h4 class="blue-text center-align no-margin" style="padding-top: 5px;">Add New Reminders</h4>
+      </div>
+      <div class="modal-footer">
+        <div class="row no-margin">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s12">
+                <input placeholder="Title" value="" id="title_text" type="text">
+              </div>
+            </div>
+            <div class="row no-margin">
+              <div class="input-field blue-text col s12">
+                <select class="blue-text" id="time_text">
+                  <option value="-1" selected>Select frequency</option>
+                  <option value="1">1 mins</option>
+                  <option value="60">1 hour</option>
+                  <option value="180">3 hours</option>
+                  <option value="360">6 hours</option>
+                </select>
+              </div>
+            </div>
+            <div class="row no-margin">
+              <div class="col s4 offset-s8">
+                <a class="btn-flat  waves-effect waves-blue blue-text" id="submit_remind">Add&nbspReminder</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--modal end-->
+
+    <!--div class="1">ashbkj<div class="2">nlk</div>n;lhiyv;</div-->
+
+  </main>
+
+  <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/materialize.js"></script>
+  <script type="text/javascript" src = "js/velocity.ui.min.js"></script>
+  <script type="text/javascript" src="js/navbar-transition.js"></script>
+  <script>
+  var id;
+  var db = openDatabase('GoFit', '1.0', 'Test DB', 2 * 1024 * 1024);
+  $(document).ready(function(){
+    db.transaction(function(tx){
+      tx.executeSql("CREATE TABLE IF NOT EXISTS `notification` (id integer primary key autoincrement, title, time)");
+      tx.executeSql("Select * from `notification`",[],function(tx,results){
+          id = results.rows.length;
+          for (var i = 0; i < results.rows.length; i++) {
+            // ************************************************card*************************************
+            var x = '<div class="row">'
+            x += '<div class="col s12">'
+            x += '<div class="card-small blue darken-2" id="'+results.rows[i].id+'">'
+            x += '<div class="row no-margin">'
+            x += '<div class="col s4">'
+            x += '<i class="large material-icons amber-text center-align">assignment_late</i>'
+            x += '</div>'
+            x += '<div class="col s8 no-padding no-margin">'
+            x += '<div class="row">'
+            x += '<div class="col s10">'
+            x += '<h5 class="amber-text" style="margin-bottom:0px;">' + results.rows[i].title + '</h5>'
+            x += '</div>'
+            x += '<div class="col s2 no-padding right-align">'
+            x += '<i class="material-icons deep-orange-text" onclick="removeCard(this)">cancel</i>'
+            x += '</div>'
+            x += '</div>'
+            x += '<div class="row no-margin">'
+            x += '<div class="col s12 amber-text">'
+            x += '<h5 class="no-margin no-padding">Every : ' + results.rows[i].time + '</h5>'
+            x += '</div>'
+            x += '</div>'
+            x += '</div>'
+            x += '</div>'
+            x += '</div>'
+            x += '</div>'
+            x += '</div>';
+            $(".d-card").append(x).velocity("transition.bounceIn", 1300);
+          }
+      });
+      $('select').material_select();
+    });
+    $('.modal-trigger').click(function () {
+        removeAttr('main');
+        $('#reminder').openModal();
+    });
+  });
+  // to add notification
+$("#submit_remind").on('click',function(){
+  var add = addNotification();//to add notification
+  if(add.status){
+    // ***************************************card**************************************
+    var x = '<div class="row">'
+    x += '<div class="col s12">'
+    x += '<div class="card-small blue darken-2" id="'+add.id+'">'
+    x += '<div class="row no-margin">'
+    x += '<div class="col s4">'
+    x += '<i class="large material-icons amber-text center-align">assignment_late</i>'
+    x += '</div>'
+    x += '<div class="col s8 no-padding no-margin">'
+    x += '<div class="row">'
+    x += '<div class="col s10">'
+    x += '<h5 class="amber-text" style="margin-bottom:0px;">' + add.title + '</h5>'
+    x += '</div>'
+    x += '<div class="col s2 no-padding right-align">'
+    x += '<i class="material-icons deep-orange-text" onclick="removeCard(this)">cancel</i>'
+    x += '</div>'
+    x += '</div>'
+    x += '<div class="row no-margin">'
+    x += '<div class="col s12 amber-text">'
+    x += '<h5 class="no-margin no-padding">Every : ' + add.time + '</h5>'
+    x += '</div>'
+    x += '</div>'
+    x += '</div>'
+    x += '</div>'
+    x += '</div>'
+    x += '</div>'
+    x += '</div>';
+    $(".d-card").append(x).velocity("transition.bounceIn", 1300);
+  }
+    $('form')[0].reset();
+    $("#reminder").closeModal();
+    return true;
+});
+  function addNotification(){
+      title = $("#title_text").val();
+      time = $("#time_text").val();
+      if (title == "" || time == -1)
+      return false;
+      time += " mins";
+      var data = {
+        status : true,
+        id: id,
+        title: title,
+        time: time
+      };
+      db.transaction(function(tx){
+        tx.executeSql("INSERT into `notification`(title,time) values(?,?)",[title,time]);
+      });
+      setNotification(id, title, time)
+      return data;
+  }
+
+    function removeCard(data){
+      var card = $(data).closest("div.card-small");
+      var key = card.attr("id");
+      removeNotification(key);
+      db.transaction(function(tx){
+        tx.executeSql("DELETE FROM 'notification' WHERE id ="+key+"")
+      });
+      card.closest("div.row").remove();
+    }
+
+  //set notification
+  function setNotification(id, title, freq) {
+    var now = new Date().getTime(),
+    first_time = now;
+    cordova.plugins.notification.local.schedule({id: id, title: title, at: first_time, every: freq});
+    return true;
+  }
+  //remove notification
+  function removeNotification(id) {
+    cordova.plugins.notification.local.cancel(id, function() {});
+    return true;
+  }
+  </script>
+</body>
+</html>

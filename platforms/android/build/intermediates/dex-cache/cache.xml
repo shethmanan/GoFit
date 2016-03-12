@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\xampp\htdocs\gofit_final\platforms\android\build\intermediates\exploded-aar\android\CordovaLib\unspecified\debug\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="c1e74dfbd3fb03490737499d168241bcca3b6e9a">
+        <dex dex="C:\xampp\htdocs\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\classes-f052978a474047646a9b4df6f04a091ef9a134ad.jar" />
+    </item>
+    <item
+        jar="C:\asd\d1308f1ad1accdf50042cbe0b1df7b3eef2940de\platforms\android\build\intermediates\exploded-aar\android\CordovaLib\unspecified\debug\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="af25d8de75bf25cd47cafa4e6825bd46fe30e5a8">
+        <dex dex="C:\asd\d1308f1ad1accdf50042cbe0b1df7b3eef2940de\platforms\android\build\intermediates\pre-dexed\armv7\debug\classes-ecb3f4420085e024a8080421a4de20028e86db71.jar" />
+    </item>
+    <item
+        jar="C:\asd\d1308f1ad1accdf50042cbe0b1df7b3eef2940de\platforms\android\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.0\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="e5f32fa48a3eb2de0c987025c11b6e3864b634d9">
+        <dex dex="C:\asd\d1308f1ad1accdf50042cbe0b1df7b3eef2940de\platforms\android\build\intermediates\pre-dexed\armv7\debug\classes-0c48c17c31e4fdb37c171dd3d516b33bd7ea7338.jar" />
+    </item>
+    <item
+        jar="C:\cordova\android-sdk\extras\android\m2repository\com\android\support\support-annotations\23.2.0\support-annotations-23.2.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="c5bf571bb10462bd90e5419ade67793f71acbc87">
+        <dex dex="C:\asd\d1308f1ad1accdf50042cbe0b1df7b3eef2940de\platforms\android\build\intermediates\pre-dexed\armv7\debug\support-annotations-23.2.0-d489f2806dc1b2aa4ae7e785153400a561276c45.jar" />
+    </item>
+    <item
+        jar="C:\asd\d1308f1ad1accdf50042cbe0b1df7b3eef2940de\platforms\android\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.0\libs\internal_impl-23.2.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6e239441500605809818997dd63b62a947195f8c">
+        <dex dex="C:\asd\d1308f1ad1accdf50042cbe0b1df7b3eef2940de\platforms\android\build\intermediates\pre-dexed\armv7\debug\internal_impl-23.2.0-ec21db7a0c39bed3da2eac5eab4c31c703e4ea56.jar" />
+    </item>
+    <item
+        jar="C:\xampp\htdocs\gofit_final\platforms\android\build\intermediates\exploded-aar\org.xwalk\xwalk_core_library\16.45.421.19\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="fe6430fcb0b63cdb623e2db3cbedae469543091d">
+        <dex dex="C:\xampp\htdocs\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\classes-47e69b26b82d9f825764b78d7ded6298cec6207d.jar" />
+    </item>
+    <item
+        jar="C:\asd\d1308f1ad1accdf50042cbe0b1df7b3eef2940de\platforms\android\build\intermediates\exploded-aar\org.xwalk\xwalk_core_library\16.45.421.19\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="fe6430fcb0b63cdb623e2db3cbedae469543091d">
+        <dex dex="C:\asd\d1308f1ad1accdf50042cbe0b1df7b3eef2940de\platforms\android\build\intermediates\pre-dexed\armv7\debug\classes-cb3fd951629ab90a04b57010564e15f685482db1.jar" />
+    </item>
+    <item
+        jar="C:\xampp\htdocs\gofit_final\platforms\android\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.0\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="e5f32fa48a3eb2de0c987025c11b6e3864b634d9">
+        <dex dex="C:\xampp\htdocs\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\classes-93c5937becc6a64d681c0cc4dd61c1a6c542ec10.jar" />
+    </item>
+    <item
+        jar="C:\xampp\htdocs\gofit_final\platforms\android\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.0\libs\internal_impl-23.2.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6e239441500605809818997dd63b62a947195f8c">
+        <dex dex="C:\xampp\htdocs\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\internal_impl-23.2.0-202e6deedd096c639dfa9ca248f90c24614cc21b.jar" />
+    </item>
+
+</items>

@@ -1,0 +1,52 @@
+
+		body{
+	background-color: #90caf9;
+}
+		main{
+			background-color:#fff;
+			position:absolute;
+			top:0px;
+			left:0px;
+			height:100vh;
+			width:100vw;
+			overflow: hidden;
+		}
+		main.active{
+			position: fixed;
+			}
+			.side-nav{
+			left:0px;
+		    z-index: 0;
+		    box-shadow: none;
+			}
+		.btn-large.btn-flat:hover{
+			box-shadow: none;
+			background-color: white;
+		}
+		li.logo{
+			border-bottom-width: 0px;
+			width: 240px;
+			height: 144px;
+		}
+		.card{
+			box-shadow: none;
+		}
+		.gap{
+			padding-top: 15px;
+			padding-bottom: 15px;
+		}
+		.profile-pic{
+		    position: relative;
+		    width: 70.5px;
+		    height: 70.5px;
+		    top: 45px;
+		    left: 50px;
+		}
+		.no-margin{
+			margin:0px;
+		}
+		.card-small{
+			box-shadow:none;
+			width:100%;
+			height:100px;
+		}
