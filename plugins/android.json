@@ -7,34 +7,33 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-whitelist": {
+        "cordova-plugin-app-event": {
+            "PACKAGE_NAME": "com.rg.hello"
+        },
+        "cordova-plugin-camera": {
             "PACKAGE_NAME": "com.rg.hello"
         },
         "cordova-plugin-crosswalk-webview": {
             "PACKAGE_NAME": "com.rg.hello"
         },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.rg.hello"
+        },
         "cordova-plugin-pedometer": {
-            "PACKAGE_NAME": "com.rg.hello"
-        },
-        "net.texh.cordovapluginstepcounter": {
-            "PACKAGE_NAME": "com.rg.hello"
-        },
-        "de.appplant.cordova.plugin.local-notification": {
             "PACKAGE_NAME": "com.rg.hello"
         },
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "com.rg.hello"
         },
-        "cordova-plugin-camera": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.rg.hello"
+        },
+        "de.appplant.cordova.plugin.local-notification": {
+            "PACKAGE_NAME": "com.rg.hello"
+        },
+        "net.texh.cordovapluginstepcounter": {
             "PACKAGE_NAME": "com.rg.hello"
         }
     },
-    "dependent_plugins": {
-        "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.rg.hello"
-        },
-        "cordova-plugin-app-event": {
-            "PACKAGE_NAME": "com.rg.hello"
-        }
-    }
+    "dependent_plugins": {}
 }

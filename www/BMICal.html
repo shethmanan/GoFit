@@ -15,7 +15,7 @@
 		   	height: 3px;
 		    background-color: #82b1ff;
 		}
-
+		
     </style>
   </head>
   <body>
@@ -103,14 +103,14 @@
                 </div>
               </div>
               <ul id="results">
-                <li id="bmi" style="opacity: 0;"></li>
-                <li id="your-weight"></li>
-                <li id="tip-head"></li>
-                <li id="tip-1"></li>
-       			<li id="tip-2"></li>
-				<li id="tip-3"></li>
-				<li id="tip-4"></li>
-				<li id="tip-5"></li>
+                <b><li id="bmi"style="opacity: 0; color: blue; font-size: 20px;"></li>
+                <li id="your-weight" style="color: blue; font-size: 18px"></li>
+                <u style="color: blue"><li id="tip-head" style="color: blue; font-size: 16px; font-family: cursive;"></li></b></u>
+                <li id="tip-1" style="color: blue; font-family: cursive;"></li>
+       			<li id="tip-2" style="color: blue; font-family: cursive;"></li>
+				<li id="tip-3" style="color: blue; font-family: cursive;"></li>
+				<li id="tip-4" style="color: blue; font-family: cursive;"></li>
+				<li id="tip-5" style="color: blue; font-family: cursive;"></li>
               </ul>
 
               <center>
@@ -157,14 +157,14 @@
                 </div>
               </div>
               <ul id="results-mu">
-                <li id="bmi-mu" style="opacity: 0;"></li>
-                <li id="your-muweight"></li>
-                <li id="tip-muhead"></li>
-                <li id="tip-mu1"></li>
-       			<li id="tip-mu2"></li>
-				<li id="tip-mu3"></li>
-				<li id="tip-mu4"></li>
-				<li id="tip-mu5"></li>
+              	<b><li id="bmi-mu"style="opacity: 0; color: blue; font-size: 20px;"></li>
+                <li id="your-muweight" style="color: blue; font-size: 18px"></li>
+                <u style="color: blue"><li id="tip-muhead" style="color: blue; font-size: 16px; font-family: cursive;"></li></b></u>
+                <li id="tip-mu1" style="color: blue; font-family: cursive;"></li>
+       			<li id="tip-mu2" style="color: blue; font-family: cursive;"></li>
+				<li id="tip-mu3" style="color: blue; font-family: cursive;"></li>
+				<li id="tip-mu4" style="color: blue; font-family: cursive;"></li>
+				<li id="tip-mu5" style="color: blue; font-family: cursive;"></li>
               </ul>
               <center>
                 <!--preloader-->
@@ -224,7 +224,7 @@
       $("#bmi").html("Your Body Mass Index Is : "+bmi);
   		 if(bmi < 18.5){
   		 	$("#your-weight").html("You are UnderWeight.");
-  		 	$("#tip-head").html("Tips that can be followed:")
+  		 	$("#tip-head").html("Tips that can be followed : ")
       		$("#tip-1").html("Drink 6-8 glasses of distilled water a day.");
       		$("#tip-2").html("Eat frequent but small meals.");
       		$("#tip-3").html("Eat lots of raw fruits and vegetables (green leafy vegetables are great).");
