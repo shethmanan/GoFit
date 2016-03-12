@@ -3,15 +3,9 @@
 
 <head>
   <script type="text/javascript">
-    // var db = openDatabase('GoFit', '1.0', 'Test DB', 2 * 1024 * 1024)
-    //   db.transaction(function(tx) {
-    //     tx.executeSql("CREATE TABLE IF NOT EXISTS USER (id unique, name, weight, gender)");
-    //     tx.executeSql("SELECT name FROM sqlite_master WHERE type='table' and name = 'USER'", [], function(tx, results) {
-    //       if (results.rows.length > 0) {
-    //         window.location = "http://www.w3schools.com";
-    //       }
-    //     });
-    //   });
+  if(localStorage.getItem("user")!= null){
+    console.log(localStorage.getItem("user"));
+  }
   </script>
   <meta charset="utf-8">
   <title>Login</title>
@@ -117,30 +111,30 @@
       </center>
   </div>
   <div class="input-form">
-    <form>
+    <form id="personal-info">
       <div class="row no-margin no-padding">
         <div class="input-field col s12 no-margin">
-          <input id="name" type="text" class="validate">
-          <label for="name">First Name</label>
+          <input id="name" type="text" class="validate" name="name">
+          <label for="name">Name</label>
         </div>
       </div>
       <div class="row no-margin no-padding">
         <div class="input-field col s4 no-margin">
-          <input type="number" name="age" id="age">
+          <input type="number" name="age" id="age" class="validate">
           <label for="age">Age</label>
         </div>
         <div class="input-field col s4 no-margin">
-          <input id="weight" type="number" class="validate">
+          <input placeholder="kg" id="weight" type="number" class="validate" name="weight">
           <label for="weight">Weight</label>
         </div>
         <div class="input-field col s4 no-margin">
-          <input type="number" name="height" id="height">
+          <input type="number" placeholder="cms" name="height" class="validate" id="height">
           <label for="height">Height</label>
         </div>
       </div>
       <div class="row no-margin no-padding">
         <div class="input-field col s12">
-          <select>
+          <select name ="gender">
             <option data-icon="img/male.ico" class="left circle" value="Male" selected>Male</option>
             <option data-icon="img/female.ico" class="left circle" value="Female">Female</option>
           </select>
@@ -160,9 +154,18 @@
     $(document).ready(function() {
       $('select').material_select();
       $("#submitbtn").click(function() {
-        
+        var details = $('#personal-info').serializeArray();
+        if(!checkInfo(details)){
+          Materialize.toast('Please fill in all your details', 4000)
+        }
       });
     });
+    function checkInfo(details){
+      for (var i = 0; i < 5; i++) {
+        if(details[i].value == 0) return false;
+      }
+      return true;
+    }
   </script>
 </body>
 
