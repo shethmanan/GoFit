@@ -4,18 +4,13 @@
   </head>
   <body>
     d
-    <a onClick="notify()">Notify!</a>
-    <a onClick="cancel_notify()">CancelNotify!</a>
+    <button onClick="f1()">Notify!</button>
+    <button onClick="cancel_notify()">CancelNotify!</button>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script>
-      function notify() {
-        var now = new Date().getTime(),
-          _5_sec_from_now = new Date(now + 5 * 1000);
-        cordova.plugins.notification.local.schedule({id: 1, title: "GoFit", text: "Drink Water", at: _5_sec_from_now, every: 2});
-        // cordova.plugins.notification.local is now available
-      }
+      
 
       function cancel_notify() {
 
@@ -24,19 +19,24 @@
 
         });
       }
-      /*
-                 function notify(id1,title1,text1,freq){
-                    var now = new Date().getTime(),
-                    first_time = new Date(now + 5 * 1000 * 60);
-                     cordova.plugins.notification.local.schedule({
-                    id: id1,
-                    title: title1,
-                    text: text1,
-                    at: first_time,
-                    every: freq
-                    });
-                }
-            */
+      function f1(){
+        var min = 5;
+        notify(1,"hello","itworks",min);
+      }
+      //dharmil the notify functions works perfectly and repeats after whatever min u specify..use this method in reminder.html...if u want to remove 'text' attribute u can..other all including variable first_time is corrrect!!!!
+       function notify(id1,title1,text1,freq){
+          var now = new Date().getTime();
+          var first_time = new Date(now + freq * 1000 * 60);  
+          cordova.plugins.notification.local.schedule({
+          id: id1,
+          title: title1,
+          text: text1,
+          at: first_time,
+          every: freq
+          });
+          alert("after");
+      }
+            
     </script>
   </body>
 </html>

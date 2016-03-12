@@ -3,15 +3,9 @@
 
 <head>
   <script type="text/javascript">
-    // var db = openDatabase('GoFit', '1.0', 'Test DB', 2 * 1024 * 1024)
-    //   db.transaction(function(tx) {
-    //     tx.executeSql("CREATE TABLE IF NOT EXISTS USER (id unique, name, weight, gender)");
-    //     tx.executeSql("SELECT name FROM sqlite_master WHERE type='table' and name = 'USER'", [], function(tx, results) {
-    //       if (results.rows.length > 0) {
-    //         window.location = "http://www.w3schools.com";
-    //       }
-    //     });
-    //   });
+  if(localStorage.getItem("user")!= null){
+    console.log(localStorage.getItem("user"));
+  }
   </script>
   <meta charset="utf-8">
   <title>Login</title>
@@ -117,30 +111,30 @@
       </center>
   </div>
   <div class="input-form">
-    <form>
+    <form id="personal-info">
       <div class="row no-margin no-padding">
         <div class="input-field col s12 no-margin">
-          <input id="name" type="text" class="validate">
-          <label for="name">First Name</label>
+          <input id="name" type="text" class="validate" name="name">
+          <label for="name">Name</label>
         </div>
       </div>
       <div class="row no-margin no-padding">
         <div class="input-field col s4 no-margin">
-          <input type="number" name="age" id="age">
+          <input type="number" name="age" id="age" class="validate">
           <label for="age">Age</label>
         </div>
         <div class="input-field col s4 no-margin">
-          <input id="weight" type="number" class="validate">
+          <input placeholder="kg" id="weight" type="number" class="validate" name="weight">
           <label for="weight">Weight</label>
         </div>
         <div class="input-field col s4 no-margin">
-          <input type="number" name="height" id="height">
+          <input type="number" placeholder="cms" name="height" class="validate" id="height">
           <label for="height">Height</label>
         </div>
       </div>
       <div class="row no-margin no-padding">
         <div class="input-field col s12">
-          <select>
+          <select name ="gender">
             <option data-icon="img/male.ico" class="left circle" value="Male" selected>Male</option>
             <option data-icon="img/female.ico" class="left circle" value="Female">Female</option>
           </select>
@@ -149,7 +143,7 @@
       </div>
       <div class="row no-margin no-padding">
         <div class="col 4 offset-s4 no-padding">
-          <a class="waves-effect waves-light blue accent-2 btn white-text" id="submitbtn"><i class="material-icons right white-text">cloud</i>Submit</a>
+          <a class="waves-effect waves-light blue accent-2 btn white-text" id="submitbtn" href="#"><i class="material-icons right white-text">cloud</i>Submit</a>
         </div>
       </div>
     </form>
@@ -160,9 +154,33 @@
     $(document).ready(function() {
       $('select').material_select();
       $("#submitbtn").click(function() {
-        
+        var details = $('#personal-info').serializeArray();
+        if(!checkInfo(details)){
+          Materialize.toast('Please fill in all your details', 4000)
+          return false;
+        }
+        var data = getdata(details);
+        localStorage.setItem("user",data);
       });
     });
+    function checkInfo(details){
+      for (var i = 0; i < 5; i++) {
+        if(details[i].value == 0) return false;
+      }
+      return true;
+    }
+    function getdata(details)
+    {
+      var data ="{";
+      for (var i = 0; i < 5; i++) {
+        data = data +'"'+details[i].name+'":"'+details[i].value+'",';
+      }
+      data = data.replaceAt(data.lastIndexOf(","),"}");
+      return data;
+    }
+    String.prototype.replaceAt=function(index, character) {
+    return this.substr(0, index) + character + this.substr(index+character.length);
+    }
   </script>
 </body>
 

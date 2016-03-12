@@ -15,7 +15,7 @@
 		   	height: 3px;
 		    background-color: #82b1ff;
 		}
-		
+
     </style>
   </head>
   <body>
@@ -85,13 +85,13 @@
                       <label for="inches">Inches</label>
                     </div>
                     <div class="input-field col s4">
-                      <input class="height" placeholder="Height" id="cms" type="number" name="cms" onkeyup="heightConverter(this.value)">
+                      <input class="height" placeholder="Height" id="cms-us" type="number" name="cms" onkeyup="heightConverter(this.value)">
                       <label for="cms">Cms</label>
                     </div>
                   </div>
                   <div class="row no-margin">
                     <div class="input-field col s4">
-                      <input class="weight" placeholder="Pounds" id="weight" type="number" name="weight">
+                      <input class="weight" placeholder="Pounds" id="weight-us" type="number" name="weight">
                       <label for="weight">Weight</label>
                     </div>
                   </div>
@@ -196,6 +196,13 @@
   <script type="text/javascript">
 	var bmi;
     $(document).ready(function () {
+      var personaldetails=localStorage.getItem("user");
+      var details = JSON.parse(personaldetails);
+      $("#weight-us").val(KtoLbs(details.weight));
+      $("#weight-mu").val(details.weight);
+      $("#cms-us").val(details.height);
+      heightConverter(details.height);
+      $("#cms-mu").val(details.height);
       $('ul.tabs').tabs();
       $('.collapsible').collapsible();
       //US unit function calling
@@ -207,20 +214,25 @@
         calculateBMIMU($("form#m-unitBMI").serializeArray());
       });
     });
+    function KtoLbs(pK) {
+  var nearExact = pK/0.45359237;
+  var lbs = Math.floor(nearExact);
+  return lbs
+}
     function calculateBMIUS(data) {
       var feet = data[0].value;
       var inch = data[1].value;
-      
+
       inch = parseInt(inch) + parseInt((feet * 12));
-      
+
       var cm = data[2].value;
 			// calculating weight
 	  var weight = Math.round(parseInt(data[3].value));
 			//done calculating
-            
+
       bmi = ( weight / ( inch * inch ) ) * 703;
       bmi= Math.round(bmi * 10) / 10;
-       
+
       $("#bmi").html("Your Body Mass Index Is : "+bmi);
   		 if(bmi < 18.5){
   		 	$("#your-weight").html("You are UnderWeight.");
@@ -291,7 +303,7 @@
       //var loa = data[4].value;
       bmi = ( weight / ( cm * cm) );
       bmi= Math.round(bmi * 10) / 10;
-       
+
       $("#bmi-mu").html("Your Body Mass Index Is : "+bmi);
   		 if(bmi < 18.5){
   		 	$("#your-muweight").html("You are UnderWeight.");
