@@ -9,7 +9,7 @@
                 "parents": {
                     "/*": [
                         {
-                            "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "xml": "<feature name=\"Camera\"><param name=\"android-package\" value=\"org.apache.cordova.camera.CameraLauncher\" /></feature>",
                             "count": 1
                         },
                         {
@@ -33,19 +33,11 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"Pedometer\"><param name=\"android-package\" value=\"org.apache.cordova.pedometer.PedoListener\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"CordovaStepCounter\"><param name=\"android-package\" value=\"net.texh.cordovapluginstepcounter.CordovaStepCounter\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"LocalNotification\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.localnotification.LocalNotification\" /></feature>",
+                            "xml": "<feature name=\"Pedometer\"><param name=\"android-package\" value=\"org.apache.cordova.pedometer.PedoListener\" /></feature>",
                             "count": 1
                         },
                         {
@@ -53,7 +45,15 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"Camera\"><param name=\"android-package\" value=\"org.apache.cordova.camera.CameraLauncher\" /></feature>",
+                            "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"LocalNotification\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.localnotification.LocalNotification\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"CordovaStepCounter\"><param name=\"android-package\" value=\"net.texh.cordovapluginstepcounter.CordovaStepCounter\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -63,27 +63,19 @@
                 "parents": {
                     "/*": [
                         {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+                            "count": 1
+                        },
+                        {
                             "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
                             "count": 1
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\" />",
                             "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
-                            "count": 1
                         }
                     ],
                     "/manifest/application": [
-                        {
-                            "xml": "<service android:enabled=\"true\" android:name=\"net.texh.cordovapluginstepcounter.StepCounterService\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<receiver android:name=\"net.texh.cordovapluginstepcounter.StepCounterBootReceiver\"><intent-filter><action android:name=\"android.intent.action.BOOT_COMPLETED\" /></intent-filter></receiver>",
-                            "count": 1
-                        },
                         {
                             "xml": "<receiver android:exported=\"false\" android:name=\"de.appplant.cordova.plugin.localnotification.TriggerReceiver\" />",
                             "count": 1
@@ -111,23 +103,31 @@
                         {
                             "xml": "<activity android:exported=\"false\" android:launchMode=\"singleInstance\" android:name=\"de.appplant.cordova.plugin.notification.ClickActivity\" android:theme=\"@android:style/Theme.NoDisplay\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<service android:enabled=\"true\" android:name=\"net.texh.cordovapluginstepcounter.StepCounterService\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<receiver android:name=\"net.texh.cordovapluginstepcounter.StepCounterBootReceiver\"><intent-filter><action android:name=\"android.intent.action.BOOT_COMPLETED\" /></intent-filter></receiver>",
+                            "count": 1
                         }
                     ],
                     "/manifest": [
-                        {
-                            "xml": "<uses-feature android:name=\"android.hardware.sensor.stepcounter\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<uses-feature android:name=\"android.hardware.sensor.stepdetector\" />",
-                            "count": 1
-                        },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.RECEIVE_BOOT_COMPLETED\" />",
                             "count": 2
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-feature android:name=\"android.hardware.sensor.stepcounter\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-feature android:name=\"android.hardware.sensor.stepdetector\" />",
                             "count": 1
                         }
                     ]
@@ -136,101 +136,36 @@
         }
     },
     "installed_plugins": {
-        "cordova-plugin-whitelist": {
+        "cordova-plugin-app-event": {
+            "PACKAGE_NAME": "com.rg.hello"
+        },
+        "cordova-plugin-camera": {
             "PACKAGE_NAME": "com.rg.hello"
         },
         "cordova-plugin-crosswalk-webview": {
             "PACKAGE_NAME": "com.rg.hello"
         },
-        "cordova-plugin-pedometer": {
-            "PACKAGE_NAME": "com.rg.hello"
-        },
-        "net.texh.cordovapluginstepcounter": {
-            "PACKAGE_NAME": "com.rg.hello"
-        },
         "cordova-plugin-device": {
             "PACKAGE_NAME": "com.rg.hello"
         },
-        "cordova-plugin-app-event": {
-            "PACKAGE_NAME": "com.rg.hello"
-        },
-        "de.appplant.cordova.plugin.local-notification": {
+        "cordova-plugin-pedometer": {
             "PACKAGE_NAME": "com.rg.hello"
         },
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "com.rg.hello"
         },
-        "cordova-plugin-camera": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.rg.hello"
+        },
+        "de.appplant.cordova.plugin.local-notification": {
+            "PACKAGE_NAME": "com.rg.hello"
+        },
+        "net.texh.cordovapluginstepcounter": {
             "PACKAGE_NAME": "com.rg.hello"
         }
     },
     "dependent_plugins": {},
     "modules": [
-        {
-            "file": "plugins/cordova-plugin-whitelist/whitelist.js",
-            "id": "cordova-plugin-whitelist.whitelist",
-            "pluginId": "cordova-plugin-whitelist",
-            "runs": true
-        },
-        {
-            "file": "plugins/cordova-plugin-pedometer/www/pedometer.js",
-            "id": "cordova-plugin-pedometer.Pedometer",
-            "pluginId": "cordova-plugin-pedometer",
-            "clobbers": [
-                "pedometer"
-            ]
-        },
-        {
-            "file": "plugins/net.texh.cordovapluginstepcounter/www/stepcounter.js",
-            "id": "net.texh.cordovapluginstepcounter.stepcounter",
-            "pluginId": "net.texh.cordovapluginstepcounter",
-            "clobbers": [
-                "stepcounter"
-            ]
-        },
-        {
-            "file": "plugins/cordova-plugin-device/www/device.js",
-            "id": "cordova-plugin-device.device",
-            "pluginId": "cordova-plugin-device",
-            "clobbers": [
-                "device"
-            ]
-        },
-        {
-            "file": "plugins/de.appplant.cordova.plugin.local-notification/www/local-notification.js",
-            "id": "de.appplant.cordova.plugin.local-notification.LocalNotification",
-            "pluginId": "de.appplant.cordova.plugin.local-notification",
-            "clobbers": [
-                "cordova.plugins.notification.local",
-                "plugin.notification.local"
-            ]
-        },
-        {
-            "file": "plugins/de.appplant.cordova.plugin.local-notification/www/local-notification-core.js",
-            "id": "de.appplant.cordova.plugin.local-notification.LocalNotification.Core",
-            "pluginId": "de.appplant.cordova.plugin.local-notification",
-            "clobbers": [
-                "cordova.plugins.notification.local.core",
-                "plugin.notification.local.core"
-            ]
-        },
-        {
-            "file": "plugins/de.appplant.cordova.plugin.local-notification/www/local-notification-util.js",
-            "id": "de.appplant.cordova.plugin.local-notification.LocalNotification.Util",
-            "pluginId": "de.appplant.cordova.plugin.local-notification",
-            "merges": [
-                "cordova.plugins.notification.local.core",
-                "plugin.notification.local.core"
-            ]
-        },
-        {
-            "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
-            "id": "cordova-plugin-splashscreen.SplashScreen",
-            "pluginId": "cordova-plugin-splashscreen",
-            "clobbers": [
-                "navigator.splashscreen"
-            ]
-        },
         {
             "file": "plugins/cordova-plugin-camera/www/CameraConstants.js",
             "id": "cordova-plugin-camera.Camera",
@@ -262,17 +197,82 @@
             "clobbers": [
                 "CameraPopoverHandle"
             ]
+        },
+        {
+            "file": "plugins/cordova-plugin-device/www/device.js",
+            "id": "cordova-plugin-device.device",
+            "pluginId": "cordova-plugin-device",
+            "clobbers": [
+                "device"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-pedometer/www/pedometer.js",
+            "id": "cordova-plugin-pedometer.Pedometer",
+            "pluginId": "cordova-plugin-pedometer",
+            "clobbers": [
+                "pedometer"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+            "id": "cordova-plugin-splashscreen.SplashScreen",
+            "pluginId": "cordova-plugin-splashscreen",
+            "clobbers": [
+                "navigator.splashscreen"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-whitelist/whitelist.js",
+            "id": "cordova-plugin-whitelist.whitelist",
+            "pluginId": "cordova-plugin-whitelist",
+            "runs": true
+        },
+        {
+            "file": "plugins/de.appplant.cordova.plugin.local-notification/www/local-notification.js",
+            "id": "de.appplant.cordova.plugin.local-notification.LocalNotification",
+            "pluginId": "de.appplant.cordova.plugin.local-notification",
+            "clobbers": [
+                "cordova.plugins.notification.local",
+                "plugin.notification.local"
+            ]
+        },
+        {
+            "file": "plugins/de.appplant.cordova.plugin.local-notification/www/local-notification-core.js",
+            "id": "de.appplant.cordova.plugin.local-notification.LocalNotification.Core",
+            "pluginId": "de.appplant.cordova.plugin.local-notification",
+            "clobbers": [
+                "cordova.plugins.notification.local.core",
+                "plugin.notification.local.core"
+            ]
+        },
+        {
+            "file": "plugins/de.appplant.cordova.plugin.local-notification/www/local-notification-util.js",
+            "id": "de.appplant.cordova.plugin.local-notification.LocalNotification.Util",
+            "pluginId": "de.appplant.cordova.plugin.local-notification",
+            "merges": [
+                "cordova.plugins.notification.local.core",
+                "plugin.notification.local.core"
+            ]
+        },
+        {
+            "file": "plugins/net.texh.cordovapluginstepcounter/www/stepcounter.js",
+            "id": "net.texh.cordovapluginstepcounter.stepcounter",
+            "pluginId": "net.texh.cordovapluginstepcounter",
+            "clobbers": [
+                "stepcounter"
+            ]
         }
     ],
     "plugin_metadata": {
-        "cordova-plugin-whitelist": "1.2.1",
-        "cordova-plugin-crosswalk-webview": "1.5.0",
-        "cordova-plugin-pedometer": "0.4.1",
-        "net.texh.cordovapluginstepcounter": "0.0.4",
-        "cordova-plugin-device": "1.1.1",
         "cordova-plugin-app-event": "1.2.0",
-        "de.appplant.cordova.plugin.local-notification": "0.8.4",
+        "cordova-plugin-camera": "2.1.0",
+        "cordova-plugin-crosswalk-webview": "1.5.0",
+        "cordova-plugin-device": "1.1.1",
+        "cordova-plugin-pedometer": "0.4.1",
         "cordova-plugin-splashscreen": "3.2.0",
-        "cordova-plugin-camera": "2.1.0"
+        "cordova-plugin-whitelist": "1.2.1",
+        "de.appplant.cordova.plugin.local-notification": "0.8.4",
+        "net.texh.cordovapluginstepcounter": "0.0.4"
     }
 }
