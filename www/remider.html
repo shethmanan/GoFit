@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no"> -->
     <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection"/>
     <link rel="stylesheet" type="text/css" href="css/navbar.css">
     <link rel="stylesheet" type="text/css" href="css/reminder.css">
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <style></style>
+    <style>
+    </style>
   </head>
   <body>
     <div class="side-section">
@@ -81,7 +84,6 @@
               <div class="col s4 offset-s8">
                 <a class="btn-flat  waves-effect waves-blue blue-text" id="submit_remind">Add&nbspReminder</a>
               </div>
-
             </div>
           </form>
         </div>
@@ -96,127 +98,132 @@
   <script type="text/javascript" src="cordova.js"></script>
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript" src="js/materialize.js"></script>
+  <script type="text/javascript" src = "js/velocity.ui.min.js"></script>
   <script type="text/javascript" src="js/navbar-transition.js"></script>
   <script>
-    /*----------------------card over ---------------------------------------------------------------*/
-    $(document).ready(function () {
-      if (localStorage.length != 0) {
-        console.log(localStorage.length);
-
-        for (var i = 0; i < localStorage.length; i++) {
-          key = localStorage.getItem(i);
-          value = jQuery.parseJSON(key);
-          /*-------------------card ------------------------------------------------*/
-          var x = '<div class="row">'
-          x += '<div class="col s12">'
-          x += '<div class="card-small blue darken-2" id="' + value.id + '">'
-          x += '<div class="row no-margin">'
-          x += '<div class="col s4">'
-          x += '<i class="large material-icons amber-text center-align">assignment_late</i>'
-          x += '</div>'
-          x += '<div class="col s8 no-padding no-margin">'
-          x += '<div class="row">'
-          x += '<div class="col s10">'
-          x += '<h5 class="amber-text" style="margin-bottom:0px;">' + value.title + '</h5>'
-          x += '</div>'
-          x += '<div class="col s2 no-padding right-align">'
-          x += '<i class="material-icons deep-orange-text" onclick="removeCard(this)">cancel</i>'
-          x += '</div>'
-          x += '</div>'
-          x += '<div class="row no-margin">'
-          x += '<div class="col s12 amber-text">'
-          x += '<h5 class="no-margin no-padding">Every : ' + value.time + '</h5>'
-          x += '</div>'
-          x += '</div>'
-          x += '</div>'
-          x += '</div>'
-          x += '</div>'
-          x += '</div>'
-          x += '</div>';
-          $(".d-card").append(x);
-        }
-      }
-      $('.modal-trigger').click(function () {
-        removeAttr('main');
-        $('#reminder').openModal();
-      })
+  var id;
+  var db = openDatabase('GoFit', '1.0', 'Test DB', 2 * 1024 * 1024);
+  $(document).ready(function(){
+    db.transaction(function(tx){
+      tx.executeSql("CREATE TABLE IF NOT EXISTS `notification` (id integer primary key autoincrement, title, time)");
+      tx.executeSql("Select * from `notification`",[],function(tx,results){
+          id = results.rows.length;
+          for (var i = 0; i < results.rows.length; i++) {
+            // ************************************************card*************************************
+            var x = '<div class="row">'
+            x += '<div class="col s12">'
+            x += '<div class="card-small blue darken-2" id="'+results.rows[i].id+'">'
+            x += '<div class="row no-margin">'
+            x += '<div class="col s4">'
+            x += '<i class="large material-icons amber-text center-align">assignment_late</i>'
+            x += '</div>'
+            x += '<div class="col s8 no-padding no-margin">'
+            x += '<div class="row">'
+            x += '<div class="col s10">'
+            x += '<h5 class="amber-text" style="margin-bottom:0px;">' + results.rows[i].title + '</h5>'
+            x += '</div>'
+            x += '<div class="col s2 no-padding right-align">'
+            x += '<i class="material-icons deep-orange-text" onclick="removeCard(this)">cancel</i>'
+            x += '</div>'
+            x += '</div>'
+            x += '<div class="row no-margin">'
+            x += '<div class="col s12 amber-text">'
+            x += '<h5 class="no-margin no-padding">Every : ' + results.rows[i].time + '</h5>'
+            x += '</div>'
+            x += '</div>'
+            x += '</div>'
+            x += '</div>'
+            x += '</div>'
+            x += '</div>'
+            x += '</div>';
+            $(".d-card").append(x).velocity("transition.bounceIn", 1300);
+          }
+      });
       $('select').material_select();
     });
-    $('#submit_remind').on('click', function () {
-      closeModal("#reminder");
+    $('.modal-trigger').click(function () {
+        removeAttr('main');
+        $('#reminder').openModal();
     });
-    var title;
-    var time;
-    var freq;
-    var i = localStorage.length;
-		function removeNotification(id) {
-      cordova.plugins.notification.local.cancel(id, function() {});
-      return true;
-    }
-    function setNotification(id1, title1, freq) {
-      var now = new Date().getTime(),
-        first_time = new Date(now + 5 * 1000 * 60);
-      cordova.plugins.notification.local.schedule({id: id1, title: title1, at: first_time, every: freq});
-      return true;
-    }
-    function storeData() {
+  });
+  // to add notification
+$("#submit_remind").on('click',function(){
+  var add = addNotification();//to add notification
+  if(add.status){
+    // ***************************************card**************************************
+    var x = '<div class="row">'
+    x += '<div class="col s12">'
+    x += '<div class="card-small blue darken-2" id="'+add.id+'">'
+    x += '<div class="row no-margin">'
+    x += '<div class="col s4">'
+    x += '<i class="large material-icons amber-text center-align">assignment_late</i>'
+    x += '</div>'
+    x += '<div class="col s8 no-padding no-margin">'
+    x += '<div class="row">'
+    x += '<div class="col s10">'
+    x += '<h5 class="amber-text" style="margin-bottom:0px;">' + add.title + '</h5>'
+    x += '</div>'
+    x += '<div class="col s2 no-padding right-align">'
+    x += '<i class="material-icons deep-orange-text" onclick="removeCard(this)">cancel</i>'
+    x += '</div>'
+    x += '</div>'
+    x += '<div class="row no-margin">'
+    x += '<div class="col s12 amber-text">'
+    x += '<h5 class="no-margin no-padding">Every : ' + add.time + '</h5>'
+    x += '</div>'
+    x += '</div>'
+    x += '</div>'
+    x += '</div>'
+    x += '</div>'
+    x += '</div>'
+    x += '</div>';
+    $(".d-card").append(x).velocity("transition.bounceIn", 1300);
+  }
+    $('form')[0].reset();
+    $("#reminder").closeModal();
+    return true;
+});
+  function addNotification(){
       title = $("#title_text").val();
       time = $("#time_text").val();
       if (title == "" || time == -1)
-        return false;
+      return false;
       time += " mins";
-      var notify = {
-        id: i,
+      var data = {
+        status : true,
+        id: id,
         title: title,
         time: time
       };
-      localStorage.setItem(i, JSON.stringify(notify));
-      setNotification(i, title, time);
-      return true;
-    }
-    function closeModal(data) {
-      $(data).closeModal();
-      if (storeData()) {
+      db.transaction(function(tx){
+        tx.executeSql("INSERT into `notification`(title,time) values(?,?)",[title,time]);
+      });
+      setNotification(id, title, time)
+      return data;
+  }
 
-        /*-------------------card ------------------------------------------------ */
-        var x = '<div class="row">'
-        x += '<div class="col s12">'
-        x += '<div class="card-small blue darken-2" id="' + i + '">'
-        x += '<div class="row no-margin">'
-        x += '<div class="col s4">'
-        x += '<i class="large material-icons amber-text center-align">assignment_late</i>'
-        x += '</div>'
-        x += '<div class="col s8 no-padding no-margin">'
-        x += '<div class="row">'
-        x += '<div class="col s10">'
-        x += '<h5 class="amber-text" style="margin-bottom:0px;">' + title + '</h5>'
-        x += '</div>'
-        x += '<div class="col s2 no-padding right-align">'
-        x += '<i class="material-icons deep-orange-text" onclick="removeCard(this)">cancel</i>'
-        x += '</div>'
-        x += '</div>'
-        x += '<div class="row no-margin">'
-        x += '<div class="col s12 amber-text">'
-        x += '<h5 class="no-margin no-padding">Every : ' + time + '</h5>'
-        x += '</div>'
-        x += '</div>'
-        x += '</div>'
-        x += '</div>'
-        x += '</div>'
-        x += '</div>'
-        x += '</div>';
-        $(".d-card").append(x);
-        i++;
-      }
-      return false;
-    };
-    function removeCard(data) {
+    function removeCard(data){
       var card = $(data).closest("div.card-small");
       var key = card.attr("id");
       removeNotification(key);
-      localStorage.removeItem(key);
+      db.transaction(function(tx){
+        tx.executeSql("DELETE FROM 'notification' WHERE id ="+key+"")
+      });
       card.closest("div.row").remove();
     }
+
+  //set notification
+  function setNotification(id, title, freq) {
+    var now = new Date().getTime(),
+    first_time = now;
+    cordova.plugins.notification.local.schedule({id: id, title: title, at: first_time, every: freq});
+    return true;
+  }
+  //remove notification
+  function removeNotification(id) {
+    cordova.plugins.notification.local.cancel(id, function() {});
+    return true;
+  }
   </script>
 </body>
 </html>
