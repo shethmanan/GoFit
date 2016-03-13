@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-uk/android_ui_strings.xml -->
+    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-uk/android_ui_strings.xml -->
     <eat-comment/>
     <string name="accessibility_date_picker_month">"Місяць"</string>
     <string name="accessibility_date_picker_week">"Тиждень"</string>
@@ -12,11 +12,11 @@
     <string name="accessibility_time_picker_milli">"Мілісекунди"</string>
     <string name="accessibility_time_picker_minute">"Хвилини"</string>
     <string name="accessibility_time_picker_second">"Секунди"</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-uk/android_content_strings.xml -->
+    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-uk/android_content_strings.xml -->
     <eat-comment/>
     <string name="actionbar_share">"Надіслати"</string>
     <string name="actionbar_web_search">"Веб-пошук"</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-uk/android_ui_strings.xml -->
+    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-uk/android_ui_strings.xml -->
     <eat-comment/>
     <string name="autofill_popup_content_description">"Показ спливаючих вікон автозаповнення"</string>
     <string name="color_picker_button_black">"Чорний"</string>
@@ -41,25 +41,25 @@
     <string name="date_picker_dialog_title">"Вибрати дату"</string>
     <string name="date_time_picker_dialog_title">"Вибрати дату й час"</string>
     <string name="low_memory_error">"Не вдається закінчити попередню операцію через нестачу пам’яті"</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-uk/android_content_strings.xml -->
+    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-uk/android_content_strings.xml -->
     <eat-comment/>
     <string name="media_player_error_button">"ОК"</string>
     <string name="media_player_error_text_invalid_progressive_playback">"На жаль, це відео неможливо транслювати на цьому пристрої."</string>
     <string name="media_player_error_text_unknown">"На жаль, це відео неможливо відтворити."</string>
     <string name="media_player_error_title">"Не вдається відтворити відео"</string>
     <string name="media_player_loading_video">"Завантаж. відео"</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-uk/android_ui_strings.xml -->
+    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-uk/android_ui_strings.xml -->
     <eat-comment/>
     <string name="month_picker_dialog_title">"Вибрати місяць"</string>
     <string name="opening_file_error">"Не вдалося відкрити файл"</string>
     <string name="password_generation_popup_content_description">"Показ спливаючих вікон для створення пароля"</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-uk/android_content_strings.xml -->
+    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-uk/android_content_strings.xml -->
     <eat-comment/>
     <string name="profiler_error_toast">"Помилка запуску профілювальника"</string>
     <string name="profiler_no_storage_toast">"Неможливо запустити профілювальник, оскільки зовнішня пам’ять не готова"</string>
     <string name="profiler_started_toast">"Профілювальник запущено"</string>
     <string name="profiler_stopped_toast">"Профілювальник закінчив роботу. Результати у файлі %1$s."</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-uk/android_ui_strings.xml -->
+    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-uk/android_ui_strings.xml -->
     <eat-comment/>
     <string name="time_picker_dialog_am">"дп"</string>
     <string name="time_picker_dialog_hour_minute_separator">":"</string>

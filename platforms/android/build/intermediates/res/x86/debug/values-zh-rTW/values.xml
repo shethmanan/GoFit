@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-zh-rTW/android_ui_strings.xml -->
+    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-zh-rTW/android_ui_strings.xml -->
     <eat-comment/>
     <string name="accessibility_date_picker_month">"月"</string>
     <string name="accessibility_date_picker_week">"週"</string>
@@ -12,11 +12,11 @@
     <string name="accessibility_time_picker_milli">"毫秒"</string>
     <string name="accessibility_time_picker_minute">"分鐘"</string>
     <string name="accessibility_time_picker_second">"秒"</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-zh-rTW/android_content_strings.xml -->
+    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-zh-rTW/android_content_strings.xml -->
     <eat-comment/>
     <string name="actionbar_share">"分享"</string>
     <string name="actionbar_web_search">"網頁搜尋"</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-zh-rTW/android_ui_strings.xml -->
+    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-zh-rTW/android_ui_strings.xml -->
     <eat-comment/>
     <string name="autofill_popup_content_description">"目前顯示的是自動填入彈出式視窗"</string>
     <string name="color_picker_button_black">"黑色"</string>
@@ -41,25 +41,25 @@
     <string name="date_picker_dialog_title">"設定日期"</string>
     <string name="date_time_picker_dialog_title">"設定日期和時間"</string>
     <string name="low_memory_error">"記憶體不足，無法完成前一項操作"</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-zh-rTW/android_content_strings.xml -->
+    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-zh-rTW/android_content_strings.xml -->
     <eat-comment/>
     <string name="media_player_error_button">"確定"</string>
     <string name="media_player_error_text_invalid_progressive_playback">"很抱歉，這部影片的格式有誤，無法透過這個裝置串流播放。"</string>
     <string name="media_player_error_text_unknown">"很抱歉，無法播放這部影片。"</string>
     <string name="media_player_error_title">"無法播放影片"</string>
     <string name="media_player_loading_video">"正在載入影片"</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-zh-rTW/android_ui_strings.xml -->
+    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-zh-rTW/android_ui_strings.xml -->
     <eat-comment/>
     <string name="month_picker_dialog_title">"設定月份"</string>
     <string name="opening_file_error">"無法開啟選取的檔案"</string>
     <string name="password_generation_popup_content_description">"目前顯示的是密碼產生彈出式視窗"</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-zh-rTW/android_content_strings.xml -->
+    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-zh-rTW/android_content_strings.xml -->
     <eat-comment/>
     <string name="profiler_error_toast">"無法啟動分析器"</string>
     <string name="profiler_no_storage_toast">"外部儲存空間尚未準備就緒，因此無法啟動分析器"</string>
     <string name="profiler_started_toast">"分析器已啟動"</string>
     <string name="profiler_stopped_toast">"分析器已執行完成，請參閱 %1$s 查看分析結果。"</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-zh-rTW/android_ui_strings.xml -->
+    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-zh-rTW/android_ui_strings.xml -->
     <eat-comment/>
     <string name="time_picker_dialog_am">"AM"</string>
     <string name="time_picker_dialog_hour_minute_separator">":"</string>

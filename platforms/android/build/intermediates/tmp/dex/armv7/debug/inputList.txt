@@ -1,6 +1,6 @@
-C:\xampp\htdocs\gofit_final\platforms\android\build\intermediates\classes\armv7\debug
-C:\xampp\htdocs\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\support-annotations-23.2.0-d489f2806dc1b2aa4ae7e785153400a561276c45.jar
-C:\xampp\htdocs\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\classes-f052978a474047646a9b4df6f04a091ef9a134ad.jar
-C:\xampp\htdocs\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\internal_impl-23.2.0-202e6deedd096c639dfa9ca248f90c24614cc21b.jar
-C:\xampp\htdocs\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\classes-93c5937becc6a64d681c0cc4dd61c1a6c542ec10.jar
-C:\xampp\htdocs\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\classes-47e69b26b82d9f825764b78d7ded6298cec6207d.jar
+C:\GOFIT_FINAL\gofit_final\gofit_final\platforms\android\build\intermediates\classes\armv7\debug
+C:\GOFIT_FINAL\gofit_final\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\support-annotations-23.1.1-199affb1b7fbbea88c398273aeef2549cfa50577.jar
+C:\GOFIT_FINAL\gofit_final\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\classes-030063ed8b38169b45443f267f5d5f74591da2c6.jar
+C:\GOFIT_FINAL\gofit_final\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\internal_impl-23.1.1-183bcc31574a5c1984f6d4ddb523ba52a4888eeb.jar
+C:\GOFIT_FINAL\gofit_final\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\classes-8257cb8747a8ecc27814fbbc4d89df43154b4027.jar
+C:\GOFIT_FINAL\gofit_final\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\classes-c602804494065aa740acb3bb9100766c9740e568.jar

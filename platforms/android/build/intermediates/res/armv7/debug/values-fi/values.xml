@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-fi/android_ui_strings.xml -->
+    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-fi/android_ui_strings.xml -->
     <eat-comment/>
     <string name="accessibility_date_picker_month">"Kuukausi"</string>
     <string name="accessibility_date_picker_week">"Viikko"</string>
@@ -12,11 +12,11 @@
     <string name="accessibility_time_picker_milli">"Millisekunti"</string>
     <string name="accessibility_time_picker_minute">"Minuutti"</string>
     <string name="accessibility_time_picker_second">"Sekunti"</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-fi/android_content_strings.xml -->
+    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-fi/android_content_strings.xml -->
     <eat-comment/>
     <string name="actionbar_share">"Jaa"</string>
     <string name="actionbar_web_search">"Verkkohaku"</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-fi/android_ui_strings.xml -->
+    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-fi/android_ui_strings.xml -->
     <eat-comment/>
     <string name="autofill_popup_content_description">"Automaattisen täytön ponnahdusikkuna on näkyvissä."</string>
     <string name="color_picker_button_black">"Musta"</string>
@@ -41,25 +41,25 @@
     <string name="date_picker_dialog_title">"Aseta päivämäärä"</string>
     <string name="date_time_picker_dialog_title">"Aseta päivämäärä ja aika"</string>
     <string name="low_memory_error">"Edellistä toimintoa ei voi suorittaa. Muisti ei riitä."</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-fi/android_content_strings.xml -->
+    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-fi/android_content_strings.xml -->
     <eat-comment/>
     <string name="media_player_error_button">"OK"</string>
     <string name="media_player_error_text_invalid_progressive_playback">"Videota ei voi suoratoistaa tällä laitteella."</string>
     <string name="media_player_error_text_unknown">"Tätä videota ei voi toistaa."</string>
     <string name="media_player_error_title">"Videon toistaminen epäonnistui"</string>
     <string name="media_player_loading_video">"Videota ladataan"</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-fi/android_ui_strings.xml -->
+    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-fi/android_ui_strings.xml -->
     <eat-comment/>
     <string name="month_picker_dialog_title">"Aseta kuukausi"</string>
     <string name="opening_file_error">"Valittua tiedostoa ei voi avata"</string>
     <string name="password_generation_popup_content_description">"Salasanojen luomisen ponnahdusikkuna on näkyvissä."</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-fi/android_content_strings.xml -->
+    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-fi/android_content_strings.xml -->
     <eat-comment/>
     <string name="profiler_error_toast">"Profiiliohjelman käynnistys epäonnistui"</string>
     <string name="profiler_no_storage_toast">"Profiiliohjelmaa ei voi käynnistää, koska ulkoinen tallennustila ei ole valmis"</string>
     <string name="profiler_started_toast">"Profiiliohjelma käynnistyi"</string>
     <string name="profiler_stopped_toast">"Profiiliohjelma on valmis. Tulokset ovat tiedostossa %1$s."</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-fi/android_ui_strings.xml -->
+    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-fi/android_ui_strings.xml -->
     <eat-comment/>
     <string name="time_picker_dialog_am">"ap"</string>
     <string name="time_picker_dialog_hour_minute_separator">"."</string>

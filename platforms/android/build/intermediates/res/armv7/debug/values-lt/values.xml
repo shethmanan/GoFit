@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-lt/android_ui_strings.xml -->
+    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-lt/android_ui_strings.xml -->
     <eat-comment/>
     <string name="accessibility_date_picker_month">"Mėnuo"</string>
     <string name="accessibility_date_picker_week">"Savaitė"</string>
@@ -12,11 +12,11 @@
     <string name="accessibility_time_picker_milli">"Milisekundė"</string>
     <string name="accessibility_time_picker_minute">"Minutė"</string>
     <string name="accessibility_time_picker_second">"Sekundė"</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-lt/android_content_strings.xml -->
+    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-lt/android_content_strings.xml -->
     <eat-comment/>
     <string name="actionbar_share">"Bendrinti"</string>
     <string name="actionbar_web_search">"Žiniatinklio paieška"</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-lt/android_ui_strings.xml -->
+    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-lt/android_ui_strings.xml -->
     <eat-comment/>
     <string name="autofill_popup_content_description">"Rodomas automatinio pildymo iššokantysis langas"</string>
     <string name="color_picker_button_black">"Juoda"</string>
@@ -41,25 +41,25 @@
     <string name="date_picker_dialog_title">"Nustatykite datą"</string>
     <string name="date_time_picker_dialog_title">"Nustatykite datą ir laiką"</string>
     <string name="low_memory_error">"Nepavyko baigti ankstesnio veiksmo dėl atminties trūkumo"</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-lt/android_content_strings.xml -->
+    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-lt/android_content_strings.xml -->
     <eat-comment/>
     <string name="media_player_error_button">"Gerai"</string>
     <string name="media_player_error_text_invalid_progressive_playback">"Apgailestaujame, šis vaizdo įrašas yra netinkamas perduoti srautu į šį įrenginį."</string>
     <string name="media_player_error_text_unknown">"Apgailestaujame, šio vaizdo įrašo negalima paleisti."</string>
     <string name="media_player_error_title">"Nepavyksta paleisti vaizdo įrašo"</string>
     <string name="media_player_loading_video">"Įkel. v. įrašas"</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-lt/android_ui_strings.xml -->
+    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-lt/android_ui_strings.xml -->
     <eat-comment/>
     <string name="month_picker_dialog_title">"Nustatykite mėnesį"</string>
     <string name="opening_file_error">"Atid. pasir. failą įvyko klaida"</string>
     <string name="password_generation_popup_content_description">"Rodomas slaptažodžio generavimo iššokantysis langas"</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-lt/android_content_strings.xml -->
+    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-lt/android_content_strings.xml -->
     <eat-comment/>
     <string name="profiler_error_toast">"Paleidžiant profiliavimo priemonę įvyko klaida"</string>
     <string name="profiler_no_storage_toast">"Nepavyksta paleisti profiliavimo priemonės, nes išorinė atmintis neparuošta"</string>
     <string name="profiler_started_toast">"Profiliavimo priemonė paleista"</string>
     <string name="profiler_stopped_toast">"Profiliavimo priemonės veiksmai baigti. Rezultatai išsaugoti „%1$s“."</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-lt/android_ui_strings.xml -->
+    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-lt/android_ui_strings.xml -->
     <eat-comment/>
     <string name="time_picker_dialog_am">"priešpiet"</string>
     <string name="time_picker_dialog_hour_minute_separator">":"</string>

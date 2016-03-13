@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-hu/android_ui_strings.xml -->
+    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-hu/android_ui_strings.xml -->
     <eat-comment/>
     <string name="accessibility_date_picker_month">"hónap"</string>
     <string name="accessibility_date_picker_week">"Hét"</string>
@@ -12,11 +12,11 @@
     <string name="accessibility_time_picker_milli">"Ezredmásodperc"</string>
     <string name="accessibility_time_picker_minute">"Perc"</string>
     <string name="accessibility_time_picker_second">"Másodperc"</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-hu/android_content_strings.xml -->
+    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-hu/android_content_strings.xml -->
     <eat-comment/>
     <string name="actionbar_share">"Megosztás"</string>
     <string name="actionbar_web_search">"Internetes keresés"</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-hu/android_ui_strings.xml -->
+    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-hu/android_ui_strings.xml -->
     <eat-comment/>
     <string name="autofill_popup_content_description">"Automatikus kitöltés előugró ablakának megjelenítése"</string>
     <string name="color_picker_button_black">"Fekete"</string>
@@ -41,25 +41,25 @@
     <string name="date_picker_dialog_title">"Dátum beállítása"</string>
     <string name="date_time_picker_dialog_title">"Dátum és idő beállítása"</string>
     <string name="low_memory_error">"Az előző műveletet memóriahiány miatt nem lehet elvégezni"</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-hu/android_content_strings.xml -->
+    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-hu/android_content_strings.xml -->
     <eat-comment/>
     <string name="media_player_error_button">"OK"</string>
     <string name="media_player_error_text_invalid_progressive_playback">"Sajnos ezt a videót nem lehet erre az eszközre sugározni."</string>
     <string name="media_player_error_text_unknown">"Sajnos a videót nem lehet lejátszani."</string>
     <string name="media_player_error_title">"Nem lehet lejátszani a videót"</string>
     <string name="media_player_loading_video">"Videó betöltése"</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-hu/android_ui_strings.xml -->
+    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-hu/android_ui_strings.xml -->
     <eat-comment/>
     <string name="month_picker_dialog_title">"Hónap beállítása"</string>
     <string name="opening_file_error">"A fájl megnyitása sikertelen"</string>
     <string name="password_generation_popup_content_description">"Jelszógenerálás előugró ablakának megjelenítése"</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-hu/android_content_strings.xml -->
+    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-hu/android_content_strings.xml -->
     <eat-comment/>
     <string name="profiler_error_toast">"Nem sikerült elindítani a profilozót"</string>
     <string name="profiler_no_storage_toast">"Nem lehet elindítani a profilozót, mert a külső tároló nem áll készen"</string>
     <string name="profiler_started_toast">"A profilozó elindult"</string>
     <string name="profiler_stopped_toast">"A profilozó végzett. Az eredmény a következőben található: %1$s."</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-hu/android_ui_strings.xml -->
+    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-hu/android_ui_strings.xml -->
     <eat-comment/>
     <string name="time_picker_dialog_am">"de."</string>
     <string name="time_picker_dialog_hour_minute_separator">":"</string>

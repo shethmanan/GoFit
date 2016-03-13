@@ -1,65 +1,63 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <link rel="stylesheet" href="css/materialize.css" media="screen,projection"/>
+    <title>CalorieCalculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/navbar.css">
+    <style>
+      ::-webkit-input-placeholder {
+        color: #0d47a1;
+      }
+      .tabs .indicator {
+		   	height: 3px;
+		    background-color: #82b1ff;
+		}
 
-<head>
-  <link rel="stylesheet" href="css/materialize.css" media="screen,projection" />
-  <title>CalorieCalculator</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Roboto" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="css/navbar.css">
-  <style>
-    ::-webkit-input-placeholder {
-      color: #0d47a1;
-    }
-
-    .tabs .indicator {
-      height: 3px;
-      background-color: #82b1ff;
-    }
-  </style>
-</head>
-
-<body>
-  <header></header>
-  <!-- side nav -->
-  <div class="side-section">
-    <ul class="side-nav fixed blue lighten-3" style="left:0px">
-      <li class="logo" style="background-color:transparent;"><img class="profile-pic circle" src="1.jpg"></li>
-      <li class="blue lighten-3">
-        <a href="remider.html" class="waves-effect waves-lighten" style="color:#1976d2;">Set Goals</a>
-      </li>
-      <li class="blue lighten-3">
-        <a href="updated_walk.html" class="waves-effect waves-lighten" style="color:#1976d2;">Exercise</a>
-      </li>
-      <ul class="collapsible collapsible-accordion">
+    </style>
+  </head>
+  <body>
+    <header></header>
+   	<!-- side nav -->
+    <div class="side-section">
+      <ul class="side-nav fixed blue lighten-3" style="left:0px">
+        <li class="logo" style="background-color:transparent;"><img class="profile-pic circle" src="1.jpg"></li>
         <li class="blue lighten-3">
-          <a class="collapsible-header" class="waves-effect waves-lighten" style="color:#1976d2;">Calculators</a>
-          <div class="collapsible-body">
-            <ul>
-              <li class="blue lighten-3">
-                <a href="BMICal.html" class="waves-effect waves-lighten" style="color:#1976d2;">BMI Calculator</a>
-              </li>
-              <li class="blue lighten-3">
-                <a href="calorieCalculator.html" class="waves-effect waves-lighten" style="color:#1976d2;">Calorie Calculator</a>
-              </li>
-            </ul>
-          </div>
+          <a href="remider.html" class="waves-effect waves-lighten" style="color:#1976d2;">Set Goals</a>
         </li>
-      </ul>
+        <li class="blue lighten-3">
+          <a href="updated_walk.html" class="waves-effect waves-lighten" style="color:#1976d2;">Exercise</a>
+        </li>
+        <ul class="collapsible collapsible-accordion">
+          <li class="blue lighten-3">
+            <a class="collapsible-header" class="waves-effect waves-lighten" style="color:#1976d2;">Calculators</a>
+            <div class="collapsible-body">
+              <ul>
+                <li class="blue lighten-3">
+                  <a href="BMICal.html" class="waves-effect waves-lighten" style="color:#1976d2;">BMI Calculator</a>
+                </li>
+                <li class="blue lighten-3">
+                  <a href="calorieCalculator.html" class="waves-effect waves-lighten" style="color:#1976d2;">Calorie Calculator</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
       <li class="blue lighten-3">
         <a href="#!" class="waves-effect waves-lighten" style="color:#1976d2;">Help</a>
       </li>
     </ul>
   </div>
   <main>
-    <!-- side nav btn -->
+  <!-- side nav btn -->
     <div class="row blue darken-2 no-margin">
       <a class="waves-effect waves-lighten btn-flat large" id="nav-btn">
         <i class="large material-icons" style="color:white;font-size: xx-large;">list</i>
       </a>
     </div>
-    <!-- side nav btn ends -->
+   <!-- side nav btn ends -->
     <!-- side nav ends -->
     <div class="row">
       <div class="col s12 no-padding">
@@ -79,7 +77,7 @@
                 <form id="us-unitCC">
                   <div class="row no-margin">
                     <div class="input-field col s4">
-                      <input id="age-us" type="text" name="age">
+                      <input id="age" type="number" name="age">
                       <label for="age">AGE</label>
                     </div>
                     <div class="input-field col s8 no-padding">
@@ -95,21 +93,21 @@
                   </div>
                   <div class="row no-margin">
                     <div class="input-field col s4">
-                      <input class="height" placeholder="Height" id="feet-us" type="number" name="feet" onkeyup="heightConvertercm()">
+                      <input class="height" placeholder="Height" id="feet" type="number" name="feet" value="1" onkeyup="heightConvertercm()">
                       <label for="feet">Feet</label>
                     </div>
                     <div class="input-field col s4">
-                      <input class="height" placeholder="Height" id="inches-us" type="number" name="inches" onkeyup="heightConvertercm()">
+                      <input class="height" placeholder="Height" id="inches" type="number" name="inches" value="1" onkeyup="heightConvertercm()">
                       <label for="inches">Inches</label>
                     </div>
                     <div class="input-field col s4">
-                      <input class="height" placeholder="Height" id="cms-us" type="number" name="cms" onkeyup="heightConverter(this.value)">
+                      <input class="height" placeholder="Height" id="cms" type="number" name="cms" onkeyup="heightConverter(this.value)">
                       <label for="cms">Cms</label>
                     </div>
                   </div>
                   <div class="row no-margin">
                     <div class="input-field col s4">
-                      <input class="weight" placeholder="Pounds" id="weight-us" type="number" name="weight">
+                      <input class="weight" placeholder="Pounds" id="weight" type="number" name="weight">
                       <label for="weight">Weight</label>
                     </div>
                     <div class="input-field col s8">
@@ -133,9 +131,9 @@
               <ul id="results">
                 <li id="cneed" style="opacity: 0; color: blue; font-size: 16px; font-family: cursive"></li>
                 <li id="fneed" style="opacity: 0; color: blue; font-size: 16px; font-family: cursive"></li>
-                <li id="crneed" style="opacity: 0; color: blue; font-size: 16px; font-family: cursive"></li>
-                <li id="aneed" style="opacity: 0; color: blue; font-size: 16px; font-family: cursive"></li>
-                <li id="pneed" style="opacity: 0; color: blue; font-size: 16px; font-family: cursive"></li>
+								<li id="crneed" style="opacity: 0; color: blue; font-size: 16px; font-family: cursive"></li>
+								<li id="aneed" style="opacity: 0; color: blue; font-size: 16px; font-family: cursive"></li>
+								<li id="pneed" style="opacity: 0; color: blue; font-size: 16px; font-family: cursive"></li>
               </ul>
               <center>
                 <!--preloader-->
@@ -165,7 +163,7 @@
                 <form id="m-unitCC">
                   <div class="row no-margin">
                     <div class="input-field col s4">
-                      <input id="age-mu" type="text" name="age">
+                      <input id="age-mu" type="number" name="age">
                       <label for="age">AGE</label>
                     </div>
                     <div class="input-field col s8 no-padding">
@@ -211,9 +209,9 @@
               <ul id="results-mu">
                 <li id="cneed-mu" style="opacity: 0; color: blue; font-size: 16px; font-family: cursive"></li>
                 <li id="fneed-mu" style="opacity: 0; color: blue; font-size: 16px; font-family: cursive"></li>
-                <li id="crneed-mu" style="opacity: 0; color: blue; font-size: 16px; font-family: cursive"></li>
-                <li id="aneed-mu" style="opacity: 0; color: blue; font-size: 16px; font-family: cursive"></li>
-                <li id="pneed-mu" style="opacity: 0; color: blue; font-size: 16px; font-family: cursive"></li>
+								<li id="crneed-mu" style="opacity: 0; color: blue; font-size: 16px; font-family: cursive"></li>
+								<li id="aneed-mu" style="opacity: 0; color: blue; font-size: 16px; font-family: cursive"></li>
+								<li id="pneed-mu" style="opacity: 0; color: blue; font-size: 16px; font-family: cursive"></li>
               </ul>
               <center>
                 <!--preloader-->
@@ -243,50 +241,34 @@
   <script type="text/javascript" src="js/materialize.js"></script>
   <script type="text/javascript" src="js/navbar-transition.js"></script>
   <script type="text/javascript">
-    var cneed; //calories needed
-    var fneed; //fat needed
-    var crneed; //carbohydrates needed
-    var pneed; //protien needed
-    var aneed; //alcohol needed
-    var fd;
-    $(document).ready(function() {
-      var personaldetails = localStorage.getItem("user");
-      var details = JSON.parse(personaldetails);
-      $("#age-us").val(details.age);
-      $("#age-mu").val(details.age);
-      $("#cms-us").val(details.height);
-      $("#cms-mu").val(details.height);
-      heightConverter(details.height);
-      $("#weight-us").val(KtoLbs(details.weight));
-      $("#weight-mu").val(details.weight);
+	var cneed; //calories needed
+	var fneed; //fat needed
+	var crneed;//carbohydrates needed
+	var pneed;//protien needed
+	var aneed;//alcohol needed
+	var fd;
+    $(document).ready(function () {
       $('ul.tabs').tabs();
       $('.collapsible').collapsible();
       $('select').material_select();
-      $("#submit").click(function() {
+      $("#submit").click(function () {
         calculateCalorieUS($("form#us-unitCC").serializeArray());
       });
-      $("#submit-mu").click(function() {
+      $("#submit-mu").click(function(){
         calculateCalorieMU($("form#m-unitCC").serializeArray());
       });
     });
-
-    function KtoLbs(pK) {
-      var nearExact = pK / 0.45359237;
-      var lbs = Math.floor(nearExact);
-      return lbs
-    }
-
     function calculateCalorieUS(data) {
       var age = data[0].value;
       var gen = data[1].value;
       var feet = data[2].value;
       var inch = data[3].value;
       var cm = data[4].value;
-      // calculating weight
-      var weight = Math.round(parseInt(data[5].value) / 2.2046);
-      //done calculating
+			// calculating weight
+			var weight = Math.round(parseInt(data[5].value)/ 2.2046);
+			//done calculating
       var loa = data[6].value;
-      switch (gen) {
+      switch(gen) {
         case "male":
           fd = (10 * weight) + (6.25 * cm) - (5 * age) + 5;
           break;
@@ -294,11 +276,11 @@
           fd = (10 * weight) + (6.25 * cm) - (5 * age) - 161;
           break;
         default:
-          console.log("something went wrong");
+					console.log("something went wrong");
           break;
       }
       // calorie needed
-      cneed = fd * loa;
+      cneed = fd*loa;
       cneed = Math.floor(cneed);
       // fat needed
       fneed = Math.floor((cneed * 0.25) / 9);
@@ -312,7 +294,7 @@
       // alcohol needed
       aneed = Math.floor((cneed * 0.25) / 7);
       aneed = Math.floor(aneed * 0.0353);
-      console.log(fd);
+			console.log(fd);
       console.log(data);
       var fat1 = fneed * 0.0022;
       var pro1 = pneed * 0.0022;
@@ -322,43 +304,40 @@
       pro1 = pro1.toFixed(3);
       car1 = car1.toFixed(3);
       alh1 = alh1.toFixed(3);
-      $("#cneed").html("Calories Needed : " + cneed);
-      $("#fneed").html("Fats : " + fat1 + " lbs");
-      $("#pneed").html("Protiens : " + pro1 + " lbs");
-      $("#crneed").html("Carbohydrates : " + car1 + " lbs");
-      $("#aneed").html("Alcohol : " + alh1 + " lbs");
+      $("#cneed").html("Calories Needed : "+cneed);
+      $("#fneed").html("Fats : "+fat1+" lbs");
+      $("#pneed").html("Protiens : "+pro1+" lbs");
+      $("#crneed").html("Carbohydrates : "+car1+" lbs");
+      $("#aneed").html("Alcohol : "+alh1+" lbs");
       Materialize.showStaggeredList('#results');
     }
-
-    function heightConvertercm() {
+    function heightConvertercm(){
       var hf = parseInt($("#feet").val());
       var hi = parseInt($("#inches").val());
       var hc;
       hc = Math.round((hf * 30.48) + (hi * 2.54));
       console.log(hc);
-      $("#cms").val("" + hc);
+      $("#cms").val(""+hc);
     }
-
-    function heightConverter(cms) {
+    function heightConverter(cms){
       var hc = parseInt(cms);
       var hi = hc / 2.54;
       var hf = Math.floor(hi / 12);
       var ri = Math.round(hi % 12);
       if (hc > 40 && hc <= 210) {
-        $("#feet-us").val(hf);
+          $("#feet").val(hf);
       }
-      $("#inches-us").val(ri);
+      $("#inches").val(ri);
     }
-
-    function calculateCalorieMU(data) {
+    function calculateCalorieMU(data){
       console.log(data);
       var age = data[0].value;
       var gen = data[1].value;
       var cm = data[2].value;
-      var weight = parseInt(data[3].value);
+			var weight =parseInt(data[3].value);
       var loa = data[4].value;
       // check gender
-      switch (gen) {
+      switch(gen) {
         case "male":
           fd = (10 * weight) + (6.25 * cm) - (5 * age) + 5;
           break;
@@ -366,7 +345,7 @@
           fd = (10 * weight) + (6.25 * cm) - (5 * age) - 161;
           break;
         default:
-          console.log("something went wrong");
+					console.log("something went wrong");
           break;
       }
       cneed = fd * loa;
@@ -374,14 +353,13 @@
       pneed = Math.floor((cneed * 0.25) / 4);
       crneed = Math.floor((cneed * 0.25) / 4);
       aneed = Math.floor((cneed * 0.25) / 7);
-      $("#cneed-mu").html("Calories needed :" + cneed + " grams");
-      $("#fneed-mu").html("Fats :" + fneed + " grams");
-      $("#crneed-mu").html("Carbohydrates :" + crneed + " grams");
-      $("#aneed-mu").html("Alcohol : " + aneed + " grams");
-      $("#pneed-mu").html("Protien : " + pneed + " grams");
+      $("#cneed-mu").html("Calories needed :"+cneed+" grams");
+      $("#fneed-mu").html("Fats :"+fneed+" grams");
+      $("#crneed-mu").html("Carbohydrates :"+crneed+" grams");
+      $("#aneed-mu").html("Alcohol : "+aneed+" grams");
+      $("#pneed-mu").html("Protien : "+pneed+" grams");
       Materialize.showStaggeredList('#results-mu');
     }
   </script>
 </body>
-
 </html>

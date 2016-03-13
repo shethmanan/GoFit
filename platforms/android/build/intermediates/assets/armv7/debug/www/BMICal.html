@@ -15,7 +15,7 @@
 		   	height: 3px;
 		    background-color: #82b1ff;
 		}
-
+		
     </style>
   </head>
   <body>
@@ -85,13 +85,13 @@
                       <label for="inches">Inches</label>
                     </div>
                     <div class="input-field col s4">
-                      <input class="height" placeholder="Height" id="cms-us" type="number" name="cms" onkeyup="heightConverter(this.value)">
+                      <input class="height" placeholder="Height" id="cms" type="number" name="cms" onkeyup="heightConverter(this.value)">
                       <label for="cms">Cms</label>
                     </div>
                   </div>
                   <div class="row no-margin">
                     <div class="input-field col s4">
-                      <input class="weight" placeholder="Pounds" id="weight-us" type="number" name="weight">
+                      <input class="weight" placeholder="Pounds" id="weight" type="number" name="weight">
                       <label for="weight">Weight</label>
                     </div>
                   </div>
@@ -196,13 +196,6 @@
   <script type="text/javascript">
 	var bmi;
     $(document).ready(function () {
-      var personaldetails=localStorage.getItem("user");
-      var details = JSON.parse(personaldetails);
-      $("#weight-us").val(KtoLbs(details.weight));
-      $("#weight-mu").val(details.weight);
-      $("#cms-us").val(details.height);
-      heightConverter(details.height);
-      $("#cms-mu").val(details.height);
       $('ul.tabs').tabs();
       $('.collapsible').collapsible();
       //US unit function calling
@@ -214,27 +207,24 @@
         calculateBMIMU($("form#m-unitBMI").serializeArray());
       });
     });
-    function KtoLbs(pK) {
-  var nearExact = pK/0.45359237;
-  var lbs = Math.floor(nearExact);
-  return lbs
-}
     function calculateBMIUS(data) {
       var feet = data[0].value;
       var inch = data[1].value;
-
+      
       inch = parseInt(inch) + parseInt((feet * 12));
-
+      
       var cm = data[2].value;
 			// calculating weight
 	  var weight = Math.round(parseInt(data[3].value));
 			//done calculating
-
+            
       bmi = ( weight / ( inch * inch ) ) * 703;
       bmi= Math.round(bmi * 10) / 10;
-
+       
       $("#bmi").html("Your Body Mass Index Is : "+bmi);
   		 if(bmi < 18.5){
+        var myWeight = document.querySelector("#your-weight");
+        myWeight.style.color = "red";
   		 	$("#your-weight").html("You are UnderWeight.");
   		 	$("#tip-head").html("Tips that can be followed : ")
       		$("#tip-1").html("Drink 6-8 glasses of distilled water a day.");
@@ -244,6 +234,8 @@
       		$("#tip-5").html("Increase your intake of complex carbohydrates, particularly whole grain ones");
   	     }
   	     if(bmi >= 18.5 && bmi <= 24.99){
+          var myWeight = document.querySelector("#your-weight");
+          myWeight.style.color = "blue";
   	     	$("#your-weight").html("You have normal weight");
   	     	$("#tip-head").html("You dont need any tips to be followed.");
   	     	$("#tip-1").html("You just have to maintain your weight.");
@@ -254,8 +246,10 @@
 
   	     }
   	     else if(bmi >=25 && bmi <= 29.99){
-  		 	$("#your-weight").html("You are Over Weight.");
-  		 	$("#tip-head").html("Tips that can be followed:")
+          var myWeight = document.querySelector("#your-weight");
+          myWeight.style.color = "red";
+  		 	  $("#your-weight").html("You are Over Weight.");
+  		 	  $("#tip-head").html("Tips that can be followed:")
       		$("#tip-1").html("Drink min 8 glasses of water a day.");
       		$("#tip-2").html("Consume fewer calories than you burn, you will lose weight. ");
       		$("#tip-3").html("Become more physically active or by eating less.");
@@ -263,8 +257,10 @@
       		$("#tip-5").html("Stop Cola consumption.");
   	     }
   	     else if(bmi>=30){
-  	     	$("#your-weight").html("You are obese.");
-  		 	$("#tip-head").html("Tips that can be followed:");
+          var myWeight = document.querySelector("#your-weight");
+          myWeight.style.color = "red";  	     
+         	$("#your-weight").html("You are obese.");
+  		 	  $("#tip-head").html("Tips that can be followed:");
       		$("#tip-1").html("Eat a variety of foods, especially pasta, rice and other whole-grain foods..");
       		$("#tip-2").html("Reduce your fat-intake. ");
       		$("#tip-3").html("Eat lots of fruits and vegetables.");
@@ -303,9 +299,11 @@
       //var loa = data[4].value;
       bmi = ( weight / ( cm * cm) );
       bmi= Math.round(bmi * 10) / 10;
-
+       
       $("#bmi-mu").html("Your Body Mass Index Is : "+bmi);
   		 if(bmi < 18.5){
+        var myWeight = document.querySelector("#your-muweight");
+        myWeight.style.color = "red";
   		 	$("#your-muweight").html("You are UnderWeight.");
   		 	$("#tip-muhead").html("Tips that can be followed:");
       		$("#tip-mu1").html("Drink 6-8 glasses of distilled water a day.");
@@ -315,6 +313,8 @@
       		$("#tip-mu5").html("Increase your intake of complex carbohydrates, particularly whole grain ones");
   	     }
   	     if(bmi >= 18.5 && bmi <= 24.99){
+          var myWeight = document.querySelector("#your-muweight");
+          myWeight.style.color = "blue";
   	     	$("#your-muweight").html("You have normal weight");
   	     	$("#tip-muhead").html("You dont need any tips to be followed.");
   	     	$("#tip-mu1").html("You just have to maintain your weight.");
@@ -325,8 +325,10 @@
 
   	     }
   	     else if(bmi >=25 && bmi <= 29.99){
-  		 	$("#your-muweight").html("You are Over Weight.");
-  		 	$("#tip-muhead").html("Tips that can be followed:")
+          var myWeight = document.querySelector("#your-muweight");
+          myWeight.style.color = "red";
+  		 	  $("#your-muweight").html("You are Over Weight.");
+  		 	  $("#tip-muhead").html("Tips that can be followed:")
       		$("#tip-mu1").html("Drink min 8 glasses of water a day.");
       		$("#tip-mu2").html("Consume fewer calories than you burn, you will lose weight. ");
       		$("#tip-mu3").html("Become more physically active or by eating less.");
@@ -334,8 +336,10 @@
       		$("#tip-mu5").html("Stop Cola consumption.");
   	     }
   	     else if(bmi>=30){
+          var myWeight = document.querySelector("#your-muweight");
+          myWeight.style.color = "red";
   	     	$("#your-muweight").html("Your are obese.");
-  		 	$("#tip-muhead").html("Tips that can be followed:")
+  		 	  $("#tip-muhead").html("Tips that can be followed:")
       		$("#tip-mu1").html("Eat a variety of foods, especially pasta, rice and other whole-grain foods..");
       		$("#tip-mu2").html("Reduce your fat-intake. ");
       		$("#tip-mu3").html("Eat lots of fruits and vegetables.");
