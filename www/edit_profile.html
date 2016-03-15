@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/navbar.css">
     <style>
-      .input-form{
+      .input-form {
         position: relative;
         top: 35%;
       }
@@ -23,12 +23,8 @@
     <div class="side-section">
       <ul class="side-nav fixed blue lighten-3" style="left:0px">
         <li class="logo" style="background-color:transparent;"><img class="profile-pic circle" src="1.jpg"></li>
-        <li class="blue lighten-3">
-          <a href="remider.html" class="waves-effect waves-lighten" style="color:#1976d2;">Set Goals</a>
-        </li>
-        <li class="blue lighten-3">
-          <a href="updated_walk.html" class="waves-effect waves-lighten" style="color:#1976d2;">Exercise</a>
-        </li>
+        <li class="blue lighten-3"><a href="remider.html" class="waves-effect waves-lighten" style="color:#1976d2;">Set Reminders</a></li>
+        <li class="blue lighten-3"><a href="updated_walk.html" class="waves-effect waves-lighten" style="color:#1976d2;">Exercise</a></li>
         <ul class="collapsible collapsible-accordion">
           <li class="blue lighten-3">
             <a class="collapsible-header" class="waves-effect waves-lighten" style="color:#1976d2;">Calculators</a>
@@ -44,9 +40,8 @@
             </div>
           </li>
         </ul>
-        <li class="blue lighten-3">
-          <a href="#!" class="waves-effect waves-lighten" style="color:#1976d2;">Help</a>
-        </li>
+        <li class=" blue lighten-3"><a href="edit_profile.html" class="waves-effect waves-lighten" style="color:#1976d2;">My Profile</a></li>
+        <li class="blue lighten-3"><a href="#!" class="waves-effect waves-lighten" style="color:#1976d2;">Help</a></li>
       </ul>
     </div>
     <main>
@@ -57,7 +52,7 @@
         </a>
       </div>
       <!-- side nav btn ends -->
-      <!-- side nav ends -->
+      <!-- side nav -->
       <div class="input-form">
         <form id="personal-info">
           <div class="row no-margin no-padding">
@@ -101,44 +96,45 @@
       <script type="text/javascript" src="js/materialize.js"></script>
       <script type="text/javascript" src="js/navbar-transition.js"></script>
       <script type="text/javascript">
-      $(document).ready(function(){
-        $('select').material_select();
-        var personaldetails = localStorage.getItem("user");
-        var details = JSON.parse(personaldetails);
-        $("#name").val(details.name);
-        $("#age").val(details.age);
-        $("#weight").val(details.weight);
-        $("#height").val(details.height);
-        $("#submitbtn").click(function() {
-          localStorage.removeItem("user");
-          var details = $('#personal-info').serializeArray();
-          if(!checkInfo(details)){
-            Materialize.toast('Please fill in all your details', 4000)
-            return false;
-          }
-          var data = getdata(details);
-          localStorage.setItem("user",data);
-          Materialize.toast('Your details have been modified', 4000)
+        $(document).ready(function() {
+          $('select').material_select();
+          var personaldetails = localStorage.getItem("user");
+          var details = JSON.parse(personaldetails);
+          $("#name").val(details.name);
+          $("#age").val(details.age);
+          $("#weight").val(details.weight);
+          $("#height").val(details.height);
+          $("#submitbtn").click(function() {
+            localStorage.removeItem("user");
+            var details = $('#personal-info').serializeArray();
+            if (!checkInfo(details)) {
+              Materialize.toast('Please fill in all your details', 4000)
+              return false;
+            }
+            var data = getdata(details);
+            localStorage.setItem("user", data);
+            Materialize.toast('Your details have been modified', 4000)
+          });
         });
-      });
-      function checkInfo(details){
-        for (var i = 0; i < 5; i++) {
-          if(details[i].value == 0) return false;
+
+        function checkInfo(details) {
+          for (var i = 0; i < 5; i++) {
+            if (details[i].value == 0) return false;
+          }
+          return true;
         }
-        return true;
-      }
-      function getdata(details)
-      {
-        var data ="{";
-        for (var i = 0; i < 5; i++) {
-          data = data +'"'+details[i].name+'":"'+details[i].value+'",';
+
+        function getdata(details) {
+          var data = "{";
+          for (var i = 0; i < 5; i++) {
+            data = data + '"' + details[i].name + '":"' + details[i].value + '",';
+          }
+          data = data.replaceAt(data.lastIndexOf(","), "}");
+          return data;
         }
-        data = data.replaceAt(data.lastIndexOf(","),"}");
-        return data;
-      }
-      String.prototype.replaceAt=function(index, character) {
-      return this.substr(0, index) + character + this.substr(index+character.length);
-      }
+        String.prototype.replaceAt = function(index, character) {
+          return this.substr(0, index) + character + this.substr(index + character.length);
+        }
       </script>
   </body>
 

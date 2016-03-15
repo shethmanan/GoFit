@@ -3,9 +3,9 @@
 
 <head>
   <script type="text/javascript">
-  if(localStorage.getItem("user")!= null){
-    console.log(localStorage.getItem("user"));
-  }
+    if (localStorage.getItem("user") != null) {
+      window.location = 'navbar.html';
+    }
   </script>
   <meta charset="utf-8">
   <title>Login</title>
@@ -13,10 +13,11 @@
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-  .input-form{
-    position:relative;
-    top: 10vh;
-  }
+    .input-form {
+      position: relative;
+      top: 10vh;
+    }
+
     body {
       background-image: url("img/body.jpg");
       background-size: 100vw 100vh;
@@ -97,7 +98,8 @@
     .no-margin {
       margin: 0;
     }
-    .logo{
+
+    .logo {
       margin-top: 35px;
     }
   </style>
@@ -106,9 +108,9 @@
 <body>
   <div class="background-edit"></div>
   <div class="logo">
-      <center>
-        <img src="img/logo.png" alt="" />
-      </center>
+    <center>
+      <img src="img/logo.png" alt="" />
+    </center>
   </div>
   <div class="input-form">
     <form id="personal-info">
@@ -134,7 +136,7 @@
       </div>
       <div class="row no-margin no-padding">
         <div class="input-field col s12">
-          <select name ="gender">
+          <select name="gender">
             <option data-icon="img/male.ico" class="left circle" value="Male" selected>Male</option>
             <option data-icon="img/female.ico" class="left circle" value="Female">Female</option>
           </select>
@@ -143,7 +145,7 @@
       </div>
       <div class="row no-margin no-padding">
         <div class="col 4 offset-s4 no-padding">
-          <a class="waves-effect waves-light blue accent-2 btn white-text" id="submitbtn" href="#"><i class="material-icons right white-text">cloud</i>Submit</a>
+          <a class="waves-effect waves-light blue accent-2 btn white-text" id="submitbtn" href="navbar.html"><i class="material-icons right white-text">cloud</i>Submit</a>
         </div>
       </div>
     </form>
@@ -155,31 +157,32 @@
       $('select').material_select();
       $("#submitbtn").click(function() {
         var details = $('#personal-info').serializeArray();
-        if(!checkInfo(details)){
+        if (!checkInfo(details)) {
           Materialize.toast('Please fill in all your details', 4000)
           return false;
         }
         var data = getdata(details);
-        localStorage.setItem("user",data);
+        localStorage.setItem("user", data);
       });
     });
-    function checkInfo(details){
+
+    function checkInfo(details) {
       for (var i = 0; i < 5; i++) {
-        if(details[i].value == 0) return false;
+        if (details[i].value == 0) return false;
       }
       return true;
     }
-    function getdata(details)
-    {
-      var data ="{";
+
+    function getdata(details) {
+      var data = "{";
       for (var i = 0; i < 5; i++) {
-        data = data +'"'+details[i].name+'":"'+details[i].value+'",';
+        data = data + '"' + details[i].name + '":"' + details[i].value + '",';
       }
-      data = data.replaceAt(data.lastIndexOf(","),"}");
+      data = data.replaceAt(data.lastIndexOf(","), "}");
       return data;
     }
-    String.prototype.replaceAt=function(index, character) {
-    return this.substr(0, index) + character + this.substr(index+character.length);
+    String.prototype.replaceAt = function(index, character) {
+      return this.substr(0, index) + character + this.substr(index + character.length);
     }
   </script>
 </body>
