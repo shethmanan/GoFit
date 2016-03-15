@@ -12,8 +12,27 @@
     <link rel="stylesheet" href="css/input-field-style.css" media="screen" title="no title" charset="utf-8">
     <style>
       .input-form {
+        position: absolute;
+        top: 50%;
+      }
+
+      .my-profile-pic {
+        width: 200px;
+        height: 200px;
+      }
+
+      .edit-icon {
         position: relative;
-        top: 35%;
+        bottom: 56px;
+      }
+      .btn-edit{
+        border-radius: 0px;
+        background-color: hsla(0, 100%, 50%, 0);
+        box-shadow: none;
+      }
+      .btn-edit:hover{
+        background-color: hsla(0, 100%, 50%, 0);
+        box-shadow: none;
       }
     </style>
   </head>
@@ -54,6 +73,24 @@
       </div>
       <!-- side nav btn ends -->
       <!-- side nav -->
+      <section>
+        <div class="row">
+          <div class="col s8 offset-s3 no-padding">
+            <div class="my-profile-pic card">
+              <div class="card-image">
+                <img src="img/pro-pic.png">
+                <div class="row edit-icon">
+                  <div class="col s4 offset-s8">
+                    <a class="btn-floating btn-large waves-effect waves-light btn-edit">
+                      <i class="large material-icons">mode_edit</i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <div class="input-form">
         <form id="personal-info">
           <div class="row no-margin no-padding">
