@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-ko/android_ui_strings.xml -->
+    <!-- From: file:/C:/cordova/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-ko/android_ui_strings.xml -->
     <eat-comment/>
     <string name="accessibility_date_picker_month">"월"</string>
     <string name="accessibility_date_picker_week">"주"</string>
@@ -12,11 +12,11 @@
     <string name="accessibility_time_picker_milli">"밀리초"</string>
     <string name="accessibility_time_picker_minute">"분"</string>
     <string name="accessibility_time_picker_second">"초"</string>
-    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-ko/android_content_strings.xml -->
+    <!-- From: file:/C:/cordova/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-ko/android_content_strings.xml -->
     <eat-comment/>
     <string name="actionbar_share">"공유"</string>
     <string name="actionbar_web_search">"웹 검색"</string>
-    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-ko/android_ui_strings.xml -->
+    <!-- From: file:/C:/cordova/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-ko/android_ui_strings.xml -->
     <eat-comment/>
     <string name="autofill_popup_content_description">"자동완성 팝업 표시"</string>
     <string name="color_picker_button_black">"검정색"</string>
@@ -41,25 +41,25 @@
     <string name="date_picker_dialog_title">"날짜 설정"</string>
     <string name="date_time_picker_dialog_title">"날짜 및 시간 설정"</string>
     <string name="low_memory_error">"메모리가 부족하여 이전 작업을 완료할 수 없습니다."</string>
-    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-ko/android_content_strings.xml -->
+    <!-- From: file:/C:/cordova/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-ko/android_content_strings.xml -->
     <eat-comment/>
     <string name="media_player_error_button">"확인"</string>
     <string name="media_player_error_text_invalid_progressive_playback">"죄송합니다. 이 동영상은 이 기기로 스트리밍할 수 없습니다."</string>
     <string name="media_player_error_text_unknown">"동영상을 재생할 수 없습니다."</string>
     <string name="media_player_error_title">"동영상 재생 안됨"</string>
     <string name="media_player_loading_video">"동영상 로드 중"</string>
-    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-ko/android_ui_strings.xml -->
+    <!-- From: file:/C:/cordova/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-ko/android_ui_strings.xml -->
     <eat-comment/>
     <string name="month_picker_dialog_title">"월 설정"</string>
     <string name="opening_file_error">"선택한 파일을 열지 못했습니다."</string>
     <string name="password_generation_popup_content_description">"비밀번호 생성 팝업 표시"</string>
-    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-ko/android_content_strings.xml -->
+    <!-- From: file:/C:/cordova/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-ko/android_content_strings.xml -->
     <eat-comment/>
     <string name="profiler_error_toast">"프로파일러를 시작하지 못했습니다."</string>
     <string name="profiler_no_storage_toast">"외부 저장소가 준비되지 않아 프로파일러를 시작할 수 없습니다."</string>
     <string name="profiler_started_toast">"프로파일러가 시작되었습니다."</string>
     <string name="profiler_stopped_toast">"프로파일러가 완료되었습니다. 결과는 %1$s에 있습니다."</string>
-    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-ko/android_ui_strings.xml -->
+    <!-- From: file:/C:/cordova/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-ko/android_ui_strings.xml -->
     <eat-comment/>
     <string name="time_picker_dialog_am">"오전"</string>
     <string name="time_picker_dialog_hour_minute_separator">":"</string>

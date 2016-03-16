@@ -1,43 +1,41 @@
 <html>
-  <head>
-    <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection"/>
-    <link rel="stylesheet" type="text/css" href="css/navbar.css"/>
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-    <link rel="stylesheet" type="text/css" href="css/updated_walk.css"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <style>
 
-		</style>
-  </head>
-  <body>
-    <header></header>
-    <div class="side-section">
-      <ul class="side-nav fixed blue lighten-3" style="left:0px">
-        <li class="logo" style="background-color:transparent;"><img class="profile-pic circle" src="1.jpg"></li>
+<head>
+  <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
+  <link rel="stylesheet" type="text/css" href="css/navbar.css" />
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="css/updated_walk.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <header></header>
+  <!-- side nav -->
+  <div class="side-section">
+    <ul class="side-nav fixed blue lighten-3" style="left:0px">
+      <li class="logo" style="background-color:transparent;"><img class="profile-pic circle" src="1.jpg"></li>
+      <li class="blue lighten-3"><a href="remider.html" class="waves-effect waves-lighten" style="color:#1976d2;">Set Reminders</a></li>
+      <li class="blue lighten-3"><a href="updated_walk.html" class="waves-effect waves-lighten" style="color:#1976d2;">Exercise</a></li>
+      <ul class="collapsible collapsible-accordion">
         <li class="blue lighten-3">
-          <a href="remider.html" class="waves-effect waves-lighten" style="color:#1976d2;">Set Goals</a>
+          <a class="collapsible-header" class="waves-effect waves-lighten" style="color:#1976d2;">Calculators</a>
+          <div class="collapsible-body">
+            <ul>
+              <li class="blue lighten-3">
+                <a href="BMICal.html" class="waves-effect waves-lighten" style="color:#1976d2;">BMI Calculator</a>
+              </li>
+              <li class="blue lighten-3">
+                <a href="calorieCalculator.html" class="waves-effect waves-lighten" style="color:#1976d2;">Calorie Calculator</a>
+              </li>
+            </ul>
+          </div>
         </li>
-        <li class="blue lighten-3">
-          <a href="updated_walk.html" class="waves-effect waves-lighten" style="color:#1976d2;">Exercise</a>
-        </li>
-        <ul class="collapsible collapsible-accordion">
-          <li class="blue lighten-3">
-            <a class="collapsible-header" class="waves-effect waves-lighten" style="color:#1976d2;">Calculators</a>
-            <div class="collapsible-body">
-              <ul>
-                <li class="blue lighten-3">
-                  <a href="BMICal.html" class="waves-effect waves-lighten" style="color:#1976d2;">BMI Calculator</a>
-                </li>
-                <li class="blue lighten-3">
-                  <a href="calorieCalculator.html" class="waves-effect waves-lighten" style="color:#1976d2;">Calorie Calculator</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      <li class="blue lighten-3">
-        <a href="#!" class="waves-effect waves-lighten" style="color:#1976d2;">Help</a>
-      </li>
+      </ul>
+      <li class=" blue lighten-3"><a href="edit_profile.html" class="waves-effect waves-lighten" style="color:#1976d2;">My Profile</a></li>
+      <li class="blue lighten-3"><a href="#!" class="waves-effect waves-lighten" style="color:#1976d2;">Help</a></li>
     </ul>
   </div>
   <main>
@@ -48,7 +46,7 @@
       </a>
     </div>
     <!-- side nav btn ends -->
-    <!-- side nav ends -->
+    <!-- side nav -->
     <div class="row">
       <div class="col s12 no-padding">
         <div class="card blue no-padding darken-1 white-text step" style="margin-top:0;position:relative;">
@@ -100,12 +98,14 @@
       <div class="col s3 offset-s2">
         <i class="material-icons small logo_color">timer</i>
         <div class="blue-text">
-          &nbsp&nbsp<div class="dynamic">40
+          &nbsp&nbsp
+          <div class="dynamic">40
           </div>mins</div>
       </div>
       <div class="col s2 offset-s2">
         <i class="material-icons logo_color">motorcycle</i>
-        <div class="blue-text">&nbsp&nbsp<div class="dynamic">350</div>steps</div>
+        <div class="blue-text">&nbsp&nbsp
+          <div class="dynamic">350</div>steps</div>
       </div>
     </div>
     <br>

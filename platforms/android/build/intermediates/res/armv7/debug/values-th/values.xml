@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-th/android_ui_strings.xml -->
+    <!-- From: file:/C:/cordova/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-th/android_ui_strings.xml -->
     <eat-comment/>
     <string name="accessibility_date_picker_month">"เดือน"</string>
     <string name="accessibility_date_picker_week">"สัปดาห์"</string>
@@ -12,11 +12,11 @@
     <string name="accessibility_time_picker_milli">"มิลลิวินาที"</string>
     <string name="accessibility_time_picker_minute">"นาที"</string>
     <string name="accessibility_time_picker_second">"วินาที"</string>
-    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-th/android_content_strings.xml -->
+    <!-- From: file:/C:/cordova/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-th/android_content_strings.xml -->
     <eat-comment/>
     <string name="actionbar_share">"แชร์"</string>
     <string name="actionbar_web_search">"ค้นเว็บ"</string>
-    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-th/android_ui_strings.xml -->
+    <!-- From: file:/C:/cordova/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-th/android_ui_strings.xml -->
     <eat-comment/>
     <string name="autofill_popup_content_description">"กำลังแสดงป๊อปอัปการป้อนข้อความอัตโนมัติ"</string>
     <string name="color_picker_button_black">"สีดำ"</string>
@@ -41,25 +41,25 @@
     <string name="date_picker_dialog_title">"ตั้งวันที่"</string>
     <string name="date_time_picker_dialog_title">"ตั้งวันที่และเวลา"</string>
     <string name="low_memory_error">"ไม่สามารถดำเนินการก่อนหน้าให้สิ้นสุดได้เพราะหน่วยความจำเหลือน้อย"</string>
-    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-th/android_content_strings.xml -->
+    <!-- From: file:/C:/cordova/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-th/android_content_strings.xml -->
     <eat-comment/>
     <string name="media_player_error_button">"ตกลง"</string>
     <string name="media_player_error_text_invalid_progressive_playback">"ขออภัย ไม่สามารถสตรีมวิดีโอไปยังอุปกรณ์นี้"</string>
     <string name="media_player_error_text_unknown">"ขออภัย วิดีโอนี้เล่นไม่ได้"</string>
     <string name="media_player_error_title">"ไม่สามารถเล่นวิดีโอ"</string>
     <string name="media_player_loading_video">"กำลังโหลดวิดีโอ"</string>
-    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-th/android_ui_strings.xml -->
+    <!-- From: file:/C:/cordova/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-th/android_ui_strings.xml -->
     <eat-comment/>
     <string name="month_picker_dialog_title">"ตั้งเดือน"</string>
     <string name="opening_file_error">"ไม่สามารถเปิดไฟล์ที่เลือก"</string>
     <string name="password_generation_popup_content_description">"กำลังแสดงป๊อปอัปการสร้างรหัสผ่าน"</string>
-    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-th/android_content_strings.xml -->
+    <!-- From: file:/C:/cordova/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-th/android_content_strings.xml -->
     <eat-comment/>
     <string name="profiler_error_toast">"ไม่สามารถเริ่มโปรแกรมโปรไฟล์เลอร์"</string>
     <string name="profiler_no_storage_toast">"ไม่สามารถเริ่มโปรแกรมโปรไฟล์เลอร์ได้เนื่องจากที่จัดเก็บข้อมูลภายนอกไม่พร้อมใช้งาน"</string>
     <string name="profiler_started_toast">"เริ่มโปรแกรมโปรไฟล์เลอร์แล้ว"</string>
     <string name="profiler_stopped_toast">"โปรแกรมโปรไฟล์เลอร์ดำเนินการเสร็จแล้ว ผลลัพธ์อยู่ใน %1$s"</string>
-    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-th/android_ui_strings.xml -->
+    <!-- From: file:/C:/cordova/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-th/android_ui_strings.xml -->
     <eat-comment/>
     <string name="time_picker_dialog_am">"AM"</string>
     <string name="time_picker_dialog_hour_minute_separator">"."</string>

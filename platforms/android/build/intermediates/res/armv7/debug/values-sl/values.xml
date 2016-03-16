@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-sl/android_ui_strings.xml -->
+    <!-- From: file:/C:/cordova/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-sl/android_ui_strings.xml -->
     <eat-comment/>
     <string name="accessibility_date_picker_month">"Mesec"</string>
     <string name="accessibility_date_picker_week">"Teden"</string>
@@ -12,11 +12,11 @@
     <string name="accessibility_time_picker_milli">"Milisekunda"</string>
     <string name="accessibility_time_picker_minute">"Minuta"</string>
     <string name="accessibility_time_picker_second">"Sekunda"</string>
-    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-sl/android_content_strings.xml -->
+    <!-- From: file:/C:/cordova/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-sl/android_content_strings.xml -->
     <eat-comment/>
     <string name="actionbar_share">"Skupna raba"</string>
     <string name="actionbar_web_search">"Spletno iskanje"</string>
-    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-sl/android_ui_strings.xml -->
+    <!-- From: file:/C:/cordova/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-sl/android_ui_strings.xml -->
     <eat-comment/>
     <string name="autofill_popup_content_description">"Prikaz pojavnega okna za samodejno izpolnjevanje"</string>
     <string name="color_picker_button_black">"Črna"</string>
@@ -41,25 +41,25 @@
     <string name="date_picker_dialog_title">"Nastavitev datuma"</string>
     <string name="date_time_picker_dialog_title">"Nastavitev datuma in časa"</string>
     <string name="low_memory_error">"Prejšnjega dejanja ni mogoče končati, ker primanjkuje pomnilnika"</string>
-    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-sl/android_content_strings.xml -->
+    <!-- From: file:/C:/cordova/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-sl/android_content_strings.xml -->
     <eat-comment/>
     <string name="media_player_error_button">"V redu"</string>
     <string name="media_player_error_text_invalid_progressive_playback">"Ta video ni veljaven za pretakanje v to napravo."</string>
     <string name="media_player_error_text_unknown">"Tega videa ni mogoče predvajati."</string>
     <string name="media_player_error_title">"Videa ni mogoče predvajati"</string>
     <string name="media_player_loading_video">"Nalaganje videa"</string>
-    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-sl/android_ui_strings.xml -->
+    <!-- From: file:/C:/cordova/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-sl/android_ui_strings.xml -->
     <eat-comment/>
     <string name="month_picker_dialog_title">"Nastavitev meseca"</string>
     <string name="opening_file_error">"Izb. dat. ni bilo mogoče odpreti"</string>
     <string name="password_generation_popup_content_description">"Prikaz pojavnega okna za ustvarjanje gesel"</string>
-    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-sl/android_content_strings.xml -->
+    <!-- From: file:/C:/cordova/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-sl/android_content_strings.xml -->
     <eat-comment/>
     <string name="profiler_error_toast">"Orodja za spremljanje delovanja aplikacije ali sistema ni bilo mogoče zagnati"</string>
     <string name="profiler_no_storage_toast">"Orodja za spremljanje delovanja aplikacije ali sistema ni mogoče zagnati, ker zunanja naprava za shranjevanje ni pripravljena"</string>
     <string name="profiler_started_toast">"Orodje za spremljanje delovanja aplikacije ali sistema se je zagnalo"</string>
     <string name="profiler_stopped_toast">"Orodje za spremljanje delovanja aplikacije ali sistema je končalo postopek. Rezultati so v datoteki %1$s."</string>
-    <!-- From: file:/C:/GOFIT_FINAL/gofit_final/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-sl/android_ui_strings.xml -->
+    <!-- From: file:/C:/cordova/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-sl/android_ui_strings.xml -->
     <eat-comment/>
     <string name="time_picker_dialog_am">"dop."</string>
     <string name="time_picker_dialog_hour_minute_separator">":"</string>

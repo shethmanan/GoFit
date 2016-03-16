@@ -1,45 +1,44 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+
+<head>
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no"> -->
-    <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection"/>
-    <link rel="stylesheet" type="text/css" href="css/navbar.css">
-    <link rel="stylesheet" type="text/css" href="css/reminder.css">
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <style>
-    </style>
-  </head>
-  <body>
-    <div class="side-section">
-      <ul class="side-nav fixed blue lighten-3" style="left:0px">
-        <li class="logo" style="background-color:transparent;"><img class="profile-pic circle" src="1.jpg"></li>
+  <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
+  <link rel="stylesheet" type="text/css" href="css/navbar.css">
+  <link rel="stylesheet" type="text/css" href="css/reminder.css">
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <!-- side nav -->
+  <div class="side-section">
+    <ul class="side-nav fixed blue lighten-3" style="left:0px">
+      <li class="logo" style="background-color:transparent;"><img class="profile-pic circle" src="1.jpg"></li>
+      <li class="blue lighten-3"><a href="remider.html" class="waves-effect waves-lighten" style="color:#1976d2;">Set Reminders</a></li>
+      <li class="blue lighten-3"><a href="updated_walk.html" class="waves-effect waves-lighten" style="color:#1976d2;">Exercise</a></li>
+      <ul class="collapsible collapsible-accordion">
         <li class="blue lighten-3">
-          <a href="remider.html" class="waves-effect waves-lighten" style="color:#1976d2;">Set Goals</a>
+          <a class="collapsible-header" class="waves-effect waves-lighten" style="color:#1976d2;">Calculators</a>
+          <div class="collapsible-body">
+            <ul>
+              <li class="blue lighten-3">
+                <a href="BMICal.html" class="waves-effect waves-lighten" style="color:#1976d2;">BMI Calculator</a>
+              </li>
+              <li class="blue lighten-3">
+                <a href="calorieCalculator.html" class="waves-effect waves-lighten" style="color:#1976d2;">Calorie Calculator</a>
+              </li>
+            </ul>
+          </div>
         </li>
-        <li class="blue lighten-3">
-          <a href="updated_walk.html" class="waves-effect waves-lighten" style="color:#1976d2;">Exercise</a>
-        </li>
-        <ul class="collapsible collapsible-accordion">
-          <li class="blue lighten-3">
-            <a class="collapsible-header" class="waves-effect waves-lighten" style="color:#1976d2;">Calculators</a>
-            <div class="collapsible-body">
-              <ul>
-                <li class="blue lighten-3">
-                  <a href="BMICal.html" class="waves-effect waves-lighten" style="color:#1976d2;">BMI Calculator</a>
-                </li>
-                <li class="blue lighten-3">
-                  <a href="calorieCalculator.html" class="waves-effect waves-lighten" style="color:#1976d2;">Calorie Calculator</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      <li class="blue lighten-3">
-        <a href="#!" class="waves-effect waves-lighten" style="color:#1976d2;">Help</a>
-      </li>
+      </ul>
+      <li class=" blue lighten-3"><a href="edit_profile.html" class="waves-effect waves-lighten" style="color:#1976d2;">My Profile</a></li>
+      <li class="blue lighten-3"><a href="#!" class="waves-effect waves-lighten" style="color:#1976d2;">Help</a></li>
     </ul>
   </div>
   <main id="main">
@@ -50,7 +49,7 @@
       </a>
     </div>
     <!-- side nav btn ends -->
-    <!-- side nav ends -->
+    <!-- side nav -->
     <div class="row"></div>
     <div class="d-card"></div>
     <!--modal trigger and body-->
@@ -98,21 +97,21 @@
   <script type="text/javascript" src="cordova.js"></script>
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript" src="js/materialize.js"></script>
-  <script type="text/javascript" src = "js/velocity.ui.min.js"></script>
+  <script type="text/javascript" src="js/velocity.ui.min.js"></script>
   <script type="text/javascript" src="js/navbar-transition.js"></script>
   <script>
-  var id;
-  var db = openDatabase('GoFit', '1.0', 'Test DB', 2 * 1024 * 1024);
-  $(document).ready(function(){
-    db.transaction(function(tx){
-      tx.executeSql("CREATE TABLE IF NOT EXISTS `notification` (id integer primary key autoincrement, title, time)");
-      tx.executeSql("Select * from `notification`",[],function(tx,results){
+    var id;
+    var db = openDatabase('GoFit', '1.0', 'Test DB', 2 * 1024 * 1024);
+    $(document).ready(function() {
+      db.transaction(function(tx) {
+        tx.executeSql("CREATE TABLE IF NOT EXISTS `notification` (id integer primary key autoincrement, title, time)");
+        tx.executeSql("Select * from `notification`", [], function(tx, results) {
           id = results.rows.length;
           for (var i = 0; i < results.rows.length; i++) {
             // ************************************************card*************************************
             var x = '<div class="row">'
             x += '<div class="col s12">'
-            x += '<div class="card-small blue darken-2" id="'+results.rows[i].id+'">'
+            x += '<div class="card-small blue darken-2" id="' + results.rows[i].id + '">'
             x += '<div class="row no-margin">'
             x += '<div class="col s4">'
             x += '<i class="large material-icons amber-text center-align">assignment_late</i>'
@@ -138,92 +137,99 @@
             x += '</div>';
             $(".d-card").append(x).velocity("transition.bounceIn", 1300);
           }
+        });
+        $('select').material_select();
       });
-      $('select').material_select();
-    });
-    $('.modal-trigger').click(function () {
+      $('.modal-trigger').click(function() {
         removeAttr('main');
         $('#reminder').openModal();
+      });
     });
-  });
-  // to add notification
-$("#submit_remind").on('click',function(){
-  var add = addNotification();//to add notification
-  if(add.status){
-    // ***************************************card**************************************
-    var x = '<div class="row">'
-    x += '<div class="col s12">'
-    x += '<div class="card-small blue darken-2" id="'+add.id+'">'
-    x += '<div class="row no-margin">'
-    x += '<div class="col s4">'
-    x += '<i class="large material-icons amber-text center-align">assignment_late</i>'
-    x += '</div>'
-    x += '<div class="col s8 no-padding no-margin">'
-    x += '<div class="row">'
-    x += '<div class="col s10">'
-    x += '<h5 class="amber-text" style="margin-bottom:0px;">' + add.title + '</h5>'
-    x += '</div>'
-    x += '<div class="col s2 no-padding right-align">'
-    x += '<i class="material-icons deep-orange-text" onclick="removeCard(this)">cancel</i>'
-    x += '</div>'
-    x += '</div>'
-    x += '<div class="row no-margin">'
-    x += '<div class="col s12 amber-text">'
-    x += '<h5 class="no-margin no-padding">Every : ' + add.time + '</h5>'
-    x += '</div>'
-    x += '</div>'
-    x += '</div>'
-    x += '</div>'
-    x += '</div>'
-    x += '</div>'
-    x += '</div>';
-    $(".d-card").append(x).velocity("transition.bounceIn", 1300);
-  }
-    $('form')[0].reset();
-    $("#reminder").closeModal();
-    return true;
-});
-  function addNotification(){
+    // to add notification
+    $("#submit_remind").on('click', function() {
+      var add = addNotification(); //to add notification
+      if (add.status) {
+        // ***************************************card**************************************
+        var x = '<div class="row">'
+        x += '<div class="col s12">'
+        x += '<div class="card-small blue darken-2" id="' + add.id + '">'
+        x += '<div class="row no-margin">'
+        x += '<div class="col s4">'
+        x += '<i class="large material-icons amber-text center-align">assignment_late</i>'
+        x += '</div>'
+        x += '<div class="col s8 no-padding no-margin">'
+        x += '<div class="row">'
+        x += '<div class="col s10">'
+        x += '<h5 class="amber-text" style="margin-bottom:0px;">' + add.title + '</h5>'
+        x += '</div>'
+        x += '<div class="col s2 no-padding right-align">'
+        x += '<i class="material-icons deep-orange-text" onclick="removeCard(this)">cancel</i>'
+        x += '</div>'
+        x += '</div>'
+        x += '<div class="row no-margin">'
+        x += '<div class="col s12 amber-text">'
+        x += '<h5 class="no-margin no-padding">Every : ' + add.time + '</h5>'
+        x += '</div>'
+        x += '</div>'
+        x += '</div>'
+        x += '</div>'
+        x += '</div>'
+        x += '</div>'
+        x += '</div>';
+        $(".d-card").append(x).velocity("transition.bounceIn", 1300);
+      }
+      $('form')[0].reset();
+      $("#reminder").closeModal();
+      return true;
+    });
+
+    function addNotification() {
       title = $("#title_text").val();
       time = $("#time_text").val();
       if (title == "" || time == -1)
-      return false;
+        return false;
       time += " mins";
       var data = {
-        status : true,
+        status: true,
         id: id,
         title: title,
         time: time
       };
-      db.transaction(function(tx){
-        tx.executeSql("INSERT into `notification`(title,time) values(?,?)",[title,time]);
+      db.transaction(function(tx) {
+        tx.executeSql("INSERT into `notification`(title,time) values(?,?)", [title, time]);
       });
       setNotification(id, title, time)
       return data;
-  }
+    }
 
-    function removeCard(data){
+    function removeCard(data) {
       var card = $(data).closest("div.card-small");
       var key = card.attr("id");
       removeNotification(key);
-      db.transaction(function(tx){
-        tx.executeSql("DELETE FROM 'notification' WHERE id ="+key+"")
+      db.transaction(function(tx) {
+        tx.executeSql("DELETE FROM 'notification' WHERE id =" + key + "")
       });
       card.closest("div.row").remove();
     }
 
-  //set notification
-  function setNotification(id, title, freq) {
-    var now = new Date().getTime(),
-    first_time = now;
-    cordova.plugins.notification.local.schedule({id: id, title: title, at: first_time, every: freq});
-    return true;
-  }
-  //remove notification
-  function removeNotification(id) {
-    cordova.plugins.notification.local.cancel(id, function() {});
-    return true;
-  }
+    //set notification
+    function setNotification(id, title, freq) {
+      var now = new Date().getTime(),
+        first_time = now;
+      cordova.plugins.notification.local.schedule({
+        id: id,
+        title: title,
+        at: first_time,
+        every: freq
+      });
+      return true;
+    }
+    //remove notification
+    function removeNotification(id) {
+      cordova.plugins.notification.local.cancel(id, function() {});
+      return true;
+    }
   </script>
 </body>
+
 </html>
