@@ -1,6 +1,6 @@
-C:\cordova\gofit_final\platforms\android\build\intermediates\classes\armv7\debug
-C:\cordova\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\support-annotations-23.1.1-56b9c27c47264af76df145b5c23f4f0d2d4f4c73.jar
-C:\cordova\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\classes-908fee6c5e791bf10e1d0f405a7cf86c34b1b677.jar
-C:\cordova\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\internal_impl-23.1.1-3da946e002baf80f4d7a1fdfdf67af997fa96524.jar
-C:\cordova\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\classes-2f1b64d9f7484a23d00924a5c0a4a71d1253ae6c.jar
-C:\cordova\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\classes-5f281cd8d536116840bfd0f9813139170e53df65.jar
+C:\git-demo\gofit_final\platforms\android\build\intermediates\classes\armv7\debug
+C:\git-demo\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\support-annotations-23.1.1-d70b539b036632711f46743bdc888d4ee55b4698.jar
+C:\git-demo\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\classes-34bc06305ae017ae45da85c5841c1ddfdaed2fd1.jar
+C:\git-demo\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\internal_impl-23.1.1-b8774fdc080f6eee615b8ebdf5f21d447ead524c.jar
+C:\git-demo\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\classes-f2c038d6450f71f0ed36a839b06f959281c28688.jar
+C:\git-demo\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\classes-3b06f3d6ad758eff472803953a8c1d2f8f18e791.jar

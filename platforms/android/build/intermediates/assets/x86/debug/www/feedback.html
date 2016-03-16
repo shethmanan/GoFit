@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="css/materialize_feedback.css" media="screen,projection"/>
+		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+		   <link rel="stylesheet" href="css/rating.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<style>
+			
+			.card .card-content {
+				padding: 0px;
+				border-radius: 0 0 2px 2px;
+			}
+			form.col.s12{
+				
+				padding-left: 0px;
+				padding-right: 0px;
+				margin-bottom: 0px;
+			}
+			a.btn-large{
+				border-bottom-left-radius: 20px;
+				border-bottom-right-radius: 20px;
+				background-color: #2196F3 !important;
+			}
+			#welcome-text{
+				font-size: 20px;
+				color: #2196F3 ;
+			}
+			div.card-header{
+				padding-bottom: 12px;
+				padding-top: 8px;
+				padding-left: 6px;
+}
+			}
+			
+			
+			
+		</style>
+	</head>
+	<body>
+	<main>
+      
+		<div class="row">
+			<div class="col s12">
+				<div id="entire-card" class="card" style="border-radius:23px;">
+					<div class="card-header blue white-text">
+						<!--<i class="material-icons small" style="padding-left:25px;padding-right:7px;padding-bottom: 15px;padding-top:15px;">perm_identity </i>-->
+						<span style="padding-bottom:10px;font-size:19px;">Your feedback is important to us!</span>
+					</div>
+					<div class="card-content">
+					<div class="row">
+						<form class="col s12">
+						 
+							
+							<div class="input-field col s12">
+							  <textarea id="message" class="materialize-textarea"></textarea>
+							  <label for="message">Message</label>
+							</div>
+						  
+						  <div class="row">
+							<div class="input-field col s12">
+							  <input id="email" type="email" class="validate">
+							  <label for="email">Email</label>
+							</div>
+						  </div>
+						  
+						  
+						  
+						  <div>
+							<p>
+							  <span style="color:#9e9e9e;padding-left:8px;">Rate us:</span>
+							  <span class="starRating">
+								<input id="rating5" type="radio" name="rating" value="5">
+								<label for="rating5">5</label>
+								<input id="rating4" type="radio" name="rating" value="4">
+								<label for="rating4">4</label>
+								<input id="rating3" type="radio" name="rating" value="3" checked>
+								<label for="rating3">3</label>
+								<input id="rating2" type="radio" name="rating" value="2">
+								<label for="rating2">2</label>
+								<input id="rating1" type="radio" name="rating" value="1">
+								<label for="rating1">1</label>
+							  </span>
+							</p><br>
+						  </div>
+						  
+						  
+						  <div>
+							<a class="btn-large waves-effect waves-light" id="send"  style="width:100%">Submit <i class="material-icons">send</i></a>
+						  </div>
+						</form>
+					</div>
+        
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		</main>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/materialize.js"></script>
+		<script>
+			$(document).ready(function(){	
+				$("#send").click(function(){
+					Materialize.toast('Thank you for you feedback!', 4000)
+					$(".card-content").delay("3000").slideUp("slow");
+					$("#entire-card").delay("5000").fadeOut();
+					setTimeout(function(){
+						location.reload();
+					},"9000"); 
+				});
+				
+			});
+		</script>
+	</body>
+<html>

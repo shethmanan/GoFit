@@ -157,6 +157,7 @@
       $('select').material_select();
       $("#submitbtn").click(function() {
         var details = $('#personal-info').serializeArray();
+        console.log(details);
         if (!checkInfo(details)) {
           Materialize.toast('Please fill in all your details', 4000)
           return false;
