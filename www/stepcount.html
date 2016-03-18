@@ -40,15 +40,17 @@
         sffghsdfh<br>
         dfgsadg<br>
         gfsdgddg<br>
-        <button onClick="start_run_counter()">start run</button>
-        <button onClick="start_walk_counter()">Start walk</button>
+        <button onClick="start_run_counter1()">start run</button>
+        <button onClick="start_walk_counter1()">Start walk</button>
         <button onClick="stop_run_counter()">Stop</button>
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
         <script>
        
             var startingOffset = 0;
-                
+            var activity_status= true ;
+            var activity_id= 0;  
+
             var success = function(message) {
                 alert(message);
             }
@@ -71,20 +73,33 @@
             }
             
                     
-            // var abc= function (){
-            //     alert("masi");
-            // }
             
+           
+
+
+
+         function start_run_counter1(){
+            
+            activity_id = setInterval("start_run_counter()",10000);
+         }        
+         
+         function start_walk_counter1(){
+            
+            activity_id = setInterval("start_walk_counter()",10000);
+         }  
       
         function start_run_counter(){
             alert(":sa");
-            // abc(failure());
+            
             // stepcounter.deviceCanCountSteps(success(), failure());
             stepcounter.start(startingOffset, success, failure);
             stepcounter.getStepCount(success, failure);
             // stepcounter.deviceCanCountSteps(success, failure);
-            // alert("die");
+            
             stepcounter.getTodayStepCount(success, failure);
+            if(!activity_status){
+                clearInterval(activity_id);
+            }
         }
 
         function start_walk_counter(){
@@ -99,6 +114,7 @@
         }
 
         function stop_run_counter(){
+            activity_status = false;
             stepcounter.stop(success, failure);
         }
         </script>

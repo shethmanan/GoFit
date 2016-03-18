@@ -23,7 +23,8 @@
 
       .edit-icon {
         position: relative;
-        bottom: 56px;
+        bottom: 64px;
+        right:20px;
       }
 
       .btn-edit {
@@ -35,6 +36,11 @@
       .btn-edit:hover {
         background-color: hsla(0, 100%, 50%, 0);
         box-shadow: none;
+      }
+      #profile-photo{
+        height:200px;
+        width:200px;
+        border-radius:50%;
       }
     </style>
   </head>
@@ -81,7 +87,7 @@
             <div class="my-profile-pic card">
               <div class="card-image">
                 <div id="myImage">
-                  <img src="img/pro-pic.png">
+                  <img id="profile-photo" class="responsive-img circle" src="img/pro-pic.png">
                 </div>
                 <div class="row edit-icon">
                   <div class="col s4 offset-s8">
@@ -212,8 +218,9 @@
 				navigator.camera.getPicture(onSuccess, onFail, options);
 			}
 			function onSuccess(imageData) {
-				var image = document.getElementById('myImage');
+				var image = document.getElementById('profile-photo');
 				image.src = "data:image/jpeg;base64," + imageData;
+        // alert("pic changes");
 			}
 
 			function onFail(message) {

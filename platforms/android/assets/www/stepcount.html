@@ -48,7 +48,8 @@
         <script>
        
             var startingOffset = 0;
-                
+            boolean activity_status= true ;
+            var activity_id;    
             var success = function(message) {
                 alert(message);
             }
@@ -74,7 +75,17 @@
             // var abc= function (){
             //     alert("masi");
             // }
+           
+
+         function start_run_counter1(){
             
+            activity_id = setInterval("start_run_counter",5000);
+         }        
+
+
+         function stop_run_counter1(){
+            activity_status = false;
+         }
       
         function start_run_counter(){
             alert(":sa");
@@ -85,6 +96,9 @@
             // stepcounter.deviceCanCountSteps(success, failure);
             // alert("die");
             stepcounter.getTodayStepCount(success, failure);
+            if(!activity_status){
+                clearInterval(activity_id);
+            }
         }
 
         function start_walk_counter(){
