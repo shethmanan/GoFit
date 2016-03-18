@@ -37,8 +37,13 @@
     </head>
     <body>
         
-        sffghsdfh<br>
-        dfgsadg<br>
+        <div id="now_active_run"></div>
+
+        <div id="now_active_walk"></div>
+
+        <div id="today_active_run"></div>
+
+        <div id="today_active_walk"></div>
         gfsdgddg<br>
         <button onClick="start_run_counter1()">start run</button>
         <button onClick="start_walk_counter1()">Start walk</button>
@@ -51,11 +56,13 @@
             var activity_status= true ;
             var activity_id= 0;  
 
-            var success = function(message) {
-                alert(message);
+            var success_now_active_run = function(message) {
+                // alert(message);
+                $("#now_active_run").html(message);
             }
 
-            var success1 = function(message) {
+            var success_now_active_walk = function(message) {
+                // alert(message);
                 message=parseInt(message);
                 if(message%2==1){
                     message=message-1;
@@ -64,9 +71,34 @@
                 else{
                     message=message/2;
                 }
-                alert(message);
-
+                $("#now_active_walk").html(message);
             }
+
+            var success_today_active_run = function(message) {
+                // alert(message);
+                $("#today_active_run").html(message);
+            }
+
+            var success_today_active_walk = function(message) {
+                // alert(message);
+                message=parseInt(message);
+                if(message%2==1){
+                    message=message-1;
+                    message=message/2;
+                }
+                else{
+                    message=message/2;
+                }
+                $("#today_active_walk").html(message);
+            }
+
+            var success = function(message) {
+                alert("success");
+            }
+
+           
+
+
 
             var failure = function() {
                 alert("Error calling CordovaStepCounter Plugin");
@@ -88,34 +120,49 @@
             activity_id = setInterval("start_walk_counter()",10000);
          }  
       
+
+
+
+
+
+
         function start_run_counter(){
-            alert(":sa");
             
+            alert("run-called");
             // stepcounter.deviceCanCountSteps(success(), failure());
-            stepcounter.start(startingOffset, success, failure);
-            stepcounter.getStepCount(success, failure);
+            stepcounter.start(startingOffset, success_now_active_run, failure);
+            stepcounter.getStepCount(success_now_active_run, failure);
             // stepcounter.deviceCanCountSteps(success, failure);
             
-            stepcounter.getTodayStepCount(success, failure);
+            // use this if u want number of steps walked till now:    stepcounter.getTodayStepCount(success_today_active_run, failure);
             if(!activity_status){
+                alert("activity cleared");
                 clearInterval(activity_id);
+                activity_status = true;
             }
         }
 
         function start_walk_counter(){
-            alert(":sa");
+            alert("walk-called");
             // abc(failure());
             // stepcounter.deviceCanCountSteps(success(), failure());
-            stepcounter.start(startingOffset, success, failure);
-            stepcounter.getStepCount(success1, failure);
+            stepcounter.start(startingOffset, success_now_active_walk, failure);
+            stepcounter.getStepCount(success_now_active_walk, failure);
             // stepcounter.deviceCanCountSteps(success, failure);
             // alert("die");
-            stepcounter.getTodayStepCount(success1, failure);
+            // returns total number of steps    stepcounter.getTodayStepCount(success_today_active_walk, failure);
+            if(!activity_status){
+                alert("activity cleared");
+                clearInterval(activity_id);
+                activity_status = true;
+            }
         }
 
         function stop_run_counter(){
+            alert("stop called");
             activity_status = false;
             stepcounter.stop(success, failure);
+            alert("stopped");
         }
         </script>
     </body>
