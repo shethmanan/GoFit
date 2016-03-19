@@ -3,7 +3,8 @@
 	<head>
 		<link type="text/css" rel="stylesheet" href="css/materialize_feedback.css" media="screen,projection"/>
 		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-		   <link rel="stylesheet" href="css/rating.css">
+		<link rel="stylesheet" href="css/rating.css">
+		<link rel="stylesheet" type="text/css" href="css/navbar.css" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<style>
 			
@@ -38,7 +39,41 @@
 		</style>
 	</head>
 	<body>
+
+	<div class="side-section">
+		<ul class="side-nav fixed blue lighten-3" style="left:0px">
+			<li class="logo" style="background-color:transparent;"><a href="edit_profile.html"><img class="profile-pic circle" src="1.jpg"></a></li>
+			<li class="blue lighten-3"><a href="remider.html" class="waves-effect waves-lighten" style="color:#1976d2;">Set Reminders</a></li>
+			<li class="blue lighten-3"><a href="updated_walk.html" class="waves-effect waves-lighten" style="color:#1976d2;">Exercise</a></li>
+			<ul class="collapsible collapsible-accordion">
+				<li class="blue lighten-3">
+					<a class="collapsible-header" class="waves-effect waves-lighten" style="color:#1976d2;">Calculators</a>
+					<div class="collapsible-body">
+						<ul>
+							<li class="blue lighten-3">
+								<a href="BMICal.html" class="waves-effect waves-lighten" style="color:#1976d2;">BMI Calculator</a>
+							</li>
+							<li class="blue lighten-3">
+								<a href="calorieCalculator.html" class="waves-effect waves-lighten" style="color:#1976d2;">Calorie Calculator</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+				
+			<li class="blue lighten-3"><a href="feedback.html" class="waves-effect waves-lighten" style="color:#1976d2;">Feedback</a></li>
+		</ul>
+	</div>
+
+
 	<main>
+		<!-- side nav btn -->
+		<div class="row blue darken-2 no-margin">
+			<a class="waves-effect waves-lighten btn-flat large" id="nav-btn">
+				<i class="large material-icons" style="color:white;font-size: xx-large;">list</i>
+			</a>
+		</div>
+		<!-- side nav btn ends -->
       
 		<div class="row">
 			<div class="col s12">
@@ -99,6 +134,7 @@
 		</main>
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/materialize.js"></script>
+		<script type="text/javascript" src="js/navbar-transition.js"></script>
 		<script>
 			$(document).ready(function(){	
 				$("#send").click(function(){
