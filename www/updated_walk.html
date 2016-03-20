@@ -17,7 +17,9 @@
 	<!-- side nav -->
 	<div class="side-section">
 		<ul class="side-nav fixed blue lighten-3" style="left:0px">
-			<li class="logo" style="background-color:transparent;"><a href="edit_profile.html"><img class="profile-pic circle" src="1.jpg"></a></li>
+			<li class="logo" style="background-color:transparent;">
+				<a href="edit_profile.html"><img class="profile-pic circle" src="1.jpg"></a>
+			</li>
 			<li class="blue lighten-3"><a href="remider.html" class="waves-effect waves-lighten" style="color:#1976d2;">Set Reminders</a></li>
 			<li class="blue lighten-3"><a href="updated_walk.html" class="waves-effect waves-lighten" style="color:#1976d2;">Exercise</a></li>
 			<ul class="collapsible collapsible-accordion">
@@ -35,7 +37,7 @@
 					</div>
 				</li>
 			</ul>
-			
+
 			<li class="blue lighten-3"><a href="feedback.html" class="waves-effect waves-lighten" style="color:#1976d2;">Feedback</a></li>
 		</ul>
 	</div>
@@ -65,7 +67,7 @@
 					<div class="gap"></div>
 					<center>
 						<div class="preloader-wrapper big active">
-							<div class="spinner-layer spinner-red-only">
+							<div class="spinner-layer spinner-red-only" id="preload">
 								<div class="circle-clipper left">
 									<div class="circle"></div>
 								</div>
@@ -99,7 +101,7 @@
 		<br>
 		<div class="row">
 			<div class="col s12">
-				<a class="btn waves-effect waves-light blue darken-4 full-width">Start Walking</a>
+				<a class="btn waves-effect waves-light blue darken-4 full-width" id="start">Start Walking</a>
 			</div>
 		</div>
 	</main>
@@ -107,4 +109,15 @@
 	<script type="text/javascript" src="js/materialize.js"></script>
 	<script type="text/javascript" src="js/navbar-transition.js"></script>
 </body>
+<script type="text/javascript">
+	$(document).ready(function(data) {
+		$("#start").click(function(data) {
+			if (!$(this).hasClass("stop")){
+				$(this).html("Stop Walking");
+			}
+			else $(this).html("Start Walking");
+			$(this).toggleClass("stop");
+		});
+	});
+</script>
 <html>

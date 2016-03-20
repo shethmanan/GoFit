@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Chart-v1</title>
+  <style media="screen">
+    .ct-series-e {
+      fill: #2196f3;
+    }
+
+    .ct-series-d {
+      fill: #1e88e5;
+    }
+
+    .ct-series-c {
+      fill: #1976d2;
+    }
+
+    .ct-series-b {
+      fill: #1565c0;
+    }
+
+    .ct-series-a {
+      fill: #0d47a1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="ct-chart">
+  </div>
+  <script src="js/chartist.min.js"></script>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      chart_make();
+    });
+
+    function chart_make() {
+      var options = {
+        labelInterpolationFnc: function(value) {
+          return value[0]
+        }
+      };
+      var chart = new Chartist.Pie('.ct-chart', {
+        label: ['calories', 'fats', 'protiens', 'carbohydrates', 'alcohol'],
+        series: [11, 12, 13, 14, 15]
+      }, options);
+      // chart animation
+      chart.on('draw', function(data) {
+          if (data.type === 'slice') {
+            // Get the total path length in order to use for dash array animation
+            var pathLength = data.element._node.getTotalLength();
+
+            // Set a dasharray that matches the path length as prerequisite to animate dashoffset
+            data.element.attr({
+              'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
+            });
+
+            // Create animation definition while also assigning an ID to the animation for later sync usage
+            var animationDefinition = {
+              'stroke-dashoffset': {
+                id: 'anim' + data.index,
+                dur: 1000,
+                from:'0px',
+                to: pathLength+'px',
+                easing: Chartist.Svg.Easing.easeOutQuint,
+                // We need to use `fill: 'freeze'` otherwise our animation will fall back to initial (not visible)
+                fill: 'freeze'
+              }
+            };
+
+            // If this was not the first slice, we need to time the animation so that it uses the end sync event of the previous animation
+            if (data.index !== 0) {
+              animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
+            }
+
+            // We need to set an initial value before the animation starts as we are not in guided mode which would do that for us
+            data.element.attr({
+              'stroke-dashoffset': -pathLength + 'px'
+            });
+
+            // We can't use guided mode as the animations need to rely on setting begin manually
+            // See http://gionkunz.github.io/chartist-js/api-documentation.html#chartistsvg-function-animate
+            data.element.animate(animationDefinition, false);
+          }
+        })
+      }
+  </script>
+</body>
+
+</html>

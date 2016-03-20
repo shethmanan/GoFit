@@ -112,12 +112,23 @@
     <br>
     <div class="row">
       <div class="col s12">
-        <a class="btn waves-effect waves-light blue darken-4 full-width">Start Walking</a>
+        <a class="btn waves-effect waves-light blue darken-4 full-width" id="start">Start Cycling</a>
       </div>
     </div>
   </main>
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript" src="js/materialize.js"></script>
   <script type="text/javascript" src="js/navbar-transition.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function(data) {
+    $("#start").click(function(data) {
+      if (!$(this).hasClass("stop")){
+        $(this).html("Stop Cycling");
+      }
+      else $(this).html("Start Cycling");
+      $(this).toggleClass("stop");
+    });
+  });
+  </script>
 </body>
 <html>

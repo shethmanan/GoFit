@@ -37,7 +37,7 @@
           </div>
         </li>
       </ul>
-      
+
       <li class="blue lighten-3"><a href="feedback.html" class="waves-effect waves-lighten" style="color:#1976d2;">Feedback</a></li>
     </ul>
   </div>
@@ -135,11 +135,12 @@
             x += '</div>'
             x += '</div>'
             x += '</div>';
-            $(".d-card").append(x).velocity("transition.bounceIn", 1300);
+            $(".d-card").append(x);
           }
         });
         $('select').material_select();
       });
+      $(".d-card").velocity("transition.bounceIn", 1300);
       $('.modal-trigger').click(function() {
         removeAttr('main');
         $('#reminder').openModal();

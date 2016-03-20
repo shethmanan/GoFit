@@ -22,26 +22,26 @@
         show-point : false;
       }
       .ct-series-a .ct-slice-donut {
-        stroke: blue;   
-        stroke-width: 8px !important;   
+        stroke: blue;
+        stroke-width: 8px !important;
         stroke-linecap: circle;
       }
 
       .ct-series-b .ct-slice-donut {
-        stroke: #f0ece9;   
-        stroke-width: 8px !important;   
+        stroke: #f0ece9;
+        stroke-width: 8px !important;
       }
       #status_text{
         color:#0099ff;
       }
       #score_in_percent{
-        font-size: 35px;  
+        font-size: 35px;
       }
 		</style>
 	</head>
 	<body>
 		Buttons are of no use rite nw
-    <div id="chart1">
+    <div id="chart1" class="ct-chart ct-square">
 
     </div>
     <button >avd</button>
@@ -51,14 +51,15 @@
     <button id="pie_chart_btn" >Pie chart</button>
 
 
+
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/chartist.min.js"></script>
 		<script>
-			
+
     $(document).ready(function(){
         // $("#status_text").hide();
         var mon = 5, tue =4,wed = 2,thu = 6,fri = 4,sat = 1,sun = 4;
-        
+
         //Replace the values by the one stored in database
 
         var data = {
@@ -77,7 +78,7 @@
            fullWidth: false,
            showArea: true
         };
-         
+
         // Create a new line chart object where as first parameter we pass in a selector
         // that is resolving to our chart container element. The Second parameter
         // is the actual data object.
@@ -109,7 +110,7 @@ $(document).ready(function(){
     series: [log_data, 10],
     labels: [1, 2]
   }, {
-    donut: true,
+    donut: false,
     showLabel: false,
     width: 300,
     height: 300
