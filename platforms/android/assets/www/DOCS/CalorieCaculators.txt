@@ -1,0 +1,21 @@
+Calorie-Calculator
+-onLoad
+	-retrieve the information of previously calculated calories
+	-prepare a chart and display the chart
+-calorieCalculatorUS
+	-Button onClicked
+		-call function calculateCalorieUS()
+			-calculations are done to find calorie needed,fats needed,carbohydrates needed,protien needed,alcohol needed
+			-store the calculations in database with timestamp
+			-prepare a chart and display the chart
+-calorieCalculatorMU
+	-Button onClicked
+		-call function calculateCalorieMU()
+			-calculations are done to find calorie needed,fats needed,carbohydrates needed,protien needed,alcohol needed
+			-store the calculations in database with timestamp
+			-prepare a chart and display the chart
+
+
+DATABASE - GoFit
+Table - CalorieCalculator
+Attributes - weight,height,cneed,fneed,crneed,prneed,aneed,timestamp

@@ -9,10 +9,10 @@
 			left:0px;
 			height:100vh;
 			width:100vw;
-			overflow: overlay;
+			overflow: hidden;
 		}
 		main.active{
-			position: fixed;
+			position: absolute;
 			}
 			.side-nav{
 			left:0px;

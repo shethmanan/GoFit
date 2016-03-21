@@ -9,9 +9,25 @@
   <link rel="stylesheet" type="text/css" href="css/navbar.css">
   <link rel="stylesheet" type="text/css" href="css/reminder.css">
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="css/flaticon.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
+    .flaticon-cross-1:before {
+      margin-left: 3px;
+      
+    }
+    .flaticon-close:before {
+      margin-left: 0px;
+      font-size: 15px;
+      margin-right: 4px;
+      margin-top: 10px;
+    }
+    .flaticon-clock-6:before {
+      margin-left: 0px;
+      font-size: 45px;
+      
 
+    }
   </style>
 </head>
 
@@ -19,7 +35,7 @@
   <!-- side nav -->
   <div class="side-section">
     <ul class="side-nav fixed blue lighten-3" style="left:0px">
-      <li class="logo" style="background-color:transparent;"><img class="profile-pic circle" src="1.jpg"></li>
+      <li class="logo" style="background-color:transparent;"><a href="edit_profile.html"><img class="profile-pic circle" src="1.jpg"></a></li>
       <li class="blue lighten-3"><a href="remider.html" class="waves-effect waves-lighten" style="color:#1976d2;">Set Reminders</a></li>
       <li class="blue lighten-3"><a href="updated_walk.html" class="waves-effect waves-lighten" style="color:#1976d2;">Exercise</a></li>
       <ul class="collapsible collapsible-accordion">
@@ -37,8 +53,8 @@
           </div>
         </li>
       </ul>
-      <li class=" blue lighten-3"><a href="edit_profile.html" class="waves-effect waves-lighten" style="color:#1976d2;">My Profile</a></li>
-      <li class="blue lighten-3"><a href="#!" class="waves-effect waves-lighten" style="color:#1976d2;">Help</a></li>
+
+      <li class="blue lighten-3"><a href="feedback.html" class="waves-effect waves-lighten" style="color:#1976d2;">Feedback</a></li>
     </ul>
   </div>
   <main id="main">
@@ -54,7 +70,7 @@
     <div class="d-card"></div>
     <!--modal trigger and body-->
     <a class="btn-floating fixed btn-large waves-effect circle red modal-trigger" href="#reminder">
-      <i class="material-icons">add</i>
+      <i class="flaticon-cross-1"></i>
     </a>
     <div id="reminder" class="modal bottom-sheet">
       <div class="modal-header">
@@ -81,7 +97,7 @@
             </div>
             <div class="row no-margin">
               <div class="col s4 offset-s8">
-                <a class="btn-flat  waves-effect waves-blue blue-text" id="submit_remind">Add&nbspReminder</a>
+                <a class="btn-flat  waves-effect waves-blue blue-text" id="submit_remind">Add Reminder</a>
               </div>
             </div>
           </form>
@@ -114,7 +130,7 @@
             x += '<div class="card-small blue darken-2" id="' + results.rows[i].id + '">'
             x += '<div class="row no-margin">'
             x += '<div class="col s4">'
-            x += '<i class="large material-icons amber-text center-align">assignment_late</i>'
+            x += '<i class="large flaticon-clock-6 amber-text center-align"></i>'
             x += '</div>'
             x += '<div class="col s8 no-padding no-margin">'
             x += '<div class="row">'
@@ -122,7 +138,7 @@
             x += '<h5 class="amber-text" style="margin-bottom:0px;">' + results.rows[i].title + '</h5>'
             x += '</div>'
             x += '<div class="col s2 no-padding right-align">'
-            x += '<i class="material-icons deep-orange-text" onclick="removeCard(this)">cancel</i>'
+            x += '<i class="flaticon-close  deep-orange-text" onclick="removeCard(this)"></i>'
             x += '</div>'
             x += '</div>'
             x += '<div class="row no-margin">'
@@ -135,11 +151,12 @@
             x += '</div>'
             x += '</div>'
             x += '</div>';
-            $(".d-card").append(x).velocity("transition.bounceIn", 1300);
+            $(".d-card").append(x);
           }
         });
         $('select').material_select();
       });
+      $(".d-card").velocity("transition.bounceIn", 1300);
       $('.modal-trigger').click(function() {
         removeAttr('main');
         $('#reminder').openModal();

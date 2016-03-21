@@ -2,6 +2,13 @@
 <items version="2" >
 
     <item
+        jar="C:\git-demo\gofit_final\platforms\android\build\intermediates\exploded-aar\android\CordovaLib\unspecified\debug\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="b1234a32ae8ebe1389098ffca7b226d128e66819">
+        <dex dex="C:\git-demo\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\classes-34bc06305ae017ae45da85c5841c1ddfdaed2fd1.jar" />
+    </item>
+    <item
         jar="C:\Users\Manan\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
         jumboMode="false"
         revision="23.0.2"
@@ -28,13 +35,6 @@
         revision="23.0.2"
         sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
         <dex dex="C:\git-demo\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\internal_impl-23.1.1-b8774fdc080f6eee615b8ebdf5f21d447ead524c.jar" />
-    </item>
-    <item
-        jar="C:\git-demo\gofit_final\platforms\android\build\intermediates\exploded-aar\android\CordovaLib\unspecified\debug\classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="aec370caed6de613d1e2bdddf4c3f0cefcd4f709">
-        <dex dex="C:\git-demo\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\classes-34bc06305ae017ae45da85c5841c1ddfdaed2fd1.jar" />
     </item>
 
 </items>

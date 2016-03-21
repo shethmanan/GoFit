@@ -12,7 +12,7 @@
 			overflow: hidden;
 		}
 		main.active{
-			position: fixed;
+			position: absolute;
 			}
 			.side-nav{
 			left:0px;
