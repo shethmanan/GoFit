@@ -428,7 +428,7 @@
       // store in DATABASE
       db.transaction(function(tx){
         tx.executeSql("CREATE TABLE IF NOT EXISTS `calorieCalculatorMU` (id integer primary key autoincrement,weight,height,cneed,fneed,crneed,prneed,aneed,time)");
-        tx.executeSql("INSERT INTO `calorieCalculatorMU` (weight,height,cneed,fneed,crneed,prneed,aneed,time) values (?,?,?,?,?,?,?,datetime())",[weight,cm,cneed,fneed,crneed,prneed,aneed]);
+        tx.executeSql("INSERT INTO `calorieCalculatorMU` (weight,height,cneed,fneed,crneed,prneed,aneed,time) values (?,?,?,?,?,?,?,datetime())",[weight,cm,cneed,fneed,crneed,pneed,aneed]);
       });
       // make chart
       var options = {
@@ -439,7 +439,7 @@
       var chart = new Chartist.Pie('.ct-chart2', {
         label: ['calories', 'fats', 'protiens', 'carbohydrates', 'alcohol'],
         series: [cneed, fneed, pneed, crneed, aneed]
-      }, options, responsiveOptions);
+      }, options);
     }
   </script>
 </body>
