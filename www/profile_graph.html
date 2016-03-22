@@ -1,169 +1,194 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<link rel="stylesheet" href="css/materialize.css" media="screen,projection" />
-		<title>Profile || graphs</title>
+	<title>Profile || graphs</title>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/navbar.css">
 	<link rel="stylesheet" href="css/input-field-style.css" media="screen" title="no title" charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="css\chartist.min.css">
+	<link rel="stylesheet" type="text/css" href="css/flaticon.css">
 	<style type="text/css">
 		.tabs .indicator {
-      height: 3px;
-      background-color: #82b1ff;
-    }
-    .ct-series-a .ct-line {
-        /* Set the colour of this series line */
-        stroke: red;
-        /* Control the thikness of your lines */
-        stroke-width: 3px;
-        /* Create a dashed line with a pattern */
-        /*stroke-dasharray: 10px 20px;*/
-      }
-      .ct-series-a .ct-point {
-        /* Colour of your points */
-        stroke: blue;
-        /* Size of your points */
-        stroke-width: 10px;
-        /* Make your points appear as squares */
-        stroke-linecap: circle;
-        show-point : false;
-      }
+			height: 3px;
+			background-color: #82b1ff;
+		}
+		.icon{
+			font-size: 100px;
+		}
+		[class^="flaticon-"]:before,
+		[class*=" flaticon-"]:before,
+		[class^="flaticon-"]:after,
+		[class*=" flaticon-"]:after {
+			font-size: 80px;
+		}
+
+		.ct-series-a .ct-line {
+			/* Set the colour of this series line */
+			stroke: red;
+			/* Control the thikness of your lines */
+			stroke-width: 3px;
+			/* Create a dashed line with a pattern */
+			/*stroke-dasharray: 10px 20px;*/
+		}
+
+		.ct-series-a .ct-point {
+			/* Colour of your points */
+			stroke: blue;
+			/* Size of your points */
+			stroke-width: 10px;
+			/* Make your points appear as squares */
+			stroke-linecap: circle;
+			show-point: false;
+		}
 	</style>
 </head>
+
 <body>
-<!-- side nav -->
-    <div class="side-section">
-      <ul class="side-nav fixed blue lighten-3" style="left:0px">
-        <li class="logo" style="background-color:transparent;"><a href="edit_profile.html"><img class="profile-pic circle" src="1.jpg"></a></li>
-        <li class="blue lighten-3"><a href="remider.html" class="waves-effect waves-lighten" style="color:#1976d2;">Set Reminders</a></li>
-        <li class="blue lighten-3"><a href="updated_walk.html" class="waves-effect waves-lighten" style="color:#1976d2;">Exercise</a></li>
-        <ul class="collapsible collapsible-accordion">
-          <li class="blue lighten-3">
-            <a class="collapsible-header" class="waves-effect waves-lighten" style="color:#1976d2;">Calculators</a>
-            <div class="collapsible-body">
-              <ul>
-                <li class="blue lighten-3">
-                  <a href="BMICal.html" class="waves-effect waves-lighten" style="color:#1976d2;">BMI Calculator</a>
-                </li>
-                <li class="blue lighten-3">
-                  <a href="calorieCalculator.html" class="waves-effect waves-lighten" style="color:#1976d2;">Calorie Calculator</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-        </ul>
+	<!-- side nav -->
+	<div class="side-section">
+		<ul class="side-nav fixed blue lighten-3" style="left:0px">
+			<li class="logo" style="background-color:transparent;">
+				<a href="edit_profile.html"><img id="dp" class="profile-pic circle"></a>
+			</li>
+			<li class="blue lighten-3"><a href="remider.html" class="waves-effect waves-lighten" style="color:#1976d2;">Set Reminders</a></li>
+			<li class="blue lighten-3"><a href="updated_walk.html" class="waves-effect waves-lighten" style="color:#1976d2;">Exercise</a></li>
+			<ul class="collapsible collapsible-accordion">
+				<li class="blue lighten-3">
+					<a class="collapsible-header" class="waves-effect waves-lighten" style="color:#1976d2;">Calculators</a>
+					<div class="collapsible-body">
+						<ul>
+							<li class="blue lighten-3">
+								<a href="BMICal.html" class="waves-effect waves-lighten" style="color:#1976d2;">BMI Calculator</a>
+							</li>
+							<li class="blue lighten-3">
+								<a href="calorieCalculator.html" class="waves-effect waves-lighten" style="color:#1976d2;">Calorie Calculator</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
 
-        <li class="blue lighten-3"><a href="feedback.html" class="waves-effect waves-lighten" style="color:#1976d2;">Feedback</a></li>
-      </ul>
-    </div>
-    <main>
-      <!-- side nav btn -->
-      <div class="row blue darken-2 no-margin">
-        <a class="waves-effect waves-lighten btn-flat large" id="nav-btn">
-          <i class="large material-icons" style="color:white;font-size: xx-large;">list</i>
-        </a>
-      </div>
-      <!-- side nav btn ends -->
-      <!-- side nav -->
-   
-    <div class="row">
-      	<div class="col s12 no-padding">
-	        <ul class="tabs blue darken-1 no-margin">
-	          <li class="tab col s6">
-	            <a href="#step-counter" class="white-text">Step counter</a>
-	          </li>
-	          <li class="tab col s6">
-	            <a href="#recent-activities" class="white-text">Recent activities</a>
-	          </li>
-	        </ul>
-	        <div id="step-counter">
-	        	<div class="row">
-	        		<div class="col s12">
-	        			<div id="step-c" class="ct-perfect-fifth">
-	        				
-	        			</div>
-	        		</div>
-	        	</div>
-	        	<div class="row">
-	        		<div class="col s6">
-	        			
-	        		</div>
-	        	</div>
-	        </div>
-	        <div id="recent-activities">
-	        	<div class="row">
-	        		<div class="col s12">
-	        			<table class="bordered">
-		        			<thead>
-		        				<th>Activities</th>
-		        				<th>Recently Done</th>
-		        			</thead>
-		        			<tbody>
-		        				<tr>
-			        				<td rowspan="2">icon</td>
-			        				<td>data</td>
-		        				</tr>
-		        				<tr>
-		        					<td>data2</td>
-		        				</tr>
-		        				<tr>
-			        				<td rowspan="2">icon</td>
-			        				<td>data</td>
-		        				</tr>
-		        				<tr>
-		        					<td>data2</td>
-		        				</tr>
-		        				<tr>
-			        				<td rowspan="2">icon</td>
-			        				<td>data</td>
-		        				</tr>
-		        				<tr>
-		        					<td>data2</td>
-		        				</tr>
-		        			</tbody>
-	        			</table>
-	        		</div>
-	        	</div>
-	        </div>
-        </div>
-    </div>
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/materialize.js"></script>
-<script type="text/javascript" src="js/navbar-transition.js"></script>
-<script type="text/javascript" src="js/chartist.min.js"></script>
-<script type="text/javascript">
-	    $(document).ready(function(){
-	    $('ul.tabs').tabs();
-        // $("#status_text").hide();
-        makeChart(1,2,3,4,5,6,7);
-      });
+			<li class="blue lighten-3"><a href="feedback.html" class="waves-effect waves-lighten" style="color:#1976d2;">Feedback</a></li>
+		</ul>
+	</div>
+	<main>
+		<!-- side nav btn -->
+		<div class="row blue darken-2 no-margin">
+			<a class="waves-effect waves-lighten btn-flat large" id="nav-btn">
+				<i class="large material-icons" style="color:white;font-size: xx-large;">list</i>
+			</a>
+		</div>
+		<!-- side nav btn ends -->
+		<!-- side nav -->
 
-	  function makeChart(mon,tue,wed,thu,fri,sat,sun){
-        var data = {
-          // A labels array that can contain any sort of values
-          labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri','Sat','Sun'],
-          // Our series array that contains series objects or in this case series data arrays
-          series: [
-            [mon, tue, wed, thu, fri,sat,sun]
-          ]
-        };
-        var chart = new Chartist.Line('#step-c', data);
-        chart.on('draw', function(data) {
-          if(data.type === 'line' || data.type === 'area') {
-            data.element.animate({
-              d: {
-                begin: 2000 * data.index,
-                dur: 2000,
-                from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
-                to: data.path.clone().stringify(),
-                easing: Chartist.Svg.Easing.easeOutQuint
-              }
-            });
-          }
-        });
-	  }
-</script>
+		<div class="row">
+			<div class="col s12 no-padding">
+				<ul class="tabs blue darken-1 no-margin">
+					<li class="tab col s6">
+						<a href="#step-counter" class="white-text">Step counter</a>
+					</li>
+					<li class="tab col s6">
+						<a href="#recent-activities" class="white-text">Recent activities</a>
+					</li>
+				</ul>
+				<div id="step-counter">
+					<div class="row">
+						<div class="col s12">
+							<div id="step-c" class="ct-perfect-fifth">
+
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col s6">
+
+						</div>
+					</div>
+				</div>
+				<div id="recent-activities">
+					<div class="row">
+						<div class="col s12">
+							<table class="bordered">
+								<thead>
+									<th>Activities</th>
+									<th>Recently Done</th>
+								</thead>
+								<tbody>
+									<tr>
+										<td rowspan="2">
+													<i class="flaticon-sports-2 iconss"></i>
+										</td>
+										<td>data</td>
+									</tr>
+									<tr>
+										<td>data2</td>
+									</tr>
+									<tr>
+										<td rowspan="2">icon</td>
+										<td>data</td>
+									</tr>
+									<tr>
+										<td>data2</td>
+									</tr>
+									<tr>
+										<td rowspan="2">
+											<i class="flaticon-people-1 iconss"></i>
+										</td>
+										<td>data</td>
+									</tr>
+									<tr>
+										<td>data2</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/materialize.js"></script>
+		<script type="text/javascript" src="js/navbar-transition.js"></script>
+		<script type="text/javascript" src="js/chartist.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				var personaldetails = localStorage.getItem("user");
+        var details = JSON.parse(personaldetails);
+        var img = document.getElementById('dp');
+        img.src = details.img;
+				$('ul.tabs').tabs();
+				// $("#status_text").hide();
+				makeChart(1, 2, 3, 4, 5, 6, 7);
+			});
+
+			function makeChart(mon, tue, wed, thu, fri, sat, sun) {
+				var data = {
+					// A labels array that can contain any sort of values
+					labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+					// Our series array that contains series objects or in this case series data arrays
+					series: [
+						[mon, tue, wed, thu, fri, sat, sun]
+					]
+				};
+				var chart = new Chartist.Line('#step-c', data);
+				chart.on('draw', function(data) {
+					if (data.type === 'line' || data.type === 'area') {
+						data.element.animate({
+							d: {
+								begin: 2000 * data.index,
+								dur: 2000,
+								from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
+								to: data.path.clone().stringify(),
+								easing: Chartist.Svg.Easing.easeOutQuint
+							}
+						});
+					}
+				});
+			}
+		</script>
 </body>
+
 </html>
