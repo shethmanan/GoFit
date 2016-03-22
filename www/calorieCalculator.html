@@ -8,8 +8,35 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/navbar.css">
+  <link rel="stylesheet" href="css\chartist.min.css">
   <link rel="stylesheet" href="css/input-field-style.css" media="screen" title="no title" charset="utf-8">
   <style>
+    .ct-series-a .ct-slice-donut {
+      stroke: #0d47a1;
+      stroke-width: 20px !important;
+      stroke-linecap: circle;
+    }
+
+    .ct-series-b .ct-slice-donut {
+      stroke: #1565c0;
+      stroke-width: 20px !important;
+    }
+
+    .ct-series-c .ct-slice-donut {
+      stroke: #1976d2;
+      stroke-width: 20px !important;
+    }
+
+    .ct-series-d .ct-slice-donut {
+      stroke: #1e88e5;
+      stroke-width: 20px !important;
+    }
+
+    .ct-series-e .ct-slice-donut {
+      stroke: #2196f3;
+      stroke-width: 20px !important;
+    }
+
     .tabs .indicator {
       height: 3px;
       background-color: #82b1ff;
@@ -17,26 +44,6 @@
 
     .row #previous-chart {
       width: 50% !important;
-    }
-
-    .ct-series-e {
-      fill: #2196f3;
-    }
-
-    .ct-series-d {
-      fill: #1e88e5;
-    }
-
-    .ct-series-c {
-      fill: #1976d2;
-    }
-
-    .ct-series-b {
-      fill: #1565c0;
-    }
-
-    .ct-series-a {
-      fill: #0d47a1;
     }
 
     .row #current-chart {
@@ -238,20 +245,56 @@
                 <li id="pneed-mu" style="opacity: 0; color: blue; font-size: 16px; font-family: cursive"></li>
               </ul> -->
               <div class="row">
-                <div class="col s6">
-                  <h6 class="center-align">Previous Results</h6>
-                </div>
-                <div class="col s6">
-                  <h6 class="center-align">Current Results</h6>
+                <div class="col s12">
+                  <table class="responsive-table">
+                    <thead>
+                      <th>
+                        Something
+                      </th>
+                      <th>
+                        Previous Results
+                      </th>
+                      <th>
+                        Current Results
+                      </th>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          Calories needed
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Fats needed
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Protien needed
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Carbohydrates needed
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Alcohol needed
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
               <div class="row">
                 <div class="col s6">
-                  <div class="ct-chart">
+                  <div class="ct-chart" id="MU-Pchart">
                   </div>
                 </div>
                 <div class="col s6">
-                  <div class="ct-chart2">
+                  <div class="ct-chart2" id="MU-Cchart">
                   </div>
                 </div>
               </div>
@@ -275,7 +318,7 @@
     var cur_chart;
     var db = openDatabase('GoFit', '1.0', 'Test DB', 2 * 1024 * 1024);
     $(document).ready(function() {
-      new Chartist.Pie('.ct-chart', {
+      new Chartist.Pie('#MU-Pchart', {
         series: [{
           value: 20,
           name: 'Series 1',
@@ -366,9 +409,9 @@
       car1 = car1.toFixed(3);
       alh1 = alh1.toFixed(3);
       // store in DATABASE
-      db.transaction(function(tx){
+      db.transaction(function(tx) {
         tx.executeSql("CREATE TABLE IF NOT EXISTS `calorieCalculatorUS` (id integer primary key autoincrement,weight,height,cneed,fneed,crneed,prneed,aneed,time)");
-        tx.executeSql("INSERT INTO `calorieCalculatorUS` (weight,height,cneed,fneed,crneed,prneed,aneed,time) values (?,?,?,?,?,?,?,datetime())",[weight,cm,cneed,fat1,pro1,car1,alh1]);
+        tx.executeSql("INSERT INTO `calorieCalculatorUS` (weight,height,cneed,fneed,crneed,prneed,aneed,time) values (?,?,?,?,?,?,?,datetime())", [weight, cm, cneed, fat1, pro1, car1, alh1]);
       });
 
       $("#cneed").html("Calories Needed : " + cneed);
@@ -400,8 +443,7 @@
     }
 
     function calculateCalorieMU(data) {
-      $('.ct-chart2 svg').remove();
-      console.log(data);
+      $('#MU-Cchart svg').remove();
       var age = data[0].value;
       var gen = data[1].value;
       var cm = data[2].value;
@@ -426,20 +468,78 @@
       aneed = Math.floor((cneed * 0.25) / 7);
       // store the data in database with timeStamp
       // store in DATABASE
-      db.transaction(function(tx){
+      db.transaction(function(tx) {
         tx.executeSql("CREATE TABLE IF NOT EXISTS `calorieCalculatorMU` (id integer primary key autoincrement,weight,height,cneed,fneed,crneed,prneed,aneed,time)");
-        tx.executeSql("INSERT INTO `calorieCalculatorMU` (weight,height,cneed,fneed,crneed,prneed,aneed,time) values (?,?,?,?,?,?,?,datetime())",[weight,cm,cneed,fneed,crneed,pneed,aneed]);
+        tx.executeSql("INSERT INTO `calorieCalculatorMU` (weight,height,cneed,fneed,crneed,prneed,aneed,time) values (?,?,?,?,?,?,?,datetime())", [weight, cm, cneed, fneed, crneed, pneed, aneed]);
       });
-      // make chart
-      var options = {
-        labelInterpolationFnc: function(value) {
-          return value[0]
+      //makeChart('#MU-Cchart', cneed, fneed, pneed, crneed, aneed);
+    }
+
+    function makeChart(id, cneed, fneed, pneed, crneed, aneed) {
+      var log_data = 20;
+      //replace with the data from database
+      console.log(id);
+      var chart = new Chartist.Pie('' + id, {
+        series: [cneed, fneed, pneed, crneed, aneed],
+        labels: ['calorie needed', 'fats needed', 'protien needed', 'carbohydrates needed','alcohol needed']
+      }, {
+        donut: true,
+        showLabel: true,
+        width: 175,
+        height: 175
+      });
+
+      chart.on('draw', function(data) {
+        if (data.type === 'slice') {
+          // Get the total path length in order to use for dash array animation
+          var pathLength = data.element._node.getTotalLength();
+
+          // Set a dasharray that matches the path length as prerequisite to animate dashoffset
+          data.element.attr({
+            'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
+          });
+
+          // Create animation definition while also assigning an ID to the animation for later sync usage
+          var animationDefinition = {
+            'stroke-dashoffset': {
+              id: 'anim' + data.index,
+              dur: 1000,
+              from: -pathLength + 'px',
+              to: '0px',
+              easing: Chartist.Svg.Easing.easeOutQuint,
+              // We need to use `fill: 'freeze'` otherwise our animation will fall back to initial (not visible)
+              fill: 'freeze'
+            }
+          };
+
+          // If this was not the first slice, we need to time the animation so that it uses the end sync event of the previous animation
+          if (data.index !== 0) {
+            animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
+          }
+
+          // We need to set an initial value before the animation starts as we are not in guided mode which would do that for us
+          data.element.attr({
+            'stroke-dashoffset': -pathLength + 'px'
+          });
+
+          // We can't use guided mode as the animations need to rely on setting begin manually
+          // See http://gionkunz.github.io/chartist-js/api-documentation.html#chartistsvg-function-animate
+          data.element.animate(animationDefinition, false);
         }
-      };
-      var chart = new Chartist.Pie('.ct-chart2', {
-        label: ['calories', 'fats', 'protiens', 'carbohydrates', 'alcohol'],
-        series: [cneed, fneed, pneed, crneed, aneed]
-      }, options);
+      });
+
+      // For the sake of the example we update the chart every time it's created with a delay of 8 seconds
+      chart.on('created', function() {
+        if (window.__anim21278907124) {
+          clearTimeout(window.__anim21278907124);
+          window.__anim21278907124 = null;
+        }
+        window.__anim21278907124 = setTimeout(chart.update.bind(chart), 1000000);
+      });
+
+      // $("#pie_chart_btn").click(function(){
+      $("#status_text").hide();
+      $("#status_text").fadeIn(1500);
     }
   </script>
 </body>

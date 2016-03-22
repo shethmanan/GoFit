@@ -1,0 +1,5 @@
+start walking
+	-start step counting
+stop walking 
+	-stop step counting
+	-store steps,time,date,day  
