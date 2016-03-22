@@ -49,6 +49,15 @@
     .row #current-chart {
       width: 50% !important;
     }
+    td{
+      padding-bottom: 9px;
+      padding-top: 9px;
+      color:#546e7a;
+    }
+    th{
+      padding-bottom: 9px;
+      padding-top: 9px;
+    }
   </style>
 </head>
 
@@ -156,16 +165,89 @@
               </div>
               <div class="row">
                 <div class="col s4 offset-s4 no-padding no-margin">
-                  <a id="submit" type="submit" href="javascript:void(0)" class="btn blue">Click Me</a>
+                  <a id="submit" type="submit" href="javascript:void(0)" class="btn blue">Calculate</a>
                 </div>
               </div>
-              <ul id="results">
+              <!-- <ul id="results">
                 <li id="cneed" style="opacity: 0; color: blue; font-size: 16px; font-family: cursive"></li>
                 <li id="fneed" style="opacity: 0; color: blue; font-size: 16px; font-family: cursive"></li>
                 <li id="crneed" style="opacity: 0; color: blue; font-size: 16px; font-family: cursive"></li>
                 <li id="aneed" style="opacity: 0; color: blue; font-size: 16px; font-family: cursive"></li>
                 <li id="pneed" style="opacity: 0; color: blue; font-size: 16px; font-family: cursive"></li>
-              </ul>
+              </ul> -->
+              <div class="row">
+                <div class="col s12">
+                  <table class="bordered">
+                    <thead>
+                      <th>
+                        Something
+                      </th>
+                      <th>
+                        Previous Results
+                      </th>
+                      <th>
+                        Current Results
+                      </th>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          Calories needed
+                        </td>
+                        <td id="Presults-cal-us">
+                        </td>
+                        <td id="cresults-cal-us">
+                          
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Fats needed
+                        </td>
+                        <td id="Presults-fat-us">
+                          
+                        </td>
+                        <td id="cresults-fat-us">
+                          
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Protien needed
+                        </td>
+                        <td id="Presults-pro-us">
+                          
+                        </td>
+                        <td id="cresults-pro-us">
+                          
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Carbohydrates needed
+                        </td>
+                        <td id="Presults-cr-us">
+                          
+                        </td>
+                        <td id="cresults-cr-us">
+                          
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Alcohol needed
+                        </td>
+                        <td id="Presults-al-us">
+                          
+                        </td>
+                        <td id="cresults-al-us">
+                          
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
               <center>
                 <!--preloader-->
                 <div class="preloader-wrapper small">
@@ -234,7 +316,7 @@
               </div>
               <div class="row">
                 <div class="col s4 offset-s4 no-padding no-margin">
-                  <a id="submit-mu" type="submit" href="javascript:void(0)" class="btn blue">Click Me</a>
+                  <a id="submit-mu" type="submit" href="javascript:void(0)" class="btn blue">Calculate</a>
                 </div>
               </div>
               <!-- <ul id="results-mu">
@@ -246,7 +328,7 @@
               </ul> -->
               <div class="row">
                 <div class="col s12">
-                  <table class="responsive-table">
+                  <table class="bordered">
                     <thead>
                       <th>
                         Something
@@ -263,25 +345,54 @@
                         <td>
                           Calories needed
                         </td>
+                        <td id="Presults-cal-mu">
+                        </td>
+                        <td id="cresults-cal-mu">
+                          
+                        </td>
                       </tr>
                       <tr>
                         <td>
                           Fats needed
+                        </td>
+                        <td id="Presults-fat-mu">
+                          
+                        </td>
+                        <td id="cresults-fat-mu">
+                          
                         </td>
                       </tr>
                       <tr>
                         <td>
                           Protien needed
                         </td>
+                        <td id="Presults-pro-mu">
+                          
+                        </td>
+                        <td id="cresults-pro-mu">
+                          
+                        </td>
                       </tr>
                       <tr>
                         <td>
                           Carbohydrates needed
                         </td>
+                        <td id="Presults-cr-mu">
+                          
+                        </td>
+                        <td id="cresults-cr-mu">
+                          
+                        </td>
                       </tr>
                       <tr>
                         <td>
                           Alcohol needed
+                        </td>
+                        <td id="Presults-al-mu">
+                          
+                        </td>
+                        <td id="cresults-al-mu">
+                          
                         </td>
                       </tr>
                     </tbody>
@@ -318,24 +429,33 @@
     var cur_chart;
     var db = openDatabase('GoFit', '1.0', 'Test DB', 2 * 1024 * 1024);
     $(document).ready(function() {
-      new Chartist.Pie('#MU-Pchart', {
-        series: [{
-          value: 20,
-          name: 'Series 1',
-          className: 'class-one',
-          meta: 'Meta One'
-        }, {
-          value: 10,
-          name: 'Series 2',
-          className: 'class-two',
-          meta: 'Meta Two'
-        }, {
-          value: 70,
-          name: 'Series 3',
-          className: 'class-three',
-          meta: 'Meta Three'
-        }]
-      });
+      db.transaction(function(tx){
+        console.log("inside db.trasaction");
+      tx.executeSql("select * from `calorieCalculatorMU` Order By `id` desc limit 1",[],function(tx, results){
+        console.log(results.rows[0].aneed);
+        console.log(results);
+        // load previous results
+      $("#Presults-al-mu").html(results.rows[0].aneed);
+      $("#Presults-cr-mu").html(results.rows[0].crneed)
+      $("#Presults-pro-mu").html(results.rows[0].prneed)
+      $("#Presults-fat-mu").html(results.rows[0].fneed)
+      $("#Presults-cal-mu").html(results.rows[0].cneed)
+      })      
+    })
+      db.transaction(function(tx){
+        console.log("inside db.trasaction");
+      tx.executeSql("select * from `calorieCalculatorUS` Order By `id` desc limit 1",[],function(tx, results){
+        console.log(results.rows[0].aneed);
+        console.log(results);
+        // load previous results
+      $("#Presults-al-us").html(results.rows[0].aneed);
+      $("#Presults-cr-us").html(results.rows[0].crneed)
+      $("#Presults-pro-us").html(results.rows[0].prneed)
+      $("#Presults-fat-us").html(results.rows[0].fneed)
+      $("#Presults-cal-us").html(results.rows[0].cneed)
+      })      
+    })
+
       var personaldetails = localStorage.getItem("user");
       var details = JSON.parse(personaldetails);
       $("#age-us").val(details.age);
@@ -414,11 +534,16 @@
         tx.executeSql("INSERT INTO `calorieCalculatorUS` (weight,height,cneed,fneed,crneed,prneed,aneed,time) values (?,?,?,?,?,?,?,datetime())", [weight, cm, cneed, fat1, pro1, car1, alh1]);
       });
 
-      $("#cneed").html("Calories Needed : " + cneed);
-      $("#fneed").html("Fats : " + fat1 + " lbs");
-      $("#pneed").html("Protiens : " + pro1 + " lbs");
-      $("#crneed").html("Carbohydrates : " + car1 + " lbs");
-      $("#aneed").html("Alcohol : " + alh1 + " lbs");
+      // $("#cneed").html("Calories Needed : " + cneed);
+      // $("#fneed").html("Fats : " + fat1 + " lbs");
+      // $("#pneed").html("Protiens : " + pro1 + " lbs");
+      // $("#crneed").html("Carbohydrates : " + car1 + " lbs");
+      // $("#aneed").html("Alcohol : " + alh1 + " lbs");
+      $("#cresults-cr-us").html(car1).hide().fadeIn("slow");
+      $("#cresults-al-us").html(alh1).hide().fadeIn("slow");
+      $("#cresults-pro-us").html(pro1).hide().fadeIn("slow");
+      $("#cresults-fat-us").html(fat1).hide().fadeIn("slow");
+      $("#cresults-cal-us").html(cneed).hide().fadeIn("slow");
       Materialize.showStaggeredList('#results');
     }
 
@@ -472,6 +597,11 @@
         tx.executeSql("CREATE TABLE IF NOT EXISTS `calorieCalculatorMU` (id integer primary key autoincrement,weight,height,cneed,fneed,crneed,prneed,aneed,time)");
         tx.executeSql("INSERT INTO `calorieCalculatorMU` (weight,height,cneed,fneed,crneed,prneed,aneed,time) values (?,?,?,?,?,?,?,datetime())", [weight, cm, cneed, fneed, crneed, pneed, aneed]);
       });
+      $("#cresults-cr-mu").html(crneed).hide().fadeIn("slow");
+      $("#cresults-al-mu").html(aneed).hide().fadeIn("slow");
+      $("#cresults-pro-mu").html(pneed).hide().fadeIn("slow");
+      $("#cresults-fat-mu").html(fneed).hide().fadeIn("slow");
+      $("#cresults-cal-mu").html(cneed).hide().fadeIn("slow");
       //makeChart('#MU-Cchart', cneed, fneed, pneed, crneed, aneed);
     }
 
