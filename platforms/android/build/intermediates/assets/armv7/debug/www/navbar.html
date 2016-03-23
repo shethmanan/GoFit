@@ -47,7 +47,7 @@
 		<!-- side nav -->
 		<div class="side-section">
 			<ul class="side-nav fixed blue lighten-3" style="left:0px">
-				<li class="logo" style="background-color:transparent;"><a href="edit_profile.html"><img class="profile-pic circle" src="1.jpg"></a></li>
+				<li class="logo" style="background-color:transparent;"><a href="edit_profile.html"><img id="dp" class="profile-pic circle" src="1.jpg"></a></li>
 				<li class="blue lighten-3"><a href="remider.html" class="waves-effect waves-lighten" style="color:#1976d2;">Set Reminders</a></li>
 				<li class="blue lighten-3"><a href="updated_walk.html" class="waves-effect waves-lighten" style="color:#1976d2;">Exercise</a></li>
 				<ul class="collapsible collapsible-accordion">
@@ -65,7 +65,7 @@
             </div>
           </li>
         </ul>
-				
+
 				<li class="blue lighten-3"><a href="feedback.html" class="waves-effect waves-lighten" style="color:#1976d2;">Feedback</a></li>
 			</ul>
 		</div>
@@ -78,8 +78,8 @@
 	    </div>
 	    <!-- side nav btn ends -->
 		<!-- side nav -->
-		
-		
+
+
 		<div class="gap"></div>
 		<div class="row">
 			<div class="col s6">
@@ -115,6 +115,12 @@
 		<script type="text/javascript" src="js/navbar-transition.js"></script>
 		<script type="text/javascript" src="js/velocity.ui.min.js"></script>
 		<script type="text/javascript">
+		$(document).ready(function(){
+			var personaldetails = localStorage.getItem("user");
+			var details = JSON.parse(personaldetails);
+			var imgdp=document.getElementById('dp');
+			imgdp.src=details.img;
+		});
 			//$(".card").velocity("transition.bounceIn",{ stagger: 250}).delay(1000)}, 2000);
 		</script>
 		</script>

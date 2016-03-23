@@ -7,6 +7,7 @@
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/icon?family=Roboto" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/navbar.css">
+		<link rel="stylesheet" type="text/css" href="css/flaticon.css">
 		<style type="text/css">
 		.color{
 			background-color: black;
@@ -31,6 +32,13 @@
 			width:100%;
 			height:30vh;
 		}
+		.flaticon-sports:before {
+			margin-left: 7px;
+			font-size: 23px;
+		}
+		#nav-btn{
+			padding-left: 0px;
+		}
 		</style>
 	</head>
 	<body>
@@ -39,7 +47,7 @@
 		<!-- side nav -->
 		<div class="side-section">
 			<ul class="side-nav fixed blue lighten-3" style="left:0px">
-				<li class="logo" style="background-color:transparent;"><img class="profile-pic circle" src="1.jpg"></li>
+				<li class="logo" style="background-color:transparent;"><a href="edit_profile.html"><img id="dp" class="profile-pic circle" src="1.jpg"></a></li>
 				<li class="blue lighten-3"><a href="remider.html" class="waves-effect waves-lighten" style="color:#1976d2;">Set Reminders</a></li>
 				<li class="blue lighten-3"><a href="updated_walk.html" class="waves-effect waves-lighten" style="color:#1976d2;">Exercise</a></li>
 				<ul class="collapsible collapsible-accordion">
@@ -57,7 +65,7 @@
             </div>
           </li>
         </ul>
-				<li class=" blue lighten-3"><a href="edit_profile.html" class="waves-effect waves-lighten" style="color:#1976d2;">My Profile</a></li>
+
 				<li class="blue lighten-3"><a href="feedback.html" class="waves-effect waves-lighten" style="color:#1976d2;">Feedback</a></li>
 			</ul>
 		</div>
@@ -65,11 +73,13 @@
 			<!-- side nav btn -->
 	    <div class="row blue darken-2 no-margin">
 	      <a class="waves-effect waves-lighten btn-flat large" id="nav-btn">
-	        <i class="large material-icons" style="color:white;font-size: xx-large;">list</i>
+	        <i class="large flaticon-interface" style="color:white;font-size: xx-large;padding-left:0px;"></i>
 	      </a>
 	    </div>
 	    <!-- side nav btn ends -->
 		<!-- side nav -->
+
+
 		<div class="gap"></div>
 		<div class="row">
 			<div class="col s6">
@@ -88,7 +98,7 @@
 		<div class="row index-footer no-margin">
 			<div class="col s12 no-padding">
 				<div class="card-footer blue darken-4 no-margin">
-					<div class="btn-floating btn-large blue darken-3 z-depth-0 center-align"><i class="material-icons">directions_run</i></div>
+					<div class="btn-floating btn-large blue darken-3 z-depth-0 center-align"><i style="margin-left: 0px;" class="flaticon-sports right"></i></div>
 					<div class="gap"></div>
 					<h5 class="center-align" style="color:white;">Go for your goals</h5>
 					<p class="center-align"style="color:white">Complete your Goals and GoFit with us...</p>
@@ -105,6 +115,12 @@
 		<script type="text/javascript" src="js/navbar-transition.js"></script>
 		<script type="text/javascript" src="js/velocity.ui.min.js"></script>
 		<script type="text/javascript">
+		$(document).ready(function(){
+			var personaldetails = localStorage.getItem("user");
+			var details = JSON.parse(personaldetails);
+			var imgdp=document.getElementById('dp');
+			imgdp.src=details.img;
+		});
 			//$(".card").velocity("transition.bounceIn",{ stagger: 250}).delay(1000)}, 2000);
 		</script>
 		</script>

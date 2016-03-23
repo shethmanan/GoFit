@@ -8,11 +8,57 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/navbar.css">
+  <link rel="stylesheet" href="css\chartist.min.css">
   <link rel="stylesheet" href="css/input-field-style.css" media="screen" title="no title" charset="utf-8">
   <style>
+    .ct-series-a .ct-slice-donut {
+      stroke: #0d47a1;
+      stroke-width: 20px !important;
+      stroke-linecap: circle;
+    }
+
+    .ct-series-b .ct-slice-donut {
+      stroke: #1565c0;
+      stroke-width: 20px !important;
+    }
+
+    .ct-series-c .ct-slice-donut {
+      stroke: #1976d2;
+      stroke-width: 20px !important;
+    }
+
+    .ct-series-d .ct-slice-donut {
+      stroke: #1e88e5;
+      stroke-width: 20px !important;
+    }
+
+    .ct-series-e .ct-slice-donut {
+      stroke: #2196f3;
+      stroke-width: 20px !important;
+    }
+
     .tabs .indicator {
       height: 3px;
       background-color: #82b1ff;
+    }
+
+    .row #previous-chart {
+      width: 50% !important;
+    }
+
+    .row #current-chart {
+      width: 50% !important;
+    }
+
+    td {
+      padding-bottom: 9px;
+      padding-top: 9px;
+      color: #546e7a;
+    }
+
+    th {
+      padding-bottom: 9px;
+      padding-top: 9px;
     }
   </style>
 </head>
@@ -22,7 +68,9 @@
   <!-- side nav -->
   <div class="side-section">
     <ul class="side-nav fixed blue lighten-3" style="left:0px">
-      <li class="logo" style="background-color:transparent;"><img class="profile-pic circle" src="1.jpg"></li>
+      <li class="logo" style="background-color:transparent;">
+        <a href="edit_profile.html"><img class="profile-pic circle" id="dp"></a>
+      </li>
       <li class="blue lighten-3"><a href="remider.html" class="waves-effect waves-lighten" style="color:#1976d2;">Set Reminders</a></li>
       <li class="blue lighten-3"><a href="updated_walk.html" class="waves-effect waves-lighten" style="color:#1976d2;">Exercise</a></li>
       <ul class="collapsible collapsible-accordion">
@@ -40,8 +88,8 @@
           </div>
         </li>
       </ul>
-      <li class=" blue lighten-3"><a href="edit_profile.html" class="waves-effect waves-lighten" style="color:#1976d2;">My Profile</a></li>
-      <li class="blue lighten-3"><a href="#!" class="waves-effect waves-lighten" style="color:#1976d2;">Help</a></li>
+
+      <li class="blue lighten-3"><a href="feedback.html" class="waves-effect waves-lighten" style="color:#1976d2;">Feedback</a></li>
     </ul>
   </div>
   <main>
@@ -119,16 +167,89 @@
               </div>
               <div class="row">
                 <div class="col s4 offset-s4 no-padding no-margin">
-                  <a id="submit" type="submit" href="javascript:void(0)" class="btn blue">Click Me</a>
+                  <a id="submit" type="submit" href="javascript:void(0)" class="btn blue">Calculate</a>
                 </div>
               </div>
-              <ul id="results">
+              <!-- <ul id="results">
                 <li id="cneed" style="opacity: 0; color: blue; font-size: 16px; font-family: cursive"></li>
                 <li id="fneed" style="opacity: 0; color: blue; font-size: 16px; font-family: cursive"></li>
                 <li id="crneed" style="opacity: 0; color: blue; font-size: 16px; font-family: cursive"></li>
                 <li id="aneed" style="opacity: 0; color: blue; font-size: 16px; font-family: cursive"></li>
                 <li id="pneed" style="opacity: 0; color: blue; font-size: 16px; font-family: cursive"></li>
-              </ul>
+              </ul> -->
+              <div class="row">
+                <div class="col s12">
+                  <table class="bordered">
+                    <thead>
+                      <th>
+                        Something
+                      </th>
+                      <th>
+                        Previous Results
+                      </th>
+                      <th>
+                        Current Results
+                      </th>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          Calories needed
+                        </td>
+                        <td id="Presults-cal-us">
+                        </td>
+                        <td id="cresults-cal-us">
+
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Fats needed
+                        </td>
+                        <td id="Presults-fat-us">
+
+                        </td>
+                        <td id="cresults-fat-us">
+
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Protien needed
+                        </td>
+                        <td id="Presults-pro-us">
+
+                        </td>
+                        <td id="cresults-pro-us">
+
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Carbohydrates needed
+                        </td>
+                        <td id="Presults-cr-us">
+
+                        </td>
+                        <td id="cresults-cr-us">
+
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Alcohol needed
+                        </td>
+                        <td id="Presults-al-us">
+
+                        </td>
+                        <td id="cresults-al-us">
+
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
               <center>
                 <!--preloader-->
                 <div class="preloader-wrapper small">
@@ -197,43 +318,109 @@
               </div>
               <div class="row">
                 <div class="col s4 offset-s4 no-padding no-margin">
-                  <a id="submit-mu" type="submit" href="javascript:void(0)" class="btn blue">Click Me</a>
+                  <a id="submit-mu" type="submit" href="javascript:void(0)" class="btn blue">Calculate</a>
                 </div>
               </div>
-              <ul id="results-mu">
+              <!-- <ul id="results-mu">
                 <li id="cneed-mu" style="opacity: 0; color: blue; font-size: 16px; font-family: cursive"></li>
                 <li id="fneed-mu" style="opacity: 0; color: blue; font-size: 16px; font-family: cursive"></li>
                 <li id="crneed-mu" style="opacity: 0; color: blue; font-size: 16px; font-family: cursive"></li>
                 <li id="aneed-mu" style="opacity: 0; color: blue; font-size: 16px; font-family: cursive"></li>
                 <li id="pneed-mu" style="opacity: 0; color: blue; font-size: 16px; font-family: cursive"></li>
-              </ul>
-              <center>
-                <!--preloader-->
-                <div class="preloader-wrapper small">
-                  <div class="spinner-layer spinner-blue-only">
-                    <div class="circle-clipper left">
-                      <div class="circle"></div>
-                    </div>
-                    <div class="gap-patch">
-                      <div class="circle"></div>
-                    </div>
-                    <div class="circle-clipper right">
-                      <div class="circle"></div>
-                    </div>
+              </ul> -->
+              <div class="row">
+                <div class="col s12">
+                  <table class="bordered">
+                    <thead>
+                      <th>
+                        Something
+                      </th>
+                      <th>
+                        Previous Results
+                      </th>
+                      <th>
+                        Current Results
+                      </th>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          Calories needed
+                        </td>
+                        <td id="Presults-cal-mu">
+                        </td>
+                        <td id="cresults-cal-mu">
+
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Fats needed
+                        </td>
+                        <td id="Presults-fat-mu">
+
+                        </td>
+                        <td id="cresults-fat-mu">
+
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Protien needed
+                        </td>
+                        <td id="Presults-pro-mu">
+
+                        </td>
+                        <td id="cresults-pro-mu">
+
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Carbohydrates needed
+                        </td>
+                        <td id="Presults-cr-mu">
+
+                        </td>
+                        <td id="cresults-cr-mu">
+
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Alcohol needed
+                        </td>
+                        <td id="Presults-al-mu">
+
+                        </td>
+                        <td id="cresults-al-mu">
+
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s6">
+                  <div class="ct-chart" id="MU-Pchart">
                   </div>
                 </div>
-                <!--End preloader-->
-              </center>
+                <div class="col s6">
+                  <div class="ct-chart2" id="MU-Cchart">
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
   </main>
   <footer></footer>
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript" src="js/materialize.js"></script>
   <script type="text/javascript" src="js/navbar-transition.js"></script>
+  <script src="js/chartist.min.js"></script>
   <script type="text/javascript">
     var cneed; //calories needed
     var fneed; //fat needed
@@ -241,9 +428,40 @@
     var pneed; //protien needed
     var aneed; //alcohol needed
     var fd;
+    var cur_chart;
+    var db = openDatabase('GoFit', '1.0', 'Test DB', 2 * 1024 * 1024);
     $(document).ready(function() {
+      db.transaction(function(tx) {
+        console.log("inside db.trasaction");
+        tx.executeSql("select * from `calorieCalculatorMU` Order By `id` desc limit 1", [], function(tx, results) {
+          console.log(results.rows[0].aneed);
+          console.log(results);
+          // load previous results
+          $("#Presults-al-mu").html(results.rows[0].aneed);
+          $("#Presults-cr-mu").html(results.rows[0].crneed)
+          $("#Presults-pro-mu").html(results.rows[0].prneed)
+          $("#Presults-fat-mu").html(results.rows[0].fneed)
+          $("#Presults-cal-mu").html(results.rows[0].cneed)
+        })
+      })
+      db.transaction(function(tx) {
+        console.log("inside db.trasaction");
+        tx.executeSql("select * from `calorieCalculatorUS` Order By `id` desc limit 1", [], function(tx, results) {
+          console.log(results.rows[0].aneed);
+          console.log(results);
+          // load previous results
+          $("#Presults-al-us").html(results.rows[0].aneed);
+          $("#Presults-cr-us").html(results.rows[0].crneed)
+          $("#Presults-pro-us").html(results.rows[0].prneed)
+          $("#Presults-fat-us").html(results.rows[0].fneed)
+          $("#Presults-cal-us").html(results.rows[0].cneed)
+        })
+      })
+
       var personaldetails = localStorage.getItem("user");
       var details = JSON.parse(personaldetails);
+      var img = document.getElementById('dp');
+      img.src=details.img;
       $("#age-us").val(details.age);
       $("#age-mu").val(details.age);
       $("#cms-us").val(details.height);
@@ -314,11 +532,22 @@
       pro1 = pro1.toFixed(3);
       car1 = car1.toFixed(3);
       alh1 = alh1.toFixed(3);
-      $("#cneed").html("Calories Needed : " + cneed);
-      $("#fneed").html("Fats : " + fat1 + " lbs");
-      $("#pneed").html("Protiens : " + pro1 + " lbs");
-      $("#crneed").html("Carbohydrates : " + car1 + " lbs");
-      $("#aneed").html("Alcohol : " + alh1 + " lbs");
+      // store in DATABASE
+      db.transaction(function(tx) {
+        tx.executeSql("CREATE TABLE IF NOT EXISTS `calorieCalculatorUS` (id integer primary key autoincrement,weight,height,cneed,fneed,crneed,prneed,aneed,time)");
+        tx.executeSql("INSERT INTO `calorieCalculatorUS` (weight,height,cneed,fneed,crneed,prneed,aneed,time) values (?,?,?,?,?,?,?,datetime())", [weight, cm, cneed, fat1, pro1, car1, alh1]);
+      });
+
+      // $("#cneed").html("Calories Needed : " + cneed);
+      // $("#fneed").html("Fats : " + fat1 + " lbs");
+      // $("#pneed").html("Protiens : " + pro1 + " lbs");
+      // $("#crneed").html("Carbohydrates : " + car1 + " lbs");
+      // $("#aneed").html("Alcohol : " + alh1 + " lbs");
+      $("#cresults-cr-us").html(car1).hide().fadeIn("slow");
+      $("#cresults-al-us").html(alh1).hide().fadeIn("slow");
+      $("#cresults-pro-us").html(pro1).hide().fadeIn("slow");
+      $("#cresults-fat-us").html(fat1).hide().fadeIn("slow");
+      $("#cresults-cal-us").html(cneed).hide().fadeIn("slow");
       Materialize.showStaggeredList('#results');
     }
 
@@ -343,7 +572,7 @@
     }
 
     function calculateCalorieMU(data) {
-      console.log(data);
+      $('#MU-Cchart svg').remove();
       var age = data[0].value;
       var gen = data[1].value;
       var cm = data[2].value;
@@ -366,12 +595,85 @@
       pneed = Math.floor((cneed * 0.25) / 4);
       crneed = Math.floor((cneed * 0.25) / 4);
       aneed = Math.floor((cneed * 0.25) / 7);
-      $("#cneed-mu").html("Calories needed :" + cneed + " grams");
-      $("#fneed-mu").html("Fats :" + fneed + " grams");
-      $("#crneed-mu").html("Carbohydrates :" + crneed + " grams");
-      $("#aneed-mu").html("Alcohol : " + aneed + " grams");
-      $("#pneed-mu").html("Protien : " + pneed + " grams");
-      Materialize.showStaggeredList('#results-mu');
+      // store the data in database with timeStamp
+      // store in DATABASE
+      db.transaction(function(tx) {
+        tx.executeSql("CREATE TABLE IF NOT EXISTS `calorieCalculatorMU` (id integer primary key autoincrement,weight,height,cneed,fneed,crneed,prneed,aneed,time)");
+        tx.executeSql("INSERT INTO `calorieCalculatorMU` (weight,height,cneed,fneed,crneed,prneed,aneed,time) values (?,?,?,?,?,?,?,datetime())", [weight, cm, cneed, fneed, crneed, pneed, aneed]);
+      });
+      $("#cresults-cr-mu").html(crneed).hide().fadeIn("slow");
+      $("#cresults-al-mu").html(aneed).hide().fadeIn("slow");
+      $("#cresults-pro-mu").html(pneed).hide().fadeIn("slow");
+      $("#cresults-fat-mu").html(fneed).hide().fadeIn("slow");
+      $("#cresults-cal-mu").html(cneed).hide().fadeIn("slow");
+      //makeChart('#MU-Cchart', cneed, fneed, pneed, crneed, aneed);
+    }
+
+    function makeChart(id, cneed, fneed, pneed, crneed, aneed) {
+      var log_data = 20;
+      //replace with the data from database
+      console.log(id);
+      var chart = new Chartist.Pie('' + id, {
+        series: [cneed, fneed, pneed, crneed, aneed],
+        labels: ['calorie needed', 'fats needed', 'protien needed', 'carbohydrates needed', 'alcohol needed']
+      }, {
+        donut: true,
+        showLabel: true,
+        width: 175,
+        height: 175
+      });
+
+      chart.on('draw', function(data) {
+        if (data.type === 'slice') {
+          // Get the total path length in order to use for dash array animation
+          var pathLength = data.element._node.getTotalLength();
+
+          // Set a dasharray that matches the path length as prerequisite to animate dashoffset
+          data.element.attr({
+            'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
+          });
+
+          // Create animation definition while also assigning an ID to the animation for later sync usage
+          var animationDefinition = {
+            'stroke-dashoffset': {
+              id: 'anim' + data.index,
+              dur: 1000,
+              from: -pathLength + 'px',
+              to: '0px',
+              easing: Chartist.Svg.Easing.easeOutQuint,
+              // We need to use `fill: 'freeze'` otherwise our animation will fall back to initial (not visible)
+              fill: 'freeze'
+            }
+          };
+
+          // If this was not the first slice, we need to time the animation so that it uses the end sync event of the previous animation
+          if (data.index !== 0) {
+            animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
+          }
+
+          // We need to set an initial value before the animation starts as we are not in guided mode which would do that for us
+          data.element.attr({
+            'stroke-dashoffset': -pathLength + 'px'
+          });
+
+          // We can't use guided mode as the animations need to rely on setting begin manually
+          // See http://gionkunz.github.io/chartist-js/api-documentation.html#chartistsvg-function-animate
+          data.element.animate(animationDefinition, false);
+        }
+      });
+
+      // For the sake of the example we update the chart every time it's created with a delay of 8 seconds
+      chart.on('created', function() {
+        if (window.__anim21278907124) {
+          clearTimeout(window.__anim21278907124);
+          window.__anim21278907124 = null;
+        }
+        window.__anim21278907124 = setTimeout(chart.update.bind(chart), 1000000);
+      });
+
+      // $("#pie_chart_btn").click(function(){
+      $("#status_text").hide();
+      $("#status_text").fadeIn(1500);
     }
   </script>
 </body>

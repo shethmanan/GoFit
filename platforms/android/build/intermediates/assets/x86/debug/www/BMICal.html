@@ -23,7 +23,7 @@
   <!-- side nav -->
   <div class="side-section">
     <ul class="side-nav fixed blue lighten-3" style="left:0px">
-      <li class="logo" style="background-color:transparent;"><img class="profile-pic circle" src="1.jpg"></li>
+      <li class="logo" style="background-color:transparent;"><a href="edit_profile.html"><img id="dp" class="profile-pic circle"></a></li>
       <li class="blue lighten-3"><a href="remider.html" class="waves-effect waves-lighten" style="color:#1976d2;">Set Reminders</a></li>
       <li class="blue lighten-3"><a href="updated_walk.html" class="waves-effect waves-lighten" style="color:#1976d2;">Exercise</a></li>
       <ul class="collapsible collapsible-accordion">
@@ -41,8 +41,8 @@
           </div>
         </li>
       </ul>
-      <li class=" blue lighten-3"><a href="edit_profile.html" class="waves-effect waves-lighten" style="color:#1976d2;">My Profile</a></li>
-      <li class="blue lighten-3"><a href="#!" class="waves-effect waves-lighten" style="color:#1976d2;">Help</a></li>
+
+      <li class="blue lighten-3"><a href="feedback.html" class="waves-effect waves-lighten" style="color:#1976d2;">Feedback</a></li>
     </ul>
   </div>
   <main>
@@ -193,6 +193,8 @@
     $(document).ready(function() {
       var personaldetails = localStorage.getItem("user");
       var details = JSON.parse(personaldetails);
+      var img=document.getElementById('dp');
+      img.src = details.img;
       $("#weight-us").val(KtoLbs(details.weight));
       $("#weight-mu").val(details.weight);
       $("#cms-us").val(details.height);

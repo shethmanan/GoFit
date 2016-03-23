@@ -16,6 +16,12 @@
         top: 50%;
       }
 
+      .chart {
+        position: absolute;
+        bottom: 15px;
+        right: 24px;
+      }
+
       .my-profile-pic {
         width: 200px;
         height: 200px;
@@ -24,23 +30,25 @@
       .edit-icon {
         position: relative;
         bottom: 64px;
-        right:20px;
+        right: 20px;
       }
 
       .btn-edit {
         border-radius: 0px;
         background-color: hsla(0, 100%, 50%, 0);
         box-shadow: none;
+        left: 20px;
+        bottom: -5px;
       }
 
       .btn-edit:hover {
         background-color: hsla(0, 100%, 50%, 0);
         box-shadow: none;
       }
-      #profile-photo{
-        height:200px;
-        width:200px;
-        border-radius:50%;
+
+      #profile-photo {
+        height: 200px;
+        width: 200px;
       }
     </style>
   </head>
@@ -50,7 +58,9 @@
     <!-- side nav -->
     <div class="side-section">
       <ul class="side-nav fixed blue lighten-3" style="left:0px">
-        <li class="logo" style="background-color:transparent;"><img class="profile-pic circle" src="1.jpg"></li>
+        <li class="logo" style="background-color:transparent;">
+          <a href="edit_profile.html"><img class="profile-pic circle" id="dp"></a>
+        </li>
         <li class="blue lighten-3"><a href="remider.html" class="waves-effect waves-lighten" style="color:#1976d2;">Set Reminders</a></li>
         <li class="blue lighten-3"><a href="updated_walk.html" class="waves-effect waves-lighten" style="color:#1976d2;">Exercise</a></li>
         <ul class="collapsible collapsible-accordion">
@@ -68,8 +78,8 @@
             </div>
           </li>
         </ul>
-        <li class=" blue lighten-3"><a href="edit_profile.html" class="waves-effect waves-lighten" style="color:#1976d2;">My Profile</a></li>
-        <li class="blue lighten-3"><a href="#!" class="waves-effect waves-lighten" style="color:#1976d2;">Help</a></li>
+
+        <li class="blue lighten-3"><a href="feedback.html" class="waves-effect waves-lighten" style="color:#1976d2;">Feedback</a></li>
       </ul>
     </div>
     <main>
@@ -87,7 +97,7 @@
             <div class="my-profile-pic card">
               <div class="card-image">
                 <div id="myImage">
-                  <img id="profile-photo" class="responsive-img circle" src="img/pro-pic.png">
+                  <img id="profile-photo">
                 </div>
                 <div class="row edit-icon">
                   <div class="col s4 offset-s8">
@@ -144,89 +154,98 @@
           </div>
         </form>
       </div>
-      <!-- scripts -->
-      <script type="text/javascript" src="js/jquery.js"></script>
-      <script type="text/javascript" src="js/materialize.js"></script>
-      <script type="text/javascript" src="js/navbar-transition.js"></script>
-      <script type="text/javascript" src="cordova.js"></script>
-      <script type="text/javascript">
-        $(document).ready(function() {
-          $('.btn-edit').dropdown({
-            inDuration: 300,
-            outDuration: 225,
-            constrain_width: false, // Does not change width of dropdown to that of the activator
-            hover: false, // Activate on hover
-            gutter: 0, // Spacing from edge
-            belowOrigin: false, // Displays dropdown below the button
-            alignment: 'left' // Displays dropdown with edge aligned to the left of button
-          });
-          $('select').material_select();
-          var personaldetails = localStorage.getItem("user");
-          var details = JSON.parse(personaldetails);
-          $("#name").val(details.name);
-          $("#age").val(details.age);
-          $("#weight").val(details.weight);
-          $("#height").val(details.height);
-          $("#submitbtn").click(function() {
-            localStorage.removeItem("user");
-            var details = $('#personal-info').serializeArray();
-            if (!checkInfo(details)) {
-              Materialize.toast('Please fill in all your details', 4000)
-              return false;
-            }
-            var data = getdata(details);
-            localStorage.setItem("user", data);
-            Materialize.toast('Your details have been modified', 4000)
-          });
+      <a class="btn-floating btn-large waves-effect waves-light red chart" href="profile_graph.html"><i class="large material-icons">insert_chart</i></a>
+    </main>
+    <!-- scripts -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/materialize.js"></script>
+    <script type="text/javascript" src="js/navbar-transition.js"></script>
+    <!-- <script type="text/javascript" src="cordova.js"></script> -->
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('.btn-edit').dropdown({
+          inDuration: 300,
+          outDuration: 225,
+          constrain_width: false, // Does not change width of dropdown to that of the activator
+          hover: false, // Activate on hover
+          gutter: 0, // Spacing from edge
+          belowOrigin: false, // Displays dropdown below the button
+          alignment: 'left' // Displays dropdown with edge aligned to the left of button
         });
-
-        function checkInfo(details) {
-          for (var i = 0; i < 5; i++) {
-            if (details[i].value == 0) return false;
+        $('select').material_select();
+        var personaldetails = localStorage.getItem("user");
+        var details = JSON.parse(personaldetails);
+        var imgdp=document.getElementById('dp');
+        imgdp.src=details.img
+        var img = document.getElementById('profile-photo');
+        img.src = details.img;
+        $("#name").val(details.name);
+        $("#age").val(details.age);
+        $("#weight").val(details.weight);
+        $("#height").val(details.height);
+        $("#submitbtn").click(function() {
+          localStorage.removeItem("user");
+          var details = $('#personal-info').serializeArray();
+          if (!checkInfo(details)) {
+            Materialize.toast('Please fill in all your details', 4000)
+            return false;
           }
-          return true;
-        }
+          var data = getdata(details);
+          localStorage.setItem("user", data);
+          Materialize.toast('Your details have been modified', 4000)
+        });
+      });
 
-        function getdata(details) {
-          var data = "{";
-          for (var i = 0; i < 5; i++) {
-            data = data + '"' + details[i].name + '":"' + details[i].value + '",';
-          }
-          data = data.replaceAt(data.lastIndexOf(","), "}");
-          return data;
+      function checkInfo(details) {
+        for (var i = 0; i < 5; i++) {
+          if (details[i].value == 0) return false;
         }
-        String.prototype.replaceAt = function(index, character) {
-          return this.substr(0, index) + character + this.substr(index + character.length);
+        return true;
+      }
+
+      function getdata(details) {
+        var data = "{";
+        for (var i = 0; i < 5; i++) {
+          data = data + '"' + details[i].name + '":"' + details[i].value + '",';
         }
-			function accessGallery(){
-				var options={
-					destinationType: Camera.DestinationType.DATA_URL,
-					sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM,
-					targetHeight: 350,
-					targetWidth: 300
-				}
-				navigator.camera.getPicture(onSuccess, onFail, options);
-			}
-			function accessCamera(){
-				var options={
-					destinationType: Camera.DestinationType.DATA_URL,
-					sourceType: Camera.PictureSourceType.CAMERA,
-					saveToPhotoAlbum: true,
-					targetHeight: 350,
-					targetWidth: 300
-				}
-				navigator.camera.getPicture(onSuccess, onFail, options);
-			}
-			function onSuccess(imageData) {
-				var image = document.getElementById('profile-photo');
-				image.src = "data:image/jpeg;base64," + imageData;
+        data = data + '"' + img + '":"' + $("#profile-photo").attr(src) + '"}';
+        return data;
+      }
+      String.prototype.replaceAt = function(index, character) {
+        return this.substr(0, index) + character + this.substr(index + character.length);
+      }
+
+      function accessGallery() {
+        var options = {
+          destinationType: Camera.DestinationType.DATA_URL,
+          sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM,
+          targetHeight: 350,
+          targetWidth: 300
+        }
+        navigator.camera.getPicture(onSuccess, onFail, options);
+      }
+
+      function accessCamera() {
+        var options = {
+          destinationType: Camera.DestinationType.DATA_URL,
+          sourceType: Camera.PictureSourceType.CAMERA,
+          saveToPhotoAlbum: true,
+          targetHeight: 350,
+          targetWidth: 300
+        }
+        navigator.camera.getPicture(onSuccess, onFail, options);
+      }
+
+      function onSuccess(imageData) {
+        var image = document.getElementById('profile-photo');
+        image.src = "data:image/jpeg;base64," + imageData;
         // alert("pic changes");
-			}
+      }
 
-			function onFail(message) {
-				alert('Failed because: ' + message);
-			}
-      </script>
+      function onFail(message) {
+        alert('Failed because: ' + message);
+      }
+    </script>
   </body>
 
 </html>
