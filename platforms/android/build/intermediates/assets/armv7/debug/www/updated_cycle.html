@@ -10,16 +10,16 @@
   <style>
     .flaticon-cross-1:before {
          margin-left: 0px;
-          
+
        }
        .flaticon-people-1:before {
          margin-left: 0px;
-          
+
        }
        .flaticon-clock-4:before {
          margin-left: 5px;
          font-size: 25px;
-          
+
        }
         .flaticon-sports-2:before {
          margin-left: 5px;
@@ -120,7 +120,7 @@
         <i class="flaticon-clock-4 small logo_color"></i>
         <div class="blue-text">
           &nbsp&nbsp
-          <div class="dynamic">40
+          <div class="dynamic" id="time" data-val="0">00
           </div>mins</div>
       </div>
       <div class="col s2 offset-s2">
@@ -140,15 +140,26 @@
   <script type="text/javascript" src="js/materialize.js"></script>
   <script type="text/javascript" src="js/navbar-transition.js"></script>
   <script type="text/javascript">
+  var clock;
   $(document).ready(function(data) {
     $("#start").click(function(data) {
       if (!$(this).hasClass("stop")){
+        clock = setInterval(timer,1000*60);
         $(this).html("Stop Cycling");
       }
-      else $(this).html("Start Cycling");
+      else{
+        $(this).html("Start Cycling");
+        clearInterval(clock);
+      }
       $(this).toggleClass("stop");
     });
   });
+  var timer = function(){
+	var time = $("#time").attr("data-val");
+	console.log(time++);
+	$("#time").html(time);
+	$("#time").attr("data-val",time);
+}
   </script>
 </body>
 <html>

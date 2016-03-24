@@ -10,7 +10,12 @@
   <link rel="stylesheet" type="text/css" href="css/navbar.css">
   <link rel="stylesheet" href="css/input-field-style.css" media="screen" title="no title" charset="utf-8">
   <style>
-
+    ul{
+      margin:0px !important;
+    }
+    td{
+      padding:15px 0px !important;
+    }
     .tabs .indicator {
       height: 3px;
       background-color: #82b1ff;
@@ -97,7 +102,7 @@
                   <a id="submit" type="submit" href="javascript:void(0)" class="btn blue">Click Me</a>
                 </div>
               </div>
-              <ul id="results">
+              <!-- <ul id="results">
                 <b><li id="bmi"style="opacity: 0; color: blue; font-size: 20px;opacity: 0;"></li>
                 <li id="your-weight" style="color: blue; font-size: 18px;opacity: 0;"></li>
                 <u style="color: blue"><li id="tip-head" style="color: blue; font-size: 16px; font-family: cursive; opacity: 0;"></li></b></u>
@@ -106,25 +111,24 @@
                 <li id="tip-3" style="color: blue; font-family: cursive; opacity: 0;"></li>
                 <li id="tip-4" style="color: blue; font-family: cursive; opacity: 0;"></li>
                 <li id="tip-5" style="color: blue; font-family: cursive; opacity: 0;"></li>
-              </ul>
-
-              <center>
-                <!--preloader-->
-                <div class="preloader-wrapper small">
-                  <div class="spinner-layer spinner-blue-only">
-                    <div class="circle-clipper left">
-                      <div class="circle"></div>
-                    </div>
-                    <div class="gap-patch">
-                      <div class="circle"></div>
-                    </div>
-                    <div class="circle-clipper right">
-                      <div class="circle"></div>
-                    </div>
-                  </div>
-                </div>
-                <!--End preloader-->
-              </center>
+              </ul> -->
+              <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <h5 class = "blue" style="margin:0px;">Your Body Mass Index is</h5>
+                  </td>
+                  <td id="bmi-us"></td>
+                </tr>
+                <tr>
+                  <td colspan="2" id="your-weight-us"></td>
+                </tr>
+                <tr>
+                  <td colspan="2" id="tips-us">
+                  </td>
+                </tr>
+              </tbody>
+              </table>
             </div>
           </div>
         </div>
@@ -232,44 +236,53 @@
       bmi = (weight / (inch * inch)) * 703;
       bmi = Math.round(bmi * 10) / 10;
 
-      $("#bmi").html("Your Body Mass Index Is : " + bmi);
+      $("#bmi-us").hide().fadeIn(500).html("<h5 class='blue' style='margin:0px;'>"+bmi+"</h5>");
       if (bmi < 18.5) {
-        $("#your-weight").html("You are UnderWeight.");
-        $("#tip-head").html("Tips that can be followed : ")
-        $("#tip-1").html("Drink 6-8 glasses of distilled water a day.");
-        $("#tip-2").html("Eat frequent but small meals.");
-        $("#tip-3").html("Eat lots of raw fruits and vegetables (green leafy vegetables are great).");
-        $("#tip-4").html("Do not drink coffee, alcohol, soda pop,...");
-        $("#tip-5").html("Increase your intake of complex carbohydrates, particularly whole grain ones");
+        $("#your-weight-us").hide().fadeIn(1500).css("background-color",'#f44336').html("<h5 style='margin:0px'>You are UnderWeight.</h5>");
+        var tips = "<ul>"+
+                      "<li class='red accent-2'><h6 style='margin:0px'>Eat frequent but small meals.</h6></li>"+
+                      "<li class='red accent-2'><h6 style='margin:0px'>Eat lots of raw fruits and vegetables (green leafy vegetables are great).</h6></li>"+
+                      "<li class='red accent-2'><h6 style='margin:0px'>Drink 6-8 glasses of distilled water a day.</h6></li>"+
+                      "<li class='red accent-2'><h6 style='margin:0px'>Do not drink coffee, alcohol, soda pop,etc</h6></li>"+
+                      "<li class='red accent-2'><h6 style='margin:0px'>Increase your intake of complex carbohydrates, particularly whole grain ones</h6></li>"+
+                  "</ul>";
+                  $("#tips-us").html("<h5 class='red accent-3' style='margin:0px'>TIPS</h5>"+tips);
+        // $("#tip-head").html("Tips that can be followed : ")
+        // $("#tip-1").html("Drink 6-8 glasses of distilled water a day.");
+        // $("#tip-2").html("Eat frequent but small meals.");
+        // $("#tip-3").html("Eat lots of raw fruits and vegetables (green leafy vegetables are great).");
+        // $("#tip-4").html("Do not drink coffee, alcohol, soda pop,etc");Increase your intake of complex carbohydrates, particularly whole grain ones
+        // $("#tip-5").html("Increase your intake of complex carbohydrates, particularly whole grain ones");
       }
       if (bmi >= 18.5 && bmi <= 24.99) {
-        $("#your-weight").html("You have normal weight");
-        $("#tip-head").html("You dont need any tips to be followed.");
-        $("#tip-1").html("You just have to maintain your weight.");
-        $("#tip-2").html(" ");
-        $("#tip-3").html(" ");
-        $("#tip-4").html(" ");
-        $("#tip-5").html(" ");
+        $("#your-weight-us").hide().fadeIn(1500).css("background-color",'#4caf50').html("<h5 style='margin:0px'>You have normal weight</h5>");
+        $("#tips-us").html("<h5 class='green accent-4' style='margin:0px'>TIPS</h5><ul><li class='green accent-2'>Maintain your weight.</li></ul>");
+        // $("#tip-head").html("You dont need any tips to be followed.");
+        // $("#tip-1").html("You just have to maintain your weight.");
+        // $("#tip-2").html(" ");
+        // $("#tip-3").html(" ");
+        // $("#tip-4").html(" ");
+        // $("#tip-5").html(" ");
 
       } else if (bmi >= 25 && bmi <= 29.99) {
-        $("#your-weight").html("You are Over Weight.");
-        $("#tip-head").html("Tips that can be followed:")
-        $("#tip-1").html("Drink min 8 glasses of water a day.");
-        $("#tip-2").html("Consume fewer calories than you burn, you will lose weight. ");
-        $("#tip-3").html("Become more physically active or by eating less.");
-        $("#tip-4").html("Start your lunch/dinner with a soup or a salad.");
-        $("#tip-5").html("Stop Cola consumption.");
+        $("#your-weight-us").css("background-color",'#d32f2f').html("You are Over Weight.");
+        // $("#tip-head").html("Tips that can be followed:")
+        // $("#tip-1").html("Drink min 8 glasses of water a day.");
+        // $("#tip-2").html("Consume fewer calories than you burn, you will lose weight. ");
+        // $("#tip-3").html("Become more physically active or by eating less.");
+        // $("#tip-4").html("Start your lunch/dinner with a soup or a salad.");
+        // $("#tip-5").html("Stop Cola consumption.");
       } else if (bmi >= 30) {
-        $("#your-weight").html("You are obese.");
-        $("#tip-head").html("Tips that can be followed:");
-        $("#tip-1").html("Eat a variety of foods, especially pasta, rice and other whole-grain foods..");
-        $("#tip-2").html("Reduce your fat-intake. ");
-        $("#tip-3").html("Eat lots of fruits and vegetables.");
-        $("#tip-4").html("Try to do atleast 30 mins of physical activity a day on most days of the week.");
-        $("tip-5").html(" ");
+        $("#your-weight-us").hide().fadeIn(1500).css("background-color",'#e57373').html("You are obese.");
+        // $("#tip-head").html("Tips that can be followed:");
+        // $("#tip-1").html("Eat a variety of foods, especially pasta, rice and other whole-grain foods..");
+        // $("#tip-2").html("Reduce your fat-intake. ");
+        // $("#tip-3").html("Eat lots of fruits and vegetables.");
+        // $("#tip-4").html("Try to do atleast 30 mins of physical activity a day on most days of the week.");
+        // $("tip-5").html(" ");
       }
-
-      Materialize.showStaggeredList('#results');
+//
+      //Materialize.showStaggeredList('#results');
     }
 
     function heightConvertercm() {

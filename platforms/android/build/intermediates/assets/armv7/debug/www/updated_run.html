@@ -112,7 +112,7 @@
 			<div class="col s3 offset-s2">
 				<i class="flaticon-clock-4 small logo_color"></i>
 				<div class="blue-text"> &nbsp&nbsp
-					<div class="dynamic">40 </div>mins</div>
+					<div class="dynamic" id="time" data-val="0">00</div>mins</div>
 			</div>
 			<div class="col s2 offset-s2">
 				<i class="flaticon-sports-2 logo_color"></i>
@@ -132,15 +132,26 @@
 	<script type="text/javascript" src="js/navbar-transition.js"></script>
 	<script type="text/javascript" src="cordova.js"></script>
 	<script type="text/javascript">
+	var clock;
 		$(document).ready(function(data) {
 			$("#start-btn").click(function(data) {
-				
+
 				if (!$(this).hasClass("stop")) {
+					clock = setInterval(timer,1000*60);
 					$(this).html("Stop Running");
-				} else $(this).html("Start Running");
+				} else{
+					$(this).html("Start Running");
+					clearInterval(clock);
+				}
 				$(this).toggleClass("stop");
 			});
 		});
+		var timer = function(){
+		var time = $("#time").attr("data-val");
+		console.log(time++);
+		$("#time").html(time);
+		$("#time").attr("data-val",time);
+	}
 	</script>
 <script type="text/javascript">
 		var startingOffset = 0;
