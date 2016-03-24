@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-pt-rPT/android_ui_strings.xml -->
+    <!-- From: file:/C:/git-demo/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-pt-rPT/android_ui_strings.xml -->
     <eat-comment/>
     <string name="accessibility_date_picker_month">"Mês"</string>
     <string name="accessibility_date_picker_week">"Semana"</string>
@@ -12,11 +12,11 @@
     <string name="accessibility_time_picker_milli">"Milissegundo"</string>
     <string name="accessibility_time_picker_minute">"Minuto"</string>
     <string name="accessibility_time_picker_second">"Segundo"</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-pt-rPT/android_content_strings.xml -->
+    <!-- From: file:/C:/git-demo/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-pt-rPT/android_content_strings.xml -->
     <eat-comment/>
     <string name="actionbar_share">"Partilhar"</string>
     <string name="actionbar_web_search">"Pesquisa Web"</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-pt-rPT/android_ui_strings.xml -->
+    <!-- From: file:/C:/git-demo/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-pt-rPT/android_ui_strings.xml -->
     <eat-comment/>
     <string name="autofill_popup_content_description">"A mostrar pop-up de preenchimento automático"</string>
     <string name="color_picker_button_black">"Preto"</string>
@@ -41,25 +41,25 @@
     <string name="date_picker_dialog_title">"Definir data"</string>
     <string name="date_time_picker_dialog_title">"Definir data e hora"</string>
     <string name="low_memory_error">"Não foi possível concluir a operação anterior devido à baixa memória disponível"</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-pt-rPT/android_content_strings.xml -->
+    <!-- From: file:/C:/git-demo/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-pt-rPT/android_content_strings.xml -->
     <eat-comment/>
     <string name="media_player_error_button">"OK"</string>
     <string name="media_player_error_text_invalid_progressive_playback">"Este vídeo não é válido para transmissão em fluxo contínuo neste dispositivo."</string>
     <string name="media_player_error_text_unknown">"Não é possível reproduzir este vídeo."</string>
     <string name="media_player_error_title">"Impossível reproduzir vídeo"</string>
     <string name="media_player_loading_video">"A carregar vídeo"</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-pt-rPT/android_ui_strings.xml -->
+    <!-- From: file:/C:/git-demo/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-pt-rPT/android_ui_strings.xml -->
     <eat-comment/>
     <string name="month_picker_dialog_title">"Definir mês"</string>
     <string name="opening_file_error">"Falha ao abrir o fich. selec."</string>
     <string name="password_generation_popup_content_description">"A mostrar pop-up de geração de palavra-passe"</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-pt-rPT/android_content_strings.xml -->
+    <!-- From: file:/C:/git-demo/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-pt-rPT/android_content_strings.xml -->
     <eat-comment/>
     <string name="profiler_error_toast">"Falha ao iniciar o gerador de perfis"</string>
     <string name="profiler_no_storage_toast">"Não é possível iniciar o gerador de perfis, porque o armazenamento externo não está pronto"</string>
     <string name="profiler_started_toast">"O gerador de perfis foi iniciado"</string>
     <string name="profiler_stopped_toast">"O gerador de perfis terminou. Os resultados estão em %1$s."</string>
-    <!-- From: file:/C:/xampp/htdocs/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-pt-rPT/android_ui_strings.xml -->
+    <!-- From: file:/C:/git-demo/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-pt-rPT/android_ui_strings.xml -->
     <eat-comment/>
     <string name="time_picker_dialog_am">"AM"</string>
     <string name="time_picker_dialog_hour_minute_separator">":"</string>

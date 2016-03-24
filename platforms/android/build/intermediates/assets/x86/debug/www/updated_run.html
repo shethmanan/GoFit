@@ -117,7 +117,7 @@
 			<div class="col s2 offset-s2">
 				<i class="flaticon-sports-2 logo_color"></i>
 				<div class="blue-text">&nbsp&nbsp
-					<div class="dynamic">350</div>steps</div>
+					<div class="dynamic" id="now_active_run">00</div>steps</div>
 			</div>
 		</div>
 		<br>
@@ -133,11 +133,15 @@
 	<script type="text/javascript" src="cordova.js"></script>
 	<script type="text/javascript">
 	var clock;
+	var activity_id=0;
+	var activity_status=true;
+	var startingOffset=0;
 		$(document).ready(function(data) {
 			$("#start-btn").click(function(data) {
 
 				if (!$(this).hasClass("stop")) {
 					clock = setInterval(timer,1000*60);
+					start_run_counter();
 					$(this).html("Stop Running");
 				} else{
 					$(this).html("Start Running");
@@ -152,101 +156,38 @@
 		$("#time").html(time);
 		$("#time").attr("data-val",time);
 	}
-	</script>
-<script type="text/javascript">
-		var startingOffset = 0;
-		var activity_status = true;
-		var activity_id = 0;
-
-		var success_now_active_run = function(message) {
-			// alert(message);
-			$("#now_active_run").html(message);
-		}
-
-		var success_now_active_walk = function(message) {
-			// alert(message);
-			message = parseInt(message);
-			if (message % 2 == 1) {
-				message = message - 1;
-				message = message / 2;
-			} else {
-				message = message / 2;
-			}
-			$("#now_active_walk").html(message);
-		}
-
-		var success_today_active_run = function(message) {
-			// alert(message);
-			$("#today_active_run").html(message);
-		}
-
-		var success_today_active_walk = function(message) {
-			// alert(message);
-			message = parseInt(message);
-			if (message % 2 == 1) {
-				message = message - 1;
-				message = message / 2;
-			} else {
-				message = message / 2;
-			}
-			$("#today_active_walk").html(message);
-		}
-
-		var success = function(message) {
-			alert("success");
-		}
-		var failure = function() {
-			alert("Error calling CordovaStepCounter Plugin");
-		}
-
-		function start_run_counter1() {
-
-			activity_id = setInterval("start_run_counter()", 10000);
-		}
-
-		function start_walk_counter1() {
-
-			activity_id = setInterval("start_walk_counter()", 10000);
-		}
-
-		function start_run_counter() {
-
-			alert("run-called");
+	function start_run_counter(){
+		 activity_id = setInterval("start_run_counter()",10000);
+	}
+	function start_run_counter(){
+			console.log("inside-run-counter-called");
 			// stepcounter.deviceCanCountSteps(success(), failure());
 			stepcounter.start(startingOffset, success_now_active_run, failure);
 			stepcounter.getStepCount(success_now_active_run, failure);
 			// stepcounter.deviceCanCountSteps(success, failure);
 
 			// use this if u want number of steps walked till now:    stepcounter.getTodayStepCount(success_today_active_run, failure);
-			if (!activity_status) {
-				alert("activity cleared");
-				clearInterval(activity_id);
-				activity_status = true;
+			if(!activity_status){
+					alert("activity cleared");
+					clearInterval(activity_id);
+					activity_status = true;
 			}
-		}
-
-		function start_walk_counter() {
-			alert("walk-called");
-			// abc(failure());
-			// stepcounter.deviceCanCountSteps(success(), failure());
-			stepcounter.start(startingOffset, success_now_active_walk, failure);
-			stepcounter.getStepCount(success_now_active_walk, failure);
-			// stepcounter.deviceCanCountSteps(success, failure);
-			// alert("die");
-			// returns total number of steps    stepcounter.getTodayStepCount(success_today_active_walk, failure);
-			if (!activity_status) {
-				alert("activity cleared");
-				clearInterval(activity_id);
-				activity_status = true;
-			}
-		}
-
-		function stop_run_counter() {
-			alert("stop called");
+	}
+	var success_now_active_run = function(message) {
+			// alert(message);
+			console.log("inside now_active_run (message):-"+message);
+			$("#now_active_run").html(message);
+	}
+	function stop_run_counter(){
+			console.log("stop-run-counter");
 			activity_status = false;
 			stepcounter.stop(success, failure);
-			alert("stopped");
-		}
-</script>
+			console.log("stopped");
+	}
+	var failure = function() {
+		console.log("Failure");
+			alert("Error calling CordovaStepCounter Plugin");
+	}
+	</script>
 </body>
 <html>
