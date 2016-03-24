@@ -157,9 +157,9 @@
 		$("#time").attr("data-val",time);
 	}
 	function start_run_counter(){
-		 activity_id = setInterval("start_run_counter()",10000);
+		 activity_id = setInterval("start_run_counter1()",10000);
 	}
-	function start_run_counter(){
+	function start_run_counter1(){
 			console.log("inside-run-counter-called");
 			// stepcounter.deviceCanCountSteps(success(), failure());
 			stepcounter.start(startingOffset, success_now_active_run, failure);
