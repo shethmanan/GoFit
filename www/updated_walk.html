@@ -9,25 +9,26 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<style>
 		.flaticon-cross-1:before {
-     		 margin-left: 0px;
+			margin-left: 0px;
+		}
 
-       }
-       .flaticon-people-1:before {
-     		 margin-left: 0px;
-     		 font-size: 25px;
+		.flaticon-people-1:before {
+			margin-left: 0px;
+			font-size: 25px;
+		}
 
-       }
-       .flaticon-clock-4:before {
-     		 margin-left: 5px;
-     		 font-size: 25px;
+		.flaticon-clock-4:before {
+			margin-left: 5px;
+			font-size: 25px;
+		}
 
-       }
-        .flaticon-sports-2:before {
-     		 margin-left: 5px;
-       }
-       .flaticon-transport:before {
-     		 margin-left: 4px;
-       }
+		.flaticon-sports-2:before {
+			margin-left: 5px;
+		}
+
+		.flaticon-transport:before {
+			margin-left: 4px;
+		}
 	</style>
 </head>
 
@@ -107,15 +108,23 @@
 		</div>
 		<div class="gap"></div>
 		<div class="row">
-			<div class="col s3 offset-s2">
-				<i class="flaticon-clock-4 small logo_color"></i>
-				<div class="blue-text"> &nbsp&nbsp
-					<div class="dynamic" id="time" data-val="0">00</div>mins</div>
+			<div class="col s6">
+				<div class="row center-align">
+					<i class="flaticon-clock-4 small logo_color"></i>
+				</div>
+				<div class="row center-align">
+					<div class="col s6">
+						<span class="blue-text"><div class="dynamic" id="time-min" data-val="00">00</div>mins</span>
+					</div>
+					<div class="col s6">
+						<span class="blue-text"><div class="dynamic" id="time-sec" data-val="00">00</div>secs</span>
+					</div>
+				</div>
 			</div>
-			<div class="col s2 offset-s2">
-				<i style="font-size:25px;" class="flaticon-people-1 logo_color"></i>
+			<div class="col s6 center-align">
+				<i class="flaticon-sports-2 logo_color"></i>
 				<div class="blue-text">&nbsp&nbsp
-					<div class="dynamic" id="now_active_walk">350</div>steps</div>
+					<div class="dynamic" id="now_active_run">00</div>steps</div>
 			</div>
 		</div>
 		<br>
@@ -131,35 +140,49 @@
 	<!-- <script type="text/javascript" src="cordova.js"></script> -->
 </body>
 <script type="text/javascript">
-var clock;
-var startingOffset = 0;
-var activity_status= true ;
-var activity_id= 0;
+	var clock_min;
+	var clock_sec;
+	var startingOffset = 0;
+	var activity_status = true;
+	var activity_id = 0;
 	$(document).ready(function(data) {
 		$("#start").click(function(data) {
-			if (!$(this).hasClass("stop")){
+			if (!$(this).hasClass("stop")) {
 				console.log("inside if");
 				start_walk_counter1();
-				clock = setInterval(timer,1000*60);
+				clock_min = setInterval(timer_min, 1000 * 60);
+				clock_sec = setInterval(timer_sec, 1000);
 				$(this).html("Stop Walking");
-			}
-			else{
+			} else {
 				$(this).html("Start Walking");
-				clearInterval(clock);
+				clearInterval(clock_sec);
+				clearInterval(clock_min);
+				stop_run_counter();
 			}
 			$(this).toggleClass("stop");
 		});
 	});
-	var timer = function(){
-	var time = $("#time").attr("data-val");
-	console.log(time++);
-	$("#time").html(time);
-	$("#time").attr("data-val",time);
-}
-function start_walk_counter1(){
-	 activity_id = setInterval("start_walk_counter()",10000);
-}
-function start_run_counter(){
+	var timer_min = function() {
+		var time = $("#time-min").attr("data-val");
+		console.log(time++);
+		$("#time-min").html(time);
+		$("#time-min").attr("data-val", time);
+	}
+	var timer_sec = function() {
+		var time = $("#time-sec").attr("data-val");
+		if (time == 60) {
+			time = -1;
+		}
+		console.log(time++);
+		$("#time-sec").html(time);
+		$("#time-sec").attr("data-val", time);
+	}
+
+	function start_walk_counter1() {
+		activity_id = setInterval("start_walk_counter()", 10000);
+	}
+
+	function start_run_counter() {
 
 		console.log("run-called");
 		// stepcounter.deviceCanCountSteps(success(), failure());
@@ -168,32 +191,32 @@ function start_run_counter(){
 		// stepcounter.deviceCanCountSteps(success, failure);
 
 		// use this if u want number of steps walked till now:    stepcounter.getTodayStepCount(success_today_active_run, failure);
-		if(!activity_status){
-				console.log("activity cleared");
-				clearInterval(activity_id);
-				activity_status = true;
+		if (!activity_status) {
+			console.log("activity cleared");
+			clearInterval(activity_id);
+			activity_status = true;
 		}
-}
-var success_now_active_walk = function(message) {
+	}
+	var success_now_active_walk = function(message) {
 		// console.log(message);
-		message=parseInt(message);
-		if(message%2==1){
-				message=message-1;
-				message=message/2;
-		}
-		else{
-				message=message/2;
+		message = parseInt(message);
+		if (message % 2 == 1) {
+			message = message - 1;
+			message = message / 2;
+		} else {
+			message = message / 2;
 		}
 		$("#now_active_walk").html(message);
-}
-function stop_run_counter(){
+	}
+
+	function stop_run_counter() {
 		console.log("stop called");
 		activity_status = false;
 		stepcounter.stop(success, failure);
 		console.log("stopped");
-}
-var failure = function() {
+	}
+	var failure = function() {
 		console.log("Error calling CordovaStepCounter Plugin");
-}
+	}
 </script>
 <html>
