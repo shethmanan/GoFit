@@ -115,7 +115,7 @@
 			<div class="col s2 offset-s2">
 				<i style="font-size:25px;" class="flaticon-people-1 logo_color"></i>
 				<div class="blue-text">&nbsp&nbsp
-					<div class="dynamic">350</div>steps</div>
+					<div class="dynamic" id="now_active_walk">350</div>steps</div>
 			</div>
 		</div>
 		<br>
@@ -132,10 +132,14 @@
 </body>
 <script type="text/javascript">
 var clock;
+var startingOffset = 0;
+var activity_status= true ;
+var activity_id= 0;
 	$(document).ready(function(data) {
 		$("#start").click(function(data) {
 			if (!$(this).hasClass("stop")){
 				console.log("inside if");
+				start_walk_counter1();
 				clock = setInterval(timer,1000*60);
 				$(this).html("Stop Walking");
 			}
@@ -151,6 +155,45 @@ var clock;
 	console.log(time++);
 	$("#time").html(time);
 	$("#time").attr("data-val",time);
+}
+function start_walk_counter1(){
+	 activity_id = setInterval("start_walk_counter()",10000);
+}
+function start_run_counter(){
+
+		console.log("run-called");
+		// stepcounter.deviceCanCountSteps(success(), failure());
+		stepcounter.start(startingOffset, success_now_active_run, failure);
+		stepcounter.getStepCount(success_now_active_run, failure);
+		// stepcounter.deviceCanCountSteps(success, failure);
+
+		// use this if u want number of steps walked till now:    stepcounter.getTodayStepCount(success_today_active_run, failure);
+		if(!activity_status){
+				console.log("activity cleared");
+				clearInterval(activity_id);
+				activity_status = true;
+		}
+}
+var success_now_active_walk = function(message) {
+		// console.log(message);
+		message=parseInt(message);
+		if(message%2==1){
+				message=message-1;
+				message=message/2;
+		}
+		else{
+				message=message/2;
+		}
+		$("#now_active_walk").html(message);
+}
+function stop_run_counter(){
+		console.log("stop called");
+		activity_status = false;
+		stepcounter.stop(success, failure);
+		console.log("stopped");
+}
+var failure = function() {
+		console.log("Error calling CordovaStepCounter Plugin");
 }
 </script>
 <html>
