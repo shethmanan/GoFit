@@ -14,12 +14,15 @@
       margin:0px !important;
     }
     td{
-      padding:15px 0px !important;
+      padding:8px 0px !important;
     }
     .tabs .indicator {
       height: 3px;
       background-color: #82b1ff;
     }
+	li{
+		padding-bottom:3px;
+	}
   </style>
 </head>
 
@@ -116,7 +119,7 @@
               <tbody>
                 <tr>
                   <td>
-                    <h5 class = "blue" style="margin:0px;">Your Body Mass Index is</h5>
+                    <h5 class = "" style="margin:0px;">Body Mass Index :</h5>
                   </td>
                   <td id="bmi-us"></td>
                 </tr>
@@ -125,6 +128,10 @@
                 </tr>
                 <tr>
                   <td colspan="2" id="tips-us">
+                  </td>
+                </tr>
+				<tr>
+                  <td colspan="2" id="tips-1-us">
                   </td>
                 </tr>
               </tbody>
@@ -165,23 +172,7 @@
                 <li id="tip-mu4" style="color: blue; font-family: cursive;opacity: 0;"></li>
                 <li id="tip-mu5" style="color: blue; font-family: cursive;opacity: 0;"></li>
               </ul>
-              <center>
-                <!--preloader-->
-                <div class="preloader-wrapper small">
-                  <div class="spinner-layer spinner-blue-only">
-                    <div class="circle-clipper left">
-                      <div class="circle"></div>
-                    </div>
-                    <div class="gap-patch">
-                      <div class="circle"></div>
-                    </div>
-                    <div class="circle-clipper right">
-                      <div class="circle"></div>
-                    </div>
-                  </div>
-                </div>
-                <!--End preloader-->
-              </center>
+              
             </div>
           </div>
         </div>
@@ -194,6 +185,7 @@
   <script type="text/javascript" src="js/navbar-transition.js"></script>
   <script type="text/javascript">
     var bmi;
+	var tip_temp;
     $(document).ready(function() {
       var personaldetails = localStorage.getItem("user");
       var details = JSON.parse(personaldetails);
@@ -214,8 +206,15 @@
       $("#submit-mu").click(function() {
         calculateBMIMU($("form#m-unitBMI").serializeArray());
       });
+	  
+	 
     });
-
+	
+	function f1()
+	{			
+			
+			$("#tips-1-us").slideDown(2000);		
+	}
     function KtoLbs(pK) {
       var nearExact = pK / 0.45359237;
       var lbs = Math.floor(nearExact);
@@ -236,36 +235,40 @@
       bmi = (weight / (inch * inch)) * 703;
       bmi = Math.round(bmi * 10) / 10;
 
-      $("#bmi-us").hide().fadeIn(500).html("<h5 class='blue' style='margin:0px;'>"+bmi+"</h5>");
+      $("#bmi-us").html("<h5 class='' style='margin:0px;'>"+bmi+"</h5>");
       if (bmi < 18.5) {
-        $("#your-weight-us").hide().fadeIn(1500).css("background-color",'#f44336').html("<h5 style='margin:0px'>You are UnderWeight.</h5>");
-        var tips = "<ul>"+
-                      "<li class='red accent-2'><h6 style='margin:0px'>Eat frequent but small meals.</h6></li>"+
-                      "<li class='red accent-2'><h6 style='margin:0px'>Eat lots of raw fruits and vegetables (green leafy vegetables are great).</h6></li>"+
-                      "<li class='red accent-2'><h6 style='margin:0px'>Drink 6-8 glasses of distilled water a day.</h6></li>"+
-                      "<li class='red accent-2'><h6 style='margin:0px'>Do not drink coffee, alcohol, soda pop,etc</h6></li>"+
-                      "<li class='red accent-2'><h6 style='margin:0px'>Increase your intake of complex carbohydrates, particularly whole grain ones</h6></li>"+
+        $("#your-weight-us").css("color",'red').html("<h5 style='margin:0px'>You are UnderWeight!</h5>");
+        var tips = "<ul id='tip-1-us' style='color:#002F54;'>"+
+                      "<li class='red1 accent-2'><h6 style='margin:0px'>1. Eat frequent but small meals.</h6></li>"+
+                      "<li class='red1 accent-2'><h6 style='margin:0px'>2. Eat lots of raw fruits and vegetables (green leafy vegetables are great).</h6></li>"+
+                      "<li class='red1 accent-2'><h6 style='margin:0px'>3. Drink 6-8 glasses of distilled water a day.</h6></li>"+
+                      "<li class='red1 accent-2'><h6 style='margin:0px'>4. Do not drink coffee, alcohol, soda pop,etc</h6></li>"+
+                      "<li class='red1 accent-2'><h6 style='margin:0px'>5. Increase your intake of complex carbohydrates, particularly whole grain ones</h6></li>"+
                   "</ul>";
-                  $("#tips-us").html("<h5 class='red accent-3' style='margin:0px'>TIPS</h5>"+tips);
-        // $("#tip-head").html("Tips that can be followed : ")
-        // $("#tip-1").html("Drink 6-8 glasses of distilled water a day.");
-        // $("#tip-2").html("Eat frequent but small meals.");
-        // $("#tip-3").html("Eat lots of raw fruits and vegetables (green leafy vegetables are great).");
-        // $("#tip-4").html("Do not drink coffee, alcohol, soda pop,etc");Increase your intake of complex carbohydrates, particularly whole grain ones
-        // $("#tip-5").html("Increase your intake of complex carbohydrates, particularly whole grain ones");
+                  $("#tips-us").hide().fadeIn(2000).html("<h5 class='red-text accent-3' id='need-tip-us' onClick='f1()' style='margin:0px'>Need health Tips?</h5>");
+				  $("#tips-1-us").html("<span style='display:noneq;'>"+tips+"</span>").hide();
+				  
+  
       }
+	  
+	  
       if (bmi >= 18.5 && bmi <= 24.99) {
-        $("#your-weight-us").hide().fadeIn(1500).css("background-color",'#4caf50').html("<h5 style='margin:0px'>You have normal weight</h5>");
-        $("#tips-us").html("<h5 class='green accent-4' style='margin:0px'>TIPS</h5><ul><li class='green accent-2'>Maintain your weight.</li></ul>");
-        // $("#tip-head").html("You dont need any tips to be followed.");
-        // $("#tip-1").html("You just have to maintain your weight.");
-        // $("#tip-2").html(" ");
-        // $("#tip-3").html(" ");
-        // $("#tip-4").html(" ");
-        // $("#tip-5").html(" ");
+        $("#your-weight-us").hide().fadeIn(1500).css("background-color",'').html("<h5 class='green-text' style='margin:0px'>You have normal weight</h5>");
+         $("#tips-us").hide().fadeIn(2000).html("<h5 class='green-text accent-3' id='need-tip-us' onClick='f1()' style='margin:0px'>Need health Tips?</h5>");
+		$("#tips-1-us").html("<span style='color:#002F54'>Maintain your weight.</span>").hide();
+      
 
       } else if (bmi >= 25 && bmi <= 29.99) {
-        $("#your-weight-us").css("background-color",'#d32f2f').html("You are Over Weight.");
+        $("#your-weight-us").css("color",'#d32f2f').html("<h5>You are Over Weight!</h5>	");
+		var tips = "<ul id='tip-1-us' style='color:#002F54;'>"+
+                      "<li class='red1 accent-2'><h6 style='margin:0px'>1. Drink min 8 glasses of water a day.</h6></li>"+
+                      "<li class='red1 accent-2'><h6 style='margin:0px'>2. Consume fewer calories than you burn, you will lose weight.</h6></li>"+
+                      "<li class='red1 accent-2'><h6 style='margin:0px'>3. Become more physically active or by eating less.</h6></li>"+
+                      "<li class='red1 accent-2'><h6 style='margin:0px'>4. Do not drink coffee, alcohol, soda pop,etc</h6></li>"+
+                      "<li class='red1 accent-2'><h6 style='margin:0px'>5. Start your lunch/dinner with a soup or a salad.</h6></li>"+
+                  "</ul>";
+                  $("#tips-us").hide().fadeIn(2000).html("<h5 class='red-text accent-3' id='need-tip-us' onClick='f1()' style='margin:0px'>Need health Tips?</h5>");
+				  $("#tips-1-us").html("<span style='display:noneq;'>"+tips+"</span>").hide();
         // $("#tip-head").html("Tips that can be followed:")
         // $("#tip-1").html("Drink min 8 glasses of water a day.");
         // $("#tip-2").html("Consume fewer calories than you burn, you will lose weight. ");
@@ -273,7 +276,16 @@
         // $("#tip-4").html("Start your lunch/dinner with a soup or a salad.");
         // $("#tip-5").html("Stop Cola consumption.");
       } else if (bmi >= 30) {
-        $("#your-weight-us").hide().fadeIn(1500).css("background-color",'#e57373').html("You are obese.");
+        $("#your-weight-us").css("color",'#d32f2f').html("<h5>You are obese!!</h5>");
+		var tips = "<ul id='tip-1-us' style='color:#002F54;'>"+
+                      "<li class='red1 accent-2'><h6 style='margin:0px'>1. Drink min 10-12 glasses of water a day.</h6></li>"+
+                      "<li class='red1 accent-2'><h6 style='margin:0px'>2. Cycle/ walk or run atleast half an hour everyday.</h6></li>"+
+                      "<li class='red1 accent-2'><h6 style='margin:0px'>3. Become more physically active.</h6></li>"+
+                      "<li class='red1 accent-2'><h6 style='margin:0px'>4. Do not drink coffee, alcohol, soda pop,etc</h6></li>"+
+                      "<li class='red1 accent-2'><h6 style='margin:0px'>5. Start your lunch/dinner with a soup or a salad.</h6></li>"+
+                  "</ul>";
+                  $("#tips-us").hide().fadeIn(2000).html("<h5 class='red-text accent-3' id='need-tip-us' onClick='f1()' style='margin:0px'>Need health Tips?</h5>");
+				  $("#tips-1-us").html("<span style='display:noneq;'>"+tips+"</span>").hide();
         // $("#tip-head").html("Tips that can be followed:");
         // $("#tip-1").html("Eat a variety of foods, especially pasta, rice and other whole-grain foods..");
         // $("#tip-2").html("Reduce your fat-intake. ");
@@ -316,9 +328,9 @@
       bmi = (weight / (cm * cm));
       bmi = Math.round(bmi * 10) / 10;
 
-      $("#bmi-mu").html("Your Body Mass Index Is : " + bmi);
+      $("#bmi-mu").html("Body Mass Index Is : " + bmi);
       if (bmi < 18.5) {
-        $("#your-muweight").html("You are UnderWeight.");
+        $("#your-muweight").html("You are UnderWeight!");
         $("#tip-muhead").html("Tips that can be followed:");
         $("#tip-mu1").html("Drink 6-8 glasses of distilled water a day.");
         $("#tip-mu2").html("Eat frequent but small meals.");
