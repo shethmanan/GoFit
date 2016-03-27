@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="css/my-icons-collection/font/flaticon.css">
     <link rel="stylesheet" href="css/input-field-style.css" media="screen" title="no title" charset="utf-8">
     <style>
       .input-form {
@@ -45,11 +46,22 @@
         background-color: hsla(0, 100%, 50%, 0);
         box-shadow: none;
       }
+      .flaticon-letter:before {
+         margin-left: 0px;
+
+       }
+	   .flaticon-technology:before{
+		margin-left: 0px;
+		font-size: 25px;
+	   }
 
       #profile-photo {
         height: 200px;
         width: 200px;
       }
+	  #nav-btn{
+		padding-left: 0px;
+		}
     </style>
   </head>
 
@@ -86,7 +98,7 @@
       <!-- side nav btn -->
       <div class="row blue darken-2 no-margin">
         <a class="waves-effect waves-lighten btn-flat large" id="nav-btn">
-          <i class="large material-icons" style="color:white;font-size: xx-large;">list</i>
+          <i class="large flaticon-interface" style="color:white;font-size: xx-large;padding-left:0px;"></i>
         </a>
       </div>
       <!-- side nav btn ends -->
@@ -102,7 +114,7 @@
                 <div class="row edit-icon">
                   <div class="col s4 offset-s8">
                     <a class="btn-floating btn-large waves-effect waves-light btn-edit" data-activates="dropdown1">
-                      <i class="large material-icons">mode_edit</i>
+                      <i class="flaticon-draw"></i>
                     </a>
                     <!-- Dropdown Structure -->
                     <ul id='dropdown1' class='dropdown-content'>
@@ -149,12 +161,12 @@
           </div>
           <div class="row no-margin no-padding">
             <div class="col 4 offset-s4 no-padding">
-              <a class="waves-effect waves-light blue accent-2 btn white-text" id="submitbtn" href="#"><i class="material-icons right white-text">send</i>Submit</a>
+              <a class="waves-effect waves-light blue accent-2 btn white-text" id="submitbtn" href="#"><i class="flaticon-letter right white-text"></i>Submit</a>
             </div>
           </div>
         </form>
       </div>
-      <a class="btn-floating btn-large waves-effect waves-light red chart" href="profile_graph.html"><i class="large material-icons">insert_chart</i></a>
+      <a class="btn-floating btn-large waves-effect waves-light red chart" href="profile_graph.html"><i class=" flaticon-technology"></i></a>
     </main>
     <!-- scripts -->
     <script type="text/javascript" src="js/jquery.js"></script>

@@ -5,7 +5,7 @@
 		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 		<link rel="stylesheet" href="css/rating.css">
 		<link rel="stylesheet" type="text/css" href="css/navbar.css" />
-		<link rel="stylesheet" type="text/css" href="css/flaticon.css">
+		<link rel="stylesheet" type="text/css" href="css/my-icons-collection/font/flaticon.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<style>
 
@@ -34,8 +34,27 @@
 				padding-left: 6px;
 			}
 			.flaticon-letter:before {
-     		 margin-left: 2px;
-       }
+				margin-left: 2px;
+			}
+			#nav-btn{
+				padding-left: 0px;
+			}	
+			.input-field{
+				color:#2196f3;
+			}
+			.input-field input[type=email]:focus {
+		    	border-bottom: 1px solid #2196f3;
+		     }
+			 .textarea input[type=text]:focus {
+		    	border-bottom: 1px solid #2196f3;
+		     }
+			 textarea.materialize-textarea:focus:not([readonly]) {
+				border-bottom: 1px solid #2196f3;
+  
+			}
+			.textarea {
+				color: #2196f3;
+			}
 
 
 
@@ -73,7 +92,7 @@
 		<!-- side nav btn -->
 		<div class="row blue darken-2 no-margin">
 			<a class="waves-effect waves-lighten btn-flat large" id="nav-btn">
-				<i class="large material-icons" style="color:white;font-size: xx-large;">list</i>
+				<i class="large flaticon-interface" style="color:white;font-size: xx-large;padding-left:0px;"></i>
 			</a>
 		</div>
 		<!-- side nav btn ends -->
@@ -91,13 +110,13 @@
 
 
 							<div class="input-field col s12">
-							  <textarea id="message" class="materialize-textarea"></textarea>
+							  <textarea id="message" required class="materialize-textarea"></textarea>
 							  <label for="message">Message</label>
 							</div>
 
 						  <div class="row">
 							<div class="input-field col s12">
-							  <input id="email" type="email" class="validate">
+							  <input id="email" required type="email" class="validate">
 							  <label for="email">Email</label>
 							</div>
 						  </div>

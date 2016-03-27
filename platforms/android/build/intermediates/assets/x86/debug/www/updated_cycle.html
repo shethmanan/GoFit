@@ -5,7 +5,7 @@
   <link rel="stylesheet" type="text/css" href="css/navbar.css" />
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="css/updated_walk.css" />
-  <link rel="stylesheet" type="text/css" href="css/flaticon.css">
+  <link rel="stylesheet" type="text/css" href="css/my-icons-collection/font/flaticon.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     .flaticon-cross-1:before {
@@ -28,6 +28,9 @@
          margin-left: 3px;
          font-size: 25px;
        }
+	   #nav-btn{
+			padding-left: 0px;
+		}
   </style>
 </head>
 
@@ -62,7 +65,7 @@
     <!-- side nav btn -->
     <div class="row blue darken-2 no-margin">
       <a class="waves-effect waves-lighten btn-flat large" id="nav-btn">
-        <i class="large material-icons" style="color:white;font-size: xx-large;">list</i>
+        <i class="large flaticon-interface" style="color:white;font-size: xx-large;padding-left:0px;"></i>
       </a>
     </div>
     <!-- side nav btn ends -->
@@ -96,7 +99,7 @@
           <div class="gap"></div>
           <center>
             <div class="preloader-wrapper big active">
-              <div class="spinner-layer spinner-red-only">
+              <div style="opacity:0;" class="spinner-layer spinner-red-only" id="preload">
                 <div class="circle-clipper left">
                   <div class="circle"></div>
                 </div>
@@ -146,9 +149,11 @@
       if (!$(this).hasClass("stop")){
         clock = setInterval(timer,1000*60);
         $(this).html("Stop Cycling");
+		$("#preload").css('opacity',1);
       }
       else{
         $(this).html("Start Cycling");
+		$("#preload").css('opacity',0);
         clearInterval(clock);
       }
       $(this).toggleClass("stop");

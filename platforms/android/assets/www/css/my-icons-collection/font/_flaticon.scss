@@ -1,6 +1,6 @@
     /*
     Flaticon icon font: Flaticon
-    Creation date: 24/03/2016 12:53
+    Creation date: 27/03/2016 14:10
     */
 
     @font-face {
@@ -38,40 +38,40 @@
 
     .flaticon-arrows:before { content: "\f100"; }
 .flaticon-black:before { content: "\f101"; }
-.flaticon-circle:before { content: "\f102"; }
-.flaticon-clock:before { content: "\f103"; }
-.flaticon-clock-1:before { content: "\f104"; }
-.flaticon-clock-2:before { content: "\f105"; }
-.flaticon-clock-3:before { content: "\f106"; }
-.flaticon-clock-4:before { content: "\f107"; }
-.flaticon-clock-5:before { content: "\f108"; }
-.flaticon-clock-6:before { content: "\f109"; }
-.flaticon-clock-7:before { content: "\f10a"; }
-.flaticon-close:before { content: "\f10b"; }
-.flaticon-cross:before { content: "\f10c"; }
-.flaticon-cross-1:before { content: "\f10d"; }
-.flaticon-cross-2:before { content: "\f10e"; }
-.flaticon-danger:before { content: "\f10f"; }
-.flaticon-danger-1:before { content: "\f110"; }
-.flaticon-delete:before { content: "\f111"; }
-.flaticon-delete-1:before { content: "\f112"; }
-.flaticon-delete-2:before { content: "\f113"; }
-.flaticon-delete-3:before { content: "\f114"; }
-.flaticon-draw:before { content: "\f115"; }
-.flaticon-edit:before { content: "\f116"; }
-.flaticon-interface:before { content: "\f117"; }
-.flaticon-interface-1:before { content: "\f118"; }
-.flaticon-interface-2:before { content: "\f119"; }
-.flaticon-letter:before { content: "\f11a"; }
-.flaticon-line:before { content: "\f11b"; }
-.flaticon-medical:before { content: "\f11c"; }
-.flaticon-music:before { content: "\f11d"; }
-.flaticon-music-1:before { content: "\f11e"; }
-.flaticon-people:before { content: "\f11f"; }
-.flaticon-people-1:before { content: "\f120"; }
-.flaticon-people-2:before { content: "\f121"; }
-.flaticon-shapes:before { content: "\f122"; }
-.flaticon-shapes-1:before { content: "\f123"; }
+.flaticon-business:before { content: "\f102"; }
+.flaticon-circle:before { content: "\f103"; }
+.flaticon-clock:before { content: "\f104"; }
+.flaticon-clock-1:before { content: "\f105"; }
+.flaticon-clock-2:before { content: "\f106"; }
+.flaticon-clock-3:before { content: "\f107"; }
+.flaticon-clock-4:before { content: "\f108"; }
+.flaticon-clock-5:before { content: "\f109"; }
+.flaticon-clock-6:before { content: "\f10a"; }
+.flaticon-clock-7:before { content: "\f10b"; }
+.flaticon-close:before { content: "\f10c"; }
+.flaticon-cross:before { content: "\f10d"; }
+.flaticon-cross-1:before { content: "\f10e"; }
+.flaticon-cross-2:before { content: "\f10f"; }
+.flaticon-danger:before { content: "\f110"; }
+.flaticon-danger-1:before { content: "\f111"; }
+.flaticon-delete:before { content: "\f112"; }
+.flaticon-delete-1:before { content: "\f113"; }
+.flaticon-delete-2:before { content: "\f114"; }
+.flaticon-delete-3:before { content: "\f115"; }
+.flaticon-draw:before { content: "\f116"; }
+.flaticon-edit:before { content: "\f117"; }
+.flaticon-graphic:before { content: "\f118"; }
+.flaticon-interface:before { content: "\f119"; }
+.flaticon-interface-1:before { content: "\f11a"; }
+.flaticon-interface-2:before { content: "\f11b"; }
+.flaticon-letter:before { content: "\f11c"; }
+.flaticon-line:before { content: "\f11d"; }
+.flaticon-music:before { content: "\f11e"; }
+.flaticon-music-1:before { content: "\f11f"; }
+.flaticon-people:before { content: "\f120"; }
+.flaticon-people-1:before { content: "\f121"; }
+.flaticon-people-2:before { content: "\f122"; }
+.flaticon-shapes:before { content: "\f123"; }
 .flaticon-sign:before { content: "\f124"; }
 .flaticon-signs:before { content: "\f125"; }
 .flaticon-signs-1:before { content: "\f126"; }
@@ -81,47 +81,48 @@
 .flaticon-sports-2:before { content: "\f12a"; }
 .flaticon-sports-3:before { content: "\f12b"; }
 .flaticon-stop:before { content: "\f12c"; }
-.flaticon-tool:before { content: "\f12d"; }
-.flaticon-tool-1:before { content: "\f12e"; }
-.flaticon-transport:before { content: "\f12f"; }
-.flaticon-transport-1:before { content: "\f130"; }
+.flaticon-technology:before { content: "\f12d"; }
+.flaticon-tool:before { content: "\f12e"; }
+.flaticon-tool-1:before { content: "\f12f"; }
+.flaticon-transport:before { content: "\f130"; }
+.flaticon-transport-1:before { content: "\f131"; }
     
     $font-Flaticon-arrows: "\f100";
     $font-Flaticon-black: "\f101";
-    $font-Flaticon-circle: "\f102";
-    $font-Flaticon-clock: "\f103";
-    $font-Flaticon-clock-1: "\f104";
-    $font-Flaticon-clock-2: "\f105";
-    $font-Flaticon-clock-3: "\f106";
-    $font-Flaticon-clock-4: "\f107";
-    $font-Flaticon-clock-5: "\f108";
-    $font-Flaticon-clock-6: "\f109";
-    $font-Flaticon-clock-7: "\f10a";
-    $font-Flaticon-close: "\f10b";
-    $font-Flaticon-cross: "\f10c";
-    $font-Flaticon-cross-1: "\f10d";
-    $font-Flaticon-cross-2: "\f10e";
-    $font-Flaticon-danger: "\f10f";
-    $font-Flaticon-danger-1: "\f110";
-    $font-Flaticon-delete: "\f111";
-    $font-Flaticon-delete-1: "\f112";
-    $font-Flaticon-delete-2: "\f113";
-    $font-Flaticon-delete-3: "\f114";
-    $font-Flaticon-draw: "\f115";
-    $font-Flaticon-edit: "\f116";
-    $font-Flaticon-interface: "\f117";
-    $font-Flaticon-interface-1: "\f118";
-    $font-Flaticon-interface-2: "\f119";
-    $font-Flaticon-letter: "\f11a";
-    $font-Flaticon-line: "\f11b";
-    $font-Flaticon-medical: "\f11c";
-    $font-Flaticon-music: "\f11d";
-    $font-Flaticon-music-1: "\f11e";
-    $font-Flaticon-people: "\f11f";
-    $font-Flaticon-people-1: "\f120";
-    $font-Flaticon-people-2: "\f121";
-    $font-Flaticon-shapes: "\f122";
-    $font-Flaticon-shapes-1: "\f123";
+    $font-Flaticon-business: "\f102";
+    $font-Flaticon-circle: "\f103";
+    $font-Flaticon-clock: "\f104";
+    $font-Flaticon-clock-1: "\f105";
+    $font-Flaticon-clock-2: "\f106";
+    $font-Flaticon-clock-3: "\f107";
+    $font-Flaticon-clock-4: "\f108";
+    $font-Flaticon-clock-5: "\f109";
+    $font-Flaticon-clock-6: "\f10a";
+    $font-Flaticon-clock-7: "\f10b";
+    $font-Flaticon-close: "\f10c";
+    $font-Flaticon-cross: "\f10d";
+    $font-Flaticon-cross-1: "\f10e";
+    $font-Flaticon-cross-2: "\f10f";
+    $font-Flaticon-danger: "\f110";
+    $font-Flaticon-danger-1: "\f111";
+    $font-Flaticon-delete: "\f112";
+    $font-Flaticon-delete-1: "\f113";
+    $font-Flaticon-delete-2: "\f114";
+    $font-Flaticon-delete-3: "\f115";
+    $font-Flaticon-draw: "\f116";
+    $font-Flaticon-edit: "\f117";
+    $font-Flaticon-graphic: "\f118";
+    $font-Flaticon-interface: "\f119";
+    $font-Flaticon-interface-1: "\f11a";
+    $font-Flaticon-interface-2: "\f11b";
+    $font-Flaticon-letter: "\f11c";
+    $font-Flaticon-line: "\f11d";
+    $font-Flaticon-music: "\f11e";
+    $font-Flaticon-music-1: "\f11f";
+    $font-Flaticon-people: "\f120";
+    $font-Flaticon-people-1: "\f121";
+    $font-Flaticon-people-2: "\f122";
+    $font-Flaticon-shapes: "\f123";
     $font-Flaticon-sign: "\f124";
     $font-Flaticon-signs: "\f125";
     $font-Flaticon-signs-1: "\f126";
@@ -131,7 +132,8 @@
     $font-Flaticon-sports-2: "\f12a";
     $font-Flaticon-sports-3: "\f12b";
     $font-Flaticon-stop: "\f12c";
-    $font-Flaticon-tool: "\f12d";
-    $font-Flaticon-tool-1: "\f12e";
-    $font-Flaticon-transport: "\f12f";
-    $font-Flaticon-transport-1: "\f130";
+    $font-Flaticon-technology: "\f12d";
+    $font-Flaticon-tool: "\f12e";
+    $font-Flaticon-tool-1: "\f12f";
+    $font-Flaticon-transport: "\f130";
+    $font-Flaticon-transport-1: "\f131";

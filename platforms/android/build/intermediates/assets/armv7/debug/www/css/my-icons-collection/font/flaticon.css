@@ -1,6 +1,6 @@
 	/*
   	Flaticon icon font: Flaticon
-  	Creation date: 24/03/2016 12:53
+  	Creation date: 27/03/2016 14:10
   	*/
 
 @font-face {
@@ -31,40 +31,40 @@ margin-left: 20px;
 
 .flaticon-arrows:before { content: "\f100"; }
 .flaticon-black:before { content: "\f101"; }
-.flaticon-circle:before { content: "\f102"; }
-.flaticon-clock:before { content: "\f103"; }
-.flaticon-clock-1:before { content: "\f104"; }
-.flaticon-clock-2:before { content: "\f105"; }
-.flaticon-clock-3:before { content: "\f106"; }
-.flaticon-clock-4:before { content: "\f107"; }
-.flaticon-clock-5:before { content: "\f108"; }
-.flaticon-clock-6:before { content: "\f109"; }
-.flaticon-clock-7:before { content: "\f10a"; }
-.flaticon-close:before { content: "\f10b"; }
-.flaticon-cross:before { content: "\f10c"; }
-.flaticon-cross-1:before { content: "\f10d"; }
-.flaticon-cross-2:before { content: "\f10e"; }
-.flaticon-danger:before { content: "\f10f"; }
-.flaticon-danger-1:before { content: "\f110"; }
-.flaticon-delete:before { content: "\f111"; }
-.flaticon-delete-1:before { content: "\f112"; }
-.flaticon-delete-2:before { content: "\f113"; }
-.flaticon-delete-3:before { content: "\f114"; }
-.flaticon-draw:before { content: "\f115"; }
-.flaticon-edit:before { content: "\f116"; }
-.flaticon-interface:before { content: "\f117"; }
-.flaticon-interface-1:before { content: "\f118"; }
-.flaticon-interface-2:before { content: "\f119"; }
-.flaticon-letter:before { content: "\f11a"; }
-.flaticon-line:before { content: "\f11b"; }
-.flaticon-medical:before { content: "\f11c"; }
-.flaticon-music:before { content: "\f11d"; }
-.flaticon-music-1:before { content: "\f11e"; }
-.flaticon-people:before { content: "\f11f"; }
-.flaticon-people-1:before { content: "\f120"; }
-.flaticon-people-2:before { content: "\f121"; }
-.flaticon-shapes:before { content: "\f122"; }
-.flaticon-shapes-1:before { content: "\f123"; }
+.flaticon-business:before { content: "\f102"; }
+.flaticon-circle:before { content: "\f103"; }
+.flaticon-clock:before { content: "\f104"; }
+.flaticon-clock-1:before { content: "\f105"; }
+.flaticon-clock-2:before { content: "\f106"; }
+.flaticon-clock-3:before { content: "\f107"; }
+.flaticon-clock-4:before { content: "\f108"; }
+.flaticon-clock-5:before { content: "\f109"; }
+.flaticon-clock-6:before { content: "\f10a"; }
+.flaticon-clock-7:before { content: "\f10b"; }
+.flaticon-close:before { content: "\f10c"; }
+.flaticon-cross:before { content: "\f10d"; }
+.flaticon-cross-1:before { content: "\f10e"; }
+.flaticon-cross-2:before { content: "\f10f"; }
+.flaticon-danger:before { content: "\f110"; }
+.flaticon-danger-1:before { content: "\f111"; }
+.flaticon-delete:before { content: "\f112"; }
+.flaticon-delete-1:before { content: "\f113"; }
+.flaticon-delete-2:before { content: "\f114"; }
+.flaticon-delete-3:before { content: "\f115"; }
+.flaticon-draw:before { content: "\f116"; }
+.flaticon-edit:before { content: "\f117"; }
+.flaticon-graphic:before { content: "\f118"; }
+.flaticon-interface:before { content: "\f119"; }
+.flaticon-interface-1:before { content: "\f11a"; }
+.flaticon-interface-2:before { content: "\f11b"; }
+.flaticon-letter:before { content: "\f11c"; }
+.flaticon-line:before { content: "\f11d"; }
+.flaticon-music:before { content: "\f11e"; }
+.flaticon-music-1:before { content: "\f11f"; }
+.flaticon-people:before { content: "\f120"; }
+.flaticon-people-1:before { content: "\f121"; }
+.flaticon-people-2:before { content: "\f122"; }
+.flaticon-shapes:before { content: "\f123"; }
 .flaticon-sign:before { content: "\f124"; }
 .flaticon-signs:before { content: "\f125"; }
 .flaticon-signs-1:before { content: "\f126"; }
@@ -74,7 +74,8 @@ margin-left: 20px;
 .flaticon-sports-2:before { content: "\f12a"; }
 .flaticon-sports-3:before { content: "\f12b"; }
 .flaticon-stop:before { content: "\f12c"; }
-.flaticon-tool:before { content: "\f12d"; }
-.flaticon-tool-1:before { content: "\f12e"; }
-.flaticon-transport:before { content: "\f12f"; }
-.flaticon-transport-1:before { content: "\f130"; }
+.flaticon-technology:before { content: "\f12d"; }
+.flaticon-tool:before { content: "\f12e"; }
+.flaticon-tool-1:before { content: "\f12f"; }
+.flaticon-transport:before { content: "\f130"; }
+.flaticon-transport-1:before { content: "\f131"; }

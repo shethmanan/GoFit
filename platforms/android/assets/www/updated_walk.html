@@ -29,6 +29,10 @@
 		.flaticon-transport:before {
 			margin-left: 4px;
 		}
+		#nav-btn{
+			padding-left: 0px;
+		}
+		
 	</style>
 </head>
 
@@ -66,7 +70,7 @@
 		<!-- side nav btn -->
 		<div class="row blue darken-2 no-margin">
 			<a class="waves-effect waves-lighten btn-flat large" id="nav-btn">
-				<i class="large material-icons" style="color:white;font-size: xx-large;">list</i>
+				<i class="large flaticon-interface" style="color:white;font-size: xx-large;padding-left:0px;"></i>
 			</a>
 		</div>
 		<!-- side nav btn ends -->
@@ -88,7 +92,7 @@
 					<div class="gap"></div>
 					<center>
 						<div class="preloader-wrapper big active">
-							<div class="spinner-layer spinner-red-only" id="preload">
+							<div style="opacity:0;" class="spinner-layer spinner-red-only" id="preload">
 								<div class="circle-clipper left">
 									<div class="circle"></div>
 								</div>
@@ -153,7 +157,9 @@
 				clock_min = setInterval(timer_min, 1000 * 60);
 				clock_sec = setInterval(timer_sec, 1000);
 				$(this).html("Stop Walking");
+				$("#preload").css('opacity',1);
 			} else {
+				$("#preload").css('opacity',0);
 				$(this).html("Start Walking");
 				clearInterval(clock_sec);
 				clearInterval(clock_min);
