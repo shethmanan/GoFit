@@ -36,7 +36,7 @@
 
 		.ct-series-a .ct-point {
 			/* Colour of your points */
-			stroke: blue;
+			stroke: red;
 			/* Size of your points */
 			stroke-width: 10px;
 			/* Make your points appear as squares */
@@ -231,6 +231,7 @@
 		<script type="text/javascript" src="js/navbar-transition.js"></script>
 		<script type="text/javascript" src="js/chartist.min.js"></script>
 		<script type="text/javascript">
+		var db = openDatabase('GoFit', '1.0', 'Test DB', 2 * 1024 * 1024);
 			$(document).ready(function() {
 				var personaldetails = localStorage.getItem("user");
         var details = JSON.parse(personaldetails);
@@ -238,7 +239,7 @@
         img.src = details.img;
 				$('ul.tabs').tabs();
 				// $("#status_text").hide();
-				makeChart(1, 2, 3, 4, 5, 6, 7);
+				makeChart(1, 5, 3, 4, 5, 2, 7);
 			});
 
 			function makeChart(mon, tue, wed, thu, fri, sat, sun) {
@@ -250,7 +251,11 @@
 						[mon, tue, wed, thu, fri, sat, sun]
 					]
 				};
-				var chart = new Chartist.Line('#step-c', data);
+				var option = {
+		           showPoint : true,
+		           showArea: true
+		        };
+				var chart = new Chartist.Line('#step-c', data,option);
 				chart.on('draw', function(data) {
 					if (data.type === 'line' || data.type === 'area') {
 						data.element.animate({
