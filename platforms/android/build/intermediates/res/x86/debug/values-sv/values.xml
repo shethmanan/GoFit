@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/git-demo/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-sv/android_ui_strings.xml -->
+    <!-- From: file:/C:/cordova/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-sv/android_ui_strings.xml -->
     <eat-comment/>
     <string name="accessibility_date_picker_month">"Månad"</string>
     <string name="accessibility_date_picker_week">"Vecka"</string>
@@ -12,11 +12,11 @@
     <string name="accessibility_time_picker_milli">"Millisekund"</string>
     <string name="accessibility_time_picker_minute">"Minut"</string>
     <string name="accessibility_time_picker_second">"Sekund"</string>
-    <!-- From: file:/C:/git-demo/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-sv/android_content_strings.xml -->
+    <!-- From: file:/C:/cordova/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-sv/android_content_strings.xml -->
     <eat-comment/>
     <string name="actionbar_share">"Dela"</string>
     <string name="actionbar_web_search">"Webbsökning"</string>
-    <!-- From: file:/C:/git-demo/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-sv/android_ui_strings.xml -->
+    <!-- From: file:/C:/cordova/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-sv/android_ui_strings.xml -->
     <eat-comment/>
     <string name="autofill_popup_content_description">"Visar popupfönster för Autofyll"</string>
     <string name="color_picker_button_black">"Svart"</string>
@@ -41,25 +41,25 @@
     <string name="date_picker_dialog_title">"Ange datum"</string>
     <string name="date_time_picker_dialog_title">"Ange datum och tid"</string>
     <string name="low_memory_error">"Föregående åtgärd kan inte slutföras. För lite minne."</string>
-    <!-- From: file:/C:/git-demo/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-sv/android_content_strings.xml -->
+    <!-- From: file:/C:/cordova/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-sv/android_content_strings.xml -->
     <eat-comment/>
     <string name="media_player_error_button">"OK"</string>
     <string name="media_player_error_text_invalid_progressive_playback">"Det går tyvärr inte att spela upp videon på den här enheten."</string>
     <string name="media_player_error_text_unknown">"Det går tyvärr inte att spela upp den här videon."</string>
     <string name="media_player_error_title">"Det går inte att spela upp video"</string>
     <string name="media_player_loading_video">"Videon läses in"</string>
-    <!-- From: file:/C:/git-demo/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-sv/android_ui_strings.xml -->
+    <!-- From: file:/C:/cordova/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-sv/android_ui_strings.xml -->
     <eat-comment/>
     <string name="month_picker_dialog_title">"Ange månad"</string>
     <string name="opening_file_error">"Det gick inte att öppna filen"</string>
     <string name="password_generation_popup_content_description">"Visar popupfönster för lösenordsgenerering"</string>
-    <!-- From: file:/C:/git-demo/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-sv/android_content_strings.xml -->
+    <!-- From: file:/C:/cordova/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-sv/android_content_strings.xml -->
     <eat-comment/>
     <string name="profiler_error_toast">"Det gick inte att starta profileraren"</string>
     <string name="profiler_no_storage_toast">"Det går inte att starta profileraren eftersom den externa lagringsplatsen inte är klar"</string>
     <string name="profiler_started_toast">"Profileraren har startats"</string>
     <string name="profiler_stopped_toast">"Profileringen är klar. Resultaten finns i %1$s."</string>
-    <!-- From: file:/C:/git-demo/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-sv/android_ui_strings.xml -->
+    <!-- From: file:/C:/cordova/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-sv/android_ui_strings.xml -->
     <eat-comment/>
     <string name="time_picker_dialog_am">"AM"</string>
     <string name="time_picker_dialog_hour_minute_separator">"."</string>

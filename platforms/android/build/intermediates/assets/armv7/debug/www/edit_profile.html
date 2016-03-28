@@ -170,6 +170,7 @@
     </main>
     <!-- scripts -->
     <script type="text/javascript" src="js/jquery.js"></script>
+    <!--<script type="text/javascript" src="cordova.js"></script>-->
     <script type="text/javascript" src="js/materialize.js"></script>
     <script type="text/javascript" src="js/navbar-transition.js"></script>
     <!-- <script type="text/javascript" src="cordova.js"></script> -->
@@ -220,7 +221,8 @@
         for (var i = 0; i < 5; i++) {
           data = data + '"' + details[i].name + '":"' + details[i].value + '",';
         }
-        data = data + '"' + img + '":"' + $("#profile-photo").attr(src) + '"}';
+        var imgdp = document.getElementById('profile-photo');
+        data = data + '"img":"' + $("#profile-photo").attr('src') + '"}';
         return data;
       }
       String.prototype.replaceAt = function(index, character) {

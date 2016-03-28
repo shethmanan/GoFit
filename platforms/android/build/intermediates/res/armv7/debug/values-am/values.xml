@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/git-demo/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-am/android_ui_strings.xml -->
+    <!-- From: file:/C:/cordova/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-am/android_ui_strings.xml -->
     <eat-comment/>
     <string name="accessibility_date_picker_month">"ወር"</string>
     <string name="accessibility_date_picker_week">"ሳምንት"</string>
@@ -12,11 +12,11 @@
     <string name="accessibility_time_picker_milli">"ሚሊሰከንድ"</string>
     <string name="accessibility_time_picker_minute">"ደቂቃ"</string>
     <string name="accessibility_time_picker_second">"ሰከንድ"</string>
-    <!-- From: file:/C:/git-demo/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-am/android_content_strings.xml -->
+    <!-- From: file:/C:/cordova/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-am/android_content_strings.xml -->
     <eat-comment/>
     <string name="actionbar_share">"አጋራ"</string>
     <string name="actionbar_web_search">"የድር ፍለጋ"</string>
-    <!-- From: file:/C:/git-demo/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-am/android_ui_strings.xml -->
+    <!-- From: file:/C:/cordova/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-am/android_ui_strings.xml -->
     <eat-comment/>
     <string name="autofill_popup_content_description">"ራስ-ሙላ ብቅባይ በማሳየት ላይ"</string>
     <string name="color_picker_button_black">"ጥቁር"</string>
@@ -41,25 +41,25 @@
     <string name="date_picker_dialog_title">"ቀን ያዘጋጁ"</string>
     <string name="date_time_picker_dialog_title">"ቀን እና ሰዓት ያዘጋጁ"</string>
     <string name="low_memory_error">"በአነስተኛ ማህደረ ትውስታ ምክንያት ቀዳሚውን ክወና ማጠናቀቅ አልተቻለም"</string>
-    <!-- From: file:/C:/git-demo/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-am/android_content_strings.xml -->
+    <!-- From: file:/C:/cordova/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-am/android_content_strings.xml -->
     <eat-comment/>
     <string name="media_player_error_button">"ይሁን"</string>
     <string name="media_player_error_text_invalid_progressive_playback">"ይቅርታ፣ ይህ ቪዲዮ ወደዚህ መሣሪያ በዥረት ለመልቀቅ ልክ የሆነ አይደለም።"</string>
     <string name="media_player_error_text_unknown">"ይቅርታ፣ ይህ ቪዲዮ ሊጫወት አልቻለም።"</string>
     <string name="media_player_error_title">"ቪዲዮ ማጫወት አልተቻለም"</string>
     <string name="media_player_loading_video">"ቪዲዮን በመጫን ላይ"</string>
-    <!-- From: file:/C:/git-demo/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-am/android_ui_strings.xml -->
+    <!-- From: file:/C:/cordova/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-am/android_ui_strings.xml -->
     <eat-comment/>
     <string name="month_picker_dialog_title">"ወር ያዘጋጁ"</string>
     <string name="opening_file_error">"የተመረጠውን ፋይል መክፈት አልተሳካም"</string>
     <string name="password_generation_popup_content_description">"የይለፍ ቃል ማመንጨት ብቅ ይን በማሳየት ላይ"</string>
-    <!-- From: file:/C:/git-demo/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-am/android_content_strings.xml -->
+    <!-- From: file:/C:/cordova/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-am/android_content_strings.xml -->
     <eat-comment/>
     <string name="profiler_error_toast">"መገለጫ ሰሪውን ማስጀመር አልተሳካም"</string>
     <string name="profiler_no_storage_toast">"ውጫዊ ማከማቻ ዝግጁ ስላልሆነ መገለጫ ሰሪውን ማስጀመር አልተቻለም"</string>
     <string name="profiler_started_toast">"መገለጫ ሰሪ ተጀምሯል"</string>
     <string name="profiler_stopped_toast">"መግለጫ ሰሪ ተጠናቅቋል። ውጤቶች በ%1$s ውስጥ ናቸው።"</string>
-    <!-- From: file:/C:/git-demo/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-am/android_ui_strings.xml -->
+    <!-- From: file:/C:/cordova/gofit_final/platforms/android/build/intermediates/exploded-aar/org.xwalk/xwalk_core_library/16.45.421.19/res/values-am/android_ui_strings.xml -->
     <eat-comment/>
     <string name="time_picker_dialog_am">"ጥዋት"</string>
     <string name="time_picker_dialog_hour_minute_separator">":"</string>

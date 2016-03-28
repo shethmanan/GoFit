@@ -174,7 +174,7 @@
         x += '<div class="card-small blue darken-2" id="' + add.id + '">'
         x += '<div class="row no-margin">'
         x += '<div class="col s4">'
-        x += '<i class="material-icons amber-text">assignment_late</i>'
+        x += '<i class="flaticon-clock-6 amber-text"></i>'
         x += '</div>'
         x += '<div class="col s8 no-padding no-margin">'
         x += '<div class="row">'
@@ -182,12 +182,12 @@
         x += '<h5 class="amber-text" style="margin-bottom:0px;">' + add.title + '</h5>'
         x += '</div>'
         x += '<div class="col s2 no-padding right-align">'
-        x += '<i class="material-icons deep-orange-text" onclick="removeCard(this)">cancel</i>'
+        x += '<i class="flaticon-close deep-orange-text" onclick="removeCard(this)"></i>'
         x += '</div>'
         x += '</div>'
         x += '<div class="row no-margin">'
         x += '<div class="col s12 amber-text">'
-        x += '<h5 class="no-margin no-padding">Every : ' + add.time + '</h5>'
+        x += '<h5 class="no-margin no-padding">Every : ' + add.time + ' mins</h5>'
         x += '</div>'
         x += '</div>'
         x += '</div>'
@@ -207,7 +207,6 @@
       time = $("#time_text").val();
       if (title == "" || time == -1)
         return false;
-      time += " mins";
       var data = {
         status: true,
         id: id,
@@ -224,6 +223,7 @@
     function removeCard(data) {
       var card = $(data).closest("div.card-small");
       var key = card.attr("id");
+      console.log(key);
       removeNotification(key);
       db.transaction(function(tx) {
         tx.executeSql("DELETE FROM 'notification' WHERE id =" + key + "")
@@ -232,15 +232,16 @@
     }
 
     //set notification
-    function setNotification(id, title, freq) {
-      var now = new Date().getTime(),
-        first_time = now;
-      cordova.plugins.notification.local.schedule({
-        id: id,
-        title: title,
-        at: first_time,
-        every: freq
-      });
+    function setNotification(id1, title1, freq1) {
+      var now = new Date().getTime();
+      console.log("id :"+id1+" title :"+title1+" freq :"+freq1)
+          var first_time = new Date(now + freq1 * 1000 * 60);  
+          cordova.plugins.notification.local.schedule({
+          id: id1,
+          title: title1,
+          at: first_time,
+          every: freq1
+          });
       return true;
     }
     //remove notification

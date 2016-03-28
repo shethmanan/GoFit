@@ -57,4 +57,4 @@
     <preference name="xwalkMode" value="embedded" />
     <preference name="xwalkMultipleApk" value="true" />
 </widget>
-<!-- From: file:/C:/git-demo/gofit_final/platforms/android/res/xml/config.xml -->
+<!-- From: file:/C:/cordova/gofit_final/platforms/android/res/xml/config.xml -->
