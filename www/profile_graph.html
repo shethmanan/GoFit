@@ -43,7 +43,8 @@
 			stroke-linecap: circle;
 			show-point: false;
 		}
-		#nav-btn{
+
+		#nav-btn {
 			padding-left: 0px;
 		}
 	</style>
@@ -112,7 +113,7 @@
 									<span>Monday</span>
 								</div>
 								<div class="col s6">
-									<span id="monday"></span>
+									<span id="mon"></span>
 								</div>
 							</div>
 							<div class="row">
@@ -120,7 +121,7 @@
 									<span>Tuesday</span>
 								</div>
 								<div class="col s6">
-									<span id="tuesday"></span>
+									<span id="tue"></span>
 								</div>
 							</div>
 							<div class="row">
@@ -128,7 +129,7 @@
 									<span>Wednesday</span>
 								</div>
 								<div class="col s6">
-									<span id="wednesday"></span>
+									<span id="wed"></span>
 								</div>
 							</div>
 							<div class="row">
@@ -136,7 +137,7 @@
 									<span>Thursday</span>
 								</div>
 								<div class="col s6">
-									<span id="thursday"></span>
+									<span id="thu"></span>
 								</div>
 							</div>
 							<div class="row">
@@ -144,7 +145,7 @@
 									<span>Friday</span>
 								</div>
 								<div class="col s6">
-									<span id="friday"></span>
+									<span id="fri"></span>
 								</div>
 							</div>
 							<div class="row">
@@ -152,7 +153,7 @@
 									<span>Saturday</span>
 								</div>
 								<div class="col s6">
-									<span id="saturday"></span>
+									<span id="sat"></span>
 								</div>
 							</div>
 							<div class="row">
@@ -160,28 +161,27 @@
 									<span>Sunday</span>
 								</div>
 								<div class="col s6">
-									<span id="sunday"></span>
+									<span id="sun"></span>
 								</div>
 							</div>
-
 						</div>
 						<div class="col s6">
-								<div class="row">
-									<div class="col s6">
-										<span>Total Steps</span>
-									</div>
-									<div class="col s6">
-										<span id="total-steps">00</span>
-									</div>
+							<div class="row">
+								<div class="col s6">
+									<span>Total Steps</span>
 								</div>
-									<div class="row">
-										<div class="col s6">
-											<span>Highest Steps</span>
-										</div>
-										<div class="col s6">
-											<span id="highest-steps">00</span>
-										</div>
-									</div>
+								<div class="col s6">
+									<span id="total-steps">00</span>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col s6">
+									<span>Highest Steps</span>
+								</div>
+								<div class="col s6">
+									<span id="highest-steps">00</span>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -196,7 +196,7 @@
 								<tbody>
 									<tr>
 										<td rowspan="2">
-													<i class="flaticon-sports-2 iconss"></i>
+											<i class="flaticon-sports-2 iconss"></i>
 										</td>
 										<td>data</td>
 									</tr>
@@ -231,15 +231,74 @@
 		<script type="text/javascript" src="js/navbar-transition.js"></script>
 		<script type="text/javascript" src="js/chartist.min.js"></script>
 		<script type="text/javascript">
-		var db = openDatabase('GoFit', '1.0', 'Test DB', 2 * 1024 * 1024);
+			var db = openDatabase('GoFit', '1.0', 'Test DB', 2 * 1024 * 1024);
+			var mon = 0;
+			var tue = 0;
+			var wed = 0;
+			var thu = 0;
+			var fri = 0;
+			var sat = 0;
+			var sun = 0;
+			var highest_steps;
+			var total_steps;
 			$(document).ready(function() {
+				db.transaction(function(tx) {
+					tx.executeSql("select day,steps from updated_cycle group by day union select max(steps),sum(total_steps) from updated_cycle", [], function(tx, data) {
+						for (var i = 0; i < data.rows.length; i++) {
+							switch (data.rows[i].day) {
+								case 0:
+									console.log("0:" + data.rows[i].steps);
+									mon = data.rows[i].steps;
+									break;
+								case 1:
+									console.log("1:" + data.rows[i].steps);
+									tue = data.rows[i].steps;
+									break;
+								case 2:
+									console.log("2:" + data.rows[i].steps);
+									wed = data.rows[i].steps;
+									break;
+								case 3:
+									console.log("3:" + data.rows[i].steps);
+									thu = data.rows[i].steps;
+									break;
+								case 4:
+									console.log("4:" + data.rows[i].steps);
+									fri = data.rows[i].steps;
+									break;
+								case 5:
+									console.log("5:" + data.rows[i].steps);
+									sat = data.rows[i].steps;
+									break;
+								case 6:
+									console.log("6:" + data.rows[i].steps);
+									sun = data.rows[i].steps;
+									break;
+								default:
+								highest_steps = data.rows[i].day;
+								total_steps = data.rows[i].steps;
+								break;
+							}
+						}
+						makeChart(mon, tue, wed, thu, fri, sat, sun);
+						$("#mon").html(mon);
+						$("#tue").html(tue);
+						$("#wed").html(wed);
+						$("#thu").html(thu);
+						$("#fri").html(fri);
+						$("#sat").html(sat);
+						$("#sun").html(sun);
+						$("#highest-steps").html(highest_steps);
+						$("#total-steps").html(total_steps);
+					})
+				});
 				var personaldetails = localStorage.getItem("user");
-        var details = JSON.parse(personaldetails);
-        var img = document.getElementById('dp');
-        img.src = details.img;
+				var details = JSON.parse(personaldetails);
+				var img = document.getElementById('dp');
+				img.src = details.img;
 				$('ul.tabs').tabs();
 				// $("#status_text").hide();
-				makeChart(1, 5, 3, 4, 5, 2, 7);
+
 			});
 
 			function makeChart(mon, tue, wed, thu, fri, sat, sun) {
@@ -252,10 +311,10 @@
 					]
 				};
 				var option = {
-		           showPoint : true,
-		           showArea: true
-		        };
-				var chart = new Chartist.Line('#step-c', data,option);
+					showPoint: true,
+					showArea: true
+				};
+				var chart = new Chartist.Line('#step-c', data, option);
 				chart.on('draw', function(data) {
 					if (data.type === 'line' || data.type === 'area') {
 						data.element.animate({
