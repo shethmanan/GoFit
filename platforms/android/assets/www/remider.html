@@ -14,7 +14,7 @@
   <style>
     .flaticon-cross-1:before {
       margin-left: 3px;
-      
+
     }
     .flaticon-close:before {
       margin-left: 0px;
@@ -25,7 +25,7 @@
     .flaticon-clock-6:before {
       margin-left: 0px;
       font-size: 68px;
-      
+
     }
 	#nav-btn{
 		padding-left: 0px;
@@ -38,6 +38,7 @@
   <div class="side-section">
     <ul class="side-nav fixed blue lighten-3" style="left:0px">
       <li class="logo" style="background-color:transparent;"><a href="edit_profile.html"><img class="profile-pic circle" src="1.jpg"></a></li>
+      <li class="blue lighten-3"><a href="navbar.html" class="waves-effect waves-lighten" style="color:#1976d2;">Dash Board</a></li>
       <li class="blue lighten-3"><a href="remider.html" class="waves-effect waves-lighten" style="color:#1976d2;">Set Reminders</a></li>
       <li class="blue lighten-3"><a href="updated_walk.html" class="waves-effect waves-lighten" style="color:#1976d2;">Exercise</a></li>
       <ul class="collapsible collapsible-accordion">
@@ -124,7 +125,6 @@
       db.transaction(function(tx) {
         tx.executeSql("CREATE TABLE IF NOT EXISTS `notification` (id integer primary key autoincrement, title, time)");
         tx.executeSql("Select * from `notification`", [], function(tx, results) {
-          id = results.rows.length;
           for (var i = 0; i < results.rows.length; i++) {
             // ************************************************card*************************************
             var x = '<div class="row">'
@@ -167,35 +167,39 @@
     // to add notification
     $("#submit_remind").on('click', function() {
       var add = addNotification(); //to add notification
-      if (add.status) {
-        // ***************************************card**************************************
-        var x = '<div class="row">'
-        x += '<div class="col s12">'
-        x += '<div class="card-small blue darken-2" id="' + add.id + '">'
-        x += '<div class="row no-margin">'
-        x += '<div class="col s4">'
-        x += '<i class="flaticon-clock-6 amber-text"></i>'
-        x += '</div>'
-        x += '<div class="col s8 no-padding no-margin">'
-        x += '<div class="row">'
-        x += '<div class="col s10">'
-        x += '<h5 class="amber-text" style="margin-bottom:0px;">' + add.title + '</h5>'
-        x += '</div>'
-        x += '<div class="col s2 no-padding right-align">'
-        x += '<i class="flaticon-close deep-orange-text" onclick="removeCard(this)"></i>'
-        x += '</div>'
-        x += '</div>'
-        x += '<div class="row no-margin">'
-        x += '<div class="col s12 amber-text">'
-        x += '<h5 class="no-margin no-padding">Every : ' + add.time + ' mins</h5>'
-        x += '</div>'
-        x += '</div>'
-        x += '</div>'
-        x += '</div>'
-        x += '</div>'
-        x += '</div>'
-        x += '</div>';
-        $(".d-card").append(x).velocity("transition.bounceIn", 1300);
+      if (add) {
+        db.transaction(function(tx){
+          tx.executeSql("select * from notification order by id desc limit 1",[],function(tx,results){
+            // ***************************************card**************************************
+            var x = '<div class="row">'
+            x += '<div class="col s12">'
+            x += '<div class="card-small blue darken-2" id="' +results.rows[0].id+ '">'
+            x += '<div class="row no-margin">'
+            x += '<div class="col s4">'
+            x += '<i class="flaticon-clock-6 amber-text"></i>'
+            x += '</div>'
+            x += '<div class="col s8 no-padding no-margin">'
+            x += '<div class="row">'
+            x += '<div class="col s10">'
+            x += '<h5 class="amber-text" style="margin-bottom:0px;">' + results.rows[0].title + '</h5>'
+            x += '</div>'
+            x += '<div class="col s2 no-padding right-align">'
+            x += '<i class="flaticon-close deep-orange-text" onclick="removeCard(this)"></i>'
+            x += '</div>'
+            x += '</div>'
+            x += '<div class="row no-margin">'
+            x += '<div class="col s12 amber-text">'
+            x += '<h5 class="no-margin no-padding">Every : ' + results.rows[0].time + ' mins</h5>'
+            x += '</div>'
+            x += '</div>'
+            x += '</div>'
+            x += '</div>'
+            x += '</div>'
+            x += '</div>'
+            x += '</div>';
+            $(".d-card").append(x).velocity("transition.bounceIn", 1300);
+          })
+        })
       }
       $('form')[0].reset();
       $("#reminder").closeModal();
@@ -207,24 +211,18 @@
       time = $("#time_text").val();
       if (title == "" || time == -1)
         return false;
-      var data = {
-        status: true,
-        id: id,
-        title: title,
-        time: time
-      };
       db.transaction(function(tx) {
         tx.executeSql("INSERT into `notification`(title,time) values(?,?)", [title, time]);
       });
-      setNotification(id, title, time)
-      return data;
+      //setNotification(id, title, time)
+      return true;
     }
 
     function removeCard(data) {
       var card = $(data).closest("div.card-small");
       var key = card.attr("id");
       console.log(key);
-      removeNotification(key);
+      //removeNotification(key);
       db.transaction(function(tx) {
         tx.executeSql("DELETE FROM 'notification' WHERE id =" + key + "")
       });
@@ -235,7 +233,7 @@
     function setNotification(id1, title1, freq1) {
       var now = new Date().getTime();
       console.log("id :"+id1+" title :"+title1+" freq :"+freq1)
-          var first_time = new Date(now + freq1 * 1000 * 60);  
+          var first_time = new Date(now + freq1 * 1000 * 60);
           cordova.plugins.notification.local.schedule({
           id: id1,
           title: title1,

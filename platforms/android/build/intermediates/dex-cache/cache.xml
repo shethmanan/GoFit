@@ -2,39 +2,39 @@
 <items version="2" >
 
     <item
-        jar="C:\cordova\gofit_final\platforms\android\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\libs\internal_impl-23.1.1.jar"
+        jar="C:\Users\Manan\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
         jumboMode="false"
-        revision="23.0.1"
-        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
-        <dex dex="C:\cordova\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\internal_impl-23.1.1-3da946e002baf80f4d7a1fdfdf67af997fa96524.jar" />
-    </item>
-    <item
-        jar="C:\cordova\gofit_final\platforms\android\build\intermediates\exploded-aar\org.xwalk\xwalk_core_library\16.45.421.19\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="fe6430fcb0b63cdb623e2db3cbedae469543091d">
-        <dex dex="C:\cordova\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\classes-5f281cd8d536116840bfd0f9813139170e53df65.jar" />
-    </item>
-    <item
-        jar="C:\androidsdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
+        revision="23.0.2"
         sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
-        <dex dex="C:\cordova\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\support-annotations-23.1.1-56b9c27c47264af76df145b5c23f4f0d2d4f4c73.jar" />
+        <dex dex="C:\git-demo\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\support-annotations-23.1.1-d70b539b036632711f46743bdc888d4ee55b4698.jar" />
     </item>
     <item
-        jar="C:\cordova\gofit_final\platforms\android\build\intermediates\exploded-aar\android\CordovaLib\unspecified\debug\classes.jar"
+        jar="C:\git-demo\gofit_final\platforms\android\build\intermediates\exploded-aar\org.xwalk\xwalk_core_library\16.45.421.19\classes.jar"
         jumboMode="false"
-        revision="23.0.1"
-        sha1="ef3070e88a77e3f8a179376035f90c2f271c8a3a">
-        <dex dex="C:\cordova\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\classes-908fee6c5e791bf10e1d0f405a7cf86c34b1b677.jar" />
+        revision="23.0.2"
+        sha1="fe6430fcb0b63cdb623e2db3cbedae469543091d">
+        <dex dex="C:\git-demo\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\classes-3b06f3d6ad758eff472803953a8c1d2f8f18e791.jar" />
     </item>
     <item
-        jar="C:\cordova\gofit_final\platforms\android\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\classes.jar"
+        jar="C:\git-demo\gofit_final\platforms\android\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\classes.jar"
         jumboMode="false"
-        revision="23.0.1"
+        revision="23.0.2"
         sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
-        <dex dex="C:\cordova\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\classes-2f1b64d9f7484a23d00924a5c0a4a71d1253ae6c.jar" />
+        <dex dex="C:\git-demo\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\classes-f2c038d6450f71f0ed36a839b06f959281c28688.jar" />
+    </item>
+    <item
+        jar="C:\git-demo\gofit_final\platforms\android\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\libs\internal_impl-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="C:\git-demo\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\internal_impl-23.1.1-b8774fdc080f6eee615b8ebdf5f21d447ead524c.jar" />
+    </item>
+    <item
+        jar="C:\git-demo\gofit_final\platforms\android\build\intermediates\exploded-aar\android\CordovaLib\unspecified\debug\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ec97a107f1b6b2516be5be47a5eabf9e3d6511d4">
+        <dex dex="C:\git-demo\gofit_final\platforms\android\build\intermediates\pre-dexed\armv7\debug\classes-34bc06305ae017ae45da85c5841c1ddfdaed2fd1.jar" />
     </item>
 
 </items>
