@@ -32,7 +32,7 @@
 		#nav-btn{
 			padding-left: 0px;
 		}
-		
+
 	</style>
 </head>
 
@@ -144,11 +144,14 @@
 	<!-- <script type="text/javascript" src="cordova.js"></script> -->
 </body>
 <script type="text/javascript">
-	var clock_min;
-	var clock_sec;
-	var startingOffset = 0;
-	var activity_status = true;
-	var activity_id = 0;
+var clock_min;
+var clock_sec;
+var activity_id = 0;
+var activity_status = true;
+var startingOffset = 0;
+var steps;
+var totalSteps;
+var db = openDatabase('GoFit', '1.0', 'Test DB', 2 * 1024 * 1024);
 	$(document).ready(function(data) {
 		$("#start").click(function(data) {
 			if (!$(this).hasClass("stop")) {
@@ -216,13 +219,29 @@
 	}
 
 	function stop_run_counter() {
-		console.log("stop called");
+		console.log("stop-run-counter");
 		activity_status = false;
+		stepcounter.getTodayStepCount(success_today_active_run, failure);
+		var date = new DATE();
+		var day = date.getDay();
+		var month = date.getMonth();
+		var year = date.getFullYear();
+		var min = $("#time-min").attr("data-val");
+		var sec = $("#time-sec").attr("data-val");
+		db.transaction(function(tx){
+			tx.executeSql("CREATE TABLE IF NOT EXISTS `updated_walk` (id integer primary key autoincrement,steps,total_steps,min,secs,day,month,year)");
+			tx.executeSql("INSERT INTO `updated_walk` (steps,total_steps,min,secs,day,month,year) values (?,?,?,?,?,?,?)", [steps,totalSteps, min, sec, day, month, year]);
+		});
 		stepcounter.stop(success, failure);
 		console.log("stopped");
 	}
 	var failure = function() {
 		console.log("Error calling CordovaStepCounter Plugin");
+	}
+	var success_today_active_run = function(message) {
+			// alert(message);
+			totalSteps = message;
+			$("#today_active_run").html(message);
 	}
 </script>
 <html>

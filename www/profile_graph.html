@@ -92,16 +92,19 @@
 			<div class="col s12 no-padding">
 				<ul class="tabs blue darken-1 no-margin">
 					<li class="tab col s6">
-						<a href="#step-counter" class="white-text">Step counter</a>
+						<a id="run-counter" href="#run-tab" class="white-text">RUNS</a>
 					</li>
 					<li class="tab col s6">
-						<a href="#recent-activities" class="white-text">Recent activities</a>
+						<a id="walk-counter" href="#walk-tab" class="white-text">WALK</a>
+					</li>
+					<li class="tab col s6">
+						<a id="cycle-counter" href="#cycle-tab" class="white-text">Cycle</a>
 					</li>
 				</ul>
-				<div id="step-counter">
+				<div id="run-tab">
 					<div class="row">
 						<div class="col s12">
-							<div id="step-c" class="ct-perfect-fifth">
+							<div id="run-c" class="ct-perfect-fifth">
 
 							</div>
 						</div>
@@ -113,7 +116,7 @@
 									<span>Monday</span>
 								</div>
 								<div class="col s6">
-									<span id="mon"></span>
+									<span id="mon-run"></span>
 								</div>
 							</div>
 							<div class="row">
@@ -121,7 +124,7 @@
 									<span>Tuesday</span>
 								</div>
 								<div class="col s6">
-									<span id="tue"></span>
+									<span id="tue-run"></span>
 								</div>
 							</div>
 							<div class="row">
@@ -129,7 +132,7 @@
 									<span>Wednesday</span>
 								</div>
 								<div class="col s6">
-									<span id="wed"></span>
+									<span id="wed-run"></span>
 								</div>
 							</div>
 							<div class="row">
@@ -137,7 +140,7 @@
 									<span>Thursday</span>
 								</div>
 								<div class="col s6">
-									<span id="thu"></span>
+									<span id="thu-run"></span>
 								</div>
 							</div>
 							<div class="row">
@@ -145,7 +148,7 @@
 									<span>Friday</span>
 								</div>
 								<div class="col s6">
-									<span id="fri"></span>
+									<span id="fri-run"></span>
 								</div>
 							</div>
 							<div class="row">
@@ -153,7 +156,7 @@
 									<span>Saturday</span>
 								</div>
 								<div class="col s6">
-									<span id="sat"></span>
+									<span id="sat-run"></span>
 								</div>
 							</div>
 							<div class="row">
@@ -161,7 +164,7 @@
 									<span>Sunday</span>
 								</div>
 								<div class="col s6">
-									<span id="sun"></span>
+									<span id="sun-run"></span>
 								</div>
 							</div>
 						</div>
@@ -171,7 +174,7 @@
 									<span>Total Steps</span>
 								</div>
 								<div class="col s6">
-									<span id="total-steps">00</span>
+									<span id="total-steps-run">00</span>
 								</div>
 							</div>
 							<div class="row">
@@ -179,52 +182,189 @@
 									<span>Highest Steps</span>
 								</div>
 								<div class="col s6">
-									<span id="highest-steps">00</span>
+									<span id="highest-steps-run">00</span>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div id="recent-activities">
+				<div id="walk-tab">
 					<div class="row">
 						<div class="col s12">
-							<table class="bordered">
-								<thead>
-									<th>Activities</th>
-									<th>Recently Done</th>
-								</thead>
-								<tbody>
-									<tr>
-										<td rowspan="2">
-											<i class="flaticon-sports-2 iconss"></i>
-										</td>
-										<td>data</td>
-									</tr>
-									<tr>
-										<td>data2</td>
-									</tr>
-									<tr>
-										<td rowspan="2">icon</td>
-										<td>data</td>
-									</tr>
-									<tr>
-										<td>data2</td>
-									</tr>
-									<tr>
-										<td rowspan="2">
-											<i class="flaticon-people-1 iconss"></i>
-										</td>
-										<td>data</td>
-									</tr>
-									<tr>
-										<td>data2</td>
-									</tr>
-								</tbody>
-							</table>
+							<div id="walk-c" class="ct-perfect-fifth">
+
+							</div>
+							<div class="row">
+								<div class="col s6">
+									<div class="row">
+										<div class="col s6">
+											<span>Monday</span>
+										</div>
+										<div class="col s6">
+											<span id="mon-walk"></span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col s6">
+											<span>Tuesday</span>
+										</div>
+										<div class="col s6">
+											<span id="tue-walk"></span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col s6">
+											<span>Wednesday</span>
+										</div>
+										<div class="col s6">
+											<span id="wed-walk"></span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col s6">
+											<span>Thursday</span>
+										</div>
+										<div class="col s6">
+											<span id="thu-walk"></span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col s6">
+											<span>Friday</span>
+										</div>
+										<div class="col s6">
+											<span id="fri-walk"></span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col s6">
+											<span>Saturday</span>
+										</div>
+										<div class="col s6">
+											<span id="sat-walk"></span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col s6">
+											<span>Sunday</span>
+										</div>
+										<div class="col s6">
+											<span id="sun-walk"></span>
+										</div>
+									</div>
+								</div>
+								<div class="col s6">
+									<div class="row">
+										<div class="col s6">
+											<span>Total Steps</span>
+										</div>
+										<div class="col s6">
+											<span id="total-steps-walk">00</span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col s6">
+											<span>Highest Steps</span>
+										</div>
+										<div class="col s6">
+											<span id="highest-steps-walk">00</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="cycle-tab">
+					<div class="row">
+						<div class="col s12">
+							<div id="cycle-c" class="ct-perfect-fifth">
+
+							</div>
+							<div class="row">
+								<div class="col s6">
+									<div class="row">
+										<div class="col s6">
+											<span>Monday</span>
+										</div>
+										<div class="col s6">
+											<span id="mon-cycle"></span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col s6">
+											<span>Tuesday</span>
+										</div>
+										<div class="col s6">
+											<span id="tue-cycle"></span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col s6">
+											<span>Wednesday</span>
+										</div>
+										<div class="col s6">
+											<span id="wed-cycle"></span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col s6">
+											<span>Thursday</span>
+										</div>
+										<div class="col s6">
+											<span id="thu-cycle"></span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col s6">
+											<span>Friday</span>
+										</div>
+										<div class="col s6">
+											<span id="fri-cycle"></span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col s6">
+											<span>Saturday</span>
+										</div>
+										<div class="col s6">
+											<span id="sat-cycle"></span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col s6">
+											<span>Sunday</span>
+										</div>
+										<div class="col s6">
+											<span id="sun-cycle"></span>
+										</div>
+									</div>
+								</div>
+								<div class="col s6">
+									<div class="row">
+										<div class="col s6">
+											<span>Total Steps</span>
+										</div>
+										<div class="col s6">
+											<span id="total-steps-cycle">00</span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col s6">
+											<span>Highest Steps</span>
+										</div>
+										<div class="col s6">
+											<span id="highest-steps-cycle">00</span>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+		</div>
+		</div>
 		</div>
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/materialize.js"></script>
@@ -242,9 +382,54 @@
 			var highest_steps;
 			var total_steps;
 			$(document).ready(function() {
+				retrieveVal("updated_run", "run", "run-c")
+				var personaldetails = localStorage.getItem("user");
+				var details = JSON.parse(personaldetails);
+				var img = document.getElementById('dp');
+				img.src = details.img;
+				$('ul.tabs').tabs();
+				// $("#status_text").hide();
+				$("#walk-counter").click(function() {
+					retrieveVal("updated_walk", "walk", "walk-c");
+				});
+				$("#cycle-counter").click(function() {
+					retrieveVal("updated_cycle", "cycle", "cycle-c");
+				});
+			});
+
+			function makeChart(mon, tue, wed, thu, fri, sat, sun, id) {
+				var data = {
+					// A labels array that can contain any sort of values
+					labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+					// Our series array that contains series objects or in this case series data arrays
+					series: [
+						[mon, tue, wed, thu, fri, sat, sun]
+					]
+				};
+				var option = {
+					showPoint: true,
+					showArea: true
+				};
+				var chart = new Chartist.Line('#' + id, data, option);
+				chart.on('draw', function(data) {
+					if (data.type === 'line' || data.type === 'area') {
+						data.element.animate({
+							d: {
+								begin: 2000 * data.index,
+								dur: 2000,
+								from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
+								to: data.path.clone().stringify(),
+								easing: Chartist.Svg.Easing.easeOutQuint
+							}
+						});
+					}
+				});
+			}
+
+			function retrieveVal(table_name, day_id, chart_id) {
 				db.transaction(function(tx) {
-					tx.executeSql("select day,steps from updated_cycle group by day union select max(steps),sum(total_steps) from updated_cycle", [], function(tx, data) {
-						for (var i = 0; i < data.rows.length; i++) {
+					tx.executeSql("select day,steps from " + table_name + " group by day union select year,sum(total_steps) from "+table_name+" union select year,max(steps) from "+table_name, [], function(tx, data) {
+						for (var i = 0; i < data.rows.length-2; i++) {
 							switch (data.rows[i].day) {
 								case 0:
 									console.log("0:" + data.rows[i].steps);
@@ -274,59 +459,21 @@
 									console.log("6:" + data.rows[i].steps);
 									sun = data.rows[i].steps;
 									break;
-								default:
-								highest_steps = data.rows[i].day;
-								total_steps = data.rows[i].steps;
-								break;
 							}
 						}
-						makeChart(mon, tue, wed, thu, fri, sat, sun);
-						$("#mon").html(mon);
-						$("#tue").html(tue);
-						$("#wed").html(wed);
-						$("#thu").html(thu);
-						$("#fri").html(fri);
-						$("#sat").html(sat);
-						$("#sun").html(sun);
-						$("#highest-steps").html(highest_steps);
-						$("#total-steps").html(total_steps);
+						total_steps = data.rows[i].steps;
+						highest_steps = data.rows[++i].steps;
+						makeChart(mon, tue, wed, thu, fri, sat, sun, '' + chart_id);
+						$("#mon-" + day_id).html(mon);
+						$("#tue-" + day_id).html(tue);
+						$("#wed-" + day_id).html(wed);
+						$("#thu-" + day_id).html(thu);
+						$("#fri-" + day_id).html(fri);
+						$("#sat-" + day_id).html(sat);
+						$("#sun-" + day_id).html(sun);
+						$("#highest-steps-" + day_id).html(highest_steps);
+						$("#total-steps-" + day_id).html(total_steps);
 					})
-				});
-				var personaldetails = localStorage.getItem("user");
-				var details = JSON.parse(personaldetails);
-				var img = document.getElementById('dp');
-				img.src = details.img;
-				$('ul.tabs').tabs();
-				// $("#status_text").hide();
-
-			});
-
-			function makeChart(mon, tue, wed, thu, fri, sat, sun) {
-				var data = {
-					// A labels array that can contain any sort of values
-					labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-					// Our series array that contains series objects or in this case series data arrays
-					series: [
-						[mon, tue, wed, thu, fri, sat, sun]
-					]
-				};
-				var option = {
-					showPoint: true,
-					showArea: true
-				};
-				var chart = new Chartist.Line('#step-c', data, option);
-				chart.on('draw', function(data) {
-					if (data.type === 'line' || data.type === 'area') {
-						data.element.animate({
-							d: {
-								begin: 2000 * data.index,
-								dur: 2000,
-								from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
-								to: data.path.clone().stringify(),
-								easing: Chartist.Svg.Easing.easeOutQuint
-							}
-						});
-					}
 				});
 			}
 		</script>
