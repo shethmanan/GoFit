@@ -214,7 +214,7 @@
       db.transaction(function(tx) {
         tx.executeSql("INSERT into `notification`(title,time) values(?,?)", [title, time]);
       });
-      //setNotification(id, title, time)
+      setNotification(id, title, time)
       return true;
     }
 
@@ -222,7 +222,7 @@
       var card = $(data).closest("div.card-small");
       var key = card.attr("id");
       console.log(key);
-      //removeNotification(key);
+      removeNotification(key);
       db.transaction(function(tx) {
         tx.executeSql("DELETE FROM 'notification' WHERE id =" + key + "")
       });

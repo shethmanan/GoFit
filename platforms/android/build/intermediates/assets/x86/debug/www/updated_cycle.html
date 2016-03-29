@@ -195,7 +195,7 @@
     }
 
     function start_run_counter() {
-      activity_id = setInterval("start_run_counter1()", 10000);
+      activity_id = setInterval("start_run_counter1()", 1000);
     }
 
     function start_run_counter1() {
@@ -222,7 +222,7 @@
     function stop_run_counter() {
       console.log("stop-run-counter");
       activity_status = false;
-      stepcounter.getTodayStepCount(success_today_active_run, failure);
+      // stepcounter.getTodayStepCount(success_today_active_run, failure);
       var date = new DATE();
       var day = date.getDay();
       var month = date.getMonth();
