@@ -37,7 +37,7 @@
   <!-- side nav -->
   <div class="side-section">
     <ul class="side-nav fixed blue lighten-3" style="left:0px">
-      <li class="logo" style="background-color:transparent;"><a href="edit_profile.html"><img class="profile-pic circle" src="1.jpg"></a></li>
+      <li class="logo" style="background-color:transparent;"><a href="edit_profile.html"><img class="profile-pic circle" id="dp"></a></li>
       <li class="blue lighten-3"><a href="navbar.html" class="waves-effect waves-lighten" style="color:#1976d2;">Dash Board</a></li>
       <li class="blue lighten-3"><a href="remider.html" class="waves-effect waves-lighten" style="color:#1976d2;">Set Reminders</a></li>
       <li class="blue lighten-3"><a href="updated_walk.html" class="waves-effect waves-lighten" style="color:#1976d2;">Exercise</a></li>
@@ -122,6 +122,10 @@
     var id;
     var db = openDatabase('GoFit', '1.0', 'Test DB', 2 * 1024 * 1024);
     $(document).ready(function() {
+      var personaldetails = localStorage.getItem("user");
+      var details = JSON.parse(personaldetails);
+      var imgdp=document.getElementById('dp');
+      imgdp.src=details.img;
       db.transaction(function(tx) {
         tx.executeSql("CREATE TABLE IF NOT EXISTS `notification` (id integer primary key autoincrement, title, time)");
         tx.executeSql("Select * from `notification`", [], function(tx, results) {
@@ -170,6 +174,7 @@
       if (add) {
         db.transaction(function(tx){
           tx.executeSql("select * from notification order by id desc limit 1",[],function(tx,results){
+            console.log(results);
             // ***************************************card**************************************
             var x = '<div class="row">'
             x += '<div class="col s12">'
@@ -198,6 +203,7 @@
             x += '</div>'
             x += '</div>';
             $(".d-card").append(x).velocity("transition.bounceIn", 1300);
+            setNotification(results.rows[0].id, results.rows[0].title, results.rows[0].time)
           })
         })
       }
@@ -214,7 +220,6 @@
       db.transaction(function(tx) {
         tx.executeSql("INSERT into `notification`(title,time) values(?,?)", [title, time]);
       });
-      setNotification(id, title, time)
       return true;
     }
 

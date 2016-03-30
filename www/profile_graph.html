@@ -53,31 +53,30 @@
 <body>
 	<!-- side nav -->
 	<div class="side-section">
-		<ul class="side-nav fixed blue lighten-3" style="left:0px">
-			<li class="logo" style="background-color:transparent;">
-				<a href="edit_profile.html"><img id="dp" class="profile-pic circle"></a>
-			</li>
-			<li class="blue lighten-3"><a href="remider.html" class="waves-effect waves-lighten" style="color:#1976d2;">Set Reminders</a></li>
-			<li class="blue lighten-3"><a href="updated_walk.html" class="waves-effect waves-lighten" style="color:#1976d2;">Exercise</a></li>
-			<ul class="collapsible collapsible-accordion">
-				<li class="blue lighten-3">
-					<a class="collapsible-header" class="waves-effect waves-lighten" style="color:#1976d2;">Calculators</a>
-					<div class="collapsible-body">
-						<ul>
-							<li class="blue lighten-3">
-								<a href="BMICal.html" class="waves-effect waves-lighten" style="color:#1976d2;">BMI Calculator</a>
-							</li>
-							<li class="blue lighten-3">
-								<a href="calorieCalculator.html" class="waves-effect waves-lighten" style="color:#1976d2;">Calorie Calculator</a>
-							</li>
-						</ul>
-					</div>
-				</li>
-			</ul>
+    <ul class="side-nav fixed blue lighten-3" style="left:0px">
+      <li class="logo" style="background-color:transparent;"><a href="edit_profile.html"><img class="profile-pic circle" id="dp"></a></li>
+      <li class="blue lighten-3"><a href="navbar.html" class="waves-effect waves-lighten" style="color:#1976d2;">Dash Board</a></li>
+      <li class="blue lighten-3"><a href="remider.html" class="waves-effect waves-lighten" style="color:#1976d2;">Set Reminders</a></li>
+      <li class="blue lighten-3"><a href="updated_walk.html" class="waves-effect waves-lighten" style="color:#1976d2;">Exercise</a></li>
+      <ul class="collapsible collapsible-accordion">
+        <li class="blue lighten-3">
+          <a class="collapsible-header" class="waves-effect waves-lighten" style="color:#1976d2;">Calculators</a>
+          <div class="collapsible-body">
+            <ul>
+              <li class="blue lighten-3">
+                <a href="BMICal.html" class="waves-effect waves-lighten" style="color:#1976d2;">BMI Calculator</a>
+              </li>
+              <li class="blue lighten-3">
+                <a href="calorieCalculator.html" class="waves-effect waves-lighten" style="color:#1976d2;">Calorie Calculator</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
 
-			<li class="blue lighten-3"><a href="feedback.html" class="waves-effect waves-lighten" style="color:#1976d2;">Feedback</a></li>
-		</ul>
-	</div>
+      <li class="blue lighten-3"><a href="feedback.html" class="waves-effect waves-lighten" style="color:#1976d2;">Feedback</a></li>
+    </ul>
+  </div>
 	<main>
 		<!-- side nav btn -->
 		<div class="row blue darken-2 no-margin">
@@ -372,13 +371,13 @@
 		<script type="text/javascript" src="js/chartist.min.js"></script>
 		<script type="text/javascript">
 			var db = openDatabase('GoFit', '1.0', 'Test DB', 2 * 1024 * 1024);
-			var mon = 0;
-			var tue = 0;
-			var wed = 0;
-			var thu = 0;
-			var fri = 0;
-			var sat = 0;
-			var sun = 0;
+			var mon;
+			var tue;
+			var wed;
+			var thu;
+			var fri;
+			var sat;
+			var sun;
 			var highest_steps;
 			var total_steps;
 			$(document).ready(function() {
@@ -427,35 +426,42 @@
 			}
 
 			function retrieveVal(table_name, day_id, chart_id) {
+				mon=0;
+				tue=0;
+				wed=0;
+				thu=0;
+				fri=0;
+				sat=0;
+				sun=0;
 				db.transaction(function(tx) {
 					tx.executeSql("select day,steps from " + table_name + " group by day union select year,sum(total_steps) from "+table_name+" union select year,max(steps) from "+table_name, [], function(tx, data) {
 						for (var i = 0; i < data.rows.length-2; i++) {
 							switch (data.rows[i].day) {
-								case 0:
+								case 1:
 									console.log("0:" + data.rows[i].steps);
 									mon = data.rows[i].steps;
 									break;
-								case 1:
+								case 2:
 									console.log("1:" + data.rows[i].steps);
 									tue = data.rows[i].steps;
 									break;
-								case 2:
+								case 3:
 									console.log("2:" + data.rows[i].steps);
 									wed = data.rows[i].steps;
 									break;
-								case 3:
+								case 4:
 									console.log("3:" + data.rows[i].steps);
 									thu = data.rows[i].steps;
 									break;
-								case 4:
+								case 5:
 									console.log("4:" + data.rows[i].steps);
 									fri = data.rows[i].steps;
 									break;
-								case 5:
+								case 6:
 									console.log("5:" + data.rows[i].steps);
 									sat = data.rows[i].steps;
 									break;
-								case 6:
+								case 0:
 									console.log("6:" + data.rows[i].steps);
 									sun = data.rows[i].steps;
 									break;
