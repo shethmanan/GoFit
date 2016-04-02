@@ -165,6 +165,13 @@
           return false;
         }
         var data = getdata(details);
+        var db = openDatabase('GoFit', '1.0', 'Test DB', 2 * 1024 * 1024);
+        db.transaction(function(tx){
+          tx.executeSql("CREATE TABLE IF NOT EXISTS `notification` (id integer primary key autoincrement, title, time)");
+          tx.executeSql("CREATE TABLE IF NOT EXISTS `updated_cycle` (id integer primary key autoincrement,steps,total_steps,min,secs,day,month,year)");
+          tx.executeSql("CREATE TABLE IF NOT EXISTS `updated_run` (id integer primary key autoincrement,steps,total_steps,min,secs,day,month,year)");
+          tx.executeSql("CREATE TABLE IF NOT EXISTS `updated_walk` (id integer primary key autoincrement,steps,total_steps,min,secs,day,month,year)");
+        });
         localStorage.setItem("user", data);
       });
     });

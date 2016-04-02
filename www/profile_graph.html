@@ -434,9 +434,13 @@
 				sat=0;
 				sun=0;
 				db.transaction(function(tx) {
-					tx.executeSql("select day,steps from " + table_name + " group by day union select year,sum(total_steps) from "+table_name+" union select year,max(steps) from "+table_name, [], function(tx, data) {
+					var qry = "select day,sum(steps) as steps from " + table_name + " group by day union select year,sum(steps) from "+table_name+" union select total_steps,max(steps) from "+table_name;
+					console.log(qry);
+					tx.executeSql(qry, [], function(tx, data) {
+						console.log(data);
 						for (var i = 0; i < data.rows.length-2; i++) {
-							switch (data.rows[i].day) {
+							var day = data.rows[i].day;
+							switch (day) {
 								case 1:
 									console.log("0:" + data.rows[i].steps);
 									mon = data.rows[i].steps;
@@ -467,8 +471,10 @@
 									break;
 							}
 						}
-						total_steps = data.rows[i].steps;
-						highest_steps = data.rows[++i].steps;
+						if(data.rows[0].day != null && data.rows[0].steps != null){
+							total_steps = data.rows[i].steps;
+							highest_steps = data.rows[i++].steps;
+						}
 						makeChart(mon, tue, wed, thu, fri, sat, sun, '' + chart_id);
 						$("#mon-" + day_id).html(mon);
 						$("#tue-" + day_id).html(tue);
@@ -477,6 +483,7 @@
 						$("#fri-" + day_id).html(fri);
 						$("#sat-" + day_id).html(sat);
 						$("#sun-" + day_id).html(sun);
+						console.log(highest_steps)
 						$("#highest-steps-" + day_id).html(highest_steps);
 						$("#total-steps-" + day_id).html(total_steps);
 					})
