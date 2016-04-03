@@ -36,6 +36,10 @@
 			margin-left: 7px;
 			font-size: 23px;
 		}
+		.flaticon-signs:before {
+			margin-left: 0px;
+			font-size: 53px;
+		}
 		#nav-btn{
 			padding-left: 0px;
 		}
@@ -46,29 +50,30 @@
 		</header>
 		<!-- side nav -->
 		<div class="side-section">
-			<ul class="side-nav fixed blue lighten-3" style="left:0px">
-				<li class="logo" style="background-color:transparent;"><a href="edit_profile.html"><img id="dp" class="profile-pic circle" src="1.jpg"></a></li>
-				<li class="blue lighten-3"><a href="remider.html" class="waves-effect waves-lighten" style="color:#1976d2;">Set Reminders</a></li>
-				<li class="blue lighten-3"><a href="updated_walk.html" class="waves-effect waves-lighten" style="color:#1976d2;">Exercise</a></li>
-				<ul class="collapsible collapsible-accordion">
-          <li class="blue lighten-3">
-            <a class="collapsible-header" class="waves-effect waves-lighten" style="color:#1976d2;">Calculators</a>
-            <div class="collapsible-body">
-              <ul>
-                <li class="blue lighten-3">
-                  <a href="BMICal.html" class="waves-effect waves-lighten" style="color:#1976d2;">BMI Calculator</a>
-                </li>
-                <li class="blue lighten-3">
-                  <a href="calorieCalculator.html" class="waves-effect waves-lighten" style="color:#1976d2;">Calorie Calculator</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-        </ul>
+    <ul class="side-nav fixed blue lighten-3" style="left:0px">
+      <li class="logo" style="background-color:transparent;"><a href="edit_profile.html"><img class="profile-pic circle" id="dp"></a></li>
+      <li class="blue lighten-3"><a href="navbar.html" class="waves-effect waves-lighten" style="color:#1976d2;">Dash Board</a></li>
+      <li class="blue lighten-3"><a href="remider.html" class="waves-effect waves-lighten" style="color:#1976d2;">Set Reminders</a></li>
+      <li class="blue lighten-3"><a href="updated_walk.html" class="waves-effect waves-lighten" style="color:#1976d2;">Exercise</a></li>
+      <ul class="collapsible collapsible-accordion">
+        <li class="blue lighten-3">
+          <a class="collapsible-header" class="waves-effect waves-lighten" style="color:#1976d2;">Calculators</a>
+          <div class="collapsible-body">
+            <ul>
+              <li class="blue lighten-3">
+                <a href="BMICal.html" class="waves-effect waves-lighten" style="color:#1976d2;">BMI Calculator</a>
+              </li>
+              <li class="blue lighten-3">
+                <a href="calorieCalculator.html" class="waves-effect waves-lighten" style="color:#1976d2;">Calorie Calculator</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
 
-				<li class="blue lighten-3"><a href="feedback.html" class="waves-effect waves-lighten" style="color:#1976d2;">Feedback</a></li>
-			</ul>
-		</div>
+      <li class="blue lighten-3"><a href="feedback.html" class="waves-effect waves-lighten" style="color:#1976d2;">Feedback</a></li>
+    </ul>
+  </div>
 		<main>
 			<!-- side nav btn -->
 	    <div class="row blue darken-2 no-margin">
@@ -83,15 +88,15 @@
 		<div class="gap"></div>
 		<div class="row">
 			<div class="col s6">
-				<div class="square-card blue darken-2"><i class="material-icons white-text left-align" style="font-size: 70px;">album</i>
-					<p class="no-margin"><thin class="white-text left-align" style="font-size: 20px;padding-left:5px;">Best streak</thin></p>
-					<b class="white-text left-align" style="font-size: 60px;padding-left:5px;">7</b>
+				<div class="square-card blue darken-2"><i class="flaticon-signs white-text left-align" ></i>
+					<p class="no-margin"><thin class="white-text left-align" style="font-size: 20px;padding-left:5px;">Total Notification</thin></p>
+					<b class="white-text left-align" style="font-size: 60px;padding-left:5px;" id="tNotify"></b>
 				</div>
 			</div>
 			<div class="col s6">
-				<div class="square-card blue darken-2"><i class="material-icons white-text left-align" style="font-size: 70px;">album</i>
-					<p class="no-margin"><thin class="white-text left-align" style="font-size: 20px;padding-left:5px;">Total Goals Hit</thin></p>
-				<b class="white-text left-align" style="font-size: 60px;padding-left:5px;">1203</b></div>
+				<div class="square-card blue darken-2"><i class="flaticon-signs white-text left-align"></i>
+					<p class="no-margin"><thin class="white-text left-align" style="font-size: 20px;padding-left:5px;">Total Steps</thin></p>
+				<b class="white-text left-align" style="font-size: 60px;padding-left:5px;" id="tSteps"></b></div>
 			</div>
 		</div>
 		<div class="gap"></div>
@@ -116,6 +121,15 @@
 		<script type="text/javascript" src="js/velocity.ui.min.js"></script>
 		<script type="text/javascript">
 		$(document).ready(function(){
+			var db = openDatabase('GoFit', '1.0', 'Test DB', 2 * 1024 * 1024);
+			db.transaction(function(tx){
+				tx.executeSql("Select sum(steps) as steps from (select steps from `updated_walk` union select steps from `updated_run` union select steps from `updated_cycle`) union select count(id) from notification",[],function(tx,result){
+					console.log(result);
+					if(result.rows[0].steps === null) $("#tSteps").html('0');
+					else $("#tSteps").html(result.rows[1].steps);
+					$("#tNotify").html(result.rows[0].steps);
+				})
+			})
 			var personaldetails = localStorage.getItem("user");
 			var details = JSON.parse(personaldetails);
 			var imgdp=document.getElementById('dp');

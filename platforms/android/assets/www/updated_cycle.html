@@ -39,7 +39,7 @@
   <!-- side nav -->
   <div class="side-section">
     <ul class="side-nav fixed blue lighten-3" style="left:0px">
-      <li class="logo" style="background-color:transparent;"><a href="edit_profile.html"><img class="profile-pic circle" src="1.jpg"></a></li>
+      <li class="logo" style="background-color:transparent;"><a href="edit_profile.html"><img class="profile-pic circle" id="dp"></a></li>
       <li class="blue lighten-3"><a href="navbar.html" class="waves-effect waves-lighten" style="color:#1976d2;">Dash Board</a></li>
       <li class="blue lighten-3"><a href="remider.html" class="waves-effect waves-lighten" style="color:#1976d2;">Set Reminders</a></li>
       <li class="blue lighten-3"><a href="updated_walk.html" class="waves-effect waves-lighten" style="color:#1976d2;">Exercise</a></li>
@@ -58,7 +58,7 @@
           </div>
         </li>
       </ul>
-      <!-- <li class=" blue lighten-3"><a href="edit_profile.html" class="waves-effect waves-lighten" style="color:#1976d2;">My Profile</a></li> -->
+
       <li class="blue lighten-3"><a href="feedback.html" class="waves-effect waves-lighten" style="color:#1976d2;">Feedback</a></li>
     </ul>
   </div>
@@ -160,6 +160,10 @@
     var totalSteps;
     var db = openDatabase('GoFit', '1.0', 'Test DB', 2 * 1024 * 1024);
     $(document).ready(function(data) {
+    	var personaldetails = localStorage.getItem("user");
+      var details = JSON.parse(personaldetails);
+      var imgdp=document.getElementById('dp');
+      imgdp.src=details.img;
       $("#start-btn").click(function(data) {
 
         if (!$(this).hasClass("stop")) {
@@ -207,7 +211,6 @@
 
       // use this if u want number of steps walked till now:    stepcounter.getTodayStepCount(success_today_active_run, failure);
       if (!activity_status) {
-        alert("activity cleared");
         clearInterval(activity_id);
         activity_status = true;
       }
@@ -215,15 +218,15 @@
     var success_now_active_run = function(message) {
       // alert(message);
       console.log("inside now_active_run (message):-" + message);
-      steps = message;
+      steps = parseInt(message);
       $("#now_active_run").html(message);
     }
 
     function stop_run_counter() {
       console.log("stop-run-counter");
       activity_status = false;
-      // stepcounter.getTodayStepCount(success_today_active_run, failure);
-      var date = new DATE();
+      stepcounter.getTodayStepCount(success_today_active_run, failure);
+      var date = new Date();
       var day = date.getDay();
       var month = date.getMonth();
       var year = date.getFullYear();
@@ -245,6 +248,9 @@
         totalSteps = message;
         $("#today_active_run").html(message);
     }
+    var success = function(message) {
+                console.log("success");
+            }
   </script>
 </body>
 <html>

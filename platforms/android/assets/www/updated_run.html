@@ -40,32 +40,30 @@
 	</header>
 	<!-- side nav -->
 	<div class="side-section">
-		<ul class="side-nav fixed blue lighten-3" style="left:0px">
-			<li class="logo" style="background-color:transparent;">
-				<a href="edit_profile.html"><img class="profile-pic circle" src="1.jpg"></a>
-			</li>
-			<li class="blue lighten-3"><a href="navbar.html" class="waves-effect waves-lighten" style="color:#1976d2;">Dash Board</a></li>
-			<li class="blue lighten-3"><a href="remider.html" class="waves-effect waves-lighten" style="color:#1976d2;">Set Reminders</a></li>
-			<li class="blue lighten-3"><a href="updated_walk.html" class="waves-effect waves-lighten" style="color:#1976d2;">Exercise</a></li>
-			<ul class="collapsible collapsible-accordion">
-				<li class="blue lighten-3">
-					<a class="collapsible-header" class="waves-effect waves-lighten" style="color:#1976d2;">Calculators</a>
-					<div class="collapsible-body">
-						<ul>
-							<li class="blue lighten-3">
-								<a href="BMICal.html" class="waves-effect waves-lighten" style="color:#1976d2;">BMI Calculator</a>
-							</li>
-							<li class="blue lighten-3">
-								<a href="calorieCalculator.html" class="waves-effect waves-lighten" style="color:#1976d2;">Calorie Calculator</a>
-							</li>
-						</ul>
-					</div>
-				</li>
-			</ul>
+    <ul class="side-nav fixed blue lighten-3" style="left:0px">
+      <li class="logo" style="background-color:transparent;"><a href="edit_profile.html"><img class="profile-pic circle" id="dp"></a></li>
+      <li class="blue lighten-3"><a href="navbar.html" class="waves-effect waves-lighten" style="color:#1976d2;">Dash Board</a></li>
+      <li class="blue lighten-3"><a href="remider.html" class="waves-effect waves-lighten" style="color:#1976d2;">Set Reminders</a></li>
+      <li class="blue lighten-3"><a href="updated_walk.html" class="waves-effect waves-lighten" style="color:#1976d2;">Exercise</a></li>
+      <ul class="collapsible collapsible-accordion">
+        <li class="blue lighten-3">
+          <a class="collapsible-header" class="waves-effect waves-lighten" style="color:#1976d2;">Calculators</a>
+          <div class="collapsible-body">
+            <ul>
+              <li class="blue lighten-3">
+                <a href="BMICal.html" class="waves-effect waves-lighten" style="color:#1976d2;">BMI Calculator</a>
+              </li>
+              <li class="blue lighten-3">
+                <a href="calorieCalculator.html" class="waves-effect waves-lighten" style="color:#1976d2;">Calorie Calculator</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
 
-			<li class="blue lighten-3"><a href="feedback.html" class="waves-effect waves-lighten" style="color:#1976d2;">Feedback</a></li>
-		</ul>
-	</div>
+      <li class="blue lighten-3"><a href="feedback.html" class="waves-effect waves-lighten" style="color:#1976d2;">Feedback</a></li>
+    </ul>
+  </div>
 	<main>
 		<!-- side nav btn -->
 		<div class="row blue darken-2 no-margin">
@@ -153,6 +151,10 @@
 		var totalSteps;
 		var db = openDatabase('GoFit', '1.0', 'Test DB', 2 * 1024 * 1024);
 		$(document).ready(function(data) {
+			var personaldetails = localStorage.getItem("user");
+      var details = JSON.parse(personaldetails);
+      var imgdp=document.getElementById('dp');
+      imgdp.src=details.img;
 			$("#start-btn").click(function(data) {
 
 				if (!$(this).hasClass("stop")) {
@@ -215,8 +217,8 @@
 		function stop_run_counter() {
 			console.log("stop-run-counter");
 			activity_status = false;
-			// stepcounter.getTodayStepCount(success_today_active_run, failure);
-			var date = new DATE();
+			stepcounter.getTodayStepCount(success_today_active_run, failure);
+			var date = new Date();
 			var day = date.getDay();
 			var month = date.getMonth();
 			var year = date.getFullYear();
@@ -238,6 +240,9 @@
 				totalSteps = message;
 				$("#today_active_run").html(message);
 		}
+		var success = function(message) {
+                console.log("success");
+            }
 	</script>
 </body>
 <html>
