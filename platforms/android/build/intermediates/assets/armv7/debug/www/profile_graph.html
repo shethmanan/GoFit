@@ -53,30 +53,32 @@
 <body>
 	<!-- side nav -->
 	<div class="side-section">
-    <ul class="side-nav fixed blue lighten-3" style="left:0px">
-      <li class="logo" style="background-color:transparent;"><a href="edit_profile.html"><img class="profile-pic circle" id="dp"></a></li>
-      <li class="blue lighten-3"><a href="navbar.html" class="waves-effect waves-lighten" style="color:#1976d2;">Dash Board</a></li>
-      <li class="blue lighten-3"><a href="remider.html" class="waves-effect waves-lighten" style="color:#1976d2;">Set Reminders</a></li>
-      <li class="blue lighten-3"><a href="updated_walk.html" class="waves-effect waves-lighten" style="color:#1976d2;">Exercise</a></li>
-      <ul class="collapsible collapsible-accordion">
-        <li class="blue lighten-3">
-          <a class="collapsible-header" class="waves-effect waves-lighten" style="color:#1976d2;">Calculators</a>
-          <div class="collapsible-body">
-            <ul>
-              <li class="blue lighten-3">
-                <a href="BMICal.html" class="waves-effect waves-lighten" style="color:#1976d2;">BMI Calculator</a>
-              </li>
-              <li class="blue lighten-3">
-                <a href="calorieCalculator.html" class="waves-effect waves-lighten" style="color:#1976d2;">Calorie Calculator</a>
-              </li>
-            </ul>
-          </div>
-        </li>
-      </ul>
+		<ul class="side-nav fixed blue lighten-3" style="left:0px">
+			<li class="logo" style="background-color:transparent;">
+				<a href="edit_profile.html"><img class="profile-pic circle" id="dp"></a>
+			</li>
+			<li class="blue lighten-3"><a href="navbar.html" class="waves-effect waves-lighten" style="color:#1976d2;">Dash Board</a></li>
+			<li class="blue lighten-3"><a href="remider.html" class="waves-effect waves-lighten" style="color:#1976d2;">Set Reminders</a></li>
+			<li class="blue lighten-3"><a href="updated_walk.html" class="waves-effect waves-lighten" style="color:#1976d2;">Exercise</a></li>
+			<ul class="collapsible collapsible-accordion">
+				<li class="blue lighten-3">
+					<a class="collapsible-header" class="waves-effect waves-lighten" style="color:#1976d2;">Calculators</a>
+					<div class="collapsible-body">
+						<ul>
+							<li class="blue lighten-3">
+								<a href="BMICal.html" class="waves-effect waves-lighten" style="color:#1976d2;">BMI Calculator</a>
+							</li>
+							<li class="blue lighten-3">
+								<a href="calorieCalculator.html" class="waves-effect waves-lighten" style="color:#1976d2;">Calorie Calculator</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
 
-      <li class="blue lighten-3"><a href="feedback.html" class="waves-effect waves-lighten" style="color:#1976d2;">Feedback</a></li>
-    </ul>
-  </div>
+			<li class="blue lighten-3"><a href="feedback.html" class="waves-effect waves-lighten" style="color:#1976d2;">Feedback</a></li>
+		</ul>
+	</div>
 	<main>
 		<!-- side nav btn -->
 		<div class="row blue darken-2 no-margin">
@@ -426,66 +428,62 @@
 			}
 
 			function retrieveVal(table_name, day_id, chart_id) {
-				mon=0;
-				tue=0;
-				wed=0;
-				thu=0;
-				fri=0;
-				sat=0;
-				sun=0;
+				mon = 0;
+				tue = 0;
+				wed = 0;
+				thu = 0;
+				fri = 0;
+				sat = 0;
+				sun = 0;
 				db.transaction(function(tx) {
-					var qry = "select day,sum(steps) as steps from " + table_name + " group by day union select year,sum(steps) from "+table_name+" union select total_steps,max(steps) from "+table_name;
-					console.log(qry);
-					tx.executeSql(qry, [], function(tx, data) {
-						console.log(data);
-						for (var i = 0; i < data.rows.length-2; i++) {
-							var day = data.rows[i].day;
-							switch (day) {
-								case 1:
-									console.log("0:" + data.rows[i].steps);
-									mon = data.rows[i].steps;
-									break;
-								case 2:
-									console.log("1:" + data.rows[i].steps);
-									tue = data.rows[i].steps;
-									break;
-								case 3:
-									console.log("2:" + data.rows[i].steps);
-									wed = data.rows[i].steps;
-									break;
-								case 4:
-									console.log("3:" + data.rows[i].steps);
-									thu = data.rows[i].steps;
-									break;
-								case 5:
-									console.log("4:" + data.rows[i].steps);
-									fri = data.rows[i].steps;
-									break;
-								case 6:
-									console.log("5:" + data.rows[i].steps);
-									sat = data.rows[i].steps;
-									break;
-								case 0:
-									console.log("6:" + data.rows[i].steps);
-									sun = data.rows[i].steps;
-									break;
-							}
-						}
-						if(data.rows[0].day != null && data.rows[0].steps != null){
-							total_steps = data.rows[i].steps;
-							highest_steps = data.rows[i++].steps;
-						}
-						makeChart(mon, tue, wed, thu, fri, sat, sun, '' + chart_id);
-						$("#mon-" + day_id).html(mon);
-						$("#tue-" + day_id).html(tue);
-						$("#wed-" + day_id).html(wed);
-						$("#thu-" + day_id).html(thu);
-						$("#fri-" + day_id).html(fri);
-						$("#sat-" + day_id).html(sat);
-						$("#sun-" + day_id).html(sun);
-						console.log(highest_steps)
-						$("#highest-steps-" + day_id).html(highest_steps);
-						$("#total-steps-" + day_id).html(total_steps);
+						var qry = "select day,sum(steps) as steps from " + table_name + " group by day";
+						console.log(qry);
+						tx.executeSql(qry, [], function(tx, data) {
+								console.log(data);
+								for (var i = 0; i < data.rows.length; i++) {
+									var day = data.rows[i].day;
+									switch (day) {
+										case 1:
+											console.log("0:" + data.rows[i].steps);
+											mon = data.rows[i].steps;
+											break;
+										case 2:
+											console.log("1:" + data.rows[i].steps);
+											tue = data.rows[i].steps;
+											break;
+										case 3:
+											console.log("2:" + data.rows[i].steps);
+											wed = data.rows[i].steps;
+											break;
+										case 4:
+											console.log("3:" + data.rows[i].steps);
+											thu = data.rows[i].steps;
+											break;
+										case 5:
+											console.log("4:" + data.rows[i].steps);
+											fri = data.rows[i].steps;
+											console.log("inside switch : "+fri)
+											break;
+										case 6:
+											console.log("5:" + data.rows[i].steps);
+											sat = data.rows[i].steps;
+											break;
+										case 0:
+											console.log("6:" + data.rows[i].steps);
+											sun = data.rows[i].steps;
+											break;
+									}
+								}
+								makeChart(mon, tue, wed, thu, fri, sat, sun, '' + chart_id);
+								$("#mon-" + day_id).html(mon); $("#tue-" + day_id).html(tue); $("#wed-" + day_id).html(wed); $("#thu-" + day_id).html(thu); $("#fri-" + day_id).html(fri); $("#sat-" + day_id).html(
+									sat); $("#sun-" + day_id).html(sun);
+							})
+							console.log("fri: "+fri)
+						tx.executeSql("select max(steps)as highest from " + table_name, [], function(tx, data) {
+							$("#highest-steps-" + day_id).html(data.rows[0].highest);
+						})
+						tx.executeSql("select sum(steps) as total from " + table_name, [], function(tx, data) {
+						$("#total-steps-" + day_id).html(data.rows[0].total);
 					})
 				});
 			}
