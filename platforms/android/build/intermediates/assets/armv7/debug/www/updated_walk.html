@@ -308,14 +308,9 @@ var clock_min;
 			}
 		}
 		var success_now_active_run = function(message) {
-			message = parseInt(message);
-		if (message % 2 == 1) {
-			message = message - 1;
-			message = message / 2;
-		} else {
-			message = message / 2;
-		}
+		message = parseInt(message);
 		steps = message;
+		if(message == 0) return;
 		$("#now_active_walk").html(message);
 		}
 
@@ -350,5 +345,3 @@ var clock_min;
             }
 </script>
 <html>
-
-

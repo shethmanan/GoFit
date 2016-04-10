@@ -136,7 +136,7 @@
       <div class="col s6 center-align">
         <i class="flaticon-transport logo_color"></i>
         <div class="blue-text">&nbsp&nbsp
-          <div class="dynamic" id="now_active_run"></div>Padels</div>
+          <div class="dynamic" id="now_active_run">00</div>Padels</div>
       </div>
     </div>
     <br>
@@ -164,9 +164,9 @@
       var details = JSON.parse(personaldetails);
       var imgdp=document.getElementById('dp');
       imgdp.src=details.img;
-      if(!$("#start-btn").hasClass("stop")){$("#now_active_run").html("00")}
       $("#start-btn").click(function(data) {
         if (!$(this).hasClass("stop")) {
+          $("#now_active_run").html("00")
           clock_min = setInterval(timer_min, 1000 * 60);
           clock_sec = setInterval(timer_sec, 1000);
           start_run_counter();
@@ -219,6 +219,7 @@
       // alert(message);
       console.log("inside now_active_run (message):-" + message);
       steps = parseInt(message);
+      if(message == 0) return;
       $("#now_active_run").html(message);
     }
 
